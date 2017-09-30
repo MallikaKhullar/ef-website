@@ -10,8 +10,11 @@
     <!-- TODO: ask joel to give infinite sign vector -->
 
     <!-- css -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:400,700" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,8 +24,10 @@
 
 <body>
 
+    <!-- background image -->
     <div class="background" style="background-image: url(&quot;https://source.unsplash.com/collection/1172264/1600x900/daily&quot;);"></div>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -59,6 +64,22 @@
             </ul>
         </div>
     </nav>
+
+    <div class="widgets show-widgets">
+        <div id="center-above"></div>
+        <div id="middle">
+            <div class="greeting" class="transition" style="opacity: 1;">
+                <p>1 <i class="fa fa-heart-o" aria-hidden="true"></i> = $0.01 Donated!</p>
+            </div>
+        </div>
+
+        <div id="middle-below">
+            <div>
+                <input id="autocomplete" title="type &quot;a&quot;" placeholder="Search Google">
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
