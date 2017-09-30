@@ -3,23 +3,14 @@ var path = require('path');
 //create the router object
 var router = express.Router();
 
-//route for the homepage
-router.get("/", function(req, res) {
-    res.send("hi");
+//home page with ejs
+router.get('/new-tab', function(req, res) {
+    res.render(path.join(__dirname, "../new-tab"));
 });
 
-//route for about epic page
-router.get("/about-us", function(req, res) {
-    res.sendFile(path.join(__dirname, "../about.html"))
+//about page with ejs
+router.get('/about-us', function(req, res) {
+    res.render(path.join(__dirname, "../about"));
 });
-
-//route for new-tab page
-router.get("/new-tab", function(req, res) {
-    res.sendFile(path.join(__dirname, "../new-tab.html"))
-});
-
-
-//route for contact page
-router.post("/new-tab", function(req, res) {});
 
 module.exports = router;

@@ -9,6 +9,8 @@ var express = require('express'),
 //routing the app
 app.use('/', router);
 
+app.set('view engine', 'ejs');
+
 //connect to the local database
 mongoose.connect(database.localUrl);
 
