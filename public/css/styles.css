@@ -12,11 +12,13 @@
     height: 100%;
     padding: 10px 0 0 15px;
     width: auto;
+    filter: drop-shadow(1px 1px 3px #505050);
 }
 
 .quicklink-img {
     height: 20px;
     width: auto;
+    filter: drop-shadow(1px 1px 3px #505050);
 }
 
 .navbar-right {
