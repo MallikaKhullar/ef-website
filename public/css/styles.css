@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%
+}
+
 .navbar-default {
     background: transparent;
     box-shadow: none;
@@ -158,4 +163,26 @@
 #center-above {
     top: 0;
     z-index: 1
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    height: 90px;
+    min-width: 1210px;
+}
+
+#user-profile,
+.profile-drawer {
+    width: 555px;
+    background: #3c3c3c;
+}
+
+#user-profile-container {
+    color: #d6d2d2;
+    position: relative;
+    height: 100%;
+    background-color: rebeccapurple;
 }
