@@ -9,6 +9,7 @@ var express = require('express'),
 //routing the app
 app.use('/', router);
 
+//view engine is EJS
 app.set('view engine', 'ejs');
 
 //connect to the local database
