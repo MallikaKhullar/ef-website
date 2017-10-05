@@ -1,9 +1,49 @@
 html,
 body {
-    height: 100%
+    height: 100%;
+    background: linear-gradient(277deg, #1dc197, #2a473f, #6c2ba1, #e36007);
+    background-size: 800% 800%;
+    animation: AnimationName 18s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+    50% {
+        background-position: 100% 49%
+    }
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+    50% {
+        background-position: 100% 49%
+    }
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+    50% {
+        background-position: 100% 49%
+    }
+    100% {
+        background-position: 0% 52%
+    }
 }
 
 .navbar-default {
+    z-index: 99999;
     background: transparent;
     box-shadow: none;
     border-color: transparent;
