@@ -15,7 +15,7 @@ app.use(morgan('dev')); // log every request to the console TODO: what?
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 
-//require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret TODO: where to get this from?
