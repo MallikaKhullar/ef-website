@@ -1,11 +1,27 @@
 var path = require('path');
 
+var routesToTemplates = {
+    "/": "home.ejs",
+    "/new-tab": "new-tab.ejs",
+    "/terms": "terms.ejs",
+    "/login": "login.ejs",
+    "/about": "about.ejs"
+};
+
 module.exports = function(router, passport) {
 
-    router.get('/', continuePassage, function(req, res) {
-        res.render('index.ejs'); // load the index.ejs file
-    });
+    router.get('/', function(req, res) { res.render(routesToTemplates['/']); });
 
+    router.get('/login', continueIfLoggedOut, function(req, res) { res.render(routesToTemplates['/login']); });
+
+    router.get('/about-us', function(req, res) { res.render(routesToTemplates['/about']); });
+
+
+    //home page with ejs
+    router.get('/new-tab', continueIfLoggedIn, function(req, res) {
+        //TODO: trigger call to database handler to increase #hearts
+        res.render(routesToTemplates['/new-tab'], { user: req.user });
+    });
 
     // route for facebook authentication and login
     router.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
@@ -22,42 +38,14 @@ module.exports = function(router, passport) {
         req.logout();
         res.redirect('/');
     });
-
-    //home page with ejs
-    router.get('/new-tab', stopPassage, function(req, res) {
-        //TODO: trigger call to database handler to increase #hearts
-        res.render('new-tab.ejs', {
-            user: req.user // get the user out of session and pass to template
-        });
-    });
-
-    //about page with ejs
-    router.get('/about-us', function(req, res) {
-        res.render("about.ejs");
-    });
-
-    //about page with ejs
-    router.get('/home-page', function(req, res) {
-        res.render("home");
-    });
 };
 
-// route middleware to make sure a user is logged in
-function stopPassage(req, res, next) {
-
-    // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-        return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/');
+function continueIfLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) return next();
+    res.redirect('/login');
 }
 
-// route middleware to make sure a user is logged in
-function continuePassage(req, res, next) {
-    console.log(req.isAuthenticated());
-
-    if (req.isAuthenticated())
-        return res.redirect('/new-tab');
+function continueIfLoggedOut(req, res, next) {
+    if (req.isAuthenticated()) return res.redirect('/login');
     return next();
 }
