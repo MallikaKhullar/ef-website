@@ -1,7 +1,7 @@
 var path = require('path');
 
 var routesToTemplates = {
-    "/": "home.ejs",
+    "/": "design.ejs",
     "/new-tab": "new-tab.ejs",
     "/terms": "terms.ejs",
     "/login": "login.ejs",
@@ -14,8 +14,9 @@ module.exports = function(router, passport) {
 
     router.get('/login', continueIfLoggedOut, function(req, res) { res.render(routesToTemplates['/login']); });
 
-    router.get('/about-us', function(req, res) { res.render(routesToTemplates['/about']); });
+    router.get('/terms', function(req, res) { res.render(routesToTemplates['/terms']); });
 
+    router.get('/about-us', function(req, res) { res.render(routesToTemplates['/about']); });
 
     //home page with ejs
     router.get('/new-tab', continueIfLoggedIn, function(req, res) {
@@ -33,6 +34,15 @@ module.exports = function(router, passport) {
             failureRedirect: '/'
         }));
 
+    router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+    // the callback after google has authenticated the user
+    router.get('/auth/google/callback',
+        passport.authenticate('google', {
+            successRedirect: '/new-tab',
+            failureRedirect: '/'
+        }));
+
     // route for logging out
     router.get('/logout', function(req, res) {
         req.logout();
@@ -46,6 +56,6 @@ function continueIfLoggedIn(req, res, next) {
 }
 
 function continueIfLoggedOut(req, res, next) {
-    if (req.isAuthenticated()) return res.redirect('/login');
+    if (req.isAuthenticated()) return res.redirect('/new-tab');
     return next();
 }

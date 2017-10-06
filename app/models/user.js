@@ -8,7 +8,7 @@ var userSchema = mongoose.Schema({
     facebook_token: String,
     email: String,
     name: String,
-
+    timestamp: { type: Number },
     google: {
         id: String,
         token: String,
@@ -16,7 +16,7 @@ var userSchema = mongoose.Schema({
         name: String
     }
 
-    //TODO: timestamp added, userID, birthday?
+    //TODO: userID, birthday?
 });
 
 // methods ======================
