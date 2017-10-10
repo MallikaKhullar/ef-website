@@ -90,6 +90,7 @@ body {
     height: 50px;
     text-indent: 7px;
     font-size: 20px;
+    z-index: 99999;
     background-color: white;
 }
 
@@ -197,8 +198,9 @@ body {
 #center-above,
 #middle-below {
     left: 0;
-    top: 42%;
-    -webkit-transform: translate(0, 0)
+    top: 45%;
+    -webkit-transform: translate(0, 0);
+    z-index: 9999;
 }
 
 .metric,
