@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:400,700" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link href="/css/jquery-ui.css" rel="stylesheet">
+
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -69,8 +71,11 @@
         <div id="center-above"></div>
         <div id="middle">
             <div class="greeting" class="transition" style="opacity: 1;">
-                <strong>Hello,</strong>
+                <strong></strong>Hello,</strong>
                 <%- user.name %><br>
+                    <div id="clockbox"></div>
+
+
                     <!-- <p>1 <i class="fa fa-heart-o" aria-hidden="true"></i> = $0.01 Donated!</p> -->
             </div>
         </div>
@@ -90,5 +95,9 @@
     </div>
 
 </body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/searchbar.js"></script>
 
 </html>
