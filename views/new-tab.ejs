@@ -63,6 +63,12 @@
                         </small>
                     </a>
                 </li>
+                <li>
+                    <a href="top-apps">
+                        <small></small><img class="quicklink-img" src="/image/docs.svg"></img>
+                        </small>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -70,13 +76,12 @@
     <div class="widgets show-widgets">
         <div id="center-above"></div>
         <div id="middle">
-            <div class="greeting" class="transition" style="opacity: 1;">
+            <div class="thin-greeting" class="transition">
                 <strong></strong>Hello,</strong>
-                <%- user.name %><br>
-                    <div id="clockbox"></div>
-
-
-                    <!-- <p>1 <i class="fa fa-heart-o" aria-hidden="true"></i> = $0.01 Donated!</p> -->
+                <%- user.name %>
+            </div>
+            <div class="greeting" class="transition">
+                <div id="clockbox"></div><br>
             </div>
         </div>
 
@@ -88,8 +93,39 @@
     </div>
 
 
-    <div class="footer tfac-grey-background">
+    <div class="footer">
+
         <div id="user-profile-container" class="small-shadow">
+
+            <div style="width: 30%; float:left">
+                <div class="display-number-title">Donations So Far</div>
+                <div class="display-number">Money</div>
+                <!-- TODO:Add money here -->
+            </div>
+
+            <div style="width: 30%; float:left">
+                <div class="display-number-title">EPIC People</div>
+                <div class="display-number">Number</div>
+                <!-- TODO:Add people here -->
+
+            </div>
+
+            <div style="width: 40%; float:right">
+                <div style="float:right">
+                    <a href="http://www.facebook.com">
+                        <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                        </small>
+                    </a>
+                    <a href="http://www.facebook.com">
+                        <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                        </small>
+                    </a>
+                    <a href="http://www.facebook.com">
+                        <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                        </small>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     </div>

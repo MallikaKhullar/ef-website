@@ -7,6 +7,9 @@ var RouteHandler = require('../../handlers/route_handler');
 //     RouteHandler.renderView( /*insert API module here */ , req, res, next);
 // });
 
-router.get('/home', function(req, res) { res.render("top-apps.ejs"); });
+router.get('/', function(req, res) {
+    //TODO: compile the list of apps from some DB list (with url, image url) and send from this controller
+    res.render("top-apps.ejs");
+});
 
 module.exports = router;

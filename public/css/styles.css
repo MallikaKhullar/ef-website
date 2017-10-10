@@ -72,10 +72,17 @@ body {
 
 .greeting {
     color: white;
-    font-size: 37px;
+    font-size: 57px;
     font-family: Quicksand;
     font-weight: bold;
     filter: drop-shadow(1px 1px 3px #505050);
+    margin-top: -5px;
+}
+
+.thin-greeting {
+    color: white;
+    font-size: 37px;
+    font-family: Quicksand;
 }
 
 #autocomplete {
@@ -211,7 +218,6 @@ body {
     left: 50%;
     right: 0;
     height: 90px;
-    min-width: 1210px;
 }
 
 #user-profile,
@@ -221,8 +227,27 @@ body {
 }
 
 #user-profile-container {
-    color: #d6d2d2;
+    color: #DB8282;
     position: relative;
     height: 100%;
-    background-color: rebeccapurple;
+    padding: 10px 10px 10px 10px;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.display-number {
+    font-size: 25px;
+    color: white;
+    font-family: Quicksand;
+    font-weight: bold;
+}
+
+.display-number-title {
+    font-size: 15px;
+    color: white;
+    font-family: Quicksand;
+}
+
+.footer {
+    z-index: 99999;
 }
