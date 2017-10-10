@@ -1,10 +1,12 @@
-var moment = require('moment');
-var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-var User = require('../app/models/user');
-var configAuth = require('./auth');
+var winston = require('winston');
+var passport = require('passport');
+
+var moment = require('moment');
+var configAuth = require('config');
+var User = require('../models/user');
 
 
 module.exports = function(passport) {
@@ -22,9 +24,7 @@ module.exports = function(passport) {
     });
 
 
-    // =========================================================================
-    // FACEBOOK ================================================================
-    // =========================================================================
+    // FACEBOOK
     passport.use(new FacebookStrategy({
 
             // pull in our app id and secret from our auth.js file
@@ -41,7 +41,7 @@ module.exports = function(passport) {
             process.nextTick(function() {
 
                 // find the user in the database based on their facebook id
-                User.findOne({ 'facebook.id': profile.id }, function(err, user) {
+                User.findOne({ 'facebook_id': profile.id }, function(err, user) {
 
                     console.log(profile);
 
@@ -78,41 +78,32 @@ module.exports = function(passport) {
 
         }));
 
-    // =========================================================================
-    // GOOGLE ==================================================================
-    // =========================================================================
-    passport.use(new GoogleStrategy({
 
+    // GOOGLE
+    passport.use(new GoogleStrategy({
             clientID: configAuth.googleAuth.clientID,
             clientSecret: configAuth.googleAuth.clientSecret,
             callbackURL: configAuth.googleAuth.callbackURL,
-
         },
         function(token, refreshToken, profile, done) {
-
-
             // make the code asynchronous
             // User.findOne won't fire until we have all our data back from Google
             process.nextTick(function() {
 
                 // try to find the user based on their google id
-                User.findOne({ 'google.id': profile.id }, function(err, user) {
-                    console.log(JSON.stringify(profile) + "\n\n\n" + user);
+                User.findOne({ 'google_id': profile.id }, function(err, user) {
 
-                    if (err)
-                        return done(err);
+                    if (err) return done(err);
 
-                    if (user) {
+                    if (user) return done(null, user); //if user exists in DB
+                    else {
 
-                        // if a user is found, log them in
-                        return done(null, user);
-                    } else {
                         // if the user isnt in our database, create a new user
                         var newUser = new User();
 
                         // set all of the relevant information
-                        newUser.google.id = profile.id;
-                        newUser.google.token = token;
+                        newUser.google_id = profile.id;
+                        newUser.google_token = token;
                         newUser.name = profile.displayName;
                         newUser.email = profile.emails[0].value; // pull the first email
                         newUser.timestamp = moment().format('x');
@@ -128,5 +119,4 @@ module.exports = function(passport) {
             });
 
         }));
-
 };

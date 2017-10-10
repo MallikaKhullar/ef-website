@@ -1,0 +1,82 @@
+{
+    "environment": "Beta",
+    "environmentUrl": "",
+    "apiUrl": "",
+
+    "facebookAuth": {
+        "clientID": "197971190828325",
+        "clientSecret": "c1eb191f545f918fcae838da89e432b1",
+        "callbackURL": "http://localhost:8080/auth/facebook/callback",
+        "profileFields": ["emails", "birthday", "name", "gender", "location"]
+    },
+
+    "googleAuth": {
+        "clientID": "278732623380-jnetjlnvddisllknqh71g6hdvoctptd6.apps.googleusercontent.com",
+        "clientSecret": "0YSqvapn8HdlplZQOBXqvK5g",
+        "callbackURL": "http://localhost:8080/auth/google/callback"
+    },
+
+    "databases": {
+        "sql": {
+            "main": {
+                "database": "",
+                "username": "",
+                "password": "",
+                "options": {
+                    "host": "",
+                    "timezone": "+00:00",
+                    "port": 3306,
+                    "maxConcurrentQueries": 100,
+                    "dialect": "mysql",
+                    "dialectOptions": {
+                        "charset": "utf8mb4",
+                        "collate": "utf8mb4_unicode_ci"
+                    },
+                    "logging": false,
+                    "pool": {
+                        "maxConnections": 25,
+                        "maxIdleTime": 30
+                    }
+                }
+            }
+        }
+    },
+
+    "mainDBConfig": {
+        "rs_name": "rs0",
+        "username": "",
+        "password": "",
+        "database": ""
+    },
+
+
+    "aws": {
+        "region": "ap-southeast-1",
+        "accessKeyId": "",
+        "secretAccessKey": "",
+
+        "s3": {
+
+            "website_cdn": {
+                "bucket": "",
+                "assets": [{
+                    "name": "videos",
+                    "dir": "videos/"
+                }]
+            }
+        }
+    },
+
+    "staticContent": {
+        "imageBaseUrl": "",
+        "bundleBaseUrl": ""
+    },
+
+    "emailConfig": {
+        "emailId": "mallikapriak@gmail.com",
+        "Subject": "Beta",
+        "sendgrid": {
+            "SENDGRID_API_KEY": ""
+        }
+    }
+}

@@ -2,12 +2,12 @@ var express = require('express'),
     app = express(),
     port = 8080,
     database = require('./config/database'), // load the database config    
-    router = require('./app/routes'),
     mongoose = require('mongoose'), // mongoose for mongodb
     passport = require('passport'),
     morgan = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
+    router = require('./app/routes/index'),
     session = require('express-session'),
     flash = require('connect-flash');
 
@@ -15,7 +15,7 @@ app.use(morgan('dev')); // log every request to the console TODO: what?
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 
-require('./config/passport')(passport);
+require('./app/repo/passport')(passport);
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret TODO: where to get this from?
@@ -32,10 +32,7 @@ mongoose.connect(database.localUrl);
 // static files @ public folder
 app.use(express.static(__dirname + '/public'));
 
-require('./app/routes')(app, passport);
-
-//routing the app
-app.use('/', router);
+require('./app/routes/index')(app, passport); // pass 'app'
 
 //start the server
 app.listen(port, function() {

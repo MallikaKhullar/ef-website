@@ -9,12 +9,8 @@ var userSchema = mongoose.Schema({
     email: String,
     name: String,
     timestamp: { type: Number },
-    google: {
-        id: String,
-        token: String,
-        email: String,
-        name: String
-    }
+    google_id: String,
+    google_token: String,
 
     //TODO: userID, birthday?
 });
