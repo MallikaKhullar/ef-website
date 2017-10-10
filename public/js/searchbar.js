@@ -2,6 +2,11 @@ var suggestCallBack;
 
 $(document).ready(function() {
 
+    $('#autocomplete').keypress(function(e) {
+        if (e.keyCode == 13)
+            doSearch(document.getElementById('autocomplete').value);
+    });
+
     $("#autocomplete").autocomplete({
         source: function(request, response) {
             $.getJSON("https://suggestqueries.google.com/complete/search?callback=?", {
