@@ -252,8 +252,55 @@ body {
     font-family: Quicksand;
 }
 
+.thin-text {
+    font-family: Quicksand;
+}
+
+.bold-text {
+    font-family: Quicksand;
+    font-weight: bold;
+}
+
+.center-element {
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
 .footer {
     z-index: 99999;
+}
+
+.env-icon {
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.circle {
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 3px solid teal;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 50px;
+}
+
+#myProgress {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    background-color: #ddd;
+}
+
+#myBar {
+    width: 23%;
+    height: 5px;
+    background-color: #4CAF50;
 }
 
 .right-bar {
@@ -267,4 +314,8 @@ body {
     margin-right: 30px;
     border-radius: 6px;
     height: calc(100% - 200px);
+}
+
+.fa-red {
+    color: red;
 }
