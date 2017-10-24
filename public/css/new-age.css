@@ -31,18 +31,14 @@ body {
     font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
 }
 
-
-/* a {
-    -webkit-transition: all 0.35s;
-    -moz-transition: all 0.35s;
-    transition: all 0.35s;
-    color: #fdcc52;
+.inline-item-left {
+    display: inline-block;
 }
 
-a:hover,
-a:focus {
-    color: #fcbd20;
-} */
+.inline-item-right {
+    display: inline-block;
+    margin-left: 40px;
+}
 
 hr {
     max-width: 100px;
@@ -64,6 +60,52 @@ h6 {
     font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 200;
     letter-spacing: 1px;
+}
+
+.roboto-thick {
+    font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 700;
+}
+
+.roboto-thin {
+    font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 300;
+}
+
+.roboto-normal {
+    font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 500;
+}
+
+.stats {
+    margin-top: 50px;
+}
+
+.medium-text {
+    font-size: 30px;
+}
+
+.xsmall-text {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.signup-text {
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 47px;
+}
+
+.thin-rectangle {
+    border: 0.5px solid #FFFFFF;
+    border-radius: 20px;
+    height: 300px;
+    width: 100%;
+    margin-top: 100px;
+    color: white;
+    padding: 30px;
 }
 
 p {

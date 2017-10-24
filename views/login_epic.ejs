@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EPIC Foundation</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/vendor/device-mockups/device-mockups.min.css">
+
+    <!-- Theme CSS -->
+    <link href="/css/new-age.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">
+                    <img src="/image/logo.png">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/about-us">About Us 1</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About Us 2</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/terms">Terms and Conditions</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h1 class="roboto-thick">Every Page for Infinite Change!</h1>
+                            <h2 class="roboto-thin small-text">Sign up to take your first step towards start making the world a better place, one Epic person at a time!</h2>
+                            <div class="stats">
+                                <div class="inline-item-left">
+                                    <div class="roboto-thin xsmall-text ">Donations made so far</div>
+                                    <div class="roboto-normal medium-text ">
+                                        <%- stats.donations %>
+                                    </div>
+                                </div>
+                                <div class="inline-item-right">
+                                    |
+                                </div>
+                                <div class="inline-item-right">
+                                    <div class="roboto-thin xsmall-text ">EPICers so far</div>
+                                    <div class="roboto-normal medium-text ">
+                                        <%- stats.followers %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 ">
+                    <div class="header-content">
+                        <div class="thin-rectangle header-content-inner">
+                            <div class="signup-text">Sign up</div>
+                            <div><a href="/auth/google" class="btn btn-outline btn-xl" style="margin-top: 10px">Google</a></div>
+                            <div><a href="/auth/facebook" class="btn btn-outline btn-xl" style="margin-top: 10px">Facebook</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </header>
+
+
+    <!-- jQuery -->
+    <script src="/vendor/jquery/jquery.min.js "></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js "></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js "></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js "></script>
+
+</body>
+
+</html>
