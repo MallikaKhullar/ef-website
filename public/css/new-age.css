@@ -265,6 +265,18 @@ header .header-content {
     position: relative;
 }
 
+.white-btn {
+    background-color: #FFFFFF;
+}
+
+.red-txt {
+    color: red;
+}
+
+.blue-txt {
+    color: blue;
+}
+
 header .header-content .header-content-inner {
     position: relative;
     max-width: 500px;
