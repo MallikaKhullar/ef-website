@@ -43,7 +43,6 @@ userSchema.statics = {
     },
 
     getUserCount: function(data, cb) {
-        console.log("mongoose called");
         this.count({}).lean().exec(cb);
     },
 
