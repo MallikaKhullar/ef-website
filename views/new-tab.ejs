@@ -80,9 +80,7 @@
                 <strong></strong>Hello,</strong>
                 <%- user.name %>
             </div>
-            <div class="greeting" class="transition">
-                <div id="clockbox"></div><br>
-            </div>
+            <div id="clockbox"></div><br>
         </div>
 
         <div id="middle-below">
@@ -95,13 +93,13 @@
     <div class="right-bar">
         <div class="thick-text center-element">MY MISSION THIS WEEK</div>
         <div class="thin-text center-element">
-            <!-- <- mission.name > -->
-            Saving the environment!</div>
+            <%- user.current_week_hearts %>!</div>
         <div class="center-element">
             <img class="env-icon" src="/image/facebook-icon.svg"></a>
         </div>
 
-        <div class="thick-text center-element" style="font-size:20px;"> 230 <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+        <div class="thick-text center-element" style="font-size:20px;">
+            <%- user.current_week_hearts %> <i class="fa fa-heart fa-red" aria-hidden="true"></i>
         </div>
 
         <div class="center-element" style="width:100%; display: inline-block">
@@ -162,5 +160,10 @@
 <script src="js/jquery-ui.js"></script>
 <script src="js/clock.js"></script>
 <script src="js/searchbar.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        document.getElementById("myBar").style.width = <%= user.progress %> + "%";
+    });
+</script>
 
 </html>

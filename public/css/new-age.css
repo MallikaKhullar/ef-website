@@ -101,11 +101,11 @@ h6 {
 .thin-rectangle {
     border: 0.5px solid #FFFFFF;
     border-radius: 20px;
-    height: 300px;
+    padding: 50px;
+}
+
+.full-width {
     width: 100%;
-    margin-top: 100px;
-    color: white;
-    padding: 30px;
 }
 
 p {
@@ -298,13 +298,13 @@ header .header-content .header-content-inner .list-badges img {
     margin-bottom: 25px;
 }
 
-header .device-container {
-    max-width: 300px;
-    margin: 0 auto 100px;
-}
-
-header .device-container .screen img {
-    border-radius: 3px;
+header .header-content .header-content-inner-box {
+    max-width: none;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @media (min-width: 768px) {

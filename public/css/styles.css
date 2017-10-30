@@ -70,19 +70,22 @@ body {
     margin: 10px 0 0 0;
 }
 
-.greeting {
+#clockbox {
     color: white;
-    font-size: 57px;
-    font-family: Quicksand;
-    font-weight: bold;
-    filter: drop-shadow(1px 1px 3px #505050);
-    margin-top: -5px;
+    font-family: Roboto;
+    font-size: 112.5px;
+    margin-top: -30px;
+    font-weight: 500;
+    letter-spacing: -1px;
 }
 
 .thin-greeting {
     color: white;
-    font-size: 37px;
-    font-family: Quicksand;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 47px;
+    text-align: center;
 }
 
 #autocomplete {
@@ -298,7 +301,6 @@ body {
 }
 
 #myBar {
-    width: 23%;
     height: 5px;
     background-color: #4CAF50;
 }
