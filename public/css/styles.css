@@ -1,5 +1,6 @@
     html,
-    body {
+    body,
+    .all-content-container {
         height: 100%;
         background: linear-gradient(277deg, #1dc197, #2a473f, #6c2ba1, #e36007);
         background-size: 800% 800%;
@@ -322,7 +323,14 @@
         background-color: #4CAF50;
     }
     
-    .dialog-overlay {
+    .highzindex {
+        z-index: 25;
+    }
+    /* #all-content-container { */
+    /* display: hidden;
+    } */
+    
+    #dialog-overlay {
         position: absolute;
         top: 50%!important;
         left: 50%!important;
@@ -331,7 +339,7 @@
         margin: auto;
         width: 100%;
         height: 100%;
-        z-index: 59;
+        z-index: 20;
         background-color: rgba(255, 255, 255, 0.9);
     }
     

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "adblock-detect": "^1.0.5",
     "bcrypt-nodejs": "latest",
     "blockadblock": "^3.2.1",
     "bluebird": "^3.5.1",
