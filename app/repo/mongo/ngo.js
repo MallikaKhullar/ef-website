@@ -5,7 +5,9 @@ var ngoSchem = mongoose.Schema({
 
     ngo_id: String,
     ngo_name: String,
-    timestamp_added: String
+    timestamp_added: String,
+    cause_id: String,
+    logo_url: String,
 });
 
 

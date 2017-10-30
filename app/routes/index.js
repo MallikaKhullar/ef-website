@@ -7,15 +7,12 @@ var newTab = require('./new-tab');
 var termsAndConditions = require('./terms');
 var login = require('./login');
 
-
-
 var allRoutes = function(app, passport) {
 
     // Ping for health check - No HTTPS Check, load balancer sends HTTP only
     app.use('/health', function(req, res) {
         res.sendStatus(200);
     });
-
 
     app.all('*', function(req, res, next) {
 
@@ -45,7 +42,6 @@ var allRoutes = function(app, passport) {
     app.use('/top-apps', topApps);
     app.use('/terms', termsAndConditions);
     app.use('/new-tab', newTab);
-
 
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));

@@ -6,6 +6,28 @@ var MobileDetect = require('mobile-detect');
 
 function Utils() {}
 
+
+
+Utils.prototype.respond = function(res, tpl, obj, status) {
+    res.format({
+        html: () => res.render(tpl, obj),
+        json: () => {
+            if (status) return res.status(status).json(obj);
+            res.json(obj);
+        }
+    });
+};
+
+Utils.prototype.respondOrRedirect = function({ req, res }, url = '/', obj = {}, flash) {
+    res.format({
+        html: () => {
+            if (req && flash) req.flash(flash.type, flash.text);
+            res.redirect(url);
+        },
+        json: () => res.json(obj)
+    });
+};
+
 Utils.prototype.secureUrl = function(url) {
     var secureUrl = "";
     if (url && url.length > 0) {
@@ -255,6 +277,14 @@ function addParamsToPath(path, paramObj) {
 
 Utils.prototype.getCompleteUrl = function(req) {
     return req.method + " " + req.protocol + ':// ' + req.get('host') + " " + req.originalUrl;
+};
+
+Utils.prototype.getCommaSeparatedNumber = function(string) {
+    return string; //TODO: write function
+};
+
+Utils.prototype.getCommaSeparatedMoney = function(string) {
+    return string; //TODO: write function
 };
 
 Utils.prototype.addGETParamsToUrl = function(url, params1, param1Val) {

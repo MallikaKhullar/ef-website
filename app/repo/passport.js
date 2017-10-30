@@ -6,7 +6,7 @@ var passport = require('passport');
 
 var moment = require('moment');
 var configAuth = require('config');
-var User = require('../models/user');
+var User = require('../repo/mongo/user');
 
 
 module.exports = function(passport) {
