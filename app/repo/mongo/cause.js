@@ -1,12 +1,25 @@
 var mongoose = require('mongoose');
 
-// define the schema for our user model
 var causeSchema = mongoose.Schema({
-
-    cause_id: String,
+    cause_id: { type: String, index: true },
     cause_name: String,
-    timestamp_added: String
-});
+    img_url: String,
+    total_hearts: Number
+}, { timestamps: true });
 
+
+causeSchema.statics = {
+    getAllCauses: function(data, cb) {
+        this.find({}).lean().exec(cb);
+    },
+
+    getCausesByIds: function(data, cb) {
+        this.find({ cause_id: { $in: data.users } }).lean().exec(cb);
+    },
+
+    getCauseById: function(data, cb) {
+        this.findOne({ cause_id: data.id }).lean().exec(cb);
+    }
+}
 
 module.exports = mongoose.model('Cause', causeSchema);
