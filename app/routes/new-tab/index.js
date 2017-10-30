@@ -6,40 +6,37 @@ var User = require('../../repo/mongo/user');
 var Utils = require('../../utils');
 var userController = require('../../controllers/user');
 var donationController = require('../../controllers/donations');
+var causeController = require('../../controllers/cause');
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
 
-
 router.get('/', continueIfLoggedIn, function(req, res) {
-    console.log("Before calling def");
+    //increment hearts every time new page is loaded
     userController.incrementHearsById(req.user.id);
+
     var def = {
         userCount: userController.getAllUserCount(),
-        donationCount: donationController.getAllDonationCount()
+        donationCount: donationController.getAllDonationCount(),
+        currentCause: causeController.getCauseFromId(req.user.hearts.current_cause_id)
     };
+
     deferred.combine(def).pipe(function(data) {
-        console.log("Reached here =", data);
+
+        var user = req.user;
+        user.progress = Utils.calculateProgress(user.hearts.current_week_hearts, data.currentCause.total_hearts);
         var newdata = {
-            user: req.user,
+            user: user,
+            cause: data.currentCause,
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
                 followers: Utils.getCommaSeparatedNumber(data.userCount)
             }
         };
+
+        console.log("Sending newdata", newdata);
+
         res.render("new-tab.ejs", newdata);
     });
-
-
-    // userController.getAllUserCount(function(totalUsers) {
-    //     var data = {
-    //         user: req.user,
-    //         stats: {
-    //             donations: "Rs. " + Utils.getCommaSeparatedMoney(totalUsers),
-    //             followers: Utils.getCommaSeparatedNumber(totalUsers)
-    //         }
-    //     };
-    //     res.render("new-tab.ejs", data);
-    // });
 });
 
 function continueIfLoggedIn(req, res, next) {
