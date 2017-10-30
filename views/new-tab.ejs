@@ -31,6 +31,8 @@
     <!-- <div class="background" style="background-image: url(&quot;https://source.unsplash.com/collection/1172264/1600x900/daily&quot;);"></div> -->
 
     <!-- Navbar -->
+    <!-- <div class="dialog-overlay">Hello there</div> -->
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -84,34 +86,46 @@
         </div>
 
         <div id="middle-below">
-            <div>
-                <input id="autocomplete" title="type &quot;a&quot;" placeholder="Search Google">
-            </div>
+            <input id="autocomplete" title="type &quot;a&quot;" placeholder="Search Google">
         </div>
     </div>
 
     <div class="right-bar">
         <div class="thick-text center-element">MY MISSION THIS WEEK</div>
         <div class="thin-text center-element">
-            <%- user.current_week_hearts %>!</div>
+            <%- cause.cause_name %>!</div>
         <div class="center-element">
-            <img class="env-icon" src="/image/facebook-icon.svg"></a>
+            <img class="env-icon" src="<%- cause.img_url %>"></a>
         </div>
 
-        <div class="thick-text center-element" style="font-size:20px;">
-            <%- user.current_week_hearts %> <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+        <div class="thick-text center-element" style="font-size:28px;">
+            <%- user.hearts.current_week_hearts %> <i class="fa fa-heart fa-red" aria-hidden="true"></i>
         </div>
 
         <div class="center-element" style="width:100%; display: inline-block">
             <div id="myProgress">
                 <div id="myBar"></div>
             </div>
-            <div class="circle"></div>
+            <div class="circle">
+                <div class="thin-text" style="font-size:10px;margin-top:12%">
+                    <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+                    <BR>
+                    <%- cause.total_hearts %>
+                </div>
+            </div>
         </div>
 
+        <div class="thick-text center-element weight-500">
+            7 days to go!
+        </div>
+
+        <div class="thin-text center-element" style="margin:20px">
+            Open new tabs to collect more hearts!
+        </div>
+        <!-- 
         <div class="center-element" style="width:100%;margin-bottom:50px; bottom: 0; position: absolute;">
             <a href="https://www.facebook.com" class="btn-outline btn-med page-scroll">Tell your friends!</a>
-        </div>
+        </div> -->
 
     </div>
 
