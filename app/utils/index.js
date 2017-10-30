@@ -17,6 +17,9 @@ Utils.prototype.respond = function(res, tpl, obj, status) {
         }
     });
 };
+Utils.prototype.calculateProgress = function(num, denom) {
+    return Math.min((num * 100) / denom, 100);
+};
 
 Utils.prototype.respondOrRedirect = function({ req, res }, url = '/', obj = {}, flash) {
     res.format({
