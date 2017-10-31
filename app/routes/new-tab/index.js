@@ -37,9 +37,6 @@ router.get('/', continueIfLoggedIn, function(req, res) {
                 remainingTime: remainingTime
             }
         };
-
-        console.log("Sending newdata", newdata);
-
         res.render("new-tab.ejs", newdata);
     });
 });
