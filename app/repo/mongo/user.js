@@ -17,7 +17,8 @@ var userSchema = mongoose.Schema({
         total_hearts: Number,
         current_cause_id: String,
         donations_till_date: [String]
-    }
+    },
+    web_version: String
 }, { timestamps: true });
 
 userSchema.statics = {
