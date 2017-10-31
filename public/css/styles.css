@@ -365,6 +365,16 @@
         z-index: 7;
     }
     
+    .ad-on-right {
+        z-index: 9999;
+        float: right;
+        margin-right: 5%;
+        width: 300px;
+        background-color: olive;
+        height: 900px;
+        margin-bottom: 100px;
+    }
+    
     .fa-red {
         color: red;
     }

@@ -428,6 +428,14 @@ section.features .feature-item i {
     -webkit-text-fill-color: transparent;
 }
 
+section.features .small-feature-item i {
+    font-size: 40px;
+    background: -webkit-linear-gradient(to left, #7b4397, #dc2430);
+    background: linear-gradient(to left, #7b4397, #dc2430);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 @media (min-width: 992px) {
     section.features .device-container,
     section.features .feature-item {

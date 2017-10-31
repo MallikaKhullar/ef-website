@@ -547,23 +547,6 @@ function deg2rad(deg) {
 }
 
 
-// @deprecated
-// use String's static method
-function ellipsize(string, limitLen) {
-    if (string == null || string.length < limitLen) return string;
-    return string.substring(0, limitLen - 3) + "...";
-}
-
-// @deprecated
-// use Date's static method
-function isValidDate(date) { // This code is faster than the previous one. for 10^7 dates, this is 1121ms faster
-    return (
-        date &&
-        (date instanceof Date) &&
-        (!isNaN(date.getTime()))
-    );
-}
-
 exports.formatDate = formatDate;
 exports.formatTime = formatTime;
 exports.formatCurrency = formatCurrency;
@@ -596,5 +579,3 @@ exports.defer = defer;
 exports.returnWithProbability = returnWithProbability;
 exports.roughSizeOfObject = roughSizeOfObject;
 exports.distanceFromLatLonInMetre = distanceFromLatLonInMetre;
-exports.ellipsize = ellipsize;
-exports.isValidDate = isValidDate;

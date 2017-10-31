@@ -8,6 +8,11 @@ function Utils() {}
 
 
 
+
+Utils.prototype.calculateProgress = function(num, denom) {
+    return Math.min((num * 100) / denom, 100);
+};
+
 Utils.prototype.respond = function(res, tpl, obj, status) {
     res.format({
         html: () => res.render(tpl, obj),
@@ -16,9 +21,6 @@ Utils.prototype.respond = function(res, tpl, obj, status) {
             res.json(obj);
         }
     });
-};
-Utils.prototype.calculateProgress = function(num, denom) {
-    return Math.min((num * 100) / denom, 100);
 };
 
 Utils.prototype.respondOrRedirect = function({ req, res }, url = '/', obj = {}, flash) {
@@ -330,5 +332,19 @@ Utils.prototype.convertArrayBasedFilterFirstElemBasedFilter = function(filter) {
     }
     return filter;
 };
+
+Utils.prototype.timePeriodInMilliseconds = function(time1, time2) {
+    return Math.abs(time1 - time2);
+}
+
+Utils.prototype.timePeriodInDays = function(time1, time2) {
+    return Math.abs(timePeriodInMilliseconds(time1, time2) / 500);
+    //TODO: replace 500 with ms in days
+}
+
+Utils.prototype.timePeriodInHours = function(time1, time2) {
+    return Math.abs(timePeriodInMilliseconds(time1, time2) / 500);
+    //TODO: replace 500 with ms in hours
+}
 
 module.exports = new Utils();
