@@ -5,7 +5,10 @@ var appController = require('../../controllers/app');
 
 router.get('/', function(req, res) {
     appController.getAllApps().pipe(function(data) {
-        res.render("top-apps.ejs", data);
+        var pagedata = {
+            data: data
+        };
+        res.render("top-apps.ejs", pagedata);
     });
 });
 
