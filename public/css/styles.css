@@ -2,7 +2,7 @@
     body,
     .all-content-container {
         height: 100%;
-        background: linear-gradient(277deg, #1dc197, #2a473f, #6c2ba1, #e36007);
+        background: linear-gradient(277deg, #aae4d4, #57c5a4, #b27cdf, #eb8d4f);
         background-size: 800% 800%;
         animation: AnimationName 18s ease infinite;
     }
@@ -52,23 +52,31 @@
     
     .navbar-brand {
         padding: 0px;
+        min-height: 60px;
     }
     
     .navbar-brand>img {
         height: 100%;
         padding: 10px 0 0 15px;
         width: auto;
-        filter: drop-shadow(1px 1px 3px #505050);
+        /* filter: drop-shadow(1px 1px 3px #505050); */
     }
     
     .quicklink-img {
-        height: 20px;
+        height: 23px;
+        margin-left: 5px;
+        margin-right: 5px;
         width: auto;
         filter: drop-shadow(1px 1px 3px #505050);
     }
     
     .navbar-right {
         margin: 10px 0 0 0;
+        min-height: 60px;
+    }
+    
+    .navbar {
+        min-height: 60px;
     }
     
     #clockbox {

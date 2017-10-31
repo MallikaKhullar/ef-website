@@ -217,7 +217,7 @@ header {
     width: 100%;
     min-height: auto;
     overflow-y: hidden;
-    background: linear-gradient(277deg, #1dc197, #2a473f, #6c2ba1, #e36007);
+    background: linear-gradient(277deg, #aae4d4, #57c5a4, #b27cdf, #eb8d4f);
     background-size: 800% 800%;
     animation: AnimationName 18s ease infinite;
     color: white;
