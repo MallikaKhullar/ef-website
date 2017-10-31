@@ -32,160 +32,152 @@
 
     <div class="dialog-overlay" style="display: none;">
 
-        <body id="page-top">
-            <header>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-7">
-                            <div class="header-content">
-                                <div class="header-content-inner">
-                                    <h1 class="roboto-thick">Adblock</h1>
-                                    <h2 class="roboto-thin small-text">Disable</h2>
-                                    <a href="" class="btn-outline btn-med " onclick="dummy(0);return false;">Continue to site</a>
-                                </div>
-                            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h1 class="roboto-thick">Adblock</h1>
+                            <h2 class="roboto-thin small-text">Disable</h2>
+                            <a href="" class="btn-outline btn-med" onclick="dummy(0);return false;">Continue to site</a>
                         </div>
-
                     </div>
                 </div>
-            </header>
-
-        </body>
+            </div>
+        </div>
     </div>
 
-    <div class="all-content-container" style="display: none;">
 
-        <nav class="navbar navbar-default ">
-            <div class="container-fluid ">
-                <div class="navbar-header ">
-                    <a class="navbar-brand " href="/home ">
-                        <img src="/image/logo.png ">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/home">
+                    <img src="/image/logo.png">
+                </a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="http://www.facebook.com">
+                        <small></small><img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                        </small>
                     </a>
-                </div>
+                </li>
+                <li>
+                    <a href="http://www.gmail.com">
+                        <small></small><img class="quicklink-img" src="/image/gmail-icon.svg"></img>
+                        </small>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.youtube.com">
+                        <small></small><img class="quicklink-img" src="/image/youtube-icon.svg"></img>
+                        </small>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.drive.google.com">
+                        <small></small><img class="quicklink-img" src="/image/drive-icon.svg"></img>
+                        </small>
+                    </a>
+                </li>
+                <li>
+                    <a href="top-apps">
+                        <small></small><img class="quicklink-img" src="/image/all-apps.png"></img>
+                        </small>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-                <ul class="nav navbar-nav navbar-right ">
-                    <li>
-                        <a href="http://www.facebook.com ">
-                            <small></small><img class="quicklink-img " src="/image/facebook-icon.svg "></img>
-                            </small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.gmail.com ">
-                            <small></small><img class="quicklink-img " src="/image/gmail-icon.svg "></img>
-                            </small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.youtube.com ">
-                            <small></small><img class="quicklink-img " src="/image/youtube-icon.svg "></img>
-                            </small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.drive.google.com ">
-                            <small></small><img class="quicklink-img " src="/image/drive-icon.svg "></img>
-                            </small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="top-apps ">
-                            <small></small><img class="quicklink-img " src="/image/all-apps.png "></img>
-                            </small>
-                        </a>
-                    </li>
-                </ul>
+    <div class="widgets show-widgets">
+        <div id="middle">
+            <div class="thin-greeting" class="transition">
+                <strong></strong>Hello,</strong>
+                <%- user.name %>
             </div>
-        </nav>
+            <div id="clockbox"></div><br>
+        </div>
 
-        <div class="widgets show-widgets ">
-            <div id="middle ">
-                <div class="thin-greeting " class="transition ">
-                    <strong></strong>Hello,</strong>
-                    <%- user.name %>
-                </div>
-                <div id="clockbox "></div><br>
+        <div id="middle-below">
+            <input id="autocomplete" title="type &quot;a&quot;" placeholder="Search Google">
+        </div>
+    </div>
+
+    <div class="right-bar">
+        <div class="thick-text center-element">MY MISSION THIS WEEK</div>
+        <div class="thin-text center-element">
+            <%- cause.cause_name %>!</div>
+        <div class="center-element">
+            <img class="env-icon" src="<%- cause.img_url %>"></a>
+        </div>
+
+        <div class="thick-text center-element" style="font-size:28px;">
+            <%- user.hearts.current_week_hearts %> <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+        </div>
+
+        <div class="center-element" style="width:100%; display: inline-block">
+            <div id="myProgress">
+                <div id="myBar"></div>
             </div>
-
-            <div id="middle-below ">
-                <input id="autocomplete " title="type &quot;a&quot; " placeholder="Search Google ">
+            <div class="circle">
+                <div class="thin-text" style="font-size:10px;margin-top:12%">
+                    <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+                    <BR>
+                    <%- cause.total_hearts %>
+                </div>
             </div>
         </div>
 
-        <div class="right-bar ">
-            <div class="thick-text center-element ">MY MISSION THIS WEEK</div>
-            <div class="thin-text center-element ">
-                <%- cause.cause_name %>!</div>
-            <div class="center-element ">
-                <img class="env-icon " src="<%- cause.img_url %>"></a>
-            </div>
+        <div class="thick-text center-element weight-500">
+            7 days to go!
+        </div>
 
-            <div class="thick-text center-element" style="font-size:28px;">
-                <%- user.hearts.current_week_hearts %> <i class="fa fa-heart fa-red" aria-hidden="true"></i>
-            </div>
-
-            <div class="center-element" style="width:100%; display: inline-block">
-                <div id="myProgress">
-                    <div id="myBar"></div>
-                </div>
-                <div class="circle">
-                    <div class="thin-text" style="font-size:10px;margin-top:12%">
-                        <i class="fa fa-heart fa-red" aria-hidden="true"></i>
-                        <BR>
-                        <%- cause.total_hearts %>
-                    </div>
-                </div>
-            </div>
-
-            <div class="thick-text center-element weight-500">
-                7 days to go!
-            </div>
-
-            <div class="thin-text center-element" style="margin:20px">
-                Open new tabs to collect more hearts!
-            </div>
-            <!-- 
+        <div class="thin-text center-element" style="margin:20px">
+            Open new tabs to collect more hearts!
+        </div>
+        <!-- 
         <div class="center-element" style="width:100%;margin-bottom:50px; bottom: 0; position: absolute;">
             <a href="https://www.facebook.com" class="btn-outline btn-med page-scroll">Tell your friends!</a>
         </div> -->
 
-        </div>
+    </div>
 
 
-        <div class="footer">
+    <div class="footer">
 
-            <div id="user-profile-container" class="small-shadow">
+        <div id="user-profile-container" class="small-shadow">
 
-                <div style="width: 40%; float:left">
-                    <div class="display-number-title">Donations So Far</div>
-                    <div class="display-number">
-                        <%- stats.donations %>
-                    </div>
+            <div style="width: 40%; float:left">
+                <div class="display-number-title">Donations So Far</div>
+                <div class="display-number">
+                    <%- stats.donations %>
+                </div>
+            </div>
+
+            <div style="width: 40%; float:left">
+                <div class="display-number-title">EPIC People</div>
+                <div class="display-number">
+                    <%- stats.followers %>
                 </div>
 
-                <div style="width: 40%; float:left">
-                    <div class="display-number-title">EPIC People</div>
-                    <div class="display-number">
-                        <%- stats.followers %>
-                    </div>
+            </div>
 
-                </div>
-
-                <div style="width: 20%; float:right">
-                    <div style="float:right">
-                        <a href="http://www.facebook.com">
-                            <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                            </small>
-                        </a>
-                        <a href="http://www.facebook.com">
-                            <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                            </small>
-                        </a>
-                        <a href="http://www.facebook.com">
-                            <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                            </small>
-                        </a>
-                    </div>
+            <div style="width: 20%; float:right">
+                <div style="float:right">
+                    <a href="http://www.facebook.com">
+                        <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                        </small>
+                    </a>
+                    <a href="http://www.facebook.com">
+                        <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                        </small>
+                    </a>
+                    <a href="http://www.facebook.com">
+                        <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                        </small>
+                    </a>
                 </div>
             </div>
         </div>
@@ -197,6 +189,7 @@
 <script src="js/jquery-ui.js"></script>
 <script src="js/clock.js"></script>
 <script src="js/searchbar.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         document.getElementById("myBar").style.width = <%= user.progress %> + "%";
@@ -210,20 +203,9 @@
 <script type="text/javascript">
     if (adblock) {
         $(".dialog-overlay").show();
-        $(".all-content-container").hide();
     } else {
-        $(".all-content-container").show();
         $(".dialog-overlay").hide();
     }
-
-    // if (adblock) {
-    //     document.getElementById("dialog-overlay").style.display = "block";
-    //     document.getElementById("all-content-container").style.display = "hidden";
-
-    // } else {
-    //     document.getElementById("all-content-container").style.display = "block";
-    //     document.getElementById("dialog-overlay").style.display = "hidden";
-    // }
 </script>
 
 </html>

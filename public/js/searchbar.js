@@ -1,6 +1,6 @@
 var suggestCallBack;
 
-$(document).ready(function() {
+function init() {
 
     $('#autocomplete').keypress(function(e) {
         if (e.keyCode == 13)
@@ -33,6 +33,9 @@ $(document).ready(function() {
             doSearch(ui.item.value);
         },
     });
+}
+$(document).ready(function() {
+    init();
 });
 
 function doSearch(term) {

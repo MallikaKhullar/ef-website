@@ -177,6 +177,14 @@
         -webkit-transform: translate(-50%, -50%)
     }
     
+    #center-above,
+    #middle-below {
+        left: 0;
+        top: 45%;
+        -webkit-transform: translate(0, 0);
+        z-index: 5;
+    }
+    
     #bottom {
         width: 50%;
         bottom: 0;
@@ -207,14 +215,6 @@
         bottom: 1px;
         left: 0;
         z-index: 2
-    }
-    
-    #center-above,
-    #middle-below {
-        left: 0;
-        top: 45%;
-        -webkit-transform: translate(0, 0);
-        z-index: 5;
     }
     
     .metric,
@@ -330,7 +330,7 @@
     /* display: hidden;
     } */
     
-    #dialog-overlay {
+    .dialog-overlay {
         position: absolute;
         top: 50%!important;
         left: 50%!important;
