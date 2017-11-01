@@ -6,9 +6,6 @@ var MobileDetect = require('mobile-detect');
 
 function Utils() {}
 
-
-
-
 Utils.prototype.calculateProgress = function(num, denom) {
     return Math.min((num * 100) / denom, 100);
 };
@@ -333,18 +330,16 @@ Utils.prototype.convertArrayBasedFilterFirstElemBasedFilter = function(filter) {
     return filter;
 };
 
-Utils.prototype.timePeriodInMilliseconds = function(time1, time2) {
-    return Math.abs(time1 - time2);
+function timePeriodInMilliseconds(time1, time2) {
+    return (Math.abs(time1 - time2) * 1000);
 }
 
 Utils.prototype.timePeriodInDays = function(time1, time2) {
-    return Math.abs(timePeriodInMilliseconds(time1, time2) / 500);
-    //TODO: replace 500 with ms in days
+    return Math.abs(timePeriodInMilliseconds(time1, time2) / 86400000);
 }
 
 Utils.prototype.timePeriodInHours = function(time1, time2) {
-    return Math.abs(timePeriodInMilliseconds(time1, time2) / 500);
-    //TODO: replace 500 with ms in hours
+    return Math.abs(timePeriodInMilliseconds(time1, time2) / 3600000);
 }
 
 module.exports = new Utils();

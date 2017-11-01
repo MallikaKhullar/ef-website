@@ -23,10 +23,13 @@ router.get('/', continueIfLoggedIn, function(req, res) {
     deferred.combine(def).pipe(function(data) {
 
         var user = req.user;
+
         user.progress = Utils.calculateProgress(user.hearts.current_week_hearts, data.currentCause.total_hearts);
-        var hoursToGo = Utils.timePeriodInHours(user.target_start_time, user.target_end_time);
-        var remainingTime = hoursToGo >= 24 ? (hoursToGo / 24 > 1 ? hoursToGo / 24 + "days " : hoursToGo / 24 + "day ") :
-            (hoursToGo > 1 ? hoursToGo + "hours " : hoursToGo + "hour ");
+
+        var hoursToGo = Utils.timePeriodInHours(user.hearts.target_start_time, user.hearts.target_end_time);
+
+        var remainingTime = hoursToGo >= 24 ? (hoursToGo / 24 > 1 ? hoursToGo / 24 + " days " : hoursToGo / 24 + " day ") :
+            (hoursToGo > 1 ? hoursToGo + " hours " : hoursToGo + " hour ");
 
         var newdata = {
             user: user,
