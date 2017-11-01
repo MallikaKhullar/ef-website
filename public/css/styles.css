@@ -375,6 +375,36 @@
         margin-bottom: 100px;
     }
     
+    .dark-gradient {
+        background-color: rgba(0, 0, 0, 0.65);
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+    }
+    
+    .small-dialog-overlay {
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 70%;
+        height: 70%;
+        border-radius: 10px;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
+        left: 15%;
+        top: 15%;
+        position: absolute;
+    }
+    
+    .page-container {
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        position: absolute;
+    }
+    
     .fa-red {
         color: red;
     }
