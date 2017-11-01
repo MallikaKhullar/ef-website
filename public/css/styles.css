@@ -393,6 +393,8 @@
         box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
         left: 15%;
         top: 15%;
+        padding: 20px;
+        z-index: 3;
         position: absolute;
     }
     
@@ -403,6 +405,14 @@
         top: 0px;
         z-index: 1;
         position: absolute;
+    }
+    
+    .white-title {
+        color: white;
+        z-index: 3;
+        font-family: Roboto;
+        font-size: 30px;
+        margin-bottom: 20px;
     }
     
     .fa-red {
