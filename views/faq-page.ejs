@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EPIC FAQs</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:400,700" />
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/new-age.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <style>
+        .big-title {
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 80px;
+            font-weight: bold;
+            line-height: 100px;
+        }
+        
+        .big-subtitle {
+            color: #4D4D4D;
+            font-family: Quicksand;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+        }
+        
+        .small-title {
+            color: #650F66;
+            font-family: Quicksand;
+            font-size: 25px;
+            margin-top: 50px;
+            font-weight: 300;
+            padding: 5px 5px 20px 0px;
+            line-height: 31px;
+        }
+        /* .accordion {
+            width: 60%;
+            margin: 0 auto;
+        } */
+        
+        .accordion-toggle {
+            border-top: 1px solid #979797;
+            cursor: pointer;
+            margin: 0;
+            padding: 10px 0 10px 20px;
+            position: relative;
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .accordion-toggle.active:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 17px;
+            width: 0;
+            height: 0;
+            /* border-bottom: 5px solid #f00; */
+            border-left: 5px solid rgba(0, 0, 0, 0);
+            border-right: 5px solid rgba(0, 0, 0, 0);
+        }
+        
+        .accordion-toggle:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 17px;
+            width: 0;
+            height: 0;
+            border-top: 5px solid #000;
+            border-left: 5px solid rgba(0, 0, 0, 0);
+            border-right: 5px solid rgba(0, 0, 0, 0);
+        }
+        
+        .accordion-toggle.active:before {
+            display: none;
+        }
+        
+        .accordion-content {
+            display: none;
+            color: #4C4C4C;
+            font-family: Quicksand;
+            padding: 0px 0 10px 20px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        
+        .accordion-toggle.active {
+            color: black;
+        }
+        
+        body,
+        html {
+            background: white;
+        }
+        
+        @media (min-width: 768px) {
+            .navbar-default .navbar-header .navbar-brand {
+                color: rgba(0, 0, 0, 0.7);
+            }
+            .navbar-default .nav>li>a,
+            .navbar-default .nav>li>a:focus {
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="mainNav" class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                            </button>
+                <a class="navbar-brand page-scroll" href="/">
+                    <img src="/image/logo.png">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/about-us">About Us 1</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About Us 2</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/terms">Terms and Conditions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div style="width:80%; margin: 0 auto; padding: 10px 10px 10px 10px;">
+        <div class="big-title">FAQs</div>
+        <div class="big-subtitle">Here are some frequently asked questions about EPIC</div>
+
+        <div class="small-title">About Us</div>
+        <div class="accordion">
+            <h4 class="accordion-toggle">Question 1</h4>
+            <div class="accordion-content">
+                Cras malesuada ultrices augue molestie risus.
+            </div>
+
+            <h4 class="accordion-toggle">This is the 2nd question</h4>
+            <div class="accordion-content">
+                Lorem ipsum dolor sit amet mauris eu turpis.
+            </div>
+
+            <h4 class="accordion-toggle">Third question comes here</h4>
+            <div class="accordion-content">
+                Vivamus facilisisnibh scelerisque laoreet.
+            </div>
+        </div>
+
+        <div class="small-title">About Our Extension</div>
+        <div class="accordion">
+            <h4 class="accordion-toggle">Accordion 1</h4>
+            <div class="accordion-content">
+                Cras malesuada ultrices augue molestie risus.
+            </div>
+
+            <h4 class="accordion-toggle">Accordion 2</h4>
+            <div class="accordion-content">
+                Lorem ipsum dolor sit amet mauris eu turpis.
+            </div>
+
+            <h4 class="accordion-toggle">Accordion 3</h4>
+            <div class="accordion-content">
+                Vivamus facilisisnibh scelerisque laoreet.
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.accordion').find('.accordion-toggle').click(function() {
+                    $(this).next().slideToggle('600');
+                    // $(".accordion-content").not($(this).next()).slideUp('600');
+                });
+                $('.accordion-toggle').on('click', function() {
+                    $(this).toggleClass('active').siblings().removeClass('active');
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>

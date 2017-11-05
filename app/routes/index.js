@@ -6,6 +6,7 @@ var topApps = require('./top-apps');
 var newTab = require('./new-tab');
 var termsAndConditions = require('./terms');
 var login = require('./login');
+var faqs = require('./faqs');
 
 var allRoutes = function(app, passport) {
 
@@ -42,6 +43,7 @@ var allRoutes = function(app, passport) {
     app.use('/top-apps', topApps);
     app.use('/terms', termsAndConditions);
     app.use('/new-tab', newTab);
+    app.use('/faqs', faqs);
 
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
