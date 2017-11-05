@@ -5,61 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>EPIC FAQs</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:400,700" />
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/new-age.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <style>
+        .big-title {
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 80px;
+            font-weight: bold;
+            line-height: 100px;
+        }
+        
+        .big-subtitle {
+            color: #4D4D4D;
+            font-family: Quicksand;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+        }
+        
+        .def-para {
+            height: 495px;
+            width: 1077px;
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        
+        body,
+        html {
+            background: white;
+        }
+        
+        @media (min-width: 768px) {
+            .navbar-default .navbar-header .navbar-brand {
+                color: rgba(0, 0, 0, 0.7);
+            }
+            .navbar-default .nav>li>a,
+            .navbar-default .nav>li>a:focus {
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
+    <nav id="mainNav" class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                            </button>
+                <a class="navbar-brand page-scroll" href="/">
+                    <img src="/image/logo.png">
+                </a>
+            </div>
 
-            $('.faq_question').click(function() {
-
-                if ($(this).parent().is('.open')) {
-                    $(this).closest('.faq').find('.faq_answer_container').animate({
-                        'height': '0'
-                    }, 500);
-                    $(this).closest('.faq').removeClass('open');
-
-                } else {
-                    var newHeight = $(this).closest('.faq').find('.faq_answer').height() + 'px';
-                    $(this).closest('.faq').find('.faq_answer_container').animate({
-                        'height': newHeight
-                    }, 500);
-                    $(this).closest('.faq').addClass('open');
-                }
-
-            });
-
-        });
-    </script>
-    <style>
-        /*FAQS*/
-        
-        .faq_question {
-            margin: 0px;
-            padding: 0px 0px 5px 0px;
-            display: inline-block;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        
-        .faq_answer_container {
-            height: 0px;
-            overflow: hidden;
-            padding: 0px;
-        }
-    </style>
-
-    <div class="faq_container">
-        <div class="faq">
-            <div class="faq_question">Question goes here</div>
-            <div class="faq_answer_container">
-                <div class="faq_answer">Answer goes here</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/about-us">About Us 1</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About Us 2</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/terms">Terms and Conditions</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
+
+
+    <div style="width:80%; margin: 0 auto; padding: 10px 10px 10px 10px;">
+        <div class="big-title">T&amp;Cs</div>
+        <div class="def-para">The Myspace page defines the individual, his or her characteristics, traits, personal choices and the overall personality of the person. The page also has a number of identity related issues that can be linked on the Internet to get connected
+            to people of common interest and issues. They can be preferred forms such as hobbies, interests and common issues followed by the people in the general. People connect to each other on the Internet using the myspace profile. But how does on
+            improve the profile on the Internet using the tools and design aspects? <br><br>It depends on the background employed by the user of the account. The background conveys many things to the visitors of the page. The background therefore should
+            be carefully chosen. Preset templates are available in the myspace page for users to adopt them on their web page. However, users can also design the pages on their own using the tools available on the desktop. If the necessary tools are not
+            available on the desktop, they can be accessed on the Internet by visiting certain sites that help build the myspace web page. The backgrounds come in various colors and formats. They can be traced on the Internet. Use the search engines to
+            find popular links to site providing backgrounds.<br><br>There are two types of resources that provide the backgrounds. While the first category provides the backgrounds for free, the second category provides license-based backgrounds against
+            payment of a fee. The first category of the free backgrounds has plenty of options, but the number of backgrounds is limited to a few hundreds. The colors are preset in the free backgrounds. There are very limited options for the user to make
+            alterations in the web pages since they are in the form of templates.<br><br>Besides, the templates of the backgrounds are protected by software codes. Unlocking these codes is a critical task for the users. Besides, people without technical
+            background should not to try to break the codes. It is a very difficult task and attempting to break the codes to alter the backgrounds is not entertained. Therefore, the users’ choice is narrowed down to using them merely as templates for
+            the background. The background can be used to decorate the Myspace page with a number of added features. <br><br>However, if you find the free backgrounds not too attractive or flexible for use on the Myspace page, you can opt for license-based
+            paid backgrounds. There are plenty of options available under the license-based web backgrounds. They can be hired for a year on a long license. Normally, the fee paid is nominal and the features are a plenty. Therefore, going in for a fee-based
+            background is better. In a fee-based background, there is a lot scope for experimenting with the properties. For instance, the icons or programs can be placed according to the wishes of the account holder. The icons can also be changed on
+            a daily basis. You can also opt for a background that changes color every five minutes. There are plenty of options like these.</div>
     </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
+            <ul class="list-inline">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>
