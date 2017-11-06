@@ -375,8 +375,9 @@
         margin-bottom: 100px;
     }
     
-    .dark-gradient {
-        background-color: rgba(0, 0, 0, 0.7);
+    .dark-gradient,
+    .dark-gradient-ad {
+        background-color: rgba(0, 0, 0, 0.75);
         width: 100%;
         height: 100%;
         z-index: 2;
@@ -386,8 +387,20 @@
     }
     
     .small-dialog-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 70%;
+        height: 70%;
+        border-radius: 10px;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
+        left: 15%;
+        top: 15%;
+        padding: 20px;
+        z-index: 3;
+        position: absolute;
+    }
+    
+    .large-dialog-overlay {
         background: linear-gradient(to top right, #84ffe4 0%, #c0a3ff 80%);
-        /* background-color: rgba(0, 0, 0, 0.5); */
         width: 90%;
         height: 90%;
         border-radius: 10px;
@@ -414,6 +427,10 @@
         font-family: Roboto;
         font-size: 30px;
         margin-bottom: 20px;
+    }
+    
+    .white {
+        color: white;
     }
     
     .fa-red {
