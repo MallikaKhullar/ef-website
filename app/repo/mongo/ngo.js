@@ -1,14 +1,26 @@
 var mongoose = require('mongoose');
 
 // define the schema for our user model
-var ngoSchem = mongoose.Schema({
-
+var ngoSchema = mongoose.Schema({
     ngo_id: String,
     ngo_name: String,
-    timestamp_added: String,
-    cause_id: String,
+    cause_id: { type: String, index: true },
     logo_url: String,
 });
 
 
-module.exports = mongoose.model('Ngo', ngoSchema);
+ngoSchema.statics = {
+    getAllNgos: function(data, cb) {
+        this.find({}).lean().exec(cb);
+    },
+
+    getNGOsWithCauseIds: function(data, cb) {
+        this.find({ cause_id: data.id }).lean().exec(cb);
+    },
+
+    getNgoById: function(data, cb) {
+        this.findOne({ ngo_id: data.id }).lean().exec(cb);
+    }
+}
+
+module.exports = mongoose.model('NGO', ngoSchema);
