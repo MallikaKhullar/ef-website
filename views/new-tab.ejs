@@ -102,8 +102,19 @@
 
         <div class="right-bar">
             <% if (user.state === 'donate_pending') { %>
-                <div id="donate-now" class="small-pink-button">
-                    <div class="thick-text white center-text"><i class="fa fa-heart" aria-hidden="true"></i>DONATE NOW</div>
+                <div style="text-align: center; padding: 10%">
+                    <div class="thick-text white big-text">WEEKLY MISSION</div>
+                    <div class="thick-text green big-text">COMPLETE!</div>
+                    <img class="env-icon" src="<%- cause.img_url %>"></a>
+                    <div class="thick-text center-element white big-text">
+                        <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+                        <%- user.hearts.current_week_hearts %>
+                    </div>
+                    <div class="thin-text white">Hearts collected!</div>
+
+                    <div id="donate-now" class="small-pink-button" style="margin-top: 20px">
+                        <div class="thick-text white center-text" style="font-size:12px">DONATE NOW</div>
+                    </div>
                 </div>
                 <% } else { %>
 

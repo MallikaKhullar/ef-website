@@ -449,7 +449,7 @@
         cursor: pointer;
         border-radius: 31px;
         background-color: #FF2474;
-        padding: 20px 0 20px 0;
+        padding: 10px 0 10px 0;
         text-align: center;
     }
     
@@ -492,4 +492,12 @@
         font-family: Quicksand;
         font-size: 20px;
         font-weight: 300;
+    }
+    
+    .green {
+        color: #22FFA0;
+    }
+    
+    .big-text {
+        font-size: 20px;
     }
