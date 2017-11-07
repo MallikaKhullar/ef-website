@@ -33,161 +33,189 @@
     <% if (timeElapsed) { %>
         <div class="dark-gradient">
             <div class="small-dialog-overlay" style="display:inline-block">
-                <div style=" width: 30%; height: 100%; background-color:blue; float:left">
-                    <div class="thin-text white"><b>Week Complete</div>   
+
+                <div style="width: 35%; height: 100%; float:left; text-align:center;">
+                    <div class="big-thin-text white">Week Complete!</div>
+                    <img class="env-icon" src="<%- cause.img_url %>"></a>
+                    <div class="thick-text center-element white" style="font-size:28px;">
+                        <%- user.hearts.current_week_hearts %> <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+                    </div>
                 </div>
-                <div style="width: 70%; height: 100%; background-color:red; float:right"></div>
+
+                <div style="padding: 0 0 0 20px; width: 65%; height: 100%;  float:right; ">
+                    <div class="dialog-title">Donate your hearts &amp; get <br>started on your next EPIC mission!</div>
+
+                        <div id="donate-now" class="pink-button">
+                            <div class="thick-text white center-text"><i class="fa fa-heart" aria-hidden="true"></i>DONATE NOW</div>
+                        </div>
+
+                    <div class="thin-text white">Tentative benefiting NGOs</div>
+
+                    <ul class="hor-list">
+                        <% for(var i=0; i<ngoList.length; i++) { %>
+                            <li>
+                                <img style="height:10%; width:10%" src="<%- ngoList[i].logo_url %>">
+                            </li>
+                            <% } %>
+                    </ul>
+
+                    <div class="share-text">
+                        The world needs more heroes
+                        <a href=""><i class="fa fa-share-alt" style="margin: 0 5px 0 10px" aria-hidden="true"></i>Tell your friends</a>
+                    </div>
+
+                </div>
             </div>
         </div>
         <% } %>
 
-    <div class="dark-gradient-ad">
-        <div class="large-dialog-overlay">
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="white-title"><b>OH NO!</b><br> Adblock Detected!</div>
-                    <a href="" class="btn-outline btn-med" onclick="dummy(0);return false;">Continue to change the world!</a>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <div class="page-container">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="/home">
-                            <img src="/image/logo.png">
-                        </a>
-                    </div>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="http://www.facebook.com">
-                                <small></small><img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                                </small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.gmail.com">
-                                <small></small><img class="quicklink-img" src="/image/gmail-icon.svg"></img>
-                                </small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.youtube.com">
-                                <small></small><img class="quicklink-img" src="/image/youtube-icon.svg"></img>
-                                </small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.drive.google.com">
-                                <small></small><img class="quicklink-img" src="/image/drive-icon.svg"></img>
-                                </small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="top-apps">
-                                <small></small><img class="quicklink-img" src="/image/all-apps.png"></img>
-                                </small>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="widgets show-widgets">
-                <div id="middle">
-                    <div class="thin-greeting" class="transition">
-                        <strong></strong>Hello,</strong>
-                        <%- user.name %>
-                    </div>
-                    <div id="clockbox"></div><br>
-                </div>
-
-                <div id="middle-below">
-                    <input id="autocomplete" title="type &quot;a&quot;" placeholder="Search Google">
-                </div>
-            </div>
-
-            <div class="right-bar">
-                <div class="thick-text center-element">MY MISSION THIS WEEK</div>
-                <div class="thin-text center-element">
-                    <%- cause.cause_name %>!</div>
-                <div class="center-element">
-                    <img class="env-icon" src="<%- cause.img_url %>"></a>
-                </div>
-
-                <div class="thick-text center-element" style="font-size:28px;">
-                    <%- user.hearts.current_week_hearts %> <i class="fa fa-heart fa-red" aria-hidden="true"></i>
-                </div>
-
-                <div class="center-element" style="width:100%; display: inline-block">
-                    <div id="myProgress">
-                        <div id="myBar"></div>
-                    </div>
-                    <div class="circle">
-                        <div class="thin-text" style="font-size:10px;margin-top:12%">
-                            <i class="fa fa-heart fa-red" aria-hidden="true"></i>
-                            <BR>
-                            <%- cause.total_hearts %>
+            <div class="dark-gradient-ad">
+                <div class="large-dialog-overlay">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <div class="white-title"><b>OH NO!</b><br> Adblock Detected!</div>
+                            <a href="" class="btn-outline btn-med" onclick="dummy(0);return false;">Continue to change the world!</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="thick-text center-element weight-500">
-                    <%- stats.remainingTime %> to go!
+            <div class="page-container">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/home">
+                                <img src="/image/logo.png">
+                            </a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="http://www.facebook.com">
+                                    <small></small><img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                                    </small>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.gmail.com">
+                                    <small></small><img class="quicklink-img" src="/image/gmail-icon.svg"></img>
+                                    </small>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.youtube.com">
+                                    <small></small><img class="quicklink-img" src="/image/youtube-icon.svg"></img>
+                                    </small>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.drive.google.com">
+                                    <small></small><img class="quicklink-img" src="/image/drive-icon.svg"></img>
+                                    </small>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="top-apps">
+                                    <small></small><img class="quicklink-img" src="/image/all-apps.png"></img>
+                                    </small>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="widgets show-widgets">
+                    <div id="middle">
+                        <div class="thin-greeting" class="transition">
+                            <strong></strong>Hello,</strong>
+                            <%- user.name %>
+                        </div>
+                        <div id="clockbox"></div><br>
+                    </div>
+
+                    <div id="middle-below">
+                        <input id="autocomplete" title="type &quot;a&quot;" placeholder="Search Google">
+                    </div>
                 </div>
 
-                <div class="thin-text center-element" style="margin:20px">
-                    Open new tabs to collect more hearts!
-                </div>
-                <!-- 
+                <div class="right-bar">
+                    <div class="thick-text center-element">MY MISSION THIS WEEK</div>
+                    <div class="thin-text center-element">
+                        <%- cause.cause_name %>!</div>
+                    <div class="center-element">
+                        <img class="env-icon" src="<%- cause.img_url %>"></a>
+                    </div>
+
+                    <div class="thick-text center-element" style="font-size:28px;">
+                        <%- user.hearts.current_week_hearts %> <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="center-element" style="width:100%; display: inline-block">
+                        <div id="myProgress">
+                            <div id="myBar"></div>
+                        </div>
+                        <div class="circle">
+                            <div class="thin-text" style="font-size:10px;margin-top:12%">
+                                <i class="fa fa-heart fa-red" aria-hidden="true"></i>
+                                <BR>
+                                <%- cause.total_hearts %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="thick-text center-element weight-500">
+                        <%- stats.remainingTime %> to go!
+                    </div>
+
+                    <div class="thin-text center-element" style="margin:20px">
+                        Open new tabs to collect more hearts!
+                    </div>
+                    <!-- 
         <div class="center-element" style="width:100%;margin-bottom:50px; bottom: 0; position: absolute;">
             <a href="https://www.facebook.com" class="btn-outline btn-med page-scroll">Tell your friends!</a>
         </div> -->
 
-            </div>
+                </div>
 
-            <div class="footer">
+                <div class="footer">
 
-                <div id="user-profile-container" class="small-shadow">
+                    <div id="user-profile-container" class="small-shadow">
 
-                    <div style="width: 40%; float:left">
-                        <div class="display-number-title">Donations So Far</div>
-                        <div class="display-number">
-                            <%- stats.donations %>
-                        </div>
-                    </div>
-
-                    <div style="width: 40%; float:left">
-                        <div class="display-number-title">EPIC People</div>
-                        <div class="display-number">
-                            <%- stats.followers %>
+                        <div style="width: 40%; float:left">
+                            <div class="display-number-title">Donations So Far</div>
+                            <div class="display-number">
+                                <%- stats.donations %>
+                            </div>
                         </div>
 
-                    </div>
+                        <div style="width: 40%; float:left">
+                            <div class="display-number-title">EPIC People</div>
+                            <div class="display-number">
+                                <%- stats.followers %>
+                            </div>
 
-                    <div style="width: 20%; float:right">
-                        <div style="float:right">
-                            <a href="http://www.facebook.com">
-                                <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                                </small>
-                            </a>
-                            <a href="http://www.facebook.com">
-                                <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                                </small>
-                            </a>
-                            <a href="http://www.facebook.com">
-                                <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                                </small>
-                            </a>
+                        </div>
+
+                        <div style="width: 20%; float:right">
+                            <div style="float:right">
+                                <a href="http://www.facebook.com">
+                                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                                    </small>
+                                </a>
+                                <a href="http://www.facebook.com">
+                                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                                    </small>
+                                </a>
+                                <a href="http://www.facebook.com">
+                                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                                    </small>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
+            </div>
 
 
 </body>
@@ -199,6 +227,12 @@
 <script type="text/javascript">
     $(document).ready(function() {
         document.getElementById("myBar").style.width = <%= user.progress %> + "%";
+         document.getElementById('donate-now').onclick = function(){
+            $.get( '/donate', {}, function(data) {
+                 // redraw "current hearts" 
+                 // take him to choose next mission page
+            });
+        };
     });
 </script>
 

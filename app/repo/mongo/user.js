@@ -39,6 +39,14 @@ userSchema.statics = {
         this.find({}).lean().exec(cb);
     },
 
+    setCurrentCause: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.id }, { $set: { 'hearts.current_cause_id': data.cause_id } }, {}, cb);
+    },
+
+    clearCurrentHearts: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, { $set: { 'hearts.current_week_hearts': 0 } }, {}, cb);
+    },
+
     getUsersByIds: function(data, cb) {
         this.find({ user_id: { $in: data.users } }).lean().exec(cb);
     },
@@ -48,9 +56,7 @@ userSchema.statics = {
     },
 
     addDonation: function(data, cb) {
-        var user = getUserById(data, cb);
-        user.donations_till_date.add(data.donationId);
-        this.update({ id: data.id }, user, { upsert: false }).lean().exec(cb);
+        this.findOneAndUpdate({ user_id: data.user_id }, { "$push": { "hearts.donations_till_date": data.donation_id } }, {}, cb);
     }
 }
 

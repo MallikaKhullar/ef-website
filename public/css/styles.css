@@ -387,14 +387,14 @@
     }
     
     .small-dialog-overlay {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.76);
         width: 70%;
         height: 70%;
         border-radius: 10px;
         box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
         left: 15%;
         top: 15%;
-        padding: 20px;
+        padding: 50px;
         z-index: 3;
         position: absolute;
     }
@@ -435,4 +435,53 @@
     
     .fa-red {
         color: red;
+    }
+    
+    .pink-button {
+        cursor: pointer;
+        border-radius: 31px;
+        background-color: #FF2474;
+        padding: 20px 100px 20px 100px;
+        display: inline-block
+    }
+    
+    .center-text {
+        margin: 0 auto;
+    }
+    
+    .dialog-title {
+        color: #FFFFFF;
+        font-family: Quicksand;
+        font-size: 26px;
+        line-height: 33px;
+    }
+    
+    .hor-list {
+        padding: 0;
+    }
+    
+    .hor-list li {
+        display: inline;
+    }
+    
+    .share-text {
+        color: white;
+        font-family: Quicksand;
+        font-size: 14px;
+        position: absolute;
+        bottom: 20%;
+    }
+    
+    .share-text a {
+        font-family: Roboto;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        color: #29FFEA;
+    }
+    
+    .big-thin-text {
+        font-family: Quicksand;
+        font-size: 20px;
+        font-weight: 300;
     }

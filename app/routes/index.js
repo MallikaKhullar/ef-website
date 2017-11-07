@@ -7,6 +7,7 @@ var newTab = require('./new-tab');
 var termsAndConditions = require('./terms');
 var login = require('./login');
 var faqs = require('./faqs');
+var donate = require('./donate');
 
 var allRoutes = function(app, passport) {
 
@@ -39,6 +40,7 @@ var allRoutes = function(app, passport) {
 
     app.use('/', homePage);
     app.use('/home', homePage);
+    app.use('/donate', donate);
     app.use('/login', login);
     app.use('/top-apps', topApps);
     app.use('/terms', termsAndConditions);
@@ -46,7 +48,9 @@ var allRoutes = function(app, passport) {
     app.use('/faqs', faqs);
 
     // route for facebook authentication and login
-    app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
+    app.get('/auth/facebook', passport.authenticate('facebook', {
+        scope: 'email'
+    }));
 
     // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
@@ -55,7 +59,9 @@ var allRoutes = function(app, passport) {
             failureRedirect: '/'
         }));
 
-    app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+    app.get('/auth/google', passport.authenticate('google', {
+        scope: ['profile', 'email']
+    }));
 
     // the callback after google has authenticated the user
     app.get('/auth/google/callback',

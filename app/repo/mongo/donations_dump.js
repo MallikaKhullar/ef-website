@@ -13,6 +13,11 @@ donationDumpSchema.statics = {
         this.find({}).lean().exec(cb);
     },
 
+    createDonation: function(donationObj, cb) {
+        console.log("Create called with donation", donationObj);
+        this.create(donationObj, cb);
+    },
+
     getNGOsWithCauseIds: function(data, cb) {
         this.find({ cause_id: data.id }).lean().exec(cb);
     },

@@ -9,13 +9,18 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     router = require('./app/routes/index'),
     session = require('express-session'),
-    flash = require('connect-flash');
+    flash = require('connect-flash'),
+    helmet = require('helmet');
+
 
 app.use(morgan('dev')); // log every request to the console TODO: what?
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 
 require('./app/repo/passport')(passport);
+
+//use helmet for web protection
+app.use(helmet());
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret TODO: where to get this from?
