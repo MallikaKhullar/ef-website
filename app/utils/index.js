@@ -331,15 +331,19 @@ Utils.prototype.convertArrayBasedFilterFirstElemBasedFilter = function(filter) {
 };
 
 function timePeriodInMilliseconds(time1, time2) {
-    return (Math.abs(time1 - time2) * 1000);
+    return (time1 - time2);
 }
 
 Utils.prototype.timePeriodInDays = function(time1, time2) {
-    return Math.abs(timePeriodInMilliseconds(time1, time2) / 86400000);
+    return timePeriodInMilliseconds(time1, time2) / 86400000;
+}
+
+Utils.prototype.getEndTime = function(time1) {
+    return parseInt(7 * 86400000) + parseInt(time1);
 }
 
 Utils.prototype.timePeriodInHours = function(time1, time2) {
-    return Math.abs(timePeriodInMilliseconds(time1, time2) / 3600000);
+    return parseInt(timePeriodInMilliseconds(time1, time2) / parseInt(3600000));
 }
 
 module.exports = new Utils();

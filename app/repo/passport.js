@@ -62,6 +62,7 @@ module.exports = function(passport) {
                         newUser.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
                         newUser.user_id = "user" + moment().format('x');
                         newUser.web_version = "0.0.1";
+                        newUser.state = "uninitiated";
                         // save our user to the database
                         newUser.save(function(err) {
                             if (err)
@@ -107,6 +108,8 @@ module.exports = function(passport) {
                         newUser.email = profile.emails[0].value; // pull the first email
                         newUser.timestamp = moment().format('x');
                         newUser.web_version = "0.0.1";
+                        newUser.state = "uninitiated";
+
                         // save the user
                         newUser.save(function(err) {
                             if (err)

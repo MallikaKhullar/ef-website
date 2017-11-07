@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var moment = require('moment');
 // create the model for users and expose it to our app
 var userSchema = mongoose.Schema({
     user_id: { type: String, unique: true, required: true },
@@ -9,6 +9,7 @@ var userSchema = mongoose.Schema({
     name: String,
     google_id: String,
     google_token: String,
+    state: { type: String, enum: ['uninitiated', 'week_ongoing', 'donate_pending', 'cause_selection_pending'] },
     hearts: {
         progress: Number,
         target_end_time: Number,
@@ -43,10 +44,6 @@ userSchema.statics = {
         this.findOneAndUpdate({ user_id: data.id }, { $set: { 'hearts.current_cause_id': data.cause_id } }, {}, cb);
     },
 
-    clearCurrentHearts: function(data, cb) {
-        this.findOneAndUpdate({ user_id: data.user_id }, { $set: { 'hearts.current_week_hearts': 0 } }, {}, cb);
-    },
-
     getUsersByIds: function(data, cb) {
         this.find({ user_id: { $in: data.users } }).lean().exec(cb);
     },
@@ -56,7 +53,33 @@ userSchema.statics = {
     },
 
     addDonation: function(data, cb) {
-        this.findOneAndUpdate({ user_id: data.user_id }, { "$push": { "hearts.donations_till_date": data.donation_id } }, {}, cb);
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: { 'hearts.current_week_hearts': 0, "state": "cause_selection_pending" },
+            $push: { "hearts.donations_till_date": data.donation_id }
+        }, {}, cb);
+    },
+
+    setCause: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: {
+                'hearts.current_week_hearts': 0,
+                "state": "week_ongoing",
+                "hearts.target_start_time": data.start,
+                "hearts.target_end_time": data.end,
+                "hearts.current_cause_id": data.cause_id,
+            }
+        }, {}, cb);
+    },
+
+    initiateCauseChoosing: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: { "state": "cause_selection_pending" }
+        }, {}, cb);
+    },
+    setDonatePending: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: { "state": "donate_pending" }
+        }, {}, cb);
     }
 }
 
