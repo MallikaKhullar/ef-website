@@ -10,6 +10,11 @@ var userSchema = mongoose.Schema({
     google_id: String,
     google_token: String,
     state: { type: String, enum: ['uninitiated', 'week_ongoing', 'donate_pending', 'cause_selection_pending'] },
+    previous_donation: {
+        previous_cause_id: String,
+        previous_week_hearts: String
+    },
+
     hearts: {
         progress: Number,
         target_end_time: Number,
@@ -53,10 +58,15 @@ userSchema.statics = {
     },
 
     addDonation: function(data, cb) {
-        this.findOneAndUpdate({ user_id: data.user_id }, {
-            $set: { 'hearts.current_week_hearts': 0, "state": "cause_selection_pending" },
-            $push: { "hearts.donations_till_date": data.donation_id }
-        }, {}, cb);
+
+        this.findOne({ user_id: data.user_id }, function(err, res) {
+            res.previous_donation.previous_week_hearts = res.hearts.current_week_hearts;
+            res.previous_donation.previous_cause_id = res.hearts.current_cause_id;
+            res.hearts.current_week_hearts = 0;
+            res.state = "cause_selection_pending";
+            console.log("New user to update", res);
+            res.save();
+        });
     },
 
     setCause: function(data, cb) {

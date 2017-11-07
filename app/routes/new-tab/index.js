@@ -12,7 +12,7 @@ var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
 var moment = require('moment');
 
-router.get('/select', continueIfLoggedIn, function(req, res) {
+router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
     if (req.query && req.query.cause_id) {
         var start = moment().format('x');
         var end = Utils.getEndTime(start);
@@ -22,15 +22,15 @@ router.get('/select', continueIfLoggedIn, function(req, res) {
     } else res.redirect('/new-tab');
 });
 
-router.get('/dialog-dismiss', continueIfLoggedIn, function(req, res) {
-    userController.setDonatePending(req.user.user_id).pipe(function(data) {
-        res.render("select-cause.ejs");
-    });
+
+router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
+    res.render("select-cause.ejs");
 });
 
-function redirectForNewUser(state, res) {
-    if (state === "uninitiated") {
-        userController.initiateCauseChoosing(req.user.user_id).pipe(function(data) {
+
+function redirectForNewUser(user, res) {
+    if (user.state === "uninitiated") {
+        userController.initiateCauseChoosing(user.user_id).pipe(function(data) {
             res.render("select-cause.ejs");
         });
         return true;
@@ -40,12 +40,15 @@ function redirectForNewUser(state, res) {
 
 router.get('/', continueIfLoggedIn, function(req, res) {
 
-    if (redirectForNewUser(req.user.state, res)) return;
+    if (redirectForNewUser(req.user, res)) return;
+
+    console.log("USER request", req.user, "\n\n\n\n");
 
     var def = {
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
-        currentCause: causeController.getCauseFromId(req.user.hearts.current_cause_id)
+        currentCause: causeController.getCauseFromId(req.user.hearts.current_cause_id),
+        previousCause: causeController.getCauseFromId(req.user.previous_donation.previous_cause_id)
     };
 
     deferred.combine(def).pipe(function(data) {
@@ -53,18 +56,12 @@ router.get('/', continueIfLoggedIn, function(req, res) {
             user: req.user,
             cause: data.currentCause,
             numDonations: data.donationCount,
-            numUsers: data.userCount
+            numUsers: data.userCount,
+            previousCause: data.previousCause
         }).pipe(function(result) {
             console.log("payload", result);
             res.render("new-tab.ejs", result);
         });
-
-        // var newdata = constructPayload({
-        //     user: req.user,
-        //     cause: data.currentCause,
-        //     numDonations: data.donationCount,
-        //     numUsers: data.userCount
-        // });
     });
 
     userController.incrementHearsById(req.user.id);
@@ -82,6 +79,7 @@ function constructPayload(data) {
     var newdata = {
         user: data.user,
         cause: data.cause,
+        previousCause: data.previousCause || {},
         stats: {
             donations: "Rs. " + Utils.getCommaSeparatedMoney(data.numDonations),
             followers: Utils.getCommaSeparatedNumber(data.numUsers),
@@ -96,13 +94,22 @@ function constructPayload(data) {
         if (data.user.state !== "cause_selection_pending" && data.user.state !== 'donate_pending_dismissed') {
             newdata.user.state = "donate_pending";
             return ngoController.getNgosFromCauseId(data.cause.cause_id).pipe(function(res) {
-                newdata.ngoList = res;
+                newdata.cause.ngoList = res;
+                return deferred.success(newdata);
+            });
+        } else if (data.user.state == 'cause_selection_pending') {
+            console.log("Cause selection pending data is =>", data, "\n\n\n\n");
+            return ngoController.getNgosFromCauseId(data.previousCause.cause_id).pipe(function(res) {
+                console.log("Prev ngo found =>", res, "\n\n\n\n");
+                newdata.previousCause.ngoList = res;
                 return deferred.success(newdata);
             });
         } else {
             return deferred.success(newdata);
         }
-    } else return deferred.success(newdata);
+    } else {
+        return deferred.success(newdata);
+    }
 }
 
 function continueIfLoggedIn(req, res, next) {

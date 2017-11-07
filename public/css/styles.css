@@ -361,7 +361,7 @@
         float: right;
         margin-right: 30px;
         border-radius: 6px;
-        height: calc(100% - 250px);
+        height: calc(100% - 230px);
         z-index: 7;
     }
     

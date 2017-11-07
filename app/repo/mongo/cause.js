@@ -14,7 +14,7 @@ causeSchema.statics = {
     },
 
     getCausesByIds: function(data, cb) {
-        this.find({ cause_id: { $in: data.users } }).lean().exec(cb);
+        this.find({ cause_id: { $in: data.ids } }).lean().exec(cb);
     },
 
     getCauseById: function(data, cb) {

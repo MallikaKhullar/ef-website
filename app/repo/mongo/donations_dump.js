@@ -14,7 +14,7 @@ donationDumpSchema.statics = {
     },
 
     createDonation: function(donationObj, cb) {
-        console.log("Create called with donation", donationObj);
+        console.log("Create don repo called with donation", donationObj);
         this.create(donationObj, cb);
     },
 
