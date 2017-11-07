@@ -4,7 +4,12 @@ var causeSchema = mongoose.Schema({
     cause_id: { type: String, index: true },
     cause_name: String,
     img_url: String,
-    total_hearts: Number
+    total_hearts: Number,
+    character: {
+        name: String,
+        img_url: String,
+        desc: String,
+    }
 }, { timestamps: true });
 
 

@@ -130,7 +130,7 @@
                     <div style="text-align: center; padding: 10%">
                         <div class="thick-text center-element white big-text">
                             <i class="fa fa-heart fa-red" aria-hidden="true"></i>
-                            <%- user.hearts.current_week_hearts %>
+                            <%- user.previous_donation.previous_week_hearts %>
                         </div>
                         <div class="thick-text big-text white">Hearts Donated!</div>
                         <img class="env-icon" src="<%- previousCause.img_url %>"></a>
@@ -235,22 +235,17 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        document.getElementById('donate-now').onclick = function() {
-            $.get('/donate', {}, function(data) {
-                window.location.reload(true);
-            });
-        };
         if (document.getElementById("myBar") != null && document.getElementById("myBar").style != null) {
-            document.getElementById("myBar").width = <%= user.progress %> + "%";
+            document.getElementById("myBar").style.width = <%= user.progress %> + "%";
         }
-        // if (document.getElementById("choose-mission") != null) {
-        //     document.getElementById('choose-mission').onclick = function() {
-        //         $.get('/donate', {}, function(data) {
-        //             window.location.reload(true);
-        //         });
-        //     };
-        // }
 
+        if (document.getElementById("donate-now") != null && document.getElementById("donate-now").style != null) {
+            document.getElementById('donate-now').onclick = function() {
+                $.get('/donate', {}, function(data) {
+                    window.location.reload(true);
+                });
+            };
+        }
     });
 </script>
 

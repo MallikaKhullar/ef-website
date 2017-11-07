@@ -14,9 +14,8 @@ var userSchema = mongoose.Schema({
         previous_cause_id: String,
         previous_week_hearts: String
     },
-
+    progress: Number,
     hearts: {
-        progress: Number,
         target_end_time: Number,
         target_start_time: Number,
         current_week_hearts: Number,

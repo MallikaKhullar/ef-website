@@ -24,14 +24,19 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
 
 
 router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
-    res.render("select-cause.ejs");
+    causeController.getAllCauses().pipe(function(data) {
+        console.log("Data got from all causes", data);
+        res.render("select-cause.ejs", { data });
+    });
 });
 
 
 function redirectForNewUser(user, res) {
     if (user.state === "uninitiated") {
-        userController.initiateCauseChoosing(user.user_id).pipe(function(data) {
-            res.render("select-cause.ejs");
+
+        causeController.getAllCauses().pipe(function(data) {
+            console.log("Data got from all causes", data);
+            res.render("select-cause.ejs", { data });
         });
         return true;
     }
@@ -42,8 +47,6 @@ router.get('/', continueIfLoggedIn, function(req, res) {
 
     if (redirectForNewUser(req.user, res)) return;
 
-    console.log("USER request", req.user, "\n\n\n\n");
-
     var def = {
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
@@ -52,6 +55,8 @@ router.get('/', continueIfLoggedIn, function(req, res) {
     };
 
     deferred.combine(def).pipe(function(data) {
+        console.log("def comb", data, "\n\n\n\n");
+
         constructPayload({
             user: req.user,
             cause: data.currentCause,
@@ -60,6 +65,7 @@ router.get('/', continueIfLoggedIn, function(req, res) {
             previousCause: data.previousCause
         }).pipe(function(result) {
             console.log("payload", result);
+            console.log("payload", result.user.progress);
             res.render("new-tab.ejs", result);
         });
     });
@@ -69,12 +75,11 @@ router.get('/', continueIfLoggedIn, function(req, res) {
 
 
 function constructPayload(data) {
-    data.user.progress = Utils.calculateProgress(data.user.hearts.current_week_hearts, data.cause.total_hearts);
-
     var hoursToGo = Utils.timePeriodInHours(data.user.hearts.target_end_time, moment().format('x'));
-
     var remainingTime = hoursToGo >= 24 ? (hoursToGo / 24 > 1 ? Math.floor(hoursToGo / 24) + " days " : Math.floor(hoursToGo / 24) + " day ") :
         (hoursToGo > 1 ? Math.floor(hoursToGo) + " hours " : "1 hour ");
+    var progress = Utils.calculateProgress(data.user.hearts.current_week_hearts, data.cause.total_hearts);
+    data.user.progress = progress;
 
     var newdata = {
         user: data.user,
@@ -87,29 +92,29 @@ function constructPayload(data) {
         }
     };
 
+
+
+    if (data.user.state == 'cause_selection_pending') {
+        return ngoController.getNgosFromCauseId(data.previousCause.cause_id).pipe(function(res) {
+            newdata.previousCause.ngoList = res;
+            return deferred.success(newdata);
+        });
+    }
+
     newdata.timeElapsed = moment().format('x') > data.user.hearts.target_end_time;
 
-    if (newdata.timeElapsed) {
-        //check for week_selection_pending flag
-        if (data.user.state !== "cause_selection_pending" && data.user.state !== 'donate_pending_dismissed') {
-            newdata.user.state = "donate_pending";
-            return ngoController.getNgosFromCauseId(data.cause.cause_id).pipe(function(res) {
-                newdata.cause.ngoList = res;
-                return deferred.success(newdata);
-            });
-        } else if (data.user.state == 'cause_selection_pending') {
-            console.log("Cause selection pending data is =>", data, "\n\n\n\n");
-            return ngoController.getNgosFromCauseId(data.previousCause.cause_id).pipe(function(res) {
-                console.log("Prev ngo found =>", res, "\n\n\n\n");
-                newdata.previousCause.ngoList = res;
-                return deferred.success(newdata);
-            });
-        } else {
+    if (newdata.timeElapsed &&
+        data.user.state !== "cause_selection_pending" &&
+        data.user.state !== 'donate_pending_dismissed') {
+
+        newdata.user.state = "donate_pending";
+
+        return ngoController.getNgosFromCauseId(data.cause.cause_id).pipe(function(res) {
+            newdata.cause.ngoList = res;
             return deferred.success(newdata);
-        }
-    } else {
-        return deferred.success(newdata);
-    }
+        });
+
+    } else return deferred.success(newdata);
 }
 
 function continueIfLoggedIn(req, res, next) {

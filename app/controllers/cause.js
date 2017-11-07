@@ -11,3 +11,8 @@ exports.getCauseFromId = function(id) {
     });
 
 };
+exports.getAllCauses = function() {
+    return fn.defer(fn.bind(Cause, 'getAllCauses'))({}).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
