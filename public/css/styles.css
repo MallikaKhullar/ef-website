@@ -445,6 +445,14 @@
         display: inline-block
     }
     
+    .small-pink-button {
+        cursor: pointer;
+        border-radius: 31px;
+        background-color: #FF2474;
+        padding: 20px 0 20px 0;
+        text-align: center;
+    }
+    
     .center-text {
         margin: 0 auto;
     }
