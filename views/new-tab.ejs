@@ -25,7 +25,7 @@
 
 </head>
 
-<body>
+<body style="display:none">
 
     <!-- background image -->
     <!-- <div class="background" style="background-image: url(&quot;https://source.unsplash.com/collection/1172264/1600x900/daily&quot;);"></div> -->
@@ -235,6 +235,8 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $("body").fadeIn(500);
+
         if (document.getElementById("myBar") != null && document.getElementById("myBar").style != null) {
             document.getElementById("myBar").style.width = <%= user.progress %> + "%";
         }

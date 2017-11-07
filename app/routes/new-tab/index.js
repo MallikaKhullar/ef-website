@@ -25,7 +25,6 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
 
 router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
     causeController.getAllCauses().pipe(function(data) {
-        console.log("Data got from all causes", data);
         res.render("select-cause.ejs", { data });
     });
 });
@@ -35,7 +34,6 @@ function redirectForNewUser(user, res) {
     if (user.state === "uninitiated") {
 
         causeController.getAllCauses().pipe(function(data) {
-            console.log("Data got from all causes", data);
             res.render("select-cause.ejs", { data });
         });
         return true;
@@ -64,8 +62,6 @@ router.get('/', continueIfLoggedIn, function(req, res) {
             numUsers: data.userCount,
             previousCause: data.previousCause
         }).pipe(function(result) {
-            console.log("payload", result);
-            console.log("payload", result.user.progress);
             res.render("new-tab.ejs", result);
         });
     });
