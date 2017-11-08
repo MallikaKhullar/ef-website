@@ -5,8 +5,8 @@ var log4js = require('log4js');
 function SimpleLogger(prefix) {
     this.prefix = prefix;
     this.logger = log4js.getLogger('app');
-
 }
+
 SimpleLogger.prototype.logMessage = function(level, args) {
     var message = [' (', this.prefix, ') '],
         i, n;

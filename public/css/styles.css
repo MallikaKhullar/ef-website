@@ -401,12 +401,12 @@
     
     .large-dialog-overlay {
         background: linear-gradient(to top right, #84ffe4 0%, #c0a3ff 80%);
-        width: 90%;
-        height: 90%;
+        width: 70%;
+        height: 70%;
         border-radius: 10px;
         box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
-        left: 5%;
-        top: 5%;
+        left: 15%;
+        top: 15%;
         padding: 20px;
         z-index: 3;
         position: absolute;
@@ -425,8 +425,7 @@
         color: white;
         z-index: 3;
         font-family: Roboto;
-        font-size: 30px;
-        margin-bottom: 20px;
+        font-size: 40px;
     }
     
     .white {

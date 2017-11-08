@@ -30,55 +30,75 @@
     <!-- background image -->
     <!-- <div class="background" style="background-image: url(&quot;https://source.unsplash.com/collection/1172264/1600x900/daily&quot;);"></div> -->
 
-
     <div class="dark-gradient-ad" style="display:none">
         <div class="large-dialog-overlay">
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="white-title"><b>OH NO!</b><br> Adblock Detected!</div>
-                    <a href="" class="btn-outline btn-med" onclick="dummy(0);return false;">Continue to change the world!</a>
+
+            <div style="width: 60%; height: 100%; float:left; padding: 30px">
+
+                <div style="display: table; height: 120px; width:100%; margin-bottom: 50px">
+                    <img src=" /image/earth_badge.jpg " style="float:left; vertical-align:middle; height:100%; width:auto; display:table-cell">
+                    <div style="vertical-align:middle; display:table-cell; float:left" class="white-title">
+                        <b>OH NO!</b><br> Adblock Detected!
+                    </div>
                 </div>
+                <div class="white">
+                    Turn off your ad blocker for this page, by doing this, you donate to change the world without having to spend a single rupee!
+                </div>
+
             </div>
+
+            <div style="padding: 0 0 0 20px; width: 40%; height: 100%; float:right; padding: 30px; text-align:center">
+                <div class="btn-outline btn-med" style="padding: 10px 30px 10px 30px; font-size:14px; cursor:pointer">
+
+                    <a href="" style="padding: 20px; text-decoration:none!important; color:white; height:100%; width:100%" onclick="dummy(0);return false; ">
+                            Continue to change the world!
+                        </a>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+
+                </div>
+                <img style="width:80%; height:auto; margin-top:5%" src=" /image/earth_badge.jpg "></a>
+            </div>
+
         </div>
     </div>
 
-    <div class="page-container">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/home">
-                        <img src="/image/logo.png">
+    <div class="page-container ">
+        <nav class="navbar navbar-default ">
+            <div class="container-fluid ">
+                <div class="navbar-header ">
+                    <a class="navbar-brand " href="/home ">
+                        <img src="/image/logo.png ">
                     </a>
                 </div>
 
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right ">
                     <li>
-                        <a href="http://www.facebook.com">
-                            <small></small><img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                        <a href="http://www.facebook.com ">
+                            <small></small><img class="quicklink-img " src="/image/facebook-icon.svg "></img>
                             </small>
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.gmail.com">
-                            <small></small><img class="quicklink-img" src="/image/gmail-icon.svg"></img>
+                        <a href="http://www.gmail.com ">
+                            <small></small><img class="quicklink-img " src="/image/gmail-icon.svg "></img>
                             </small>
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.youtube.com">
-                            <small></small><img class="quicklink-img" src="/image/youtube-icon.svg"></img>
+                        <a href="http://www.youtube.com ">
+                            <small></small><img class="quicklink-img " src="/image/youtube-icon.svg "></img>
                             </small>
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.drive.google.com">
-                            <small></small><img class="quicklink-img" src="/image/drive-icon.svg"></img>
+                        <a href="http://www.drive.google.com ">
+                            <small></small><img class="quicklink-img " src="/image/drive-icon.svg "></img>
                             </small>
                         </a>
                     </li>
                     <li>
-                        <a href="top-apps">
-                            <small></small><img class="quicklink-img" src="/image/all-apps.png"></img>
+                        <a href="top-apps ">
+                            <small></small><img class="quicklink-img " src="/image/all-apps.png "></img>
                             </small>
                         </a>
                     </li>
@@ -86,26 +106,26 @@
             </div>
         </nav>
 
-        <div class="widgets show-widgets">
-            <div id="middle">
-                <div class="thin-greeting" class="transition">
+        <div class="widgets show-widgets ">
+            <div id="middle ">
+                <div class="thin-greeting " class="transition ">
                     <strong></strong>Hello,</strong>
                     <%- user.name %>
                 </div>
-                <div id="clockbox"></div><br>
+                <div id="clockbox "></div><br>
             </div>
 
-            <div id="middle-below">
-                <input id="autocomplete" title="type &quot;a&quot;" placeholder="Search Google">
+            <div id="middle-below ">
+                <input id="autocomplete " title="type &quot;a&quot; " placeholder="Search Google ">
             </div>
         </div>
 
-        <div class="right-bar">
+        <div class="right-bar ">
             <% if (user.state === 'donate_pending') { %>
-                <div style="text-align: center; padding: 10%">
-                    <div class="thick-text white big-text">WEEKLY MISSION</div>
-                    <div class="thick-text green big-text">COMPLETE!</div>
-                    <img class="env-icon" src="<%- cause.img_url %>"></a>
+                <div style="text-align: center; padding: 10% ">
+                    <div class="thick-text white big-text ">WEEKLY MISSION</div>
+                    <div class="thick-text green big-text ">COMPLETE!</div>
+                    <img class="env-icon " src="<%- cause.img_url %>"></a>
                     <div class="thick-text center-element white big-text">
                         <i class="fa fa-heart fa-red" aria-hidden="true"></i>
                         <%- user.hearts.current_week_hearts %>
