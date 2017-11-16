@@ -1,5 +1,5 @@
 {
-    "environment": "Development",
+    "environment": "Prod",
     "environmentUrl": "",
     "apiUrl": "",
 
