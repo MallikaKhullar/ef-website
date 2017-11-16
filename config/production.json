@@ -4,8 +4,8 @@
     "apiUrl": "",
 
     "facebookAuth": {
-        "clientID": "197971190828325",
-        "clientSecret": "c1eb191f545f918fcae838da89e432b1",
+        "clientID": "1816954011929659",
+        "clientSecret": "c1ce19d48e62cc607b30d4238fbeb2be",
         "callbackURL": "http://localhost:8080/auth/facebook/callback",
         "profileFields": ["emails", "birthday", "name", "gender", "location"]
     },
