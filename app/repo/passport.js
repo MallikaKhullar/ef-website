@@ -41,7 +41,7 @@ module.exports = function(passport) {
             process.nextTick(function() {
 
                 // find the user in the database based on their facebook id
-                User.findOne({ 'facebook_id': profile.id }, function(err, user) {
+                User.findOne({ 'email': profile.emails[0].value }, function(err, user) {
 
                     // if there is an error, stop everything and return that
                     // ie an error connecting to the database
@@ -91,7 +91,7 @@ module.exports = function(passport) {
             process.nextTick(function() {
 
                 // try to find the user based on their google id
-                User.findOne({ 'google_id': profile.id }, function(err, user) {
+                User.findOne({ 'email': profile.emails[0].value }, function(err, user) {
 
                     if (err) return done(err);
 
@@ -109,6 +109,7 @@ module.exports = function(passport) {
                         newUser.timestamp = moment().format('x');
                         newUser.web_version = "0.0.1";
                         newUser.state = "uninitiated";
+                        newUser.user_id = "user" + moment().format('x');
 
                         // save the user
                         newUser.save(function(err) {
