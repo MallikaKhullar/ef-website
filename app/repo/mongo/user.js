@@ -4,6 +4,7 @@ var moment = require('moment');
 var userSchema = mongoose.Schema({
     user_id: { type: String, unique: true, required: true },
     email: { type: String, unique: true },
+    timestamp: Number,
     facebook_id: String,
     facebook_token: String,
     name: String,
@@ -24,7 +25,7 @@ var userSchema = mongoose.Schema({
         donations_till_date: [String]
     },
     web_version: String
-}, { timestamps: true });
+});
 
 userSchema.statics = {
     createUser: function(data, cb) {
@@ -50,6 +51,11 @@ userSchema.statics = {
 
     getUsersByIds: function(data, cb) {
         this.find({ user_id: { $in: data.users } }).lean().exec(cb);
+    },
+
+    getUserById: function(id, cb) {
+        console.log("Get user by id called", id);
+        this.findOne({ user_id: id }).lean().exec(cb);
     },
 
     getUserCount: function(data, cb) {
