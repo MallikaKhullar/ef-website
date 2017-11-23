@@ -115,8 +115,6 @@ p {
 }
 
 .navbar-default {
-    background-color: white;
-    border-color: rgba(34, 34, 34, 0.05);
     -webkit-transition: all 0.35s;
     -moz-transition: all 0.35s;
     transition: all 0.35s;
@@ -536,8 +534,8 @@ section.contact ul.list-social li.social-google-plus a:hover {
 footer {
     background-color: #222222;
     padding: 25px 0;
-    color: rgba(255, 255, 255, 0.3);
     text-align: center;
+    background-color: #3C3C3C;
 }
 
 footer p {
@@ -550,7 +548,9 @@ footer ul {
 }
 
 footer ul li a {
-    font-size: 12px;
+    font-size: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
     color: rgba(255, 255, 255, 0.3);
 }
 

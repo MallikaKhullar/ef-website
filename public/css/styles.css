@@ -268,7 +268,8 @@
     }
     
     .display-number-title {
-        font-size: 15px;
+        font-weight: 300;
+        font-size: 13px;
         color: white;
         font-family: Quicksand;
     }
@@ -499,4 +500,12 @@
     
     .big-text {
         font-size: 20px;
+    }
+    
+    .black-quicksand-title {
+        color: #000000;
+        font-family: Quicksand;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 31px;
     }
