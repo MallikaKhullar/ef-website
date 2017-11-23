@@ -41,6 +41,8 @@ exports.getAllDonationCount = function() {
             var incremental_rev = REV_PER_TAB * TABS_PER_USER_MIN * USER_COUNT * DAU_PER_30D_INSTALLS * ADBLOCK_DISABLED;
             var total_rev = incremental_rev * TIME_PASSED;
 
+            console.log("Donation count\nTabs per user per min:", TABS_PER_USER_MIN, "\nInc rev:", incremental_rev, "\nTime passed:", (TIME_PASSED / 60000));
+
             return deferred.success(Math.round(total_rev));
         });
     });
