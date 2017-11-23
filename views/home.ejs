@@ -17,6 +17,8 @@
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" />
+
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
     <!-- Plugin CSS -->
@@ -27,6 +29,7 @@
     <!-- Theme CSS -->
     <link href="/css/new-age.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+
 
 
 </head>
@@ -150,25 +153,38 @@
         </div>
     </section>
 
-    <%- include contact_partial.ejs %>
 
+    <div style="background-color:white; text-align:center; padding:100px">
+        <div class="black-quicksand-title" style="margin-bottom: 40px">Tentative List of Ngos</div>
+        <div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2">
+                    </div>
+                    <% for(var i=0; i<4; i++) { %>
+                        <div class="col-md-2">
+                            <img style="height:80px;padding:10px" src="<%- ngos[i].logo_url %>">
+                        </div>
+                        <% } %>
+                            <div class="col-md-2">
+                            </div>
+                </div>
 
-        <footer>
-            <div class="container">
-                <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
-                <ul class="list-inline">
-                    <li>
-                        <a href="#">Privacy</a>
-                    </li>
-                    <li>
-                        <a href="#">Terms</a>
-                    </li>
-                    <li>
-                        <a href="#">FAQ</a>
-                    </li>
-                </ul>
+                <div class="row" style="margin-top:40px">
+                    <div class="col-md-2">
+                    </div>
+                    <% for(var i=4; i<ngos.length; i++) { %>
+                        <div class="col-md-4">
+                            <img style="height:80px;padding:10px" src="<%- ngos[i].logo_url %>">
+                        </div>
+                        <% } %>
+                            <div class="col-md-2">
+                            </div>
+                </div>
             </div>
-        </footer>
+        </div>
+    </div>
+    <%- include footer_partial.ejs %>
 
         <!-- jQuery -->
         <script src="/vendor/jquery/jquery.min.js"></script>
