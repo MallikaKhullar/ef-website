@@ -10,7 +10,7 @@ var ngoSchema = mongoose.Schema({
 
 
 ngoSchema.statics = {
-    getAllNgos: function(data, cb) {
+    getAllNgos: function(cb) {
         this.find({}).lean().exec(cb);
     },
 
