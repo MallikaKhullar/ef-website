@@ -498,6 +498,10 @@
         color: #22FFA0;
     }
     
+    .black {
+        color: black;
+    }
+    
     .big-text {
         font-size: 20px;
     }
@@ -507,5 +511,170 @@
         font-family: Quicksand;
         font-size: 22px;
         font-weight: bold;
-        line-height: 31px;
+    }
+    
+    .bg-white {
+        background-color: white;
+    }
+    
+    .bg-lightgrey {
+        background-color: #FCFCFC;
+    }
+    
+    .font-small {
+        font-size: 18px;
+    }
+    
+    .gradient-box {
+        opacity: 0.94;
+        background: linear-gradient(90deg, #C768FF 0%, #FF1F7B 100%);
+    }
+    
+    .rounded-gradient-box {
+        opacity: 0.94;
+        border-radius: 19.71px;
+        background: linear-gradient(90deg, #C768FF 0%, #FF1F7B 100%);
+    }
+    
+    .middle {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .clearfix {
+        clear: both;
+    }
+    
+    .white-button {
+        padding: 20px 20px 20px 50px;
+        border-radius: 36px;
+        background-color: #FFFFFF;
+        box-shadow: -2px 4px 10px 0 rgba(0, 0, 0, 0.24);
+    }
+    
+    .red-orange-brown {
+        background-image: linear-gradient(90deg, #C768FF 0%, #FF1F7B 100%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: 20px;
+        font-weight: 700;
+        font-family: Quicksand;
+    }
+    /**
+ * Position icons into circle (SO)
+ * http://stackoverflow.com/q/12813573/1397351 
+ */
+    
+    .circle-container {
+        position: relative;
+        width: 24em;
+        height: 14em;
+        padding: 1.8em;
+        /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
+        border-radius: 50%;
+        margin: 1.75em auto 0;
+    }
+    
+    .circle-container a {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 4em;
+        height: 4em;
+        margin: -2em;
+        /* 2em = 4em/2 */
+        /* half the width */
+    }
+    
+    .circle-container img {
+        display: block;
+        width: 100%;
+    }
+    
+    .deg0 {
+        transform: translate(12em);
+    }
+    /* 12em = half the width of the wrapper */
+    
+    .deg45 {
+        transform: rotate(45deg) translate(12em) rotate(-45deg);
+    }
+    
+    .deg135 {
+        transform: rotate(135deg) translate(12em) rotate(-135deg);
+    }
+    
+    .deg180 {
+        transform: translate(-12em);
+    }
+    
+    .deg225 {
+        transform: rotate(225deg) translate(12em) rotate(-225deg);
+    }
+    
+    .deg315 {
+        transform: rotate(315deg) translate(12em) rotate(-315deg);
+    }
+    
+    .circle-container a:hover:before {
+        opacity: 1;
+    }
+    /* this is for showing the circle on which the images are placed */
+    
+    .circle-container:after {
+        position: absolute;
+        top: 2.8em;
+        left: 2.8em;
+        width: 24em;
+        height: 24em;
+        border-radius: 50%;
+        opacity: .3;
+        pointer-events: none;
+        content: '';
+    }
+    
+    .circle-container:hover:after {
+        opacity: 1;
+    }
+    
+    .circle-container:hover a:after {
+        opacity: 1;
+    }
+    
+    .circle-container a:hover:after {
+        opacity: .3;
+    }
+    
+    .basic-slide {
+        width: 315px;
+        padding: 15px 0 15px 15px;
+        box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
+        font-weight: 400;
+        background: #fff;
+        border: 0.5px solid #efefef;
+        outline: 0;
+        color: #868686;
+    }
+    
+    label {
+        top: 0;
+        color: #fff;
+        left: 0;
+        padding: 15px 15px;
+        text-shadow: 0 1px 0 rgba(19, 74, 70, .4);
+        background: #FF0F96;
+        box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    .trans-box {
+        color: white;
+        padding: 10px 10px 10px 10px;
+        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        z-index: 7;
+        height: 100%
     }
