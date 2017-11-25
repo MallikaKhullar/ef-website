@@ -112,9 +112,9 @@
     };
 
     var startPoint = new THREE.Vector3(
-        MIN_X + Math.random() * SIZE_X,
-        MIN_Y + Math.random() * SIZE_Y,
-        MIN_Z + Math.random() * SIZE_Z
+        MIN_X + (Math.random() * 0.2 + 0.4) * SIZE_X,
+        MIN_Y + (Math.random() * 0.2 + 0.4) * SIZE_Y,
+        MIN_Z + (Math.random() * 0.2 + 0.4) * SIZE_Z
     );
     var startPoint2 = startPoint.clone();
     startPoint2.x += 0.01;
