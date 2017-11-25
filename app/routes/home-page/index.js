@@ -9,6 +9,16 @@ var fn = require('./../../utils/functions');
 var Utils = require('../../utils');
 
 
+router.get('/submit-email', function(req, res) {
+    console.log("Submit email", req.query.email_id);
+    if (req.query && req.query.email_id) {
+        userController.insertPledge(req.query.email_id).pipe(function(data) {
+            res.redirect('/new-tab');
+        });
+    } else res.redirect('/new-tab');
+});
+
+
 router.get('/', function(req, res) {
 
     var def = {

@@ -513,6 +513,14 @@
         font-weight: bold;
     }
     
+    .pink-quicksand-title {
+        color: #FB117E;
+        font-family: Quicksand;
+        font-size: 32.76px;
+        font-weight: bold;
+        line-height: 41px;
+    }
+    
     .bg-white {
         background-color: white;
     }
@@ -677,4 +685,31 @@
         border-radius: 6px;
         z-index: 7;
         height: 100%
+    }
+    
+    .email-submit {
+        width: 92%;
+        padding: 20px;
+        border: 1.5px solid #E5E5E5;
+        border-radius: 5px;
+        background-color: #FFFFFF;
+        /* box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1); */
+        color: #17B487;
+        text-align: center;
+        font-family: Quicksand;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 25px;
+    }
+    
+    @media screen and (min-width: 500px) {
+        .resp-footer {
+            visibility: visible;
+        }
+    }
+    
+    @media all and (max-width: 499px) {
+        .resp-footer {
+            visibility: hidden;
+        }
     }

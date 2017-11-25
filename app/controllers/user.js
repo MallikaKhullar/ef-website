@@ -1,7 +1,9 @@
 const User = require('../repo/mongo/user');
+const Pledge = require('../repo/mongo/pledge');
 const { wrap: async } = require('co');
 var fn = require('./../utils/functions');
 var deferred = require('./../utils/deferred.js');
+
 
 exports.incrementHearsById = async(function*(id) {
     User.findById(id, function(err, user) {
@@ -15,6 +17,12 @@ exports.incrementHearsById = async(function*(id) {
         });
     });
 });
+
+exports.insertPledge = function(pledgeObj) {
+    return fn.defer(fn.bind(Pledge, 'createPledge'))({ "user_email": pledgeObj }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
 
 exports.getAllUserCount = function() {
     return fn.defer(fn.bind(User, 'getUserCount'))({}).pipe(function(res) {

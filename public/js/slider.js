@@ -37,15 +37,15 @@ $(document).ready(function() {
 
             switch (valSelected) {
                 case "food":
-                    $('#impact-val').text(Math.round(this.value * 30 / 4));
+                    $('#impact-val').text(Math.round(this.value * 12.36));
                     break;
 
                 case "tree":
-                    $('#impact-val').text(Math.round(this.value * 30 / 6));
+                    $('#impact-val').text(Math.round(this.value * 3.12));
                     break;
 
                 case "child":
-                    $('#impact-val').text(Math.round(this.value * 30 / 10));
+                    $('#impact-val').text(Math.round(this.value * 7.02));
                     break;
             }
 

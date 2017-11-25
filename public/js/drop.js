@@ -40,17 +40,17 @@ $(document).ready(function() {
             switch ($this.val()) {
                 case "food":
                     $('#impact-stmt').text("FOOD by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text(Math.round(num * 30 / 4));
+                    $('#impact-val').text(Math.round(num * 12.36));
                     break;
 
                 case "tree":
                     $('#impact-stmt').text("TREE by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text(Math.round(num * 30 / 6));
+                    $('#impact-val').text(Math.round(num * 3.12));
                     break;
 
                 case "child":
                     $('#impact-stmt').text("CHILD by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text(Math.round(num * 30 / 10));
+                    $('#impact-val').text(Math.round(num * 7.02));
                     break;
             }
         });
