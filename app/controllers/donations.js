@@ -31,15 +31,15 @@ exports.getAllDonationCount = function() {
             var REV_PER_TAB = 0.07,
                 ADBLOCK_DISABLED = 0.7,
                 DAU_PER_30D_INSTALLS = 0.7,
-                TABS_PER_USER_MIN;
+                TABS_PER_USER_MIN = 0.011;
 
-            TABS_PER_USER_MIN = moment(currentTime).isBetween(morn, after) ? 0.0011 :
-                (moment(currentTime).isBetween(after, eve) ? 0.0175 : 0.0125);
+            // TABS_PER_USER_MIN = moment(currentTime).isBetween(morn, after) ? 0.0011 :
+            //     (moment(currentTime).isBetween(after, eve) ? 0.0175 : 0.0125);
 
             TIME_PASSED = (moment().format('x') - user.timestamp) / (1000 * 60);
 
             var incremental_rev = REV_PER_TAB * TABS_PER_USER_MIN * USER_COUNT * DAU_PER_30D_INSTALLS * ADBLOCK_DISABLED;
-            var total_rev = incremental_rev * TIME_PASSED;
+            var total_rev = incremental_rev * TIME_PASSED / 2;
 
             return deferred.success(Math.round(total_rev));
         });
