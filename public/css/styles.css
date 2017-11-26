@@ -728,3 +728,12 @@
         margin-left: auto;
         margin-right: auto;
     }
+    
+    .impact-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #impact-grid {
+        text-align: center;
+    }
