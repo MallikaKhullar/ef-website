@@ -37,20 +37,21 @@ $(document).ready(function() {
 
             switch (valSelected) {
                 case "food":
-                    $('#impact-val').text(Math.round(this.value * 12.36));
+                    $('#impact-val').text((this.value * 12.36).toFixed(1));
                     break;
 
                 case "tree":
-                    $('#impact-val').text(Math.round(this.value * 3.12));
+                    $('#impact-val').text((this.value * 3.12).toFixed(1));
                     break;
 
-                case "child":
-                    $('#impact-val').text(Math.round(this.value * 7.02));
+                case "book":
+                    $('#impact-val').text((this.value * 7.02).toFixed(1));
                     break;
             }
 
             var $handle = this.$range.find('.rangeslider__handle__value');
             $handle.text(this.value);
+            changeImpactGrid();
         },
 
         // Callback function

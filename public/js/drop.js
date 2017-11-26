@@ -40,19 +40,21 @@ $(document).ready(function() {
             switch ($this.val()) {
                 case "food":
                     $('#impact-stmt').text("FOOD by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text(Math.round(num * 12.36));
+                    $('#impact-val').text((num * 12.36).toFixed(1));
                     break;
 
                 case "tree":
                     $('#impact-stmt').text("TREE by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text(Math.round(num * 3.12));
+                    $('#impact-val').text((num * 3.12).toFixed(1));
                     break;
 
-                case "child":
-                    $('#impact-stmt').text("CHILD by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text(Math.round(num * 7.02));
+                case "book":
+                    $('#impact-stmt').text("Days of School by you in 1 year by doing almost nothing!");
+                    $('#impact-val').text((num * 7.02).toFixed(1));
                     break;
             }
+            changeImpactGrid();
+
         });
 
         $(document).click(function() {
