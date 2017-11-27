@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = 8080,
+    port = 8081,
     database = require('./config/database'), // load the database config    
     mongoose = require('mongoose'), // mongoose for mongodb
     passport = require('passport'),
