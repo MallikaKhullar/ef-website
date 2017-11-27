@@ -204,7 +204,6 @@
 
 <script type="text/javascript">
     $('label').click(function() {
-        alert(document.getElementById("name").value);
         $.ajax({
             type: "GET",
             url: "/home/submit-email?email_id=" + document.getElementById("name").value,
