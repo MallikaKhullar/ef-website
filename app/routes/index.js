@@ -8,6 +8,7 @@ var termsAndConditions = require('./terms');
 var login = require('./login');
 var faqs = require('./faqs');
 var donate = require('./donate');
+var ultron = require('./ultron');
 
 var allRoutes = function(app, passport) {
 
@@ -46,7 +47,7 @@ var allRoutes = function(app, passport) {
     app.use('/terms', termsAndConditions);
     app.use('/new-tab', newTab);
     app.use('/faqs', faqs);
-
+    app.use('/ultron', ultron);
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', {
         scope: 'email'
