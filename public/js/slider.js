@@ -37,7 +37,7 @@ $(document).ready(function() {
 
             switch (valSelected) {
                 case "food":
-                    $('#impact-val').text((this.value * 12.36).toFixed(1));
+                    $('#impact-val').text((this.value * 4.12).toFixed(1));
                     break;
 
                 case "tree":

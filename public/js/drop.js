@@ -40,7 +40,7 @@ $(document).ready(function() {
             switch ($this.val()) {
                 case "food":
                     $('#impact-stmt').text("FOOD by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text((num * 12.36).toFixed(1));
+                    $('#impact-val').text((num * 4.12).toFixed(1));
                     break;
 
                 case "tree":

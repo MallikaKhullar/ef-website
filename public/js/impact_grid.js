@@ -7,7 +7,7 @@ function getImpactNum(category) {
 
     switch (category) {
         case "food":
-            return (num * 12.36);
+            return (num * 4.12);
         case "tree":
             return (num * 3.12);
         case "book":

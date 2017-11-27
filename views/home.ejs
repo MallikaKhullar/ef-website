@@ -42,19 +42,18 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top: 15px;padding-right: 15px;">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
+                    <!-- <li>
                         <a class="page-scroll white" href="/faqs">FAQs</a>
                     </li>
                     <li>
                         <a class="page-scroll white" href="/terms">T&amp;Cs</a>
-                    </li>
+                    </li> -->
                     <li>
-                        <div class="btn-outline btn-med" style="padding: 10px 30px 10px 30px; font-size:14px; cursor:pointer">
-
-                            <i class="fa fa-venus-mars" aria-hidden="true"></i>
-                            <a href="https://chrome.google.com/webstore/detail/todoist-to-do-list-and-ta/jldhpllghnbhlbpcmnajkpdmadaolakh" style="padding: 20px; text-decoration:none!important; color:white; height:100%; width:100%">
-                                Chrome Plugin
-                            </a>
+                        <div class="btn-outline btn-med" style="font-size:12px; cursor:pointer">
+                            <!-- <i class="fa fa-venus-mars" aria-hidden="true"></i> -->
+                            <b><a href="https://chrome.google.com/webstore/detail/todoist-to-do-list-and-ta/jldhpllghnbhlbpcmnajkpdmadaolakh" style="padding: 20px; text-decoration:none!important; color:white; height:100%; width:100%">
+                                CHROME PLUGIN
+                            </a></b>
                         </div>
                     </li>
                 </ul>
@@ -77,20 +76,20 @@
 
 
             <div class="col-sm-6">
-                <div class="header-content white" style="padding: 0 50px;">
-                    <div class="header-content-inner">
-                        <div class="trans-box" style="padding:50px 50px 50px 20px">
+                <div class="header-content white" style="padding: 0 50px;width:100%">
+                    <div class="header-content-inner" style="width:100%">
+                        <div class="trans-box" style="padding:50px 50px 10px 20px; width: 80%; height:50%">
                             <%- include grid.ejs %>
                                 <div style="display:table">
                                     <div id="impact-val" class="thick-text" style="padding-right:10px;font-size:30px; vertical-align:middle; width:90px;text-align:right;display:table-cell">0</div>
                                     <select id="year" style="display:table-cell">
                                     <option value="tree">Trees</option>
-                                    <option value="food">Meals</option>
+                                    <option value="food">Children Fed</option>
                                     <option value="book">Days of School</option>
                                 </select>
                                 </div>
 
-                                <div id="impact-stmt" class="thin-text font-small">Planted &amp; watered by you in 1 year by doing almost nothing!</div>
+                                <div id="impact-stmt" class="thin-text font-small" style="height:50px">Planted &amp; watered by you in 1 year by doing almost nothing!</div>
                         </div>
                     </div>
                 </div>
@@ -107,21 +106,32 @@
                 <div class="black-quicksand-title" style="font-size:50px; line-height:50px">Tiny acts create ripples through history</div>
                 <div class="thin-text black font-small">We operate in some awesome way that allows all our users to contribute to massive advances in social improvement by doing almost nothing at all. We convert your digital footprint to social gold!</div>
             </div>
+            <div class="col-sm-1"></div>
             <div class="col-sm-5">
+                <img src="/image/child.png" style="width:60%"></img>
             </div>
         </div>
     </section>
 
     <section id="about" class="bg-lightgrey">
         <div class="row">
-            <div class="col-sm-6"><img src="/image/laptop_ext.png" class="img-responsive" alt=""></div>
             <div class="col-sm-5">
                 <div class="gradient-box row" style="padding: 15px">
                     <div class="white" style="float:left;width:25%;">PROJECT</div>
                     <div class="white" style="float:left;width:75%; ">PROJECT NAME HERE</div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="black-quicksand-title" style="margin-top:40px; font-size:50px; line-height:50px">Product Name</div>
+            </div>
+
+            <div class="col-sm-6"></div>
+            <div class="col-sm-1"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5">
+                <img src="/image/laptop_ext.png" class="img-responsive" alt=""></div>
+            <div class="col-sm-6">
+                <div class="black-quicksand-title" style="margin-top:100px; font-size:50px; line-height:50px">Product Name</div>
                 <div class="thin-text black font-small">Open tabs on your Chrome browser to bring about change! Begin donating to NGOs working on causes without spending a single rupee.</div>
                 <a style="text-decoration:none">
                     <div style="margin-top:10px" class="red-orange-brown white-button" ref="https://chrome.google.com/webstore/detail/todoist-to-do-list-and-ta/jldhpllghnbhlbpcmnajkpdmadaolakh">GET STARTED</div>
@@ -129,6 +139,18 @@
             </div>
             <div class="col-sm-1"></div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-5"></div>
+            <div class="col-sm-2">
+                <a href="/faqs" style="text-decoration:none; margin-top:300px">
+                    <div class="know-how">Know how?</div>
+                    <div style="box-sizing: border-box; width: 87px; border: 1px solid #000000;"></div>
+                </a>
+            </div>
+        </div>
+
     </section>
 
     <section id="about" class="bg-white">
@@ -217,7 +239,7 @@
         });
     });
 </script>
-<script src="js/three.min.js"></script>
-<script src="js/lorenz.js"></script>
+<!-- <script src="js/three.min.js"></script>
+<script src="js/lorenz.js"></script> -->
 
 </html>

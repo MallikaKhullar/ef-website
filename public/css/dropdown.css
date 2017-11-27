@@ -41,12 +41,12 @@
     }
     
     .select-styled:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.2);
     }
     
     .select-styled:active,
     .select-styled.active {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.2);
     }
     
     .select-styled:active:after,
@@ -65,14 +65,14 @@
         margin: 0;
         padding: 0;
         list-style: none;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(40, 40, 40, 0.99);
     }
     
     .select-options li {
         margin: 0;
         padding: 12px 0;
         text-indent: 15px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(40, 40, 40, 0.99);
         -moz-transition: all 0.15s ease-in;
         -o-transition: all 0.15s ease-in;
         -webkit-transition: all 0.15s ease-in;
@@ -80,7 +80,7 @@
     }
     
     .select-options li:hover {
-        color: rgba(0, 0, 0, 0.1);
+        color: rgba(0, 0, 0, 0.4);
         background: #fff;
     }
     
