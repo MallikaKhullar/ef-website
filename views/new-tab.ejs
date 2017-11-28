@@ -7,18 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Be EPIC Everyday</title>
     <link rel="icon" href="image/logo_pink.png" />
-    <!-- TODO: ask joel to give infinite sign vector -->
 
-    <!-- css -->
+    <!-- fonts -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+
+    <!-- css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link href="/css/new-age.css" rel="stylesheet">
     <link href="/css/jquery-ui.css" rel="stylesheet">
-
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
 
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -33,32 +32,85 @@
 
         <div class="dark-gradient-ad" style="display:none">
             <div class="large-dialog-overlay">
-
-                <div style="width: 60%; height: 100%; float:left; padding: 30px">
-
-                    <div style="display: table; height: 120px; width:100%; margin-bottom: 50px">
-                        <img src=" /image/exclamation.png" style="float:left; vertical-align:middle; height:100%; width:auto; display:table-cell">
-                        <div style="vertical-align:middle; display:table-cell; float:left" class="white-title">
-                            <b>OH NO!</b><br> Adblock Detected!
+                <div class="row">
+                    <div class="col-sm-8"></div>
+                    <div class="col-sm-4">
+                        <div class="btn-outline btn-med" style="text-align:center; cursor:pointer">
+                            <a href="" style=" text-decoration:none!important; color:white;" onclick="dummy(0);return false;">
+                                <b>CONTINUE TO CHANGE THE WORLD</b>
+                            </a>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
                         </div>
                     </div>
-                    <div class="white">
-                        Turn off your ad blocker for this page, by doing this, you donate to change the world without having to spend a single rupee!
-                    </div>
-
                 </div>
 
-                <div style="padding: 0 0 0 20px; width: 40%; height: 100%; float:right; padding: 30px; text-align:center">
-                    <div class="btn-outline btn-med" style="padding: 10px 30px 10px 30px; font-size:14px; cursor:pointer">
-
-                        <a href="" style="padding: 20px; text-decoration:none!important; color:white; height:100%; width:100%" onclick="dummy(0);return false;">
-                            Continue to change the world!
-                        </a>
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div>
+                            <div style="display: table; height: 100px; width:100%; margin: 50px 0px 10px 0px">
+                                <img src=" /image/exclamation.png" style="float:left; vertical-align:middle; height:95%; width:auto; display:table-cell; padding: 10px">
+                                <div style="vertical-align:middle; display:table-cell; float:left" class="white-title">
+                                    <b>OH NO!</b><br> Adblock Detected!
+                                </div>
+                            </div>
+                            <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">
+                                Turn off your ad blocker for this page, by doing this, you donate to change the world without having to spend a single rupee!
+                            </div>
+                            <a href="/faqs" style="text-decoration:none;">
+                                <div class="know-how" style="color:white">Know why?</div>
+                                <div style="box-sizing: border-box; width: 87px; border: 1px solid #fff;"></div>
+                            </a>
+                        </div>
                     </div>
-                    <img style="width:80%; height:auto; margin-top:5%" src=" /image/sad_earth.png"></a>
+
+                    <div class="col-sm-5">
+                        <div style="text-align:center">
+                            <img style="width:90%; height:auto; margin-top:5%" src=" /image/sad_earth.png"></a>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-7">
+                        <div style="float:left;">
+                            <div class="display-number-title">Donations So Far</div>
+                            <div class="display-number">
+                                <%- stats.donations %>
+
+                            </div>
+                        </div>
+
+                        <div style="float:left; margin-left:50px">
+                            <div class="display-number-title">EPIC People</div>
+                            <div class="display-number">
+                                <%- stats.followers %>
+
+                            </div>
+                        </div>
+
+                        <div style="float:right">
+                            <div style="float:right">
+                                <a href="http://www.facebook.com">
+                                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                                    </small>
+                                </a>
+                                <a href="http://www.facebook.com">
+                                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                                    </small>
+                                </a>
+                                <a href="http://www.facebook.com">
+                                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
+                                    </small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
 
             </div>
         </div>
@@ -113,7 +165,12 @@
                         <strong></strong>Hello,</strong>
                         <%- user.name %>
                     </div>
-                    <div id="clockbox"></div><br>
+                    <div class="clock">
+                        <div id="clockbox"></div>
+                        <div id="clockbox-pm"></div>
+                    </div>
+
+                    <br>
                 </div>
 
                 <div id="middle-below">

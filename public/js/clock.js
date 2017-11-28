@@ -13,7 +13,8 @@ function GetClock() {
         nhour -= 12;
     }
     if (nmin <= 9) nmin = "0" + nmin;
-    document.getElementById('clockbox').innerHTML = "" + nhour + ":" + nmin + ap + "";
+    document.getElementById('clockbox').innerHTML = "" + nhour + ":" + nmin;
+    document.getElementById('clockbox-pm').innerHTML = ap + "";
 }
 window.onload = function() {
     GetClock();

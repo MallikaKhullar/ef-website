@@ -79,10 +79,24 @@
     }
     
     #clockbox {
+        font-size: 112.5px;
+        font-weight: 500;
+        letter-spacing: -1px;
+        display: inline-block;
+    }
+    
+    .clock {
         color: white;
         font-family: Roboto;
-        font-size: 112.5px;
+        padding: 20px 0;
         margin-top: -30px;
+        font-weight: 500;
+        letter-spacing: -1px;
+    }
+    
+    #clockbox-pm {
+        font-size: 20.5px;
+        display: inline-block;
         font-weight: 500;
         letter-spacing: -1px;
     }
@@ -99,7 +113,7 @@
     .thin-greeting {
         color: white;
         font-family: Quicksand;
-        font-size: 40px;
+        font-size: 25px;
         font-weight: 300;
         line-height: 47px;
         text-align: center;
@@ -300,8 +314,7 @@
     
     .env-icon {
         width: 40%;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        padding: 10px 0;
     }
     
     .circle {
@@ -400,14 +413,14 @@
     }
     
     .large-dialog-overlay {
-        background: linear-gradient(to top right, #84ffe4 0%, #c0a3ff 80%);
+        background: linear-gradient(to top right, rgba(101, 226, 189, 0.9) 0%, rgba(91, 134, 184, 0.9) 80%);
         width: 70%;
         height: 70%;
         border-radius: 10px;
         box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
         left: 15%;
         top: 15%;
-        padding: 20px;
+        padding: 20px 40px 0px 40px;
         z-index: 3;
         position: absolute;
     }
@@ -424,7 +437,7 @@
     .white-title {
         color: white;
         z-index: 3;
-        font-family: Roboto;
+        font-family: Quicksand;
         font-size: 40px;
     }
     
@@ -503,6 +516,10 @@
     
     .big-text {
         font-size: 20px;
+    }
+    
+    .quicksand {
+        font-family: Quicksand;
     }
     
     .black-quicksand-title {
