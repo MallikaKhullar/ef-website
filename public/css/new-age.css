@@ -85,6 +85,16 @@ h6 {
     font-size: 30px;
 }
 
+.small-text {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.smaller-text {
+    font-size: 16px;
+    font-weight: 300;
+}
+
 .xsmall-text {
     font-size: 12px;
     font-weight: 300;
@@ -95,13 +105,15 @@ h6 {
     font-family: Roboto;
     font-size: 40px;
     font-weight: 300;
-    line-height: 47px;
+    margin-bottom: 20px;
 }
 
 .thin-rectangle {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: -4px 5px 4px 0 rgba(0, 0, 0, 0.15);
     border: 0.5px solid #FFFFFF;
     border-radius: 20px;
-    padding: 50px;
+    padding: 50px 50px 70px 50px;
 }
 
 .full-width {
@@ -594,8 +606,7 @@ footer ul li a.active {
 }
 
 .btn {
-    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
-    text-transform: uppercase;
+    font-family: 'Quicksand', 'Lato', 'Helvetica', 'Arial', 'sans-serif';
     letter-spacing: 2px;
     border-radius: 300px;
 }
