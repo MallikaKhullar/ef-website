@@ -259,7 +259,7 @@ header {
 
 header .header-content {
     text-align: center;
-    padding: 150px 0 50px;
+    padding: 150px 0 0px 0px;
     position: relative;
 }
 
@@ -312,7 +312,7 @@ header .header-content .header-content-inner-box {
     header .header-content {
         text-align: left;
         padding: 0;
-        height: 100vh;
+        height: 93vh;
     }
     header .header-content .header-content-inner {
         max-width: none;
@@ -338,7 +338,9 @@ header .header-content .header-content-inner-box {
 }
 
 section {
-    padding: 100px 0;
+    /* padding: 120px 0; */
+    width: 100%;
+    /* min-height: 100vh; */
 }
 
 section h2 {
