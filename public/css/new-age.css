@@ -63,17 +63,17 @@ h6 {
 }
 
 .roboto-thick {
-    font-family: ''Roboto', 'Helvetica', 'Arial', 'sans-serif'';
+    font-family: ''Quicksand', 'Helvetica', 'Arial', 'sans-serif'';
     font-weight: 700;
 }
 
 .roboto-thin {
-    font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+    font-family: 'Quicksand', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 300;
 }
 
 .roboto-normal {
-    font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+    font-family: 'Quicksand', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 500;
 }
 
@@ -102,7 +102,7 @@ h6 {
 
 .signup-text {
     color: #FFFFFF;
-    font-family: Roboto;
+    font-family: Quicksand;
     font-size: 40px;
     font-weight: 300;
     margin-bottom: 20px;
