@@ -44,6 +44,14 @@
         /* box-shadow: 0 -4px 1px rgba(0, 0, 0, 0.07), 0 -5px 20px rgba(0, 0, 0, 0.3); */
     }
     
+    .rangeslider__handle__draw {
+        transition: background-color .2s, box-shadow .1s, transform .1s;
+        left: -18px;
+        top: 20px;
+        position: absolute;
+        white-space: nowrap;
+    }
+    
     .rangeslider__handle__value:before {
         transition: border-top-color .2s;
         position: absolute;
@@ -56,6 +64,16 @@
         border-right: 10px solid transparent;
         border-top: 10px solid;
         border-top-color: rgba(133, 0, 110, 0.25);
+    }
+    
+    .rangeslider__handle__draw:before {
+        transition: border-top-color .2s;
+        position: absolute;
+        bottom: -10px;
+        left: calc(50% - 10px);
+        content: "";
+        width: 0;
+        height: 0;
     }
     
     .rangeslider__handle__value:after {
@@ -121,6 +139,11 @@
     }
     
     .rangeslider.rangeslider--active .rangeslider__handle__value {
+        transform: translateY(-5px);
+        /* box-shadow: 0 -3px 2px rgba(0, 0, 0, 0.04), 0 -9px 25px rgba(0, 0, 0, 0.25); */
+    }
+    
+    .rangeslider.rangeslider--active .rangeslider__handle__draw {
         transform: translateY(-5px);
         /* box-shadow: 0 -3px 2px rgba(0, 0, 0, 0.04), 0 -9px 25px rgba(0, 0, 0, 0.25); */
     }

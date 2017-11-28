@@ -16,6 +16,8 @@ $(document).ready(function() {
             var $handle = $rangeEl.find('.rangeslider__handle');
             var handleValue = '<div class="rangeslider__handle__value">' + this.value + '</div>';
             $handle.append(handleValue);
+            var drawValue = '<div class="rangeslider__handle__draw"><img src="/image/yellow_point.png" style="width:50px"/></div>';
+            $handle.append(drawValue);
 
             // get range index labels 
             var rangeLabels = this.$element.attr('labels');
@@ -55,8 +57,6 @@ $(document).ready(function() {
         },
 
         // Callback function
-        onSlideEnd: function(position, value) {
-
-        }
+        onSlideEnd: function(position, value) {}
     });
 });
