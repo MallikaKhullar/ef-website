@@ -784,3 +784,10 @@
         font-weight: bold;
         line-height: 18px;
     }
+    
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+        outline: none;
+    }
