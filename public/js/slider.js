@@ -18,6 +18,8 @@ $(document).ready(function() {
             $handle.append(handleValue);
             var drawValue = '<div class="rangeslider__handle__draw"><img src="/image/yellow_point.png" style="width:50px"/></div>';
             $handle.append(drawValue);
+            var slideVal = '<div class="rangeslider__handle__slide" class="white">' + "Slide me!" + '</div>';
+            $handle.append(slideVal);
 
             // get range index labels 
             var rangeLabels = this.$element.attr('labels');
@@ -36,20 +38,23 @@ $(document).ready(function() {
             $('#impact-val').text(this.value);
 
             var valSelected = document.getElementById("year").options[document.getElementById("year").selectedIndex].value;
-
+            var val;
             switch (valSelected) {
                 case "food":
-                    $('#impact-val').text((this.value * 4.12).toFixed(1));
+                    val = this.value * 4.12;
                     break;
 
                 case "tree":
-                    $('#impact-val').text((this.value * 3.12).toFixed(1));
+                    val = this.value * 3.12;
                     break;
 
                 case "book":
-                    $('#impact-val').text((this.value * 7.02).toFixed(1));
+                    val = this.value * 7.02;
                     break;
             }
+
+            val = val > 10 ? val.toFixed(1) : val.toFixed(2);
+            $('#impact-val').text(val);
 
             var $handle = this.$range.find('.rangeslider__handle__value');
             $handle.text(this.value);

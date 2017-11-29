@@ -70,7 +70,7 @@
     }
     
     .navbar-right {
-        margin: 10px 0 0 0;
+        margin-top: -2px;
         min-height: 60px;
     }
     

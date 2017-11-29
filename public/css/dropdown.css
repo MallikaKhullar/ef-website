@@ -8,21 +8,20 @@
         cursor: pointer;
         display: inline-block;
         position: relative;
-        font-size: 16px;
         color: #fff;
+        font-size: 15px;
         width: 190px;
         height: 40px;
     }
     
     .select-styled {
         position: absolute;
-        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         border: 1px solid white;
-        background-color: rgba(0, 0, 0, 0.1);
-        padding: 8px 15px;
+        background-color: rgba(0, 0, 0, 0.0);
+        padding: 15px 15px;
         -moz-transition: all 0.2s ease-in;
         -o-transition: all 0.2s ease-in;
         -webkit-transition: all 0.2s ease-in;
@@ -36,7 +35,7 @@
         border: 7px solid transparent;
         border-color: #fff transparent transparent transparent;
         position: absolute;
-        top: 16px;
+        top: 23px;
         right: 10px;
     }
     
@@ -48,12 +47,13 @@
     .select-styled.active {
         background-color: rgba(0, 0, 0, 0.2);
     }
-    
+    /*     
     .select-styled:active:after,
     .select-styled.active:after {
         top: 9px;
         border-color: transparent transparent #fff transparent;
     }
+     */
     
     .select-options {
         display: none;
