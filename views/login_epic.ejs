@@ -32,6 +32,12 @@
     <link rel="stylesheet" href="/css/styles.css">
 
     <style>
+        header .header-content {
+            text-align: left;
+            padding: 0;
+            height: 100vh;
+        }
+        
         .login-btn {
             font-family: Lato;
             font-size: 18px;
@@ -52,10 +58,9 @@
 <body id="page-top">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div class="container" style="width:95%">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-
+            <div class="navbar-header" style="padding-top: 10px;">
                 <a class="navbar-brand" href="/">
                     <img src="/image/flutur.png">
                 </a>
@@ -64,29 +69,29 @@
     </nav>
 
     <header>
-        <div style="z-index: 0; bottom:0; left: 0;position:absolute">
-            <img src="/image/happy_earth.png" />
+        <div style="z-index: 0; bottom:0; left: 0; position:absolute;">
+            <img style="width: 230px" src="/image/happy_earth.png" />
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
                     <div class="header-content">
                         <div class="header-content-inner">
-                            <h1 class="roboto-thick">Every Page for Infinite Change!</h1>
-                            <h2 class="roboto-thin small-text">Sign up to take your first step towards start making the world a better place, one Epic person at a time!</h2>
+                            <div class="roboto-thick" style="font-size: 54px; line-height:55px; margin-bottom:20px">Every Page for Infinite Change!</div>
+                            <div class="roboto-thin small-text" style="padding-right:50px;">Sign up to take your first step towards start making the world a better place, one Epic person at a time!</div>
                             <div class="stats">
                                 <div class="inline-item-left">
                                     <div class="roboto-thin xsmall-text ">Donations made so far</div>
-                                    <div class="roboto-normal medium-text ">
+                                    <div class="roboto-normal medium-text display-number">
                                         <%- stats.donations %>
                                     </div>
                                 </div>
-                                <div class="inline-item-right">
-                                    |
+                                <div class="inline-item-right" style="width:1px; height:42px; background-color:white">
+
                                 </div>
                                 <div class="inline-item-right">
                                     <div class="roboto-thin xsmall-text ">EPICers so far</div>
-                                    <div class="roboto-normal medium-text ">
+                                    <div class="roboto-normal medium-text display-number">
                                         <%- stats.followers %>
                                     </div>
                                 </div>
@@ -94,19 +99,27 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-sm-5 ">
                     <div class="header-content">
                         <div class="header-content-inner-box">
                             <div class="thin-rectangle">
                                 <div class="signup-text">Sign up</div>
-                                <div><a href="/auth/google" target="_top" class="full-width btn btn-xl white-btn login-btn red" style="margin-top: 10px">Google Plus</a></div>
-                                <div><a href="/auth/facebook" target="_top" class="btn full-width btn-xl white-btn login-btn blue" style="margin-top: 10px">Facebook</a></div>
+                                <div>
+                                    <a href="/auth/google" target="_top" class="full-width btn btn-xl white-btn login-btn red" style="margin-top: 10px">
+                                        <img src="/image/google_white.png" style="height:25px; margin-right:10px; margin-bottom:2px" />Google Plus</a>
+                                </div>
+                                <div>
+                                    <a href="/auth/facebook" target="_top" class="btn full-width btn-xl white-btn login-btn blue" style="margin-top: 10px">
+                                        <img src="/image/facebook_white.png" style="height:20px; margin-right:10px; margin-bottom:2px" />Facebook</a>
+                                </div>
                             </div>
                             <div style="margin-top:30px; text-align:center" class="roboto-thin smaller-text"><i class="fa fa-power-off" aria-hidden="true"></i> Please turn your Ad blocker off for this site!</div>
                         </div>
                     </div>
 
                 </div>
+
             </div>
         </div>
     </header>

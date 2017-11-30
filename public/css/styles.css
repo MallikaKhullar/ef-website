@@ -120,14 +120,14 @@
     }
     
     #autocomplete {
-        width: 50%;
-        height: 65px;
+        width: 62%;
+        height: 52px;
         text-indent: 7px;
-        border-radius: 9px;
+        /* border-radius: 5px; */
         border-width: 0px;
         font-size: 20px;
-        color: #989898;
-        padding-left: 10px;
+        color: #000000;
+        padding-left: 20px;
         z-index: 15;
         font-size: 20px;
         font-family: Quicksand;
@@ -201,7 +201,7 @@
     #center-above,
     #middle-below {
         left: 0;
-        top: 45%;
+        top: 50%;
         -webkit-transform: translate(0, 0);
         z-index: 5;
     }
@@ -270,11 +270,11 @@
         padding: 10px 10px 10px 10px;
         /* border-radius: 5px 0px 0px 0px; */
         background-color: #000;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.07);
     }
     
     .display-number {
-        font-size: 25px;
+        font-size: 30px;
         color: white;
         font-family: Quicksand;
         font-weight: bold;
@@ -282,14 +282,14 @@
     
     .display-number-title {
         font-weight: 300;
-        font-size: 13px;
+        font-size: 11px;
         color: white;
         font-family: Quicksand;
     }
     
     .thin-text {
         font-family: Quicksand;
-        font-weight: 400;
+        font-weight: 300;
     }
     
     .thick-text {
@@ -314,13 +314,13 @@
     
     .env-icon {
         width: 40%;
-        padding: 10px 0;
+        padding: 12px 0;
     }
     
     .circle {
         background-color: #000;
-        background-color: rgba(0, 0, 0, 0.2);
-        border: 3px solid teal;
+        background-color: rgba(0, 0, 0, 0.54);
+        border: 1px solid #38FFFC;
         height: 50px;
         border-radius: 50%;
         display: inline-block;
@@ -328,6 +328,7 @@
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         width: 50px;
+        margin-left: -5px;
         z-index: 10;
     }
     
@@ -336,12 +337,14 @@
         vertical-align: middle;
         width: 60%;
         background-color: #ddd;
+        border-radius: 50px;
     }
     
     #myBar {
         width: 0%;
+        border-radius: 50px;
         height: 5px;
-        background-color: #4CAF50;
+        background-color: #38FFFC;
     }
     
     .highzindex {
@@ -366,15 +369,17 @@
     
     .right-bar {
         color: white;
-        position: relative;
-        padding: 10px 10px 10px 10px;
+        position: absolute;
+        padding: 15px 10px s15px 10px;
         background-color: #000;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.07);
         width: 20%;
         float: right;
         margin-right: 30px;
-        border-radius: 6px;
-        height: calc(100% - 230px);
+        right: 0;
+        top: 50%;
+        transform: translate(0, -52%);
+        border-radius: 10px;
         z-index: 7;
     }
     
@@ -450,17 +455,27 @@
     }
     
     .pink-button {
-        cursor: pointer;
         border-radius: 31px;
-        background-color: #FF2474;
-        padding: 20px 100px 20px 100px;
+        background-color: #ff3b83;
+        padding: 15px 80px 15px 80px;
         display: inline-block
+    }
+    
+    .grey-button {
+        border-radius: 31px;
+        padding: 15px 80px 15px 80px;
+        display: inline-block;
+        background-color: #b8b8b8;
+    }
+    
+    .pointer-class {
+        cursor: pointer;
     }
     
     .small-pink-button {
         cursor: pointer;
         border-radius: 31px;
-        background-color: #FF2474;
+        background-color: #ff3b83;
         padding: 10px 0 10px 0;
         text-align: center;
     }
@@ -790,4 +805,70 @@
     textarea:focus,
     button:focus {
         outline: none;
+    }
+    
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+    }
+    
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    
+    @-webkit-keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
     }

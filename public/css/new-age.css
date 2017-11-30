@@ -63,7 +63,7 @@ h6 {
 }
 
 .roboto-thick {
-    font-family: ''Quicksand', 'Helvetica', 'Arial', 'sans-serif'';
+    font-family: 'Quicksand', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 700;
 }
 
@@ -88,6 +88,7 @@ h6 {
 .small-text {
     font-size: 20px;
     font-weight: 300;
+    line-height: 25px;
 }
 
 .smaller-text {
@@ -139,12 +140,12 @@ p {
     font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 200;
     letter-spacing: 1px;
-    color: #fdcc52;
+    color: rgba(255, 255, 255, 0.07);
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-    color: #fcbd20;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .navbar-default .navbar-header .navbar-toggle {
@@ -167,12 +168,12 @@ p {
 
 .navbar-default .nav>li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #fdcc52;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .navbar-default .nav>li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #fdcc52 !important;
+    color: rgba(255, 255, 255, 0.7);
     background-color: transparent;
 }
 
@@ -210,7 +211,7 @@ p {
     }
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
-        color: #fdcc52;
+        color: rgba(255, 255, 255, 0.07);
     }
     .navbar-default.affix .nav>li>a,
     .navbar-default.affix .nav>li>a:focus {
@@ -218,7 +219,7 @@ p {
     }
     .navbar-default.affix .nav>li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: #fdcc52;
+        color: rgba(255, 255, 255, 0.07);
     }
 }
 
@@ -227,7 +228,7 @@ header {
     width: 100%;
     min-height: auto;
     overflow-y: hidden;
-    background: linear-gradient(277deg, #aae4d4, #57c5a4, #b27cdf, #eb8d4f);
+    background: linear-gradient(30deg, #3CC58F, #3CC58F, #23D2AF, #54A5C1, #4CA7E4, #C479E2, #B553F1, #DC4AA6, #E5458C);
     background-size: 800% 800%;
     animation: AnimationName 18s ease infinite;
     color: white;
@@ -576,13 +577,13 @@ footer ul li a.active {
 }
 
 .bg-primary {
-    background: #fdcc52;
+    background: rgba(255, 255, 255, 0.07);
     background: -webkit-linear-gradient(#fdcc52, #fdc539);
     background: linear-gradient(#fdcc52, #fdc539);
 }
 
 .text-primary {
-    color: #fdcc52;
+    color: rgba(255, 255, 255, 0.07);
 }
 
 .no-gutter>[class*='col-'] {
@@ -601,8 +602,8 @@ footer ul li a.active {
 .btn-outline:active,
 .btn-outline.active {
     color: white;
-    background-color: #fdcc52;
-    border-color: #fdcc52;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.07);
 }
 
 .btn {

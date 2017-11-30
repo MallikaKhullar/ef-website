@@ -26,9 +26,10 @@
 
     <style>
         li.selected {
-            -webkit-box-shadow: inset 0px 0px 0px 10px #f00;
-            -moz-box-shadow: inset 0px 0px 0px 10px #f00;
-            box-shadow: inset 0px 0px 0px 10px #f00;
+            -webkit-box-shadow: inset 0px 0px 0px 2px #b626ff;
+            -moz-box-shadow: inset 0px 0px 0px 2px #b626ff;
+            box-shadow: inset 0px 0px 0px 2px #b626ff;
+            border-radius: 20px;
         }
         
         .hor-list li {
@@ -85,6 +86,11 @@
             text-align: center;
             margin-top: 10px;
         }
+        
+        .mission-li:hover {
+            border: 1px solid #e8e8e8;
+            border-radius: 20px;
+        }
     </style>
 
 </head>
@@ -92,35 +98,31 @@
 <body>
 
     <div style="position:relative; width:100%; height:100%">
-        <div style=" height: 250px;right:0;position:absolute;">
-            <img style=" height: 250px; width:auto; z-index:1" src="/image/earth_badge.jpg"></img>
-        </div>
 
-        <div style="width:100%; position:absolute; text-align:center; padding: 30px 0px">
+        <div style="width:100%; position:absolute; text-align:center; padding: 40px 0px">
 
             <div class="big-title">Choose your mission!</div>
             <div class="medium-title">Save the world by impacting other causes</div>
-            <div class="small-title">Select a different one every week!</div>
+            <div class="small-title" style="color:#989898">Select a different one every week!</div>
 
-            <ul class="hor-list" style="margin-bottom:30px">
+            <ul class="hor-list" style="margin-bottom:50px">
                 <% for(var i=0; i<data.length; i++) { %>
-                    <li id="<%-data[i].cause_id%>">
+                    <li class="mission-li" id="<%-data[i].cause_id%>">
                         <img src="<%- data[i].img_url %>">
                         <div class="medium-title">
                             <%- data[i].character.name %>
                         </div>
-                        <div class="small-title">
+                        <div class="small-title" style="color:#989898">
                             <%- data[i].character.desc %>
                         </div>
                     </li>
                     <% } %>
             </ul>
-
-            <a style="margin-top: 20px" id="link" href="/new-tab/mission-selected?cause_id=xyz">
-                <div id="donate-now" class="pink-button">
-                    <div class="thick-text white center-text"><i class="fa fa-heart" aria-hidden="true"></i>Let's Go</div>
+            <div id="lets-go-button">
+                <div id="donate-now" class="grey-button disabled">
+                    <div class="thick-text white center-text" style="font-size:20px"><i style="margin-right:10px" class="fa fa-heart" aria-hidden="true"></i>Let's Go</div>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 
@@ -131,8 +133,10 @@
 <script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
     var $li = $('.hor-list li').click(function() {
+        $("li").removeClass("mission-li");
         $li.removeClass('selected');
         $(this).addClass('selected');
+        document.getElementById("lets-go-button").innerHTML = "<a class=\"pointer-class\" style=\"margin-top: 20px\" id=\"link\" href=\"/new-tab/mission-selected?cause_id=xyz\"><div id=\"donate-now\" class=\"pink-button disabled\"><div class=\"thick-text white center-text\" style=\"font-size:20px\"><i style=\"margin-right:10px\" class=\"fa fa-heart\" aria-hidden=\"true\"></i>Let's Go</div></div></a>";
         $("#link").attr("href", "/new-tab/mission-selected?cause_id=" + $(this).attr("id"));
     });
 </script>
