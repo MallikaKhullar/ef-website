@@ -1,57 +1,38 @@
 <footer style="height:200px">
-    <div style="display:flow-root">
-        <div style="width: 15%; float:left;">
+    <div class="row">
+        <div class="col-sm-2">
             <div class="display-number-title">Donations So Far</div>
             <div class="display-number">
                 <%- stats.donations %>
-
             </div>
         </div>
-
-        <div style="width: 15%; float:left">
+        <div class="col-sm-2">
             <div class="display-number-title">EPIC People</div>
             <div class="display-number">
                 <%- stats.followers %>
-
             </div>
         </div>
-
-        <div style="width: 60%; float:right; padding:0 30px 0 0">
-            <div style="float:right; display:inline-block">
-                <div class="btn-outline btn-med" style="display:inline-block;padding: 10px 30px 10px 30px; font-size:14px; cursor:pointer">
-
-                    <i class="fa fa-venus-mars" aria-hidden="true"></i>
-                    <a target="_top" href="https://chrome.google.com/webstore/detail/flutur-small-flutters-cau/onebagjpomhjadhoiianmnelkbcnllnf" style="padding: 20px; text-decoration:none!important; color:white; height:100%; width:100%">
-                    Every Page, Infinite Change
-                    </a>
-                </div>
-                <a target="_top" href="http://www.facebook.com">
-                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                    </small>
-                </a>
-                <a target="_top" href="http://www.facebook.com">
-                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                    </small>
-                </a>
-                <a target="_top" href="http://www.facebook.com">
-                    <img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                    </small>
-                </a>
-            </div>
-        </div>
+        <div class="col-sm-8"></div>
     </div>
-    <div class="white" style="padding-right:30px;float:right; padding-top:10px"><i class="fa fa-phone" aria-hidden="true"></i> 9191919191</div>
-    <div style="margin-top:40px">
-        <ul class="list-inline">
-            <li>
-                <a href="/home">Home</a>
-            </li>
-            <li>
-                <a href="/faqs">FAQs</a>
-            </li>
-            <li>
-                <a href="/terms">Terms and Conditions</a>
-            </li>
-        </ul>
+    <div class="row" style="margin-top:30px">
+        <div class="col-sm-3">
+            <div class="btn-outline btn-med" style="display:inline-block;padding: 10px 30px 10px 30px; font-size:12px; cursor:pointer">
+
+                <i class="fa fa-venus-mars" aria-hidden="true"></i>
+                <a target="_top" href="https://chrome.google.com/webstore/detail/flutur-small-flutters-cau/onebagjpomhjadhoiianmnelkbcnllnf" style="padding: 20px; text-decoration:none!important; color:white; height:100%; width:100%">
+                GO TO CHROME EXTENSION
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div style="margin-top:10px; text-align: center;">
+                <ul class="list-inline white quicksand">
+                    <li class="white"><a href="/home">Home</a></li>
+                    <li class="white"><a href="/faqs">FAQs</a></li>
+                    <li class="white"><a href="/terms">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-3 white quicksand" style="text-align:right; font-size:16px"><i class="fa fa-phone" aria-hidden="true"></i> +9191919191</div>
     </div>
 </footer>
