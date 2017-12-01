@@ -49,6 +49,23 @@ function changeImpactGrid() {
     var category = getCategory();
     var count = getImpactNum(category);
 
+    var activity = "";
+    switch (category) {
+        case "food":
+            activity = "children can be fed";
+            break;
+        case "tree":
+            activity = "trees can be planted";
+            break;
+        case "book":
+            activity = "children can be educated";
+            break;
+    }
+
+    var value = count > 10 ? count.toFixed(1) : count.toFixed(2);
+
+    $("#impact-stmt").text("Each month " + value + " " + activity + " by you without doing anything!");
+
     var imgsrc = "/image/" + category + "_";
 
     if (count > 48) {
@@ -86,8 +103,6 @@ function changeImpactGrid() {
         if (dec > 0) applyImageRows(imgsrc + "small.png", 2, num + 1, num + 2);
         applyImageRows(imgsrc + "empty.png", 2, num + 2, 48);
         return;
-
-        return;
     }
 
     if (count > 12) {
@@ -117,4 +132,6 @@ function changeImpactGrid() {
     applyImage(imgsrc + "empty.png", 1);
     applyImage(imgsrc + "empty.png", 2);
     applyImage(imgsrc + "empty.png", 3);
+
+
 }
