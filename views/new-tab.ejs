@@ -22,15 +22,6 @@
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-        function showSnackbar() {
-            var x = document.getElementById("snackbar")
-            x.className = "show";
-            setTimeout(function() {
-                x.className = x.className.replace("show", "");
-            }, 3000);
-        }
     </script>
 
     <style>
@@ -179,11 +170,12 @@
                     </div>
                     <div>
                         <div class="quicksand" style="display:inline-block; color:white; padding-top:25px">The world needs more heroes - </div>
-                        <div class="quicksand" style="height:45px;border-bottom-width:2px;border-bottom-color:White;border-bottom-style: solid;display:inline-block; color:white; padding-top:20px; font-weight:700"><i class="fa fa-share-alt" aria-hidden="true"></i> Tell your friends</div>
+                        <div id="tell-friends" class="tell-friends quicksand" style="height:45px;border-bottom-width:2px;border-bottom-color:White;border-bottom-style: solid;display:inline-block; color:white; padding-top:20px; font-weight:700"><i class="fa fa-share-alt" aria-hidden="true"></i> Tell your friends</div>
+                        <div class="copy-link-box" style="display:none">
+                            <i class="fa fa-link" aria-hidden="true"></i> Copy link
+                            <div style="margin-top:5px; box-sizing: border-box; width: 87px; border: 1px solid #01FFCA; "></div>
+                        </div>
                     </div>
-                    <!-- <button onclick="myFunction()">Show Snackbar</button>
-                    <div id="snackbar">Some text some message..</div> -->
-
                 </div>
             </div>
 
@@ -305,6 +297,9 @@
                     </div>
                 </div>
             </div>
+
+            <div id="snackbar">Link copied!</div>
+
         </div>
         </div>
     </header>
@@ -344,12 +339,36 @@
     }
 
     function showSnackbar() {
-        var x = document.getElementById("snackbar ")
-        x.className = "show ";
+        var x = document.getElementById("snackbar");
+        x.className = "show";
         setTimeout(function() {
-            x.className = x.className.replace("show ", " ");
-        }, 3000);
+            x.className = x.className.replace("show", "");
+        }, 1000);
     }
+
+    $("#tell-friends").click(function() {
+        $(".copy-link-box").css("display", "block");
+    });
+
+    function copyToClipboard(text) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(text).select();
+        document.execCommand("copy");
+        $temp.remove();
+        $(".copy-link-box").css("display", "none");
+        showSnackbar();
+    }
+
+    $(".copy-link-box").click(function() {
+        copyToClipboard("www.facebook.com");
+    });
+
+    $(document).click(function(event) {
+        if (!$(event.target).hasClass('copy-link-box') && !$(event.target).hasClass('tell-friends')) {
+            $(".copy-link-box").css("display", "none");
+        }
+    });
 </script>
 
 </html>
