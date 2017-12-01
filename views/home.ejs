@@ -153,59 +153,59 @@
             <div class="col-sm-5"></div>
             <div class="col-sm-5"></div>
             <div class="col-sm-2" style="padding-right:10px">
-                <a href=" /faqs " style="text-decoration:none; margin-top:300px ">
-                    <div class="know-how ">Know how?</div>
-                    <div style="box-sizing: border-box; width: 87px; border: 1px solid #000000; "></div>
+                <a href=" /faqs" style="text-decoration:none; margin-top:300px">
+                    <div class="know-how">Know how?</div>
+                    <div style="box-sizing: border-box; width: 87px; border: 1px solid #000000;"></div>
                 </a>
             </div>
         </div>
 
     </section>
 
-    <section id="pledge " class="bg-white " style="padding: 150px 0; ">
-        <div class="row ">
+    <section id="pledge" class="bg-white" style="padding: 150px 0;">
+        <div class="row">
 
-            <div class="col-sm-1 "></div>
+            <div class="col-sm-1"></div>
 
-            <div class="col-sm-6 ">
+            <div class="col-sm-6">
 
-                <div class="black-quicksand-title " style="font-size:50px; line-height:50px ">We’re starting a revolution &amp; we need your support!</div>
-                <div class="thin-text black font-small " style="margin:20px 0 20px 0; ">Share your email to know about our other products.</div>
+                <div class="black-quicksand-title" style="font-size:50px; line-height:50px">We’re starting a revolution &amp; we need your support!</div>
+                <div class="thin-text black font-small" style="margin:20px 0 20px 0;">Share your email to know about our other products.</div>
 
-                <div style="margin-top:30px; " id="email-input ">
+                <div style="margin-top:30px;" id="email-input">
                     <span>
-                          <input class="basic-slide " id="name " type="email " placeholder="Eg. i.am.epic@gmail.com " />
-                               <label for="name " style="cursor:pointer "> I AM EPIC
-                                    <i class="fa fa-angle-right " aria-hidden="true " style="margin: 0 10px "></i>
+                          <input class="basic-slide" id="name" type="email" placeholder="Eg. i.am.epic@gmail.com" />
+                               <label for="name"  style="cursor:pointer"> I AM EPIC
+                                    <i class="fa fa-angle-right" aria-hidden="true" style="margin: 0 10px"></i>
                                </label>
                     </span>
                 </div>
 
-                <div style="margin-top:30px;visibility:hidden " class="email-submit " id="email-submit ">
+                <div style="margin-top:30px;visibility:hidden" class="email-submit" id="email-submit">
                     Awesome! We will send you an email shortly :)
 
                 </div>
             </div>
 
-            <div class="col-sm-4 ">
-                <!-- <div id="lorenz "></div> -->
+            <div class="col-sm-4">
+                <!-- <div id="lorenz"></div> -->
             </div>
 
-            <div class="col-sm-1 "></div>
+            <div class="col-sm-1"></div>
 
         </div>
     </section>
 
-    <section style="text-align:center; padding:100px 0; " class="bg-lightgrey ">
-        <div class="black-quicksand-title " style="margin-bottom: 40px ">Tentative List of Ngos</div>
+    <section style="text-align:center; padding:100px 0;" class="bg-lightgrey">
+        <div class="black-quicksand-title" style="margin-bottom: 40px">Tentative List of Ngos</div>
         <div>
-            <div class="container-fluid ">
-                <div class="row ">
-                    <div class="col-md-2 ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2">
                     </div>
                     <% for(var i=0; i<4; i++) { %>
-                        <div class="col-md-2 ">
-                            <img style="height:80px;padding:10px " src="<%- ngos[i].logo_url %>">
+                        <div class="col-md-2">
+                            <img style="height:80px;padding:10px" src="<%- ngos[i].logo_url %>">
                         </div>
                         <% } %>
                             <div class="col-md-2">
@@ -248,11 +248,15 @@
         });
     });
 
+
     $(document).ready(function() {
         changeImpactGrid();
     });
 
     $('label').click(function() {
+        if ($("#name").val() == null || $("#name").val() == undefined || $("#name").val() == "")
+            return;
+
         $.ajax({
             type: "GET",
             url: "/home/submit-email?email_id=" + document.getElementById("name").value,
