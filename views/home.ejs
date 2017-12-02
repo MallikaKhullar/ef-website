@@ -198,14 +198,14 @@
     </section>
 
     <section style="text-align:center; padding:100px 0;" class="bg-lightgrey">
-        <div class="black-quicksand-title" style="margin-bottom: 40px">Benefitting Ngos</div>
+        <div class="black-quicksand-title" style="margin-bottom: 40px">Benefitting NGOs</div>
         <div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2">
                     </div>
                     <% for(var i=0; i<4; i++) { %>
-                        <div class="col-md-2">
+                        <div class="col-md-2 ngo-icon">
                             <img style="height:80px;padding:10px" src="<%- ngos[i].logo_url %>">
                         </div>
                         <% } %>
@@ -217,8 +217,8 @@
                     <div class="col-md-2">
                     </div>
                     <% for(var i=4; i<ngos.length; i++) { %>
-                        <div class="col-md-2">
-                            <img style="height:80px;padding:10px" src="<%- ngos[i].logo_url %>">
+                        <div class="col-md-2 ngo-icon">
+                            <img value="<%- ngos[i].ngo_name %>" style="height:80px;padding:10px" src="<%- ngos[i].logo_url %>">
                         </div>
                         <% } %>
                             <div class="col-md-2">
