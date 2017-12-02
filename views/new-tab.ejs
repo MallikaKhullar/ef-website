@@ -74,7 +74,6 @@
                             </div>
                             <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">
                                 Please turn off your ad blocker for this page. We show non-intrusive tiny ads which raise funds for the NGOs.
-
                             </div>
                             <a href="/faqs" style="text-decoration:none;">
                                 <div class="know-how" style="color:white">Know why?</div>
@@ -121,30 +120,38 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a htarget="_top" ref="http://www.facebook.com">
-                                <small></small><img class="quicklink-img" src="/image/facebook-icon.svg"></img>
-                                </small>
-                            </a>
-                        </li>
-                        <li>
                             <a target="_top" href="http://www.gmail.com">
-                                <small></small><img class="quicklink-img" src="/image/gmail-icon.svg"></img>
-                                </small>
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="http://www.youtube.com">
-                                <small></small><img class="quicklink-img" src="/image/youtube-icon.svg"></img>
+                                <small></small><img class="quicklink-img" src="/image/gmail-icon.png"></img>
                                 </small>
                             </a>
                         </li>
                         <li>
                             <a target="_top" href="http://www.drive.google.com">
-                                <small></small><img class="quicklink-img" src="/image/drive-icon.svg"></img>
+                                <small></small><img class="quicklink-img" src="/image/drive-icon.png"></img>
                                 </small>
                             </a>
                         </li>
 
+                        <li>
+                            <a target="_top" href="http://docs.google.com/spreadsheets/u/0/">
+                                <small></small><img class="quicklink-img" src="/image/sheets-icon.png"></img>
+                                </small>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.youtube.com">
+                                <small></small><img class="quicklink-img" src="/image/youtube-icon.png"></img>
+                                </small>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a htarget="_top" ref="http://www.facebook.com">
+                                <small></small><img class="quicklink-img" src="/image/facebook-icon.png"></img>
+                                </small>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -200,7 +207,7 @@
                         <ul class="hor-list" style="margin-top:5px">
                             <% for(var i=0; i<cause.ngoList.length; i++) { %>
                                 <li>
-                                    <img style="height:20%; width:20%" src="<%- cause.ngoList[i].logo_url %>">
+                                    <img style="height:20%; width:20%; margin-left:5px" src="<%- cause.ngoList[i].logo_url %>">
                                 </li>
                                 <% } %>
                         </ul>
@@ -217,7 +224,7 @@
                             <ul class="hor-list" style="margin:20px 0;">
                                 <% for(var i=0; i<previousCause.ngoList.length; i++) { %>
                                     <li>
-                                        <img style="height:20%; width:20%" src="<%- previousCause.ngoList[i].logo_url %>">
+                                        <img style="height:20%; width:20%; margin-left:5px" src="<%- previousCause.ngoList[i].logo_url %>">
                                     </li>
                                     <% } %>
                             </ul>
