@@ -62,9 +62,7 @@ function changeImpactGrid() {
             break;
     }
 
-    var value = count > 10 ? count.toFixed(1) : count.toFixed(2);
-
-    $("#impact-stmt").text("Each month " + value + " " + activity + " by you without doing anything!");
+    $("#impact-stmt").text("Each month " + Math.floor(count) + " " + activity + " by you without doing anything!");
 
     var imgsrc = "/image/" + category + "_";
 
