@@ -44,7 +44,7 @@ var allRoutes = function(app, passport) {
     app.use('/donate', donate);
     app.use('/login', login);
     app.use('/top-apps', topApps);
-    app.use('/terms', termsAndConditions);
+    app.use('/privacy', termsAndConditions);
     app.use('/new-tab', newTab);
     app.use('/faqs', faqs);
     app.use('/ultron', ultron);
