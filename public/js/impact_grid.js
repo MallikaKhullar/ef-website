@@ -58,7 +58,7 @@ function changeImpactGrid() {
             activity = Math.floor(count) + " trees can be planted";
             break;
         case "book":
-            activity = "children can be educated for " + Math.floor(count) + " days";
+            activity = "a child can be educated for " + Math.floor(count) + " days";
             break;
     }
 
