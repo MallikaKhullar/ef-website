@@ -68,8 +68,8 @@
             <div class="col-sm-6">
                 <div class="header-content">
                     <div class="header-content-inner">
-                        <div class="thick-text white" style="letter-spacing:-1px; font-size:48px;line-height: 50px;">How long are you active online everyday?</div>
-                        <div class="rangeslider-wrap">
+                        <div class="main-home-title thick-text white" style="display:none;letter-spacing:-1px; font-size:48px;line-height: 50px;">How long are you active online everyday?</div>
+                        <div class="rangeslider-wrap" style="visibility:hidden">
                             <input type="range" min="0" max="16" step="0.5" labels="0, 16" value="1">
                         </div>
                     </div>
@@ -78,7 +78,7 @@
             <div class="col-sm-6">
                 <div class="header-content white" style="padding: 0 50px;width:100%">
                     <div class="header-content-inner" style="width:100%">
-                        <div class="trans-box" style="padding:55px 50px 0px 50px; width: 90%; height:55%">
+                        <div class="trans-box" style="display:none;padding:55px 50px 0px 50px; width: 90%; height:55%">
                             <div style="display:table">
                                 <div id="impact-val" class="thick-text" style="padding-right:5px; font-size:40px; vertical-align:middle; width:100px;text-align:left;display:table-cell">3.12</div>
                                 <select id="year" style="display:table-cell;padding:15px">
@@ -243,6 +243,13 @@
 <script src="js/slider.js"></script>
 
 <script type="text/javascript">
+    $(document).ready(function() {
+        $(".trans-box").fadeIn(500);
+        $(".main-home-title").fadeIn(500);
+        $(".rangeslider-wrap").css('visibility', 'visible').hide().fadeIn(500);
+
+    });
+
     $("#footer-motivation").find("a").click(function(e) {
         e.preventDefault();
         var section = $(this).attr("href");
