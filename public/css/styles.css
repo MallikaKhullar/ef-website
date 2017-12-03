@@ -68,11 +68,11 @@ body,
 }
 
 .quicklink-img {
-    height: 25px;
+    height: 30px;
     margin-left: 5px;
     margin-right: 5px;
     width: auto;
-    filter: drop-shadow(1px 1px 3px #505050);
+    /* filter: drop-shadow(1px 1px 3px #505050); */
 }
 
 .navbar-right {
