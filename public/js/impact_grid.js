@@ -52,17 +52,17 @@ function changeImpactGrid() {
     var activity = "";
     switch (category) {
         case "food":
-            activity = Math.floor(count) + " children can be fed";
+            activity = "feed " + Math.floor(count) + " children";
             break;
         case "tree":
-            activity = Math.floor(count) + " trees can be planted";
+            activity = "plant " + Math.floor(count) + " trees";
             break;
         case "book":
-            activity = "a child can be educated for " + Math.floor(count) + " days";
+            activity = "educate a child for " + Math.floor(count) + " days";
             break;
     }
 
-    $("#impact-stmt").text("Each month " + activity + " by you without doing anything!");
+    $("#impact-stmt").text("Each month, you can raise funds to " + activity + ", just by spending time online!");
 
     var imgsrc = "/image/" + category + "_";
 
