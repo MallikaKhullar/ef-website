@@ -4,16 +4,16 @@ var express = require('express'),
     database = require('./config/database'), // load the database config    
     mongoose = require('mongoose'), // mongoose for mongodb
     passport = require('passport'),
-    morgan = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     router = require('./app/routes/index'),
     session = require('express-session'),
-    flash = require('connect-flash'),
     helmet = require('helmet');
+var session = require('express-session');
+var redisStore = require('connect-redis')(session);
+var redis   = require("redis");
+var client  = redis.createClient();
 
-
-app.use(morgan('dev')); // log every request to the console TODO: what?
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 
@@ -23,10 +23,17 @@ require('./app/repo/passport')(passport);
 app.use(helmet());
 
 // required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret TODO: where to get this from?
+app.use(session({
+    secret: 'deveshIsSexy',
+    // create new redis store.
+    store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  260}),
+    saveUninitialized: false,
+    resave: false
+}));
+
+//app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret TODO: where to get this from?
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session TODO: find out about this
 
 //view engine is EJS
 app.set('view engine', 'ejs');
