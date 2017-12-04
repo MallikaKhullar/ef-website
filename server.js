@@ -26,7 +26,8 @@ app.use(helmet());
 app.use(session({
     secret: 'deveshIsSexy',
     // create new redis store.
-    store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  2600}),
+    store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  60000 * 24 * 30 * 100}),
+    cookie: {maxAge: (60000 * 24 * 30 * 100)},
     saveUninitialized: false,
     resave: false
 }));
