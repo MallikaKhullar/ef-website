@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dropdown.css">
     <link rel="stylesheet" href="/css/slider.css">
+    <link rel="stylesheet" href="/css/mobile-view.css">
 </head>
 
 <body id="page-top">
@@ -78,7 +79,7 @@
             <div class="col-sm-6">
                 <div class="header-content white" style="padding: 0 50px;width:100%">
                     <div class="header-content-inner" style="width:100%">
-                        <div class="trans-box" style="display:none;padding:55px 50px 0px 50px; width: 90%; height:55%">
+                        <div class="trans-box">
                             <div style="display:table">
                                 <div id="impact-val" class="thick-text" style="padding-right:5px; font-size:40px; vertical-align:middle; width:100px;text-align:left;display:table-cell">3.12</div>
                                 <select id="year" style="display:table-cell;padding:15px">
@@ -92,6 +93,8 @@
                             <div style="margin: 10px 0px 50px 0">
                                 <%- include grid.ejs %>
                             </div>
+                        </div>
+                        <div class="small-trans-box">
                         </div>
                     </div>
                 </div>
@@ -191,7 +194,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4" style="text-align:right">
+            <div class="col-sm-4 gif-container">
                 <img src="/image/logo.gif" style="height:auto; width:70%" />
             </div>
 
@@ -216,7 +219,7 @@
                             </div>
                 </div>
 
-                <div class="row" style="margin-top:40px">
+                <div class="row ngo-container">
                     <div class="col-md-2">
                     </div>
                     <% for(var i=4; i<ngos.length; i++) { %>
@@ -237,6 +240,9 @@
     <div class="resp-footer">
         <%- include footer_partial.ejs %>
     </div>
+    <div class="small-resp-footer">
+        <%- include footer_small_partial.ejs %>
+    </div>
 </body>
 <script src="https://rawgit.com/andreruffert/rangeslider.js/develop/dist/rangeslider.min.js"></script>
 <script src="js/impact_grid.js"></script>
@@ -245,9 +251,14 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $(".trans-box").fadeIn(500);
         $(".main-home-title").css("visibility", "visible").hide().fadeIn(800);
         $(".rangeslider-wrap").css("visibility", "visible").hide().fadeIn(800);
+
+        if (window.matchMedia('(min-width: 700px)').matches) {
+            $(".trans-box").fadeIn(500);
+        } else {
+            $(".small-trans-box").fadeIn(500);
+        }
     });
 
     $("#footer-motivation").find("a").click(function(e) {
