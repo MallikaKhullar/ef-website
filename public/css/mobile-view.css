@@ -17,7 +17,8 @@
 
 @media all and (max-width: 699px) {
     .trans-box,
-    .resp-footer {
+    .resp-footer,
+    .pledge-container {
         display: none;
     }
     .small-trans-box,
