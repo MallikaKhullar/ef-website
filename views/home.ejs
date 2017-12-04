@@ -64,7 +64,7 @@
         </div>
     </nav>
 
-    <header style="padding: 80px 50px 0px 50px">
+    <header>
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-content">
@@ -79,6 +79,7 @@
             <div class="col-sm-6">
                 <div class="header-content white" style="padding: 0 50px;width:100%">
                     <div class="header-content-inner" style="width:100%">
+
                         <div class="trans-box">
                             <div style="display:table">
                                 <div id="impact-val" class="thick-text" style="padding-right:5px; font-size:40px; vertical-align:middle; width:100px;text-align:left;display:table-cell">3.12</div>
@@ -94,7 +95,26 @@
                                 <%- include grid.ejs %>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+
+                <div class="small-header-content white">
+                    <div class="small-header-content-inner" style="width:100%">
                         <div class="small-trans-box">
+                            <div style="display:table">
+                                <div id="impact-val" class="thick-text" style="padding-right:5px; font-size:40px; vertical-align:middle; width:100px;text-align:left;display:table-cell">3.12</div>
+                                <select id="year" style="display:table-cell;padding:15px">
+                                            <option value="tree">TREES</option>
+                                            <option value="food">CHILDREN FED</option>
+                                            <option value="book">DAYS OF SCHOOL</option>
+                                        </select>
+                            </div>
+
+                            <div id="impact-stmt" class="thin-text font-smaller" style="width:420px; height:50px; margin:10px 0 0 5px;">Planted &amp; watered by you in 1 year by doing almost nothing!</div>
+                            <div style="margin: 10px 0px 50px 0">
+                                <%- include grid.ejs %>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,18 +128,17 @@
         </div>
     </header>
 
-    <section id="about" class="bg-white" style="padding: 170px 0;">
+    <section id="about" class="about-container bg-white">
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-sm-5">
-
+            <div class="col-sm-5 flutur-effect-container">
                 <div class="pink-quicksand-title" style="margin-top:40px;">The flutur effect</div>
-                <div class="black-quicksand-title" style="margin:15px 0px; font-size:50px; line-height:50px">Tiny acts can have large effects</div>
+                <div class="black-quicksand-title" style="margin:15px 0px;">Tiny acts can have large effects</div>
                 <div class="thin-text black font-small">At Flutur, we are building products which convert your otherwise wasted hours into real donations. As a result, you can change the world right from your workplace!
                 </div>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-5">
+            <div class="col-sm-5 amita-img-container">
                 <img src="/image/child.png" style="width:60%;filter: alpha(opacity=90);"></img>
             </div>
         </div>
@@ -140,10 +159,10 @@
             <div class="col-sm-1"></div>
         </div>
 
-        <div class="row">
+        <div class="row tab-project-container">
             <div class="col-sm-5">
                 <img src="/image/laptop_ext.png" class="img-responsive" alt=""></div>
-            <div class="col-sm-5">
+            <div class="col-sm-5 tab-project-details-container">
                 <div class="black-quicksand-title" style="margin:100px 0 20px 0; font-size:50px; line-height:50px">Tabs For Infinite Change</div>
                 <div class="thin-text black font-small" style="margin:20px 0 20px 0;">The <b>Tabs For Infinite Change </b> Chrome extension replaces your new tab page with a beautiful one designed by us. Every new tab you open while surfing the web raises funds for the cause of your choice.</div>
                 <!-- <a target="_top" href="https://chrome.google.com/webstore/detail/flutur-small-flutters-cau/onebagjpomhjadhoiianmnelkbcnllnf" style="text-decoration:none"> -->
@@ -159,7 +178,7 @@
         <div class="row">
             <div class="col-sm-5"></div>
             <div class="col-sm-5"></div>
-            <div class="col-sm-2" style="padding-right:10px">
+            <div class="col-sm-2 know-how-container">
                 <a href=" /faqs" style="text-decoration:none; margin-top:300px">
                     <div class="know-how">Know how?</div>
                     <div style="box-sizing: border-box; width: 87px; border: 1px solid #000000;"></div>
@@ -169,7 +188,7 @@
 
     </section>
 
-    <section id="pledge" class="bg-white" style="padding: 165px 0;">
+    <section id="pledge" class="pledge-section bg-white" style="">
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-6 pledge-container">

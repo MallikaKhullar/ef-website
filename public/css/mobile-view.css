@@ -3,8 +3,10 @@
     .resp-footer {
         display: block;
     }
-    .trans-box-small,
-    .small-resp-footer {
+    .small-trans-box,
+    .small-resp-footer,
+    .small-header-content,
+    .small-header-content-inner {
         display: none;
     }
     .gif-container {
@@ -12,6 +14,9 @@
     }
     .ngo-container {
         margin-top: 40px;
+    }
+    .about-container {
+        padding: 170px 0;
     }
 }
 
@@ -22,11 +27,44 @@
         display: none;
     }
     .small-trans-box,
-    .small-resp-footer {
+    .small-resp-footer,
+    .small-header-content,
+    .small-header-content-inner {
         display: block;
     }
-    .gif-container {
+    .gif-container,
+    .flutur-effect-container,
+    .amita-img-container,
+    .tab-project-container {
         text-align: center;
+    }
+    header {
+        padding: 80px 5px 0px 5px;
+    }
+    header .header-content {
+        text-align: center;
+        padding: 150px 0 0px 0px;
+        position: relative;
+    }
+    .about-container,
+    .pledge-section {
+        padding: 50px 10px;
+    }
+    .pink-quicksand-title {
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 26px;
+    }
+    .black-quicksand-title {
+        font-size: 35px;
+        font-weight: bold;
+        line-height: 35px;
+    }
+    .tab-project-details-container {
+        padding: 0px 50px 20px 50px;
+    }
+    .know-how-container {
+        margin-left: 50px;
     }
 }
 
@@ -56,4 +94,15 @@
     color: white;
     font-family: 'Quicksand', 'Lato', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 300;
+}
+
+.small-trans-box {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    z-index: 7;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 30px 30px 5px 30px;
 }

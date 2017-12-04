@@ -550,7 +550,8 @@ body,
 .black-quicksand-title {
     color: #000000;
     font-family: Quicksand;
-    font-size: 22px;
+    font-size: 50px;
+    line-height: 50px;
     font-weight: bold;
 }
 
@@ -773,7 +774,6 @@ label {
 
 .trans-box {
     color: white;
-    background-color: #000;
     background-color: rgba(0, 0, 0, 0.07);
     border-radius: 20px;
     z-index: 7;
@@ -935,4 +935,12 @@ button:focus {
     border-right: 10px solid transparent;
     border-bottom: 10px solid;
     border-bottom-color: #2b2b2b;
+}
+
+.know-how-container {
+    padding-right: 10px
+}
+
+.pledge-section {
+    padding: 165px 0;
 }

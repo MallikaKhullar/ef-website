@@ -187,6 +187,7 @@ header {
     background-size: 800% 800%;
     animation: AnimationName 18s ease infinite;
     color: white;
+    padding: 80px 50px 0px 50px;
 }
 
 @-webkit-keyframes AnimationName {
