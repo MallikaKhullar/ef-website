@@ -53,8 +53,6 @@ router.get('/', continueIfLoggedIn, function(req, res) {
     };
 
     deferred.combine(def).pipe(function(data) {
-        console.log("def comb", data, "\n\n\n\n");
-
         constructPayload({
             user: req.user,
             cause: data.currentCause,
@@ -87,8 +85,6 @@ function constructPayload(data) {
             remainingTime: remainingTime
         }
     };
-
-
 
     if (data.user.state == 'cause_selection_pending') {
         return ngoController.getNgosFromCauseId(data.previousCause.cause_id).pipe(function(res) {
