@@ -39,5 +39,5 @@ $(document).ready(function() {
 });
 
 function doSearch(term) {
-    window.location = '//www.google.co.in/search?q=' + term;
+    window.top.location = '//www.google.co.in/search?q=' + term;
 }
