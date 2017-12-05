@@ -10,7 +10,8 @@
         background-color: white;
     }
     
-    .rangeslider__handle {
+    .rangeslider__handle,
+    .small-rangeslider__handle {
         transition: background-color .2s;
         box-sizing: border-box;
         width: 15px;
@@ -26,7 +27,8 @@
         /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), inset 0 0 0 2px white; */
     }
     
-    .rangeslider__handle__value {
+    .rangeslider__handle__value,
+    .small-rangeslider__handle__value {
         transition: background-color .2s, box-shadow .1s, transform .1s;
         box-sizing: border-box;
         width: 95px;
@@ -44,7 +46,8 @@
         white-space: nowrap;
     }
     
-    .rangeslider__handle__draw {
+    .rangeslider__handle__draw,
+    .small-rangeslider__handle__draw {
         transition: background-color .2s, box-shadow .1s, transform .1s;
         left: -18px;
         top: 20px;
@@ -52,7 +55,8 @@
         white-space: nowrap;
     }
     
-    .rangeslider__handle__slide {
+    .rangeslider__handle__slide,
+    .small-rangeslider__handle__slide {
         transition: background-color .2s, box-shadow .1s, transform .1s;
         left: -18px;
         top: -100px;
@@ -60,7 +64,8 @@
         white-space: nowrap;
     }
     
-    .rangeslider__handle__value:before {
+    .rangeslider__handle__value:before,
+    .small-rangeslider__handle__value:before {
         transition: border-top-color .2s;
         position: absolute;
         bottom: -10px;
@@ -74,7 +79,8 @@
         border-top-color: rgba(133, 0, 110, 0.25);
     }
     
-    .rangeslider__handle__slide:before {
+    .rangeslider__handle__slide:before,
+    .small-rangeslider__handle__slide:before {
         transition: border-top-color .2s;
         position: absolute;
         bottom: -10px;
@@ -84,7 +90,8 @@
         height: 0;
     }
     
-    .rangeslider__handle__draw:before {
+    .rangeslider__handle__draw:before,
+    .small-rangeslider__handle__draw:before {
         transition: border-top-color .2s;
         position: absolute;
         bottom: -10px;
@@ -94,7 +101,8 @@
         height: 0;
     }
     
-    .rangeslider__handle__slide:before {
+    .rangeslider__handle__slide:before,
+    .small-rangeslider__handle__slide:before {
         transition: border-top-color .2s;
         position: absolute;
         bottom: -10px;
@@ -104,7 +112,8 @@
         height: 0;
     }
     
-    .rangeslider__handle__value:after {
+    .rangeslider__handle__value:after,
+    .small-rangeslider__handle__value:after {
         content: " hr";
     }
     
@@ -117,7 +126,8 @@
         border-radius: 5px;
     }
     
-    .rangeslider__labels {
+    .rangeslider__labels,
+    .small-rangeslider__labels {
         position: absolute;
         width: 100%;
         z-index: 2;
@@ -125,7 +135,8 @@
         justify-content: space-between;
     }
     
-    .rangeslider__labels__label {
+    .rangeslider__labels__label,
+    .small-rangeslider__labels__label {
         font-size: 16px;
         margin-top: -10px;
         position: relative;
@@ -133,7 +144,8 @@
         font-weight: bold;
     }
     
-    .rangeslider__labels__label:before {
+    .rangeslider__labels__label:before,
+    .small-rangeslider__labels__label:before {
         position: absolute;
         top: 0;
         left: 50%;
@@ -146,35 +158,29 @@
     }
     
     .rangeslider__labels__label:first-child:before,
-    .rangeslider__labels__label:last-child:before {
+    .rangeslider__labels__label:last-child:before,
+    .small-rangeslider__labels__label:first-child:before,
+    .small-rangeslider__labels__label:last-child:before {
         height: 0px;
         width: 2px;
     }
     
-    .rangeslider__labels__label:first-child:before {
+    .rangeslider__labels__label:first-child:before,
+    .small-rangeslider__labels__label:first-child:before {
         background-color: lightblue;
     }
     
-    .rangeslider__labels__label:last-child:before {
+    .rangeslider__labels__label:last-child:before,
+    .small-rangeslider__labels__label:last-child:before {
         background-color: white;
     }
     
-    .rangeslider__labels__label:first-child {
+    .rangeslider__labels__label:first-child,
+    .small-rangeslider__labels__label:first-child {
         transform: translateX(-155%);
     }
     
-    .rangeslider__labels__label:last-child {
+    .rangeslider__labels__label:last-child,
+    .small-rangeslider__labels__label:last-child {
         transform: translateX(148%);
     }
-    /*     
-    .rangeslider.rangeslider--active .rangeslider__handle__value {
-        transform: translateY(-5px);
-    }
-    
-    .rangeslider.rangeslider--active .rangeslider__handle__draw {
-        transform: translateY(-5px);
-    }
-    
-    .rangeslider.rangeslider--active .rangeslider__handle__slide {
-        transform: translateY(-5px);
-    } */
