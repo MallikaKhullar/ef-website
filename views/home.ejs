@@ -152,7 +152,14 @@
         changeImpactGrid();
     });
 
-    $("#footer-motivation").find("a").click(function(e) {
+    $("#desktop-footer-motivation").find("a").click(function(e) {
+        e.preventDefault();
+        var section = $(this).attr("href");
+        $("html, body").animate({
+            scrollTop: $(section).offset().top
+        });
+    });
+    $("#small-footer-motivation").find("a").click(function(e) {
         e.preventDefault();
         var section = $(this).attr("href");
         $("html, body").animate({
@@ -162,12 +169,8 @@
 
 
     function submitEmail($val) {
-        console.log("Submit called");
         if ($val.val() == null || $val.val() == undefined || $val.val() == "")
             return;
-
-        console.log("$val is ----", $val.val());
-
 
         $.ajax({
             type: "GET",
@@ -181,11 +184,9 @@
     }
 
     $('.email-label').click(function() {
-        console.log("Email called");
         submitEmail($(".desktop-name"));
     });
     $('.small-email-label').click(function() {
-        console.log("mobile called");
         submitEmail($(".small-name"));
     });
 </script>
