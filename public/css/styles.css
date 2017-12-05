@@ -587,6 +587,7 @@ body,
 }
 
 .gradient-box {
+    padding: 15px;
     opacity: 0.94;
     background: linear-gradient(90deg, #C768FF 0%, #FF1F7B 100%);
 }
@@ -954,4 +955,9 @@ button:focus {
     letter-spacing: -1px;
     font-size: 48px;
     line-height: 50px;
+}
+
+.benefitting-ngos {
+    text-align: center;
+    padding: 100px 0;
 }
