@@ -19,19 +19,23 @@ function changeImpactGrid() {
     setImpactVal(count);
 }
 
-function setImpactVal(num) {
+function setImpactVal(val) {
+    val = val > 10 ? val.toFixed(1) : val.toFixed(2);
+
     if (window.matchMedia('(min-width: 700px)').matches) {
-        $('#impact-val').text(count);
+        $('#impact-val').text(val);
     } else {
-        $('#small-impact-val').text(count);
+        $('#small-impact-val').text(val);
     }
 }
 
 function setImpactStatement(activity) {
+    console.log("stmtn", activity);
     if (window.matchMedia('(min-width: 700px)').matches) {
+        console.log("bigsts", activity);
         $("#impact-stmt").text("Each month, you can raise funds to " + activity + ", just by spending time online!");
     } else {
-        console.log("small shit");
+        console.log("smallst", activity);
         $("#small-impact-stmt").text("Each month, you can raise funds to " + activity + ", just by spending time online!");
     }
 }
@@ -118,7 +122,11 @@ function getCategory() {
 }
 
 function getImpactNum(category) {
-    var num = $('.rangeslider__handle__value')[0].textContent;
+    if (window.matchMedia('(min-width: 700px)').matches) {
+        var num = $('.rangeslider__handle__value')[1].textContent;
+    } else {
+        var num = $('.rangeslider__handle__value')[0].textContent;
+    }
 
     switch (category) {
         case "food":

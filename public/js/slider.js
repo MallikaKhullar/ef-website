@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    initRangeSlider();
+});
+
+function initRangeSlider() {
     $('input[type="range"]').rangeslider({
         polyfill: false,
 
@@ -34,27 +38,6 @@ $(document).ready(function() {
 
         // Callback function
         onSlide: function(position, value) {
-
-            var valSelected = document.getElementById("year").options[document.getElementById("year").selectedIndex].value;
-            var val;
-            switch (valSelected) {
-                case "food":
-                    val = this.value * 4.12;
-                    break;
-
-                case "tree":
-                    val = this.value * 3.12;
-                    break;
-
-                case "book":
-                    val = this.value * 7.02;
-                    break;
-            }
-
-            val = val > 10 ? val.toFixed(1) : val.toFixed(2);
-            $('#impact-val').text(val);
-            $('#small-impact-val').text(val);
-
             var $handle = this.$range.find('.rangeslider__handle__value');
             $handle.text(this.value);
             changeImpactGrid();
@@ -63,4 +46,4 @@ $(document).ready(function() {
         // Callback function
         onSlideEnd: function(position, value) {}
     });
-});
+}
