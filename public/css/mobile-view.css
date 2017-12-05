@@ -24,7 +24,7 @@
 }
 
 @media all and (max-width: 699px) {
-    div {
+    div{
         box-sizing: border-box;
     }
     .trans-box,
