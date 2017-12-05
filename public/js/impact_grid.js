@@ -30,12 +30,9 @@ function setImpactVal(val) {
 }
 
 function setImpactStatement(activity) {
-    console.log("stmtn", activity);
     if (window.matchMedia('(min-width: 700px)').matches) {
-        console.log("bigsts", activity);
         $("#impact-stmt").text("Each month, you can raise funds to " + activity + ", just by spending time online!");
     } else {
-        console.log("smallst", activity);
         $("#small-impact-stmt").text("Each month, you can raise funds to " + activity + ", just by spending time online!");
     }
 }
@@ -43,7 +40,6 @@ function setImpactStatement(activity) {
 function setImpactGrid(count, imgsrc) {
 
     if (count > 48) {
-        console.log("Bigger than 48");
         imgsrc += "big.png";
         applyImageAll(imgsrc);
         return;
@@ -149,7 +145,6 @@ function applyImage(imgsrc, row) {
         $('td', rowDiv).each(function() {
             $(this)[0].lastChild.src = imgsrc;
         });
-        console.log("small shit");
     }
 };
 
@@ -172,8 +167,6 @@ function applyImageRows(imgsrc, row, colStart, colEnd) {
             }
         });
     } else {
-        console.log("small shit");
-
         var rowDiv = $('#small-impact-grid').children().eq(0).children()[row];
         $('td', rowDiv).each(function() {
             count++;

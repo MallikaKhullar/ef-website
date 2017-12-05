@@ -141,6 +141,8 @@
         } else {
             $(".small-trans-box").fadeIn(500);
         }
+
+        changeImpactGrid();
     });
 
     $("#footer-motivation").find("a").click(function(e) {
@@ -151,10 +153,6 @@
         });
     });
 
-
-    $(document).ready(function() {
-        changeImpactGrid();
-    });
 
     $('label').click(function() {
         if ($("#name").val() == null || $("#name").val() == undefined || $("#name").val() == "")
