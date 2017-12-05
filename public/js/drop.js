@@ -1,5 +1,11 @@
 $(document).ready(function() {
-    $('select').each(function() {
+    initSelect($('#small-year'));
+    initSelect($('#year'));
+
+});
+
+function initSelect(selectOption) {
+    selectOption.each(function() {
         var $this = $(this),
             numberOfOptions = $(this).children('option').length;
 
@@ -36,23 +42,6 @@ $(document).ready(function() {
             $styledSelect.text($(this).text()).removeClass('active');
             $this.val($(this).attr('rel'));
             $list.hide();
-            var num = $('.rangeslider__handle__value')[0].textContent;
-            switch ($this.val()) {
-                case "food":
-                    $('#impact-stmt').text("FOOD by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text((num * 4.12).toFixed(1));
-                    break;
-
-                case "tree":
-                    $('#impact-stmt').text("TREE by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text((num * 3.12).toFixed(1));
-                    break;
-
-                case "book":
-                    $('#impact-stmt').text("Days of School by you in 1 year by doing almost nothing!");
-                    $('#impact-val').text((num * 7.02).toFixed(1));
-                    break;
-            }
             changeImpactGrid();
 
         });
@@ -62,4 +51,4 @@ $(document).ready(function() {
             $list.hide();
         });
     });
-});
+}

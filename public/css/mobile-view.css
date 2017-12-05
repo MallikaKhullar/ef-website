@@ -21,6 +21,11 @@
 }
 
 @media all and (max-width: 699px) {
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
     .trans-box,
     .resp-footer,
     .pledge-container {
@@ -43,7 +48,7 @@
     }
     header .header-content {
         text-align: center;
-        padding: 150px 0 0px 0px;
+        padding: 100px 0 0px 0px;
         position: relative;
     }
     .about-container,
@@ -65,6 +70,26 @@
     }
     .know-how-container {
         margin-left: 50px;
+    }
+    .impact-img {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 5px;
+    }
+    .font-smaller {
+        font-size: 12px;
+    }
+    #footer-motivation {
+        margin-top: 0;
+    }
+    .main-home-title {
+        visibility: hidden;
+        letter-spacing: -1px;
+        font-size: 35px;
+        line-height: 35px;
+    }
+    .primary-section-container {
+        padding: 0px 50px;
     }
 }
 
@@ -103,6 +128,6 @@
     z-index: 7;
     width: 90%;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 80px;
     padding: 30px 30px 5px 30px;
 }

@@ -1,54 +1,6 @@
-function getCategory() {
-    return document.getElementById("year").options[document.getElementById("year").selectedIndex].value;
-}
-
-function getImpactNum(category) {
-    var num = $('.rangeslider__handle__value')[0].textContent;
-
-    switch (category) {
-        case "food":
-            return (num * 4.12);
-        case "tree":
-            return (num * 3.12);
-        case "book":
-            return (num * 7.02);
-    }
-}
-
-function applyImage(imgsrc, row) {
-    var rowDiv = $('#impact-grid').children().eq(0).children()[row];
-    $('td', rowDiv).each(function() {
-        $(this)[0].lastChild.src = imgsrc;
-    });
-};
-
-function applyImageAll(imgsrc) {
-    applyImage(imgsrc, 0);
-    applyImage(imgsrc, 1);
-    applyImage(imgsrc, 2);
-    applyImage(imgsrc, 3);
-}
-
-function applyImageRows(imgsrc, row, colStart, colEnd) {
-    var count = 0;
-    var rowDiv = $('#impact-grid').children().eq(0).children()[row];
-    $('td', rowDiv).each(function() {
-        count++;
-        if (count >= colStart && count <= colEnd) {
-            $(this)[0].lastChild.src = imgsrc;
-        }
-    });
-}
-
-
-function getIntAndDecimal(n) {
-    return [Math.floor(n), n - Math.floor(n)];
-}
-
 function changeImpactGrid() {
     var category = getCategory();
     var count = getImpactNum(category);
-
     var activity = "";
     switch (category) {
         case "food":
@@ -62,9 +14,29 @@ function changeImpactGrid() {
             break;
     }
 
-    $("#impact-stmt").text("Each month, you can raise funds to " + activity + ", just by spending time online!");
+    setImpactStatement(activity);
+    setImpactGrid(count, "/image/" + category + "_");
+    setImpactVal(count);
+}
 
-    var imgsrc = "/image/" + category + "_";
+function setImpactVal(num) {
+    if (window.matchMedia('(min-width: 700px)').matches) {
+        $('#impact-val').text(count);
+    } else {
+        $('#small-impact-val').text(count);
+    }
+}
+
+function setImpactStatement(activity) {
+    if (window.matchMedia('(min-width: 700px)').matches) {
+        $("#impact-stmt").text("Each month, you can raise funds to " + activity + ", just by spending time online!");
+    } else {
+        console.log("small shit");
+        $("#small-impact-stmt").text("Each month, you can raise funds to " + activity + ", just by spending time online!");
+    }
+}
+
+function setImpactGrid(count, imgsrc) {
 
     if (count > 48) {
         console.log("Bigger than 48");
@@ -130,6 +102,81 @@ function changeImpactGrid() {
     applyImage(imgsrc + "empty.png", 1);
     applyImage(imgsrc + "empty.png", 2);
     applyImage(imgsrc + "empty.png", 3);
+}
 
 
+
+
+/** ----------UTILS------------  **/
+function getCategory() {
+
+    if (window.matchMedia('(min-width: 700px)').matches) {
+        return document.getElementById("year").options[document.getElementById("year").selectedIndex].value;
+    } else {
+        return document.getElementById("small-year").options[document.getElementById("small-year").selectedIndex].value;
+    }
+}
+
+function getImpactNum(category) {
+    var num = $('.rangeslider__handle__value')[0].textContent;
+
+    switch (category) {
+        case "food":
+            return (num * 4.12);
+        case "tree":
+            return (num * 3.12);
+        case "book":
+            return (num * 7.02);
+    }
+}
+
+function applyImage(imgsrc, row) {
+    if (window.matchMedia('(min-width: 700px)').matches) {
+        var rowDiv = $('#impact-grid').children().eq(0).children()[row];
+        $('td', rowDiv).each(function() {
+            $(this)[0].lastChild.src = imgsrc;
+        });
+    } else {
+        var rowDiv = $('#small-impact-grid').children().eq(0).children()[row];
+        $('td', rowDiv).each(function() {
+            $(this)[0].lastChild.src = imgsrc;
+        });
+        console.log("small shit");
+    }
+};
+
+function applyImageAll(imgsrc) {
+    applyImage(imgsrc, 0);
+    applyImage(imgsrc, 1);
+    applyImage(imgsrc, 2);
+    applyImage(imgsrc, 3);
+}
+
+function applyImageRows(imgsrc, row, colStart, colEnd) {
+    var count = 0;
+
+    if (window.matchMedia('(min-width: 700px)').matches) {
+        var rowDiv = $('#impact-grid').children().eq(0).children()[row];
+        $('td', rowDiv).each(function() {
+            count++;
+            if (count >= colStart && count <= colEnd) {
+                $(this)[0].lastChild.src = imgsrc;
+            }
+        });
+    } else {
+        console.log("small shit");
+
+        var rowDiv = $('#small-impact-grid').children().eq(0).children()[row];
+        $('td', rowDiv).each(function() {
+            count++;
+            if (count >= colStart && count <= colEnd) {
+                $(this)[0].lastChild.src = imgsrc;
+            }
+        });
+    }
+}
+
+
+function getIntAndDecimal(n) {
+    return [Math.floor(n), n - Math.floor(n)];
 }

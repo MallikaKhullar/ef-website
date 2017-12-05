@@ -35,8 +35,6 @@ $(document).ready(function() {
         // Callback function
         onSlide: function(position, value) {
 
-            $('#impact-val').text(this.value);
-
             var valSelected = document.getElementById("year").options[document.getElementById("year").selectedIndex].value;
             var val;
             switch (valSelected) {
@@ -55,6 +53,7 @@ $(document).ready(function() {
 
             val = val > 10 ? val.toFixed(1) : val.toFixed(2);
             $('#impact-val').text(val);
+            $('#small-impact-val').text(val);
 
             var $handle = this.$range.find('.rangeslider__handle__value');
             $handle.text(this.value);
