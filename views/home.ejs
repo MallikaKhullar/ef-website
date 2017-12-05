@@ -166,12 +166,12 @@
         if ($val.val() == null || $val.val() == undefined || $val.val() == "")
             return;
 
-        console.log("Beyond return called");
+        console.log("$val is ----", $val.val());
 
 
         $.ajax({
             type: "GET",
-            url: "/home/submit-email?email_id=" + document.getElementById("name").value,
+            url: "/home/submit-email?email_id=" + $val.val(),
             success: function(result) {
                 $(".email-input").css("display", "none");
                 $(".email-submit").css("display", "block");
