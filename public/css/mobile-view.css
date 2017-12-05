@@ -24,7 +24,7 @@
 }
 
 @media all and (max-width: 699px) {
-    div{
+    div {
         box-sizing: border-box;
     }
     .trans-box,
@@ -119,6 +119,18 @@
         border-radius: 0px 5px 5px 0px;
         padding: 10.5px 5px;
         box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
+    }
+    .email-submit {
+        padding: 10px 5px;
+        border: 1.5px solid #E5E5E5;
+        border-radius: 5px;
+        background-color: #FFFFFF;
+        color: #17B487;
+        text-align: center;
+        font-family: Quicksand;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 12px;
     }
 }
 
