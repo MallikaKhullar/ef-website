@@ -961,3 +961,19 @@ button:focus {
     text-align: center;
     padding: 100px 0;
 }
+
+.big-title {
+    color: #000000;
+    font-family: Quicksand;
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 100px;
+}
+
+.big-subtitle {
+    color: #4D4D4D;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+}

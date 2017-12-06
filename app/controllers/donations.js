@@ -18,7 +18,6 @@ exports.createDump = function(num_hearts, donation_id, user_id, cause_id) {
 };
 
 exports.getAllDonationCount = function() {
-    console.log("Get all donation count");
     return fn.defer(fn.bind(User, 'getUserCount'))({}).pipe(function(USER_COUNT) {
         return fn.defer(fn.bind(User, 'getUserById'))("123").pipe(function(user) {
             var currentTime = moment();

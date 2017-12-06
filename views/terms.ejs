@@ -15,25 +15,10 @@
 
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css-min/new-age.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css-min/styles.min.css">
+    <link rel="stylesheet" href="/css/mobile-view.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <style>
-        .big-title {
-            color: #000000;
-            font-family: Quicksand;
-            font-size: 80px;
-            font-weight: bold;
-            line-height: 100px;
-        }
-        
-        .big-subtitle {
-            color: #4D4D4D;
-            font-family: Quicksand;
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 25px;
-        }
-        
         body,
         html {
             background: white;
@@ -144,7 +129,7 @@
             <li>Consulting. </li>
         </ol>
 
-        <p><span style="font-weight: 400;"> Flutur may partner with third parties to provide specific services. When you sign up for these third party services, TinyStep will share names, or other contact information that is necessary for the third party to provide these services. According to Flutur&rsquo;s contractual arrangements with parties, these parties are not allowed to use personal information except for the explicit purpose of providing these services. </span></p>
+        <p><span style="font-weight: 400;"> Flutur may partner with third parties to provide specific services. When you sign up for these third party services, Flutur will share names, or other contact information that is necessary for the third party to provide these services. According to Flutur&rsquo;s contractual arrangements with parties, these parties are not allowed to use personal information except for the explicit purpose of providing these services. </span></p>
 
         <ol start="3">
             <li>Spam.</li>
@@ -207,7 +192,12 @@
         <%- include contact_partial_small.ejs %>
 
     </div>
-    <%- include footer_partial.ejs %>
+    <div class="resp-footer">
+        <%- include footer_partial.ejs %>
+    </div>
+    <div class="small-resp-footer">
+        <%- include footer_small_partial.ejs %>
+    </div>
 </body>
 
-</html>
+</html

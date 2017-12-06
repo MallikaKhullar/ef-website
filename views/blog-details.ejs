@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="google-site-verification" content="bIgzhiYzJX-z_6EqT39MpkW7wN8J7zbpD_8puZbvKeM" />
+    <link rel="icon" href="image/header_logo.png" />
+
+
+    <title>Flutur | Blog |
+        <%- details.blog_title %>
+    </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css-min/new-age.min.css">
+    <link rel="stylesheet" href="/css-min/styles.min.css">
+    <link rel="stylesheet" href="/css-min/mobile-view.min.css">
+
+</head>
+
+<body>
+
+    <nav id="mainNav" class="navbar navbar-default">
+        <div class="container" style="width:95%">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header" style="margin-top:10px">
+                <a class="navbar-brand page-scroll" href="http://www.flutur.org">
+                    <img src="/image/flutur_logo_black.png">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div style="width:80%; margin: 0 auto; padding: 10px 10px 10px 10px;">
+        <div class="black-quicksand-title" style="margin:20px 0px 0px 0px">
+            <%- details.blog_title %>
+        </div>
+    </div>
+
+
+    Recent Blogs:
+    <ul style="margin-top:5px">
+        <% for(var i=0; i<recent.length; i++) { %>
+            <li>
+                <%- recent[i].blog_title %>
+            </li>
+            <% } %>
+    </ul>
+    <hr> Similar Blogs:
+    <ul style="margin-top:5px">
+        <% for(var i=0; i<similar.length; i++) { %>
+            <li>
+                <%- similar[i].blog_title %>
+            </li>
+            <% } %>
+    </ul>
+
+    <%- include footer_partial.ejs %>
+
+</body>
+
+</html>

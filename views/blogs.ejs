@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="google-site-verification" content="bIgzhiYzJX-z_6EqT39MpkW7wN8J7zbpD_8puZbvKeM" />
+    <link rel="icon" href="image/header_logo.png" />
+
+
+    <title>Flutur | Blogs | DonateWithoutDonating
+    </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/new-age.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mobile-view.css">
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+
+<body>
+    <nav id="mainNav" class="your-header navbar" style="z-index:10; margin-top:10px;margin-bottom:-100px;">
+        <div class="container" style="width:95%">
+            <div class="navbar-header">
+
+                <a class="navbar-brand page-scroll" href="/">
+                    <img src="/image/flutur_logo_black.png">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" style="padding-top: 15px;padding-right: 15px;">
+                <ul class="nav navbar-right">
+                    <li class="li-no-padding">
+                        <a class="grey" target="_top" href="/blog">
+                            <b class="quick-weight-bold"> BLOG</b>
+                        </a>
+                    </li>
+                    <li class="li-no-padding">
+                        <a class="black" target="_top" href="/faqs">
+                            <b class="quick-weight-bold"> FAQs</b>
+                        </a>
+                    </li>
+                    <li class="li-no-padding">
+                        <a class="black" target="_top" href="/privacy">
+                            <b class="quick-weight-bold"> PRIVACY</b>
+                        </a>
+                    </li>
+                    <li class="li-no-padding">
+                        <div class="btn-black" style="font-size:12px; cursor:pointer">
+                            <a class="black" target="_top" href="https://chrome.google.com/webstore/detail/flutur-small-flutters-cau/onebagjpomhjadhoiianmnelkbcnllnf" style="padding: 20px; text-decoration:none!important; height:100%; width:100%">
+                                <b class="quick-weight-bold-small"> CHROME PLUGIN</b>
+                                <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top: 15px;padding-right: 15px;">
+            <ul class="nav">
+                <li class="li-no-padding">
+                    <a class="black" target="_top" href="/privacy"><b class="quick-weight-bold"> PRIVACY</b> </a>
+                </li>
+                <li class="li-no-padding">
+                    <a class="black" target="_top" href="/privacy"><b class="quick-weight-bold"> PRIVACY</b> </a>
+                </li>
+                <li class="li-no-padding">
+                    <a class="black" target="_top" href="/privacy"><b class="quick-weight-bold"> PRIVACY</b> </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sticky-bar">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top: 15px;padding-right: 15px;">
+            <ul class="nav">
+                <li class="li-no-padding">
+                    <a class="black" target="_top" href="/privacy">
+                        <b class="quick-weight-bold"> PRIVACY</b> </a>
+                </li>
+                <li class="li-no-padding">
+                    <a class="black" target="_top" href="/privacy">
+                        <b class="quick-weight-bold"> PRIVACY</b> </a>
+                </li>
+                <li class="li-no-padding">
+                    <a class="black" target="_top" href="/privacy">
+                        <b class="quick-weight-bold"> PRIVACY</b> </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="grid-container">
+        <div class="big-title" style="margin:20px 0px 10px 0px">Blogs &amp; Stories</div>
+        <div class="big-subtitle">All Stories</div>
+        <div class="grid-row">
+            <div class="grid-column">
+                <% for(var i=0; i<Math.ceil(blogs.length/3); i++) { %>
+                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                    <div class="blog-outside-title black">
+                        <%- blogs[i].blog_title%>
+                    </div>
+                    <div class="blog-short-desc">
+                        <%- blogs[i].blog_short_desc%>
+                    </div>
+                    <% } %>
+            </div>
+
+            <div class="grid-column">
+                <% for(var i= Math.ceil(blogs.length/3); i < Math.ceil(2 * blogs.length/3); i++) { %>
+                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                    <div class="blog-outside-title black">
+                        <%- blogs[i].blog_title%>
+                    </div>
+                    <div class="blog-short-desc">
+                        <%- blogs[i].blog_short_desc%>
+                    </div>
+                    <% } %>
+            </div>
+
+            <div class="grid-column">
+                <% for(var i= Math.ceil(2 * blogs.length/3); i<blogs.length; i++) { %>
+                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                    <div class="blog-outside-title black">
+                        <%- blogs[i].blog_title%>
+                    </div>
+                    <div class="blog-short-desc">
+                        <%- blogs[i].blog_short_desc%>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+
+    <div class="resp-footer">
+        <%- include footer_partial.ejs %>
+    </div>
+    <div class="small-resp-footer">
+        <%- include footer_small_partial.ejs %>
+    </div>
+
+</body>
+
+<script>
+    $window = $(window);
+    $window.scroll(function() {
+        if (window.matchMedia('(min-width: 700px)').matches) {
+            $scroll_position = $window.scrollTop();
+            if ($scroll_position > 200) {
+                $('.sticky-bar').fadeIn();
+            } else {
+                $('.sticky-bar').fadeOut();
+            }
+        }
+    });
+</script>
+
+</html>
