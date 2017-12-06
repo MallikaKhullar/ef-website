@@ -17,6 +17,7 @@
     <link href="/css-min/new-age.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/mobile-view.css">
     <link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/blog.css">
 
 
 
@@ -97,15 +98,43 @@
     </style>
 </head>
 
-<body>
+<body style="display:none">
 
-    <nav id="mainNav" class="navbar navbar-default">
+    <nav id="mainNav" class="navbar" style="z-index:10; margin-bottom: 0px; margin-top:10px;">
         <div class="container" style="width:95%">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header" style="margin-top:10px">
-                <a class="navbar-brand page-scroll" href="http://www.flutur.org">
+            <div class="navbar-header">
+
+                <a class="navbar-brand page-scroll" href="/">
                     <img src="/image/flutur_logo_black.png">
                 </a>
+            </div>
+
+            <div class="collapse navbar-collapse" style="padding-top: 15px;padding-right: 15px;">
+                <ul class="nav navbar-right">
+                    <li class="li-no-padding">
+                        <a class="black" target="_top" href="/blog">
+                            <b class="quick-weight-bold"> BLOG</b>
+                        </a>
+                    </li>
+                    <li class="li-no-padding">
+                        <a class="grey" target="_top" href="/faqs">
+                            <b class="quick-weight-bold"> FAQs</b>
+                        </a>
+                    </li>
+                    <li class="li-no-padding">
+                        <a class="black" target="_top" href="/privacy">
+                            <b class="quick-weight-bold"> PRIVACY</b>
+                        </a>
+                    </li>
+                    <li class="li-no-padding">
+                        <div class="btn-black" style="font-size:12px; cursor:pointer">
+                            <a class="black" target="_top" href="https://chrome.google.com/webstore/detail/flutur-small-flutters-cau/onebagjpomhjadhoiianmnelkbcnllnf" style="padding: 20px; text-decoration:none!important; height:100%; width:100%">
+                                <b class="quick-weight-bold-small"> CHROME PLUGIN</b>
+                                <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -182,6 +211,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
+            $("body").fadeIn(800);
             $('.accordion').find('.accordion-toggle').click(function() {
                 $(this).next().slideToggle('600');
             });

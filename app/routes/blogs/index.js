@@ -9,15 +9,28 @@ var donationController = require('../../controllers/donations');
 var moment = require('moment');
 
 router.get('/', function(req, res) {
-    var count = req.query.count || 10;
-    var offset = req.query.offset || 0;
+    var type = req.query.type || "all";
+    var page = req.query.page || 0;
+    var count = 9;
+    var offset = page * count;
 
     var def1 = {
-        all: blogController.getBlogOverviews({}),
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount()
     };
 
+    var params = {
+        count: count,
+        offset: offset
+    };
+
+    if (type !== "all") {
+        params.filter = { "category_id": type };
+        def1.category = blogController.getCategoryDetails({ category_id: type });
+    }
+
+    def1.all = blogController.getBlogOverviews(params);
+    def1.blogCount = blogController.getBlogCountForCategory(type);
 
     deferred.combine(def1).pipe(function(data) {
         var newdata = {
@@ -25,8 +38,14 @@ router.get('/', function(req, res) {
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
                 followers: Utils.getCommaSeparatedNumber(data.userCount)
-            }
+            },
+            currentPage: page,
+            currentCategoryId: type,
+            endOfPagination: (data.blogCount <= offset + count)
         };
+
+        if (data.category) newdata.category = data.category;
+        console.log(newdata);
 
         res.render("blogs.ejs", newdata);
     });

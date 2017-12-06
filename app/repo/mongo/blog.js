@@ -23,7 +23,7 @@ var blogSchema = mongoose.Schema({
 });
 blogSchema.statics = {
     getAllBlogs: function(data, cb) {
-        var count = data.count || 5;
+        var count = data.count || 9;
         var offset = data.offset || 0;
         var sortBy = data.sortBy || "none";
         var filter = data.filter || {};
@@ -37,6 +37,13 @@ blogSchema.statics = {
 
     getBlogDetails: function(data, cb) {
         this.findOne({ blog_id: data.blog_id }).lean().exec(cb);
+    },
+
+    getBlogCount: function(cb) {
+        this.count({}).lean().exec(cb);
+    },
+    getBlogCountForCategory: function(category, cb) {
+        this.find({ category_id: category }).count().lean().exec(cb);
     }
 }
 

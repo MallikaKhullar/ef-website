@@ -10,6 +10,7 @@ body {
     float: left;
     width: 33%;
     padding: 10px;
+    cursor: pointer;
 }
 
 .grid-column img {
@@ -28,7 +29,7 @@ body {
 }
 
 .grid-container {
-    padding: 100px 150px;
+    padding: 10px 120px;
 }
 
 @media (max-width: 600px) {
@@ -36,7 +37,7 @@ body {
         width: 100%;
     }
     .grid-container {
-        padding: 50px 20px;
+        padding: 10px 20px;
     }
 }
 
@@ -51,6 +52,7 @@ body {
     font-size: 14px;
     line-height: 18px;
     margin: 10px;
+    height: 36px;
 }
 
 .blog-outside-title {
@@ -108,10 +110,25 @@ body {
     z-index: 9999;
     width: 100%;
     top: 0;
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: none;
+    background-color: #FFFFFF;
+    padding: 12px 150px;
 }
 
+.box-shadow {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
 
+.very-thin-roboto {
+    color: #4C4C4C;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 19px;
+    width: 350px;
+}
+
+.col-half-offset {
+    margin-left: 4.166666667%
 }

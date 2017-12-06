@@ -1,4 +1,5 @@
 const Blog = require('../repo/mongo/blog.js');
+const BlogCategory = require('../repo/mongo/blog_category.js');
 const { wrap: async } = require('co');
 var fn = require('./../utils/functions');
 var deferred = require('./../utils/deferred.js');
@@ -10,14 +11,38 @@ exports.getBlogDetails = function(data, cb) {
     });
 }
 
+exports.getCategoryDetails = function(data, cb) {
+    return fn.defer(fn.bind(BlogCategory, 'getCategory'))({ category_id: data.category_id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+}
+
 exports.getBlogOutlinePage = function(filter) {
     return fn.defer(fn.bind(Blog, 'getAllBlogs'))(filter).pipe(function(res) {
         return deferred.success(res);
     });
 };
 
-exports.getBlogOverviews = function(filter) {
-    return fn.defer(fn.bind(Blog, 'getAllBlogs'))(filter).pipe(function(blogs) {
+exports.getBlogCount = function() {
+    return fn.defer(fn.bind(Blog, 'getBlogCount'))().pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+
+exports.getBlogCountForCategory = function(category) {
+    if (category == "all") {
+        return fn.defer(fn.bind(Blog, 'getBlogCount'))().pipe(function(res) {
+            return deferred.success(res);
+        });
+    } else {
+        return fn.defer(fn.bind(Blog, 'getBlogCountForCategory'))(category).pipe(function(res) {
+            return deferred.success(res);
+        });
+    }
+};
+
+exports.getBlogOverviews = function(data) {
+    return fn.defer(fn.bind(Blog, 'getAllBlogs'))(data).pipe(function(blogs) {
 
         for (var i = 0; i < blogs.length; i++) blogs[i] = constructPayload(blogs[i]);
 

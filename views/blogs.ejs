@@ -29,11 +29,10 @@
     <link rel="stylesheet" href="/css/blog.css">
 </head>
 
-<body>
-    <nav id="mainNav" class="your-header navbar" style="z-index:10; margin-top:10px;margin-bottom:-100px;">
+<body style="display:none">
+    <nav id="mainNav" class="navbar" style="z-index:10; margin-bottom: 0px; margin-top:10px;">
         <div class="container" style="width:95%">
             <div class="navbar-header">
-
                 <a class="navbar-brand page-scroll" href="/">
                     <img src="/image/flutur_logo_black.png">
                 </a>
@@ -69,84 +68,110 @@
         </div>
     </nav>
 
-    <div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top: 15px;padding-right: 15px;">
-            <ul class="nav">
-                <li class="li-no-padding">
-                    <a class="black" target="_top" href="/privacy"><b class="quick-weight-bold"> PRIVACY</b> </a>
-                </li>
-                <li class="li-no-padding">
-                    <a class="black" target="_top" href="/privacy"><b class="quick-weight-bold"> PRIVACY</b> </a>
-                </li>
-                <li class="li-no-padding">
-                    <a class="black" target="_top" href="/privacy"><b class="quick-weight-bold"> PRIVACY</b> </a>
-                </li>
-            </ul>
+    <div id="blog-header" class="box-shadow row" style="text-align: center;padding:12px 150px">
+
+        <div class="col-md-2">
+            <a id="all" class="black" target="_top" href="/blog"><b class="quick-weight-bold"> ALL</b> </a>
+        </div>
+        <div class="col-md-2 col-half-offset">
+            <a id="tech_1" class="black" target="_top" href="/blog?type=tech_1"><b class="quick-weight-bold"> TECH</b> </a>
+        </div>
+        <div class="col-md-2 col-half-offset">
+            <a id="news_1" class="black" target="_top" href="/blog?type=news_1"><b class="quick-weight-bold"> NEWS</b> </a>
+        </div>
+        <div class="col-md-2 col-half-offset">
+            <a id="flu_1" class="black" target="_top" href="/blog?type=flu_1"><b class="quick-weight-bold"> FLUTUR</b> </a>
+        </div>
+        <div class="col-ms-2 col-half-offset">
+            <a id="disc_1" class="black" target="_top" href="/blog?type=disc_1"><b class="quick-weight-bold"> DISCOVER</b> </a>
         </div>
     </div>
 
-    <div class="sticky-bar">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top: 15px;padding-right: 15px;">
-            <ul class="nav">
-                <li class="li-no-padding">
-                    <a class="black" target="_top" href="/privacy">
-                        <b class="quick-weight-bold"> PRIVACY</b> </a>
-                </li>
-                <li class="li-no-padding">
-                    <a class="black" target="_top" href="/privacy">
-                        <b class="quick-weight-bold"> PRIVACY</b> </a>
-                </li>
-                <li class="li-no-padding">
-                    <a class="black" target="_top" href="/privacy">
-                        <b class="quick-weight-bold"> PRIVACY</b> </a>
-                </li>
 
-            </ul>
+    <div style="margin:50px 150px 50px 150px; width:100%; height:100px">
+        <div style="width:50%; float:left">
+            <div class="big-title" style="margin:20px 0px 10px 0px">
+
+                <% if (typeof category != 'undefined') { %>
+                    <%- category.category_name %>
+                        <% } else {%>
+                            Blogs &amp; Stories
+                            <% } %>
+
+            </div>
+            <!-- <div class="big-subtitle">All Stories</div> -->
+        </div>
+        <div style="width:50%; float:left; margin-top:30px">
+            <%- include small_donate_partial.ejs %>
         </div>
     </div>
 
 
     <div class="grid-container">
-        <div class="big-title" style="margin:20px 0px 10px 0px">Blogs &amp; Stories</div>
-        <div class="big-subtitle">All Stories</div>
         <div class="grid-row">
             <div class="grid-column">
                 <% for(var i=0; i<Math.ceil(blogs.length/3); i++) { %>
-                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
-                    <div class="blog-outside-title black">
-                        <%- blogs[i].blog_title%>
-                    </div>
-                    <div class="blog-short-desc">
-                        <%- blogs[i].blog_short_desc%>
-                    </div>
+                    <a href="/blog/<%-blogs[i].blog_id%>">
+                        <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                        <div class="blog-outside-title black">
+                            <%- blogs[i].blog_title%>
+                        </div>
+                        <div class="blog-short-desc">
+                            <%- blogs[i].blog_short_desc%>
+                        </div>
+                    </a>
                     <% } %>
             </div>
 
             <div class="grid-column">
                 <% for(var i= Math.ceil(blogs.length/3); i < Math.ceil(2 * blogs.length/3); i++) { %>
-                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
-                    <div class="blog-outside-title black">
-                        <%- blogs[i].blog_title%>
-                    </div>
-                    <div class="blog-short-desc">
-                        <%- blogs[i].blog_short_desc%>
-                    </div>
+                    <a href="/blog/<%-blogs[i].blog_id%>">
+                        <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                        <div class="blog-outside-title black">
+                            <%- blogs[i].blog_title%>
+                        </div>
+                        <div class="blog-short-desc">
+                            <%- blogs[i].blog_short_desc%>
+                        </div>
+                    </a>
                     <% } %>
             </div>
 
             <div class="grid-column">
                 <% for(var i= Math.ceil(2 * blogs.length/3); i<blogs.length; i++) { %>
-                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
-                    <div class="blog-outside-title black">
-                        <%- blogs[i].blog_title%>
-                    </div>
-                    <div class="blog-short-desc">
-                        <%- blogs[i].blog_short_desc%>
-                    </div>
+                    <a href="/blog/<%-blogs[i].blog_id%>">
+                        <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                        <div class="blog-outside-title black">
+                            <%- blogs[i].blog_title%>
+                        </div>
+                        <div class="blog-short-desc">
+                            <%- blogs[i].blog_short_desc%>
+                        </div>
+                    </a>
                     <% } %>
             </div>
         </div>
     </div>
+
+
+    <div class="row" style="margin-bottom:15px">
+        <div class="col-md-1" style="text-align: right;">
+            <% if (currentPage > 0) { %>
+                <a id="prev-page" class="black-quicksand-title">
+                    <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                </a>
+                <% } %>
+        </div>
+        <div class="col-md-10"></div>
+        <div class="col-md-1">
+            <% if (!endOfPagination) { %>
+                <a id="next-page" class="black-quicksand-title">
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </a>
+                <% } %>
+        </div>
+    </div>
+
 
     <div class="resp-footer">
         <%- include footer_partial.ejs %>
@@ -162,11 +187,31 @@
     $window.scroll(function() {
         if (window.matchMedia('(min-width: 700px)').matches) {
             $scroll_position = $window.scrollTop();
-            if ($scroll_position > 200) {
+            if ($scroll_position > 150) {
+                $('#blog-header').addClass("sticky-bar");
+                $('#blog-header').removeClass("row");
                 $('.sticky-bar').fadeIn();
             } else {
-                $('.sticky-bar').fadeOut();
+                $('#blog-header').removeClass("sticky-bar");
+                $('#blog-header').addClass("row");
             }
+        }
+    });
+
+    $(document).ready(function() {
+        $("body").fadeIn(800);
+
+        var page = <%- currentPage %>;
+        var category = "<%- currentCategoryId %>";
+        $("#next-page").attr("href", "/blog?page=" + (page + 1) + "&type=" + category);
+        $("#prev-page").attr("href", "/blog?page=" + (page - 1) + "&type=" + category);
+
+        if (typeof category != 'undefined') {
+            $('#' + category).addClass("grey");
+            $('#' + category).removeClass("black");
+        } else {
+            $('#all').addClass("grey");
+            $('#all').removeClass("black");
         }
     });
 </script>
