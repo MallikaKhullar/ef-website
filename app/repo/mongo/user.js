@@ -54,7 +54,6 @@ userSchema.statics = {
     },
 
     getUserById: function(id, cb) {
-        console.log("Get user by id called", id);
         this.findOne({ user_id: id }).lean().exec(cb);
     },
 

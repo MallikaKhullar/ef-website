@@ -14,7 +14,7 @@ body {
 }
 
 .grid-column img {
-    margin-top: 50px;
+    margin-top: 20px;
     border-radius: 5px;
 }
 
@@ -81,6 +81,10 @@ body {
     color: #a0a0a0;
 }
 
+.dark-grey {
+    color: #868686;
+}
+
 .li-no-padding {
     float: left;
 }
@@ -131,4 +135,72 @@ body {
 
 .col-half-offset {
     margin-left: 4.166666667%
+}
+
+div.center-cropped {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+div.center-cropped img {
+    min-width: 100%;
+    left: 50%;
+    top: -50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.image-caption {
+    color: #A9A9A9;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 14px;
+    padding: 10px 0px;
+}
+
+.para-title {
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+    margin: 20px 0px;
+}
+
+.para-text {
+    color: #000000;
+    font-family: "Source Serif Pro";
+    font-size: 20px;
+    line-height: 25px;
+    margin: 20px 0px;
+}
+
+.blog-inside-title {
+    color: #000000;
+    font-family: Roboto;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 49px;
+}
+
+.circ-img {
+    border-radius: 50%;
+}
+
+.small-roboto-thick {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.small-roboto-thin {
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.para {
+    margin: 50px 0px;
 }

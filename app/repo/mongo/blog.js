@@ -14,9 +14,11 @@ var blogSchema = mongoose.Schema({
     blog_title: String,
     blog_short_desc: String,
     title_photo_url: String,
+    title_photo_caption: String,
     category_id: { type: String, index: true },
     category_name: String, //can be backfilled when category updated
     author_name: String,
+    author_photo_url: String,
     timestamp: { type: Number, required: true, index: true },
     paragraphs: [paragraphSchema],
     visible: Boolean

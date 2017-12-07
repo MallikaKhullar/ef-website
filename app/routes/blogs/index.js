@@ -57,7 +57,7 @@ router.get('/:blogId', function(req, res) {
 
     var def1 = {
         details: blogController.getBlogDetails({ blog_id }),
-        recent: blogController.getBlogOverviews({}),
+        recent: blogController.getBlogOverviews({ count: 3 }),
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount()
     };
@@ -65,11 +65,10 @@ router.get('/:blogId', function(req, res) {
     deferred.combine(def1).pipe(function(data) {
         var filterSimilar = {
             filter: { category_id: data.details.category_id },
-            count: 5,
+            count: 3,
             offset: 0,
             sortBy: { 'timestamp': -1 }
         };
-
 
         var newdata = {
             details: data.details,
@@ -82,6 +81,7 @@ router.get('/:blogId', function(req, res) {
 
         blogController.getBlogOverviews(filterSimilar).pipe(function(similar) {
             newdata.similar = similar;
+            console.log("Final data snet", newdata);
             res.render("blog-details.ejs", newdata);
         });
     });
