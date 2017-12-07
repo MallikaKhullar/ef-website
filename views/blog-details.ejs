@@ -132,20 +132,20 @@
         <div style="margin:20px 0px;">
             <% for(var i=0; i<details.paragraphs.length; i++) { %>
                 <div class="para">
-                    <% if (typeof details.paragraphs[i].image_url != 'undefined') { %>
-                        <img src="<%-details.paragraphs[i].image_url%>" style="width:50%">
-                        <% if (typeof details.paragraphs[i].image_caption != 'undefined') { %>
-                            <div class="image-caption">
-                                <%- details.paragraphs[i].image_caption %>
-                            </div>
-                            <% } %>
-                                <% } %>
-                                    <% if (typeof details.paragraphs[i].paragraph_title != 'undefined') { %>
-                                        <div class="para-title">
-                                            <%- details.paragraphs[i].paragraph_title %>
-                                        </div>
-                                        <% } %>
+                    <% if (typeof details.paragraphs[i].paragraph_title != 'undefined') { %>
+                        <div class="para-title">
+                            <%- details.paragraphs[i].paragraph_title %>
+                        </div>
+                        <% } %>
 
+                            <% if (typeof details.paragraphs[i].image_url != 'undefined') { %>
+                                <img src="<%-details.paragraphs[i].image_url%>" style="width:50%">
+                                <% if (typeof details.paragraphs[i].image_caption != 'undefined') { %>
+                                    <div class="image-caption">
+                                        <%- details.paragraphs[i].image_caption %>
+                                    </div>
+                                    <% } %>
+                                        <% } %>
                                             <% if (typeof details.paragraphs[i].paragraph_text != 'undefined') { %>
                                                 <div class="para-text">
                                                     <%- details.paragraphs[i].paragraph_text %>
