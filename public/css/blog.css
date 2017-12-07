@@ -56,6 +56,11 @@ body {
 }
 
 .blog-outside-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     font-family: Roboto;
     font-size: 18px;
     font-weight: bold;
@@ -203,4 +208,9 @@ div.center-cropped img {
 
 .para {
     margin: 50px 0px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #777777;
 }

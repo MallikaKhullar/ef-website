@@ -977,3 +977,9 @@ button:focus {
     font-weight: 500;
     line-height: 25px;
 }
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    color: #777777;
+    background-color: white;
+}

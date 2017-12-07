@@ -563,10 +563,6 @@ footer ul li a.active {
     border-color: rgba(255, 255, 255, 0.7);
 }
 
-a:hover {
-    color: white;
-}
-
 .btn {
     font-family: 'Quicksand', 'Lato', 'Helvetica', 'Arial', 'sans-serif';
     letter-spacing: 2px;
