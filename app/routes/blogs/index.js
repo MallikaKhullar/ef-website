@@ -70,6 +70,8 @@ router.get('/:blogId', function(req, res) {
             sortBy: { 'timestamp': -1 }
         };
 
+        data.details.timestamp = Utils.getHumanizedTimestamp(data.details.timestamp * 1000);
+
         var newdata = {
             details: data.details,
             recent: data.recent,
@@ -81,7 +83,6 @@ router.get('/:blogId', function(req, res) {
 
         blogController.getBlogOverviews(filterSimilar).pipe(function(similar) {
             newdata.similar = similar;
-            console.log("Final data snet", newdata);
             res.render("blog-details.ejs", newdata);
         });
     });
