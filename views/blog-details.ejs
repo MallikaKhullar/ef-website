@@ -121,7 +121,15 @@
                     <%- include small_donate_partial.ejs %>
                 </div>
             </div>
+            <div class="btn-black" style="float:right;width:300px;font-size:12px; cursor:pointer">
+                <a class="black facebook-share" target="_top">
+                    <i class="fa fa-facebook" style="font-size:15px; margin-right:5px" aria-hidden="true"></i>
+                    <b class="quick-weight-bold-small"> Share on Facebook</b>
+                </a>
+            </div>
+
         </div>
+
 
         <div class="black-quicksand-title" style="margin:30px 0px 0px 0px ">
             <%- details.blog_title %>
@@ -219,6 +227,8 @@
             $('#all').addClass("grey");
             $('#all').removeClass("black");
         }
+        $(".facebook-share").attr("href", "http://www.facebook.com/sharer.php?u=" + window.location.href);
+
     });
 </script>
 
