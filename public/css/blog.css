@@ -151,7 +151,6 @@ div.center-cropped {
 div.center-cropped img {
     min-width: 100%;
     left: 50%;
-    top: -50%;
     position: relative;
     transform: translateX(-50%);
 }
