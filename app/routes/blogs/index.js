@@ -57,17 +57,19 @@ router.get('/:blogId', function(req, res) {
 
     var def1 = {
         details: blogController.getBlogDetails({ blog_id }),
-        recent: blogController.getBlogOverviews({ count: 3 }),
+        recent: blogController.getBlogOverviews({ filter: { blog_id: { $nin: [blog_id] } }, count: 3 }),
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount()
     };
 
+
     deferred.combine(def1).pipe(function(data) {
         var filterSimilar = {
-            filter: { category_id: data.details.category_id },
+            filter: { category_id: data.details.category_id, blog_id: { $nin: [blog_id] } },
             count: 3,
             offset: 0,
-            sortBy: { 'timestamp': -1 }
+            sortBy: { 'timestamp': -1 },
+            exclude_id: blog_id
         };
 
         data.details.timestamp = Utils.getHumanizedTimestamp(data.details.timestamp * 1000);
