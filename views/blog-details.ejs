@@ -171,7 +171,8 @@
                 <% for(var i=0; i<recent.length; i++) { %>
                     <div class="grid-column">
                         <a href="/blog/<%-recent[i].blog_id%>">
-                            <img src="<%-recent[i].title_photo_url%>" style="width:100%">
+                            <div style="background-image:url('<%-recent[i].title_photo_url%>');width:100%;height: 250px; background-position: center center; background-repeat: no-repeat; background-size: cover;"></div> 
+                             <!-- <img src="<%-recent[i].title_photo_url%>" style="width:100%"> -->
                             <div class="blog-outside-title black">
                                 <%- recent[i].blog_title%>
                             </div>
@@ -191,7 +192,8 @@
                 <% for(var i=0; i<similar.length; i++) { %>
                     <div class="grid-column">
                         <a href="/blog/<%-similar[i].blog_id%>">
-                                <img src="<%-similar[i].title_photo_url%>" style="width:100%">
+                                <div style="background-image:url('<%-similar[i].title_photo_url%>');width:100%;height: 250px; background-position: center center; background-repeat: no-repeat; background-size: cover;">
+                                </div>
                                 <div class="blog-outside-title black">
                                     <%- similar[i].blog_title%>
                                 </div>
