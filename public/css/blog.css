@@ -145,14 +145,9 @@ body {
 div.center-cropped {
     width: 100%;
     height: 500px;
-    overflow: hidden;
-}
-
-div.center-cropped img {
-    min-width: 100%;
-    left: 50%;
-    position: relative;
-    transform: translateX(-50%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .image-caption {
