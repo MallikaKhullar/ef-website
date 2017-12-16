@@ -287,7 +287,7 @@
             <div class="collapse navbar-collapse" style="padding-top: 15px;padding-right: 15px;">
                 <ul class="nav navbar-right">
                     <li class="li-no-padding">
-                        <a class="grey" target="_top" href="/blog">
+                        <a class="black" target="_top" href="/blog">
                             <b class="quick-weight-bold"> BLOG</b>
                         </a>
                     </li>
@@ -459,10 +459,10 @@
         $("body").fadeIn(800);
         var category = "<%- details.category_id %>";
         if (typeof category != 'undefined') {
-            $('#' + category).addClass("grey");
+            $('#' + category).addClass("pink");
             $('#' + category).removeClass("black");
         } else {
-            $('#all').addClass("grey");
+            $('#all').addClass("pink");
             $('#all').removeClass("black");
         }
         $(".facebook-share").attr("href", "http://www.facebook.com/sharer.php?u=" + window.location.href);
