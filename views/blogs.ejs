@@ -108,7 +108,7 @@
         @media screen and (min-width: 700px) {
             .category-container {
                 margin: 30px 0px 10px 0px;
-                padding: 10px 150px 0px 150px;
+                padding: 10px 130px 0px 126px;
                 width: 100%;
                 height: 80px;
             }
@@ -130,7 +130,7 @@
         }
         
         .blog-short-desc {
-            margin: 0px 0px 30px 0px;
+            margin: 0px 0px 15px 0px;
         }
         
         .blog-outside-title {
@@ -151,7 +151,7 @@
             <div class="collapse navbar-collapse" style="padding-top: 15px;padding-right: 15px;">
                 <ul class="nav navbar-right">
                     <li class="li-no-padding">
-                        <a class="grey" target="_top" href="/blog">
+                        <a class="black" target="_top" href="/blog">
                             <b class="quick-weight-bold"> BLOG</b>
                         </a>
                     </li>
@@ -345,10 +345,10 @@
         $("#prev-page").attr("href", "/blog?page=" + (page - 1) + "&type=" + category);
 
         if (typeof category != 'undefined') {
-            $('#' + category).addClass("grey");
+            $('#' + category).addClass("pink");
             $('#' + category).removeClass("black");
         } else {
-            $('#all').addClass("grey");
+            $('#all').addClass("pink");
             $('#all').removeClass("black");
         }
     });
