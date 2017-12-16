@@ -150,31 +150,6 @@ div.center-cropped {
     background-size: cover;
 }
 
-.image-caption {
-    color: #A9A9A9;
-    font-family: Roboto;
-    font-size: 12px;
-    font-style: italic;
-    line-height: 14px;
-    padding: 10px 0px;
-}
-
-.para-title {
-    font-family: Roboto;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 35px;
-    margin: 20px 0px;
-}
-
-.para-text {
-    color: #000000;
-    font-family: "Source Serif Pro";
-    font-size: 20px;
-    line-height: 25px;
-    margin: 20px 0px;
-}
-
 .blog-inside-title {
     color: #000000;
     font-family: Roboto;
@@ -198,10 +173,6 @@ div.center-cropped {
     font-family: Roboto;
     font-size: 12px;
     line-height: 14px;
-}
-
-.para {
-    margin: 50px 0px;
 }
 
 a:hover {
