@@ -31,12 +31,66 @@
 
     <style>
         @media all and (max-width: 699px) {
+            .blog-outside-title {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                font-family: Roboto;
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 21px;
+                margin: 10px 0px;
+            }
+            .blog-short-desc {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                color: #4C4C4C;
+                font-family: "Source Serif Pro";
+                font-size: 14px;
+                line-height: 18px;
+                margin: 10px 0px;
+                height: 36px;
+            }
+            .recent-title {
+                margin: 80px 0px 10px 0px;
+            }
+            .navbar-brand>img {
+                height: 90%;
+                padding: 10px 0 0 15px;
+                width: auto;
+            }
+            .small-roboto-thick {
+                font-family: Roboto;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 21px;
+            }
+            .small-roboto-thin {
+                font-family: Roboto;
+                font-size: 10px;
+                line-height: 14px;
+            }
+            .small-user-partial {
+                float: left;
+                width: 50%;
+            }
+            .user-container-small {
+                display: block;
+            }
+            .user-container {
+                display: none;
+            }
             #blog-header {
                 display: none;
             }
             #blog-header-small {
                 display: block;
-                padding: 20px 0px;
+                padding: 16px 0px;
                 overflow: auto;
             }
             .user-deets {
@@ -51,11 +105,7 @@
                 float: right;
                 font-size: 12px;
                 cursor: pointer;
-                margin: 50px;
-            }
-            .small-user-partial {
-                float: left;
-                width: 100%;
+                margin-top: 6px;
             }
             .small-donate-partial {
                 display: none;
@@ -63,11 +113,11 @@
             .blog-detail-container {
                 width: 90%;
                 margin: 0 auto;
-                padding: 50px 0px 10px 0px;
+                padding: 30px 0px 10px 0px;
             }
             div.center-cropped {
                 width: 100%;
-                height: 200px;
+                height: 150px;
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -80,8 +130,8 @@
             .para-text {
                 color: #000000;
                 font-family: "Source Serif Pro";
-                font-size: 15px;
-                line-height: 18px;
+                font-size: 21px;
+                line-height: 31px;
                 margin: 10px 0px;
             }
             .para-image {
@@ -108,6 +158,12 @@
         }
         
         @media screen and (min-width: 700px) {
+            .user-container {
+                display: block;
+            }
+            .user-container-small {
+                display: none;
+            }
             #blog-header {
                 display: block;
             }
@@ -269,7 +325,7 @@
             <%- details.title_photo_caption %>
         </div>
 
-        <div style="margin:30px 0px;height:100px;width:100%">
+        <div class="user-container" style="margin:30px 0px;height:100px;width:100%">
             <div class="small-user-partial">
                 <%- include small_user_partial.ejs %>
             </div>
@@ -279,10 +335,21 @@
             <div class="btn-black facebook-btn">
                 <a class="black facebook-share" target="_top">
                     <i class="fa fa-facebook" style="font-size:15px; margin-right:5px" aria-hidden="true"></i>
-                    <b class="quick-weight-bold-small"> Share on Facebook</b>
+                    <b class="quick-weight-bold-small"> Share now</b>
                 </a>
             </div>
+        </div>
 
+        <div class="user-container-small" style="margin:10px 0px; height: 40px; width:100%">
+            <div class="small-user-partial">
+                <%- include small_user_partial.ejs %>
+            </div>
+            <div class="btn-black facebook-btn">
+                <a class="black facebook-share" target="_top">
+                    <i class="fa fa-facebook" style="font-size:15px; margin-right:5px" aria-hidden="true"></i>
+                    <b class="quick-weight-bold-small"> Share now</b>
+                </a>
+            </div>
         </div>
 
         <div class="black-quicksand-title" style="margin:30px 0px 0px 0px ">
@@ -312,33 +379,12 @@
                                                     <%- details.paragraphs[i].paragraph_text %>
                                                 </div>
                                                 <% } %>
-
-
                 </div>
                 <% } %>
         </div>
 
-        <div class="black-quicksand-big-title" style="margin-bottom:-5px">Recent Blogs:</div>
-        <div>
-            <div class="grid-row">
-                <% for(var i=0; i<recent.length; i++) { %>
-                    <div class="grid-column">
-                        <a href="/blog/<%-recent[i].blog_id%>">
-                            <div style="background-image:url('<%-recent[i].title_photo_url%>');width:100%;height: 250px; background-position: center center; background-repeat: no-repeat; background-size: cover;"></div> 
-                            <div class="blog-outside-title black">
-                                <%- recent[i].blog_title%>
-                            </div>
-                            <div class="blog-short-desc">
-                                <%- recent[i].blog_short_desc%>
-                            </div>
-                        </a>
-                    </div>
-                    <% } %>
-            </div>
-        </div>
 
-
-        <div class="black-quicksand-big-title" style="margin-bottom:-5px">Similar Blogs:</div>
+        <div class="black-quicksand-big-title recent-title">Similar Blogs:</div>
         <div>
             <div class="grid-row">
                 <% for(var i=0; i<similar.length; i++) { %>
@@ -357,10 +403,7 @@
                     <% } %>
             </div>
         </div>
-
     </div>
-
-
 
     <div class="resp-footer ">
         <%- include footer_partial.ejs %>
