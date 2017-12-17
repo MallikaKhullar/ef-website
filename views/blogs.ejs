@@ -136,6 +136,14 @@
         .blog-outside-title {
             margin: 10px 0px 5px 0px;
         }
+        
+        .more-pink-title {
+            color: #EF2A67;
+            font-family: Quicksand;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
     </style>
 </head>
 
@@ -252,20 +260,20 @@
         </div>
 
 
-        <div class="paginate-big row" style="margin-bottom:15px">
+        <div class="paginate-big row" style="padding:35px 30px 50px 30px;">
             <div class="col-md-1" style="text-align: right;">
                 <% if (currentPage > 0) { %>
-                    <a id="prev-page" class="black-quicksand-title">
-                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                    <a id="prev-page" class="more-pink-title">
+                        <i class="fa fa-angle-left" style="font-size:15px; margin-left:5px" aria-hidden="true"></i> Previous
                     </a>
                     <% } %>
             </div>
             <div class="col-md-10"></div>
             <div class="col-md-1">
                 <% if (!endOfPagination) { %>
-                    <a id="next-page" class="black-quicksand-title">
-                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    </a>
+                    <a id="next-page" class="more-pink-title">
+                            Next <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
+                        </a>
                     <% } %>
             </div>
         </div>
