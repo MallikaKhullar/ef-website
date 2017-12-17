@@ -276,162 +276,126 @@
 
 <body style="display:none">
 
-    <nav id="mainNav" class="navbar" style="z-index:10; margin-bottom: 0px; margin-top:10px;">
-        <div class="container" style="width:95%">
-            <div class="navbar-header">
-                <a class="navbar-brand page-scroll" href="/">
-                    <img src="/image/flutur_logo_black.png">
-                </a>
-            </div>
+    <%- include standard-header.ejs %>
 
-            <div class="collapse navbar-collapse" style="padding-top: 15px;padding-right: 15px;">
-                <ul class="nav navbar-right">
-                    <li class="li-no-padding">
-                        <a class="black" target="_top" href="/blog">
-                            <b class="quick-weight-bold"> BLOG</b>
-                        </a>
-                    </li>
-                    <li class="li-no-padding">
-                        <a class="black" target="_top" href="/faqs">
-                            <b class="quick-weight-bold"> FAQs</b>
-                        </a>
-                    </li>
-                    <li class="li-no-padding">
-                        <a class="black" target="_top" href="/privacy">
-                            <b class="quick-weight-bold"> PRIVACY</b>
-                        </a>
-                    </li>
-                    <li class="li-no-padding">
-                        <div class="btn-black" style="font-size:12px; cursor:pointer">
-                            <a class="black" target="_top" href="https://chrome.google.com/webstore/detail/flutur-small-flutters-cau/onebagjpomhjadhoiianmnelkbcnllnf" style="padding: 20px; text-decoration:none!important; height:100%; width:100%">
-                                <b class="quick-weight-bold-small"> CHROME PLUGIN</b>
-                                <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+        <div id="blog-header" class="box-shadow row" style="text-align: center;padding:12px 150px">
+
+            <div class="col-md-2">
+                <a id="all" class="black" target="_top" href="/blog"><b class="quick-weight-bold"> HOME</b> </a>
+            </div>
+            <div class="col-md-2 col-half-offset">
+                <a id="tech_1" class="black" target="_top" href="/blog?type=tech_1"><b class="quick-weight-bold"> TECH</b> </a>
+            </div>
+            <div class="col-md-2 col-half-offset">
+                <a id="news_1" class="black" target="_top" href="/blog?type=news_1"><b class="quick-weight-bold"> NEWS</b> </a>
+            </div>
+            <div class="col-md-2 col-half-offset">
+                <a id="flu_1" class="black" target="_top" href="/blog?type=flu_1"><b class="quick-weight-bold"> FLUTUR</b> </a>
+            </div>
+            <div class="col-ms-2 col-half-offset">
+                <a id="disc_1" class="black" target="_top" href="/blog?type=disc_1"><b class="quick-weight-bold"> DISCOVER</b> </a>
             </div>
         </div>
-    </nav>
 
-    <div id="blog-header" class="box-shadow row" style="text-align: center;padding:12px 150px">
+        <div id="blog-header-small" class="box-shadow">
+            <div class="col-xs-2">
+                <a id="all" class="black" target="_top" href="/blog"><b class="quick-weight-bold"> HOME</b> </a>
+            </div>
+            <div class="col-xs-2 col-half-offset">
+                <a id="tech_1" class="black" target="_top" href="/blog?type=tech_1"><b class="quick-weight-bold"> TECH</b> </a>
+            </div>
+            <div class="col-xs-2 col-half-offset">
+                <a id="news_1" class="black" target="_top" href="/blog?type=news_1"><b class="quick-weight-bold"> NEWS</b> </a>
+            </div>
+            <div class="col-xs-2 col-half-offset">
+                <a id="flu_1" class="black" target="_top" href="/blog?type=flu_1"><b class="quick-weight-bold"> FLUTUR</b> </a>
+            </div>
+            <div class="col-xs-2 col-half-offset">
+                <a id="disc_1" class="black" target="_top" href="/blog?type=disc_1"><b class="quick-weight-bold"> DISCOVER</b> </a>
+            </div>
+        </div>
 
-        <div class="col-md-2">
-            <a id="all" class="black" target="_top" href="/blog"><b class="quick-weight-bold"> HOME</b> </a>
-        </div>
-        <div class="col-md-2 col-half-offset">
-            <a id="tech_1" class="black" target="_top" href="/blog?type=tech_1"><b class="quick-weight-bold"> TECH</b> </a>
-        </div>
-        <div class="col-md-2 col-half-offset">
-            <a id="news_1" class="black" target="_top" href="/blog?type=news_1"><b class="quick-weight-bold"> NEWS</b> </a>
-        </div>
-        <div class="col-md-2 col-half-offset">
-            <a id="flu_1" class="black" target="_top" href="/blog?type=flu_1"><b class="quick-weight-bold"> FLUTUR</b> </a>
-        </div>
-        <div class="col-ms-2 col-half-offset">
-            <a id="disc_1" class="black" target="_top" href="/blog?type=disc_1"><b class="quick-weight-bold"> DISCOVER</b> </a>
-        </div>
-    </div>
+        <div class="blog-detail-container">
 
-    <div id="blog-header-small" class="box-shadow">
-        <div class="col-xs-2">
-            <a id="all" class="black" target="_top" href="/blog"><b class="quick-weight-bold"> HOME</b> </a>
-        </div>
-        <div class="col-xs-2 col-half-offset">
-            <a id="tech_1" class="black" target="_top" href="/blog?type=tech_1"><b class="quick-weight-bold"> TECH</b> </a>
-        </div>
-        <div class="col-xs-2 col-half-offset">
-            <a id="news_1" class="black" target="_top" href="/blog?type=news_1"><b class="quick-weight-bold"> NEWS</b> </a>
-        </div>
-        <div class="col-xs-2 col-half-offset">
-            <a id="flu_1" class="black" target="_top" href="/blog?type=flu_1"><b class="quick-weight-bold"> FLUTUR</b> </a>
-        </div>
-        <div class="col-xs-2 col-half-offset">
-            <a id="disc_1" class="black" target="_top" href="/blog?type=disc_1"><b class="quick-weight-bold"> DISCOVER</b> </a>
-        </div>
-    </div>
-
-    <div class="blog-detail-container">
-
-        <div class="center-cropped" style="background-image: url('<%-details.title_photo_url%>');">
-            <div class="black-share" style="position: absolute;right: 10%;margin-top: 420px; margin-right: 20px;">
-                <div class="btn-outline btn-med" style="background-color: rgba(0, 0, 0, 0.6);text-align:center;width:150px;cursor:pointer;">
-                    <a class="facebook-share" style="color: #0CFFFC;text-decoration:none!important;">
-                        <img style="display:inline-block; height:14px; margin-bottom:1px" class="quicklink-img" src="/image/white_facebook_icon.png"></img>
-                        <div style="display:inline-block" class="white quicksand">Share Article</div>
-                    </a>
+            <div class="center-cropped" style="background-image: url('<%-details.title_photo_url%>');">
+                <div class="black-share" style="position: absolute;right: 10%;margin-top: 420px; margin-right: 20px;">
+                    <div class="btn-outline btn-med" style="background-color: rgba(0, 0, 0, 0.6);text-align:center;width:150px;cursor:pointer;">
+                        <a class="facebook-share" style="color: #0CFFFC;text-decoration:none!important;">
+                            <img style="display:inline-block; height:14px; margin-bottom:1px" class="quicklink-img" src="/image/white_facebook_icon.png"></img>
+                            <div style="display:inline-block" class="white quicksand">Share Article</div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div class="image-caption">
-            <%- details.title_photo_caption %>
-        </div>
-
-        <div class="user-container" style="margin:30px 0px;height:50px;width:100%">
-            <div class="small-user-partial">
-                <%- include small_user_partial.ejs %>
-            </div>
-            <div class="small-donate-partial">
-                <%- include small_donate_partial.ejs %>
-            </div>
-        </div>
-
-
-
-        <div class="user-container-small" style="margin:10px 0px; height: 40px; width:100%">
-            <div class="small-user-partial">
-                <%- include small_user_partial.ejs %>
-            </div>
-            <div class="btn-black facebook-btn">
-                <a class="black facebook-share" target="_top">
-                    <i class="fa fa-facebook" style="font-size:15px; margin-right:5px" aria-hidden="true"></i>
-                    <b class="quick-weight-bold-small"> Share now</b>
-                </a>
+            <div class="image-caption">
+                <%- details.title_photo_caption %>
             </div>
 
-        </div>
-
-        <div class="squish">
-            <div class="black-quicksand-title">
-                <%- details.blog_title %>
+            <div class="user-container" style="margin:30px 0px;height:50px;width:100%">
+                <div class="small-user-partial">
+                    <%- include small_user_partial.ejs %>
+                </div>
+                <div class="small-donate-partial">
+                    <%- include small_donate_partial.ejs %>
+                </div>
             </div>
 
-            <div style="margin:20px 0px;">
-                <% for(var i=0; i<details.paragraphs.length; i++) { %>
-                    <div class="para">
-                        <% if (typeof details.paragraphs[i].paragraph_title != 'undefined') { %>
-                            <div class="para-title">
-                                <%- details.paragraphs[i].paragraph_title %>
-                            </div>
-                            <% } %>
-                                <% if (typeof details.paragraphs[i].image_url != 'undefined') { %>
-                                    <div style="text-align:center;">
-                                        <img src="<%-details.paragraphs[i].image_url%>" class="para-image">
-                                        <% if (typeof details.paragraphs[i].image_caption != 'undefined') { %>
-                                            <div class="image-caption">
-                                                <%- details.paragraphs[i].image_caption %>
-                                            </div>
-                                            <% } %>
-                                    </div>
 
-                                    <% } %>
-                                        <% if (typeof details.paragraphs[i].paragraph_text != 'undefined') { %>
-                                            <div class="para-text">
-                                                <%- details.paragraphs[i].paragraph_text %>
-                                            </div>
-                                            <% } %>
-                    </div>
-                    <% } %>
+
+            <div class="user-container-small" style="margin:10px 0px; height: 40px; width:100%">
+                <div class="small-user-partial">
+                    <%- include small_user_partial.ejs %>
+                </div>
+                <div class="btn-black facebook-btn">
+                    <a class="black facebook-share" target="_top">
+                        <i class="fa fa-facebook" style="font-size:15px; margin-right:5px" aria-hidden="true"></i>
+                        <b class="quick-weight-bold-small"> Share now</b>
+                    </a>
+                </div>
+
             </div>
 
-        </div>
-        <div class="black-quicksand-big-title recent-title">Similar Blogs:</div>
-        <div class="grid-row" style="margin-bottom:50px;">
-            <% for(var i=0; i<similar.length; i++) { %>
-                <div class="grid-column">
-                    <a href="/blog/<%-similar[i].blog_id%>">
+            <div class="squish">
+                <div class="black-quicksand-title">
+                    <%- details.blog_title %>
+                </div>
+
+                <div style="margin:20px 0px;">
+                    <% for(var i=0; i<details.paragraphs.length; i++) { %>
+                        <div class="para">
+                            <% if (typeof details.paragraphs[i].paragraph_title != 'undefined') { %>
+                                <div class="para-title">
+                                    <%- details.paragraphs[i].paragraph_title %>
+                                </div>
+                                <% } %>
+                                    <% if (typeof details.paragraphs[i].image_url != 'undefined') { %>
+                                        <div style="text-align:center;">
+                                            <img src="<%-details.paragraphs[i].image_url%>" class="para-image">
+                                            <% if (typeof details.paragraphs[i].image_caption != 'undefined') { %>
+                                                <div class="image-caption">
+                                                    <%- details.paragraphs[i].image_caption %>
+                                                </div>
+                                                <% } %>
+                                        </div>
+
+                                        <% } %>
+                                            <% if (typeof details.paragraphs[i].paragraph_text != 'undefined') { %>
+                                                <div class="para-text">
+                                                    <%- details.paragraphs[i].paragraph_text %>
+                                                </div>
+                                                <% } %>
+                        </div>
+                        <% } %>
+                </div>
+
+            </div>
+            <div class="black-quicksand-big-title recent-title">Similar Blogs:</div>
+            <div class="grid-row" style="margin-bottom:50px;">
+                <% for(var i=0; i<similar.length; i++) { %>
+                    <div class="grid-column">
+                        <a href="/blog/<%-similar[i].blog_id%>">
                             <div style="background-image:url('<%-similar[i].title_photo_url%>');width:100%;height: 250px; background-position: center center; background-repeat: no-repeat; background-size: cover;">
                             </div>
                             <div class="blog-outside-title black">
@@ -441,17 +405,17 @@
                                 <%- similar[i].blog_short_desc%>
                             </div>
                         </a>
-                </div>
-                <% } %>
+                    </div>
+                    <% } %>
+            </div>
         </div>
-    </div>
 
-    <div class="resp-footer">
-        <%- include footer_partial.ejs %>
-    </div>
-    <div class="small-resp-footer">
-        <%- include footer_small_partial.ejs %>
-    </div>
+        <div class="resp-footer">
+            <%- include footer_partial.ejs %>
+        </div>
+        <div class="small-resp-footer">
+            <%- include footer_small_partial.ejs %>
+        </div>
 </body>
 
 <script>
