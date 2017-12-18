@@ -48,7 +48,7 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     color: #4C4C4C;
-    font-family: "Source Serif Pro";
+    font-family: Source Serif Pro;
     font-size: 14px;
     line-height: 18px;
     margin: 10px;
@@ -61,7 +61,7 @@ body {
     -webkit-line-clamp: 2;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    font-family: Roboto;
+    font-family: Quicksand;
     font-size: 18px;
     font-weight: bold;
     line-height: 21px;

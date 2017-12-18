@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>About Us - Flutur</title>
+    <link rel="icon" href="image/header_logo.png" />
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:400,700" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css-min/new-age.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/mobile-view.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <style>
+        body,
+        html {
+            background: white;
+            font-family: Quicksand;
+        }
+        
+        @media (min-width: 768px) {
+            .navbar-default .navbar-header .navbar-brand {
+                color: rgba(0, 0, 0, 0.7);
+            }
+            .navbar-default .nav>li>a,
+            .navbar-default .nav>li>a:focus {
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                width: 90%;
+            }
+        }
+        
+        h2 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 25px;
+        }
+        
+        .terms-container>li {
+            font-size: 20px;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-left: 60px;
+            margin-bottom: 30px;
+        }
+        
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 10px;
+        }
+        
+        .blog-short-desc {
+            margin-bottom: 0px;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            letter-spacing: 0px;
+        }
+        
+        .grid-column {
+            text-align: center;
+            padding: 10px 20px 10px 20px;
+        }
+    </style>
+</head>
+
+<body style="display:none">
+
+    <%- include standard-header.ejs %>
+
+        <div class="terms-container" style="width:80%; margin: 0 auto; padding: 10px 10px 10px 10px;">
+            <div class="big-title" style="margin:20px 0px 0px 0px">About Us</div>
+            <!-- <h2>Why did we start Flutur</h2>
+            <p><span style="font-weight: 400;"> </span></p> -->
+
+            <h2>Who are we?</h2>
+            <p><span style="font-weight: 400;"> </span></p>
+
+            <div class="grid-row" style="margin:50px 200px 50px 0px;">
+                <div class="grid-column">
+                    <div class="blog-img" style="background-image:url('https://scontent.fblr8-1.fna.fbcdn.net/v/t31.0-8/13920186_10157172257165176_653980194679104627_o.jpg?oh=d9f3b16f2550c062912d0a3165bb8379&oe=5A89ADCD');">
+                    </div>
+                    <h2 class="blog-outside-title"> Joel John Koshy </h2>
+                    <h3 class="blog-short-desc">pretends is too cool.</h3>
+                    <a href="https://www.facebook.com/j.j.k892" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
+                    <a href="https://www.linkedin.com/in/joel-john-koshy-5565bb53/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
+                </div>
+                <div class="grid-column">
+                    <div class="blog-img" style="background-image:url('https://scontent.fblr8-1.fna.fbcdn.net/v/t1.0-9/14910293_10154119009838576_3485779856412403027_n.jpg?oh=59218c10912121683f2ca1753a616b45&oe=5AD35437');">
+                    </div>
+                    <h2 class="blog-outside-title"> Mallika Priya Khullar</h2>
+                    <h3 class="blog-short-desc">still listens to eminem. also binge watches jimmy fallon #hashtag videos.</h3>
+                    <a href="https://www.facebook.com/mallika.khullar" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
+                    <a href="https://www.linkedin.com/in/mallikakhullar/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
+                </div>
+                <div class="grid-column">
+                    <div class="blog-img" style="background-image:url('http://res.cloudinary.com/epicfoundation/image/upload/v1513594070/rah_cpyuep.jpg');">
+                    </div>
+                    <h2 class="blog-outside-title"> Rahul Mallapur </h2>
+                    <h3 class="blog-short-desc">pretends is too smart.</h3>
+                    <div style="display:block">
+                        <a href="https://www.facebook.com/rahulkmallapur" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
+                        <a href="https://www.linkedin.com/in/rahul-mallapur-8a078630/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
+                    </div>
+                </div>
+            </div>
+
+            <%- include contact_partial_small.ejs %>
+
+        </div>
+
+
+        <div class="resp-footer">
+            <%- include footer_partial.ejs %>
+        </div>
+        <div class="small-resp-footer">
+            <%- include footer_small_partial.ejs %>
+        </div>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("body").fadeIn(800);
+    });
+</script>
+</html
