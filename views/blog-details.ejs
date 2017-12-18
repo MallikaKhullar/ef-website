@@ -29,6 +29,11 @@
         <%- details.blog_title %>
     </title>
 
+    <meta property="og:title" content="<%- details.blog_title %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.flutur.org/blog/<%- details.blog_id %>" />
+    <meta property="og:image" content="<%- details.title_photo_url %>" />
+
     <style>
         @media all and (max-width: 699px) {
             .black-share {
