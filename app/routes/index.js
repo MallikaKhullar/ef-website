@@ -52,7 +52,6 @@ var allRoutes = function(app, passport) {
     app.use('/privacy', termsAndConditions);
     app.use('/new-tab', newTab);
     app.use('/faqs', faqs);
-    app.use('/ultron', ultron);
     app.use('/blog', blogs);
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', {
