@@ -10,6 +10,8 @@ var faqs = require('./faqs');
 var donate = require('./donate');
 var ultron = require('./ultron');
 var blogs = require('./blogs');
+var contactPage = require('./contact');
+var aboutPage = require('./about-us');
 
 var allRoutes = function(app, passport) {
 
@@ -41,6 +43,8 @@ var allRoutes = function(app, passport) {
     });
 
     app.use('/', homePage);
+    app.use('/contact', contactPage);
+    app.use('/aboutUs', aboutPage);
     app.use('/home', homePage);
     app.use('/donate', donate);
     app.use('/login', login);
