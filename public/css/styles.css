@@ -4,12 +4,6 @@ body,
     height: 100%;
     background-size: 800% 800%;
     animation: AnimationName 18s ease infinite;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 @-webkit-keyframes AnimationName {
