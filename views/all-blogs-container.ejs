@@ -1,0 +1,45 @@
+<div class="grid-container">
+    <div class="grid-row">
+        <div class="grid-column">
+            <% for(var i=0; i<Math.ceil(blogs.length/3); i++) { %>
+                <a href="/blog/<%-blogs[i].blog_id%>">
+                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                    <div class="blog-outside-title black">
+                        <%- blogs[i].blog_title%>
+                    </div>
+                    <div class="blog-short-desc">
+                        <%- blogs[i].blog_short_desc%>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+
+        <div class="grid-column">
+            <% for(var i= Math.ceil(blogs.length/3); i < Math.ceil(2 * blogs.length/3); i++) { %>
+                <a href="/blog/<%-blogs[i].blog_id%>">
+                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                    <div class="blog-outside-title black">
+                        <%- blogs[i].blog_title%>
+                    </div>
+                    <div class="blog-short-desc">
+                        <%- blogs[i].blog_short_desc%>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+
+        <div class="grid-column">
+            <% for(var i= Math.ceil(2 * blogs.length/3); i<blogs.length; i++) { %>
+                <a href="/blog/<%-blogs[i].blog_id%>">
+                    <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
+                    <div class="blog-outside-title black">
+                        <%- blogs[i].blog_title%>
+                    </div>
+                    <div class="blog-short-desc">
+                        <%- blogs[i].blog_short_desc%>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+    </div>
+</div>

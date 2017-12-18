@@ -4,6 +4,7 @@ var RouteHandler = require('../../handlers/route_handler');
 var ngoController = require('../../controllers/ngo');
 var userController = require('../../controllers/user');
 var donationController = require('../../controllers/donations');
+var blogController = require('../../controllers/blog');
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
 var Utils = require('../../utils');
@@ -24,8 +25,10 @@ router.get('/', function(req, res) {
     var def = {
         ngos: ngoController.getAllNgos(),
         userCount: userController.getAllUserCount(),
-        donationCount: donationController.getAllDonationCount()
+        donationCount: donationController.getAllDonationCount(),
+        allBlogs: blogController.getBlogOverviews({ count: 3 })
     };
+
 
     deferred.combine(def).pipe(function(data) {
 
@@ -34,7 +37,8 @@ router.get('/', function(req, res) {
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
                 followers: Utils.getCommaSeparatedNumber(data.userCount)
-            }
+            },
+            blogs: data.allBlogs
         };
 
         res.render("home.ejs", newdata);

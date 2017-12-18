@@ -106,17 +106,17 @@
         }
         
         @media screen and (min-width: 700px) {
-            .category-container {
-                margin: 90px 0px 10px 0px;
-                padding: 10px 130px 0px 126px;
-                width: 100%;
-                height: 80px;
-            }
             .paginate-small {
                 display: none;
             }
             .paginate-big {
                 display: block;
+            }
+            .category-container {
+                margin: 90px 0px 10px 0px;
+                padding: 10px 130px 0px 126px;
+                width: 100%;
+                height: 80px;
             }
             .category-container-small {
                 display: none;
@@ -213,95 +213,51 @@
         </div>
 
 
-        <div class="grid-container">
-            <div class="grid-row">
-                <div class="grid-column">
-                    <% for(var i=0; i<Math.ceil(blogs.length/3); i++) { %>
-                        <a href="/blog/<%-blogs[i].blog_id%>">
-                        <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
-                        <div class="blog-outside-title black">
-                            <%- blogs[i].blog_title%>
-                        </div>
-                        <div class="blog-short-desc">
-                            <%- blogs[i].blog_short_desc%>
-                        </div>
-                    </a>
+        <%- include all-blogs-container.ejs %>
+
+
+            <div class="paginate-big row" style="padding:35px 30px 50px 30px;">
+                <div class="col-md-1" style="text-align: right;">
+                    <% if (currentPage > 0) { %>
+                        <a id="prev-page" class="more-pink-title">
+                            <i class="fa fa-angle-left" style="font-size:15px; margin-left:5px" aria-hidden="true"></i> Previous
+                        </a>
                         <% } %>
                 </div>
-
-                <div class="grid-column">
-                    <% for(var i= Math.ceil(blogs.length/3); i < Math.ceil(2 * blogs.length/3); i++) { %>
-                        <a href="/blog/<%-blogs[i].blog_id%>">
-                        <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
-                        <div class="blog-outside-title black">
-                            <%- blogs[i].blog_title%>
-                        </div>
-                        <div class="blog-short-desc">
-                            <%- blogs[i].blog_short_desc%>
-                        </div>
-                    </a>
-                        <% } %>
-                </div>
-
-                <div class="grid-column">
-                    <% for(var i= Math.ceil(2 * blogs.length/3); i<blogs.length; i++) { %>
-                        <a href="/blog/<%-blogs[i].blog_id%>">
-                        <img src="<%-blogs[i].title_photo_url%>" style="width:100%">
-                        <div class="blog-outside-title black">
-                            <%- blogs[i].blog_title%>
-                        </div>
-                        <div class="blog-short-desc">
-                            <%- blogs[i].blog_short_desc%>
-                        </div>
-                    </a>
-                        <% } %>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="paginate-big row" style="padding:35px 30px 50px 30px;">
-            <div class="col-md-1" style="text-align: right;">
-                <% if (currentPage > 0) { %>
-                    <a id="prev-page" class="more-pink-title">
-                        <i class="fa fa-angle-left" style="font-size:15px; margin-left:5px" aria-hidden="true"></i> Previous
-                    </a>
-                    <% } %>
-            </div>
-            <div class="col-md-10"></div>
-            <div class="col-md-1">
-                <% if (!endOfPagination) { %>
-                    <a id="next-page" class="more-pink-title">
+                <div class="col-md-10"></div>
+                <div class="col-md-1">
+                    <% if (!endOfPagination) { %>
+                        <a id="next-page" class="more-pink-title">
                             Next <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
                         </a>
-                    <% } %>
+                        <% } %>
+                </div>
             </div>
-        </div>
 
-        <div class="paginate-small" style="margin-bottom:15px">
-            <div style="float:left;">
-                <% if (currentPage > 0) { %>
-                    <a id="prev-page" class="black-quicksand-title">
-                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-                    </a>
-                    <% } %>
+            <div class="paginate-small" style="margin-bottom:15px">
+                <div style="float:left;">
+                    <% if (currentPage > 0) { %>
+                        <a id="prev-page" class="black-quicksand-title">
+                            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        </a>
+                        <% } %>
+                </div>
+                <div style="float:right">
+                    <% if (!endOfPagination) { %>
+                        <a id="next-page" class="black-quicksand-title">
+                            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        </a>
+                        <% } %>
+                </div>
             </div>
-            <div style="float:right">
-                <% if (!endOfPagination) { %>
-                    <a id="next-page" class="black-quicksand-title">
-                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    </a>
-                    <% } %>
+
+
+            <div class="resp-footer">
+                <%- include footer_partial.ejs %>
             </div>
-        </div>
-
-
-        <div class="resp-footer">
-            <%- include footer_partial.ejs %>
-        </div>
-        <div class="small-resp-footer">
-            <%- include footer_small_partial.ejs %>
-        </div>
+            <div class="small-resp-footer">
+                <%- include footer_small_partial.ejs %>
+            </div>
 
 </body>
 
