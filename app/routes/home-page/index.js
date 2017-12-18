@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
         ngos: ngoController.getAllNgos(),
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
-        allBlogs: blogController.getBlogOverviews({ count: 3 })
+        allBlogs: blogController.getBlogOverviews({ count: 6 })
     };
 
 
