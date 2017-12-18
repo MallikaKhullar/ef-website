@@ -83,6 +83,12 @@
             font-size: 12px;
         }
         
+        h1,
+        h2,
+        h3 {
+            letter-spacing: 0px;
+        }
+        
         @media all and (max-width: 699px) {
             .category-container {
                 display: none;
@@ -180,24 +186,24 @@
 
         <div class="category-container">
             <div class="title-container" style="width:50%; float:left">
-                <div class="black-quicksand-title">
+                <h1 class="black-quicksand-title">
                     <% if (typeof category != 'undefined') { %>
                         <%- category.category_name %>
                             <% } else {%>
-                                Blogs &amp; Stories
+                                Flutur Blogs &amp; Stories
                                 <% } %>
-                </div>
+                </h1>
             </div>
         </div>
 
         <div class="category-container-small">
-            <div class="black-quicksand-title" style="text-align: center">
+            <h1 class="black-quicksand-title" style="text-align: center">
                 <% if (typeof category != 'undefined') { %>
                     <%- category.category_name %>
                         <% } else {%>
-                            Blogs &amp; Stories
+                            Flutur Blogs &amp; Stories
                             <% } %>
-            </div>
+            </h1>
         </div>
 
         <div class="grid-row" style="margin-bottom:20px;">
@@ -207,12 +213,12 @@
                             <div class="blog-img" style="background-image:url('<%-blogs[i].title_photo_url%>');">
                             </div>
                             <div style="height:95px">
-                            <div class="blog-outside-title black">
+                            <h2 class="blog-outside-title black">
                                 <%- blogs[i].blog_title%>
-                            </div>
-                            <div class="blog-short-desc">
+                            </h2>
+                            <h3 class="blog-short-desc">
                                 <%- blogs[i].blog_short_desc%>
-                            </div>
+                            </h3>
                         </div>
                         </a>
                 </div>
