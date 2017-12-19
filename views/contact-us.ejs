@@ -51,7 +51,7 @@
             font-size: 25px;
         }
         
-        .terms-container>li {
+        li {
             font-size: 20px;
         }
         
@@ -60,6 +60,14 @@
             margin-left: 60px;
             margin-bottom: 30px;
         }
+        
+        .terms-container {
+            padding: 125px 0px;
+        }
+        
+        .big-subtitle {
+            line-height: 50px;
+        }
     </style>
 </head>
 
@@ -67,17 +75,19 @@
 
     <%- include standard-header.ejs %>
 
-        <div class="terms-container" style="width:80%; margin: 0 auto; padding: 10px 10px 10px 10px;">
+        <div class="terms-container" style="width:80%; margin: 0 auto;">
             <h1 class="big-title" style="margin:20px 0px 0px 0px">Contact Us</h1>
+            <div class="big-subtitle">Feel free to reach out to us for volunteer or collaboration opportunities! We love new friends :D
+            </div>
+
             <ul>
                 <li>
-                    Emailing us at: hello@flutur.org
+                    Email us at: hello@flutur.org
                 </li>
                 <li>
-                    Calling us at: +8310753447
+                    Contact us at: 8310753447
                 </li>
             </ul>
-
         </div>
 
         <div class="resp-footer">
@@ -93,4 +103,5 @@
         $("body").fadeIn(800);
     });
 </script>
-</html
+
+</html>
