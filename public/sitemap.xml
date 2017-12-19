@@ -1,100 +1,108 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"> 
 <url>
-<loc>http://www.flutur.org/</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>1.00</priority>
+  <loc>http://www.flutur.org/</loc>
+  <priority>1.0</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/faqs</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.80</priority>
+  <loc>http://www.flutur.org/blog</loc>
+  <priority>1.0</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/blog</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.80</priority>
+  <loc>http://www.flutur.org/faqs</loc>
+  <priority>0.4</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/privacy</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.80</priority>
+  <loc>http://www.flutur.org/privacy</loc>
+  <priority>0.4</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/blog?type=tech_1</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/indias-silent-heroes-rajaram-joshi</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/blog?type=news_1</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/physical-philanthropy-is-all-the-rage</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/blog?type=flu_1</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/pitbull-adoptions-made-fun-flower-power</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/blog?type=disc_1</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/6-ways-to-change-lives-over-christmas</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/blog/flutur-why-literacy</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/indias-silent-heroes-jadav-payeng</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>
-http://www.flutur.org/blog/6-ways-to-change-lives-over-christmas
-</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/flutur-why-literacy</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>
-http://www.flutur.org/blog/flutur-how-we-chose-the-name
-</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog?type=tech</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/blog/7-amazing-ngos-websites</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog?type=news</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>http://www.flutur.org/blog/meet-the-javan-rhino</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog?type=flutur</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>
-http://www.flutur.org/blog/indias-silent-heroes-jadav-payeng
-</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog?type=discover</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>
-http://www.flutur.org/blog/generalized-anxiety-in-elders
-</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/7-amazing-ngos-websites</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>
-http://www.flutur.org/blog/3-movies-to-inspire-kids-environmentally
-</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/meet-the-javan-rhino</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 <url>
-<loc>
-http://www.flutur.org/blog/3-ngos-to-adopt-your-pet-from
-</loc>
-<lastmod>2017-12-15T17:21:41+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>http://www.flutur.org/blog/indias-silent-heroes-nileema-mishra</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.flutur.org/blog/generalized-anxiety-in-elders</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.flutur.org/blog/flutur-how-we-chose-the-name</loc>
+  <priority>1.0</priority>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.flutur.org/blog/3-movies-to-inspire-kids-environmentally</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
+</url>
+<url>
+  <loc>http://www.flutur.org/blog/3-ngos-to-adopt-your-pet-from</loc>
+  <priority>0.8</priority>
+  <changefreq>hourly</changefreq>
 </url>
 </urlset>
