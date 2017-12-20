@@ -2061,7 +2061,6 @@ button:focus {
 }
 
 @media screen and (min-width: 700px) {
-    .trans-box,
     .resp-footer {
         display: block;
     }
