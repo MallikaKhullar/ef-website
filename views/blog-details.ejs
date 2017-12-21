@@ -398,7 +398,7 @@
                                 <% } %>
                                     <% if (typeof details.paragraphs[i].image_url != 'undefined') { %>
                                         <div style="text-align:center;">
-                                            <img src="<%-details.paragraphs[i].image_url%>" class="para-image">
+                                            <img alt="<%-details.paragraphs[i].image_alt_text%>" src="<%-details.paragraphs[i].image_url%>" class="para-image">
                                             <% if (typeof details.paragraphs[i].image_caption != 'undefined') { %>
                                                 <div class="image-caption">
                                                     <%- details.paragraphs[i].image_caption %>

@@ -4,7 +4,8 @@ var paragraphSchema = mongoose.Schema({
     image_url: String,
     image_caption: String,
     paragraph_title: String,
-    paragraph_text: String
+    paragraph_text: String,
+    image_alt_text: String
 }, { _id: false });
 
 
