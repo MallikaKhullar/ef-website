@@ -59,6 +59,10 @@ var allRoutes = function(app, passport) {
         res.send("User-agent: *\n" +
             "Disallow: /blog/jljl11kj\n" +
             "Disallow: /blog/sophie_1\n" +
+            "Disallow: /blog/sophie_1\n" +
+            "Disallow: /blog?type=tech_1\n" +
+            "Disallow: /blog?type=news\n" +
+            "Disallow: /blog?type=tech\n" +
             "Disallow: /blog/ngos_dog_adoption");
     });
 
