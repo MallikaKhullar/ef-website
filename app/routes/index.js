@@ -53,6 +53,15 @@ var allRoutes = function(app, passport) {
     app.use('/new-tab', newTab);
     app.use('/faqs', faqs);
     app.use('/blog', blogs);
+
+    app.get('/robots.txt', function(req, res) {
+        res.type('text/plain');
+        res.send("User-agent: *\n" +
+            "Disallow: /blog/jljl11kj\n" +
+            "Disallow: /blog/sophie_1\n" +
+            "Disallow: /blog/ngos_dog_adoption");
+    });
+
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', {
         scope: 'email'
