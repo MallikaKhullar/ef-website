@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
+var moment = require('moment');
 
 var donationDumpSchema = mongoose.Schema({
     num_hearts: Number,
     cause_id: String,
     ngo_id: String,
     user_id: String,
-    donation_id: String
+    donation_id: String,
+    timestamp: Number
 });
 
 donationDumpSchema.statics = {
@@ -14,7 +16,7 @@ donationDumpSchema.statics = {
     },
 
     createDonation: function(donationObj, cb) {
-        console.log("Create don repo called with donation", donationObj);
+        donationObj.timestamp = moment().format('x');
         this.create(donationObj, cb);
     },
 
