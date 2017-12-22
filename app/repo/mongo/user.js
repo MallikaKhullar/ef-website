@@ -7,6 +7,7 @@ var userSchema = mongoose.Schema({
     timestamp: Number,
     facebook_id: String,
     facebook_token: String,
+    modified_timestamp: Number,
     name: String,
     google_id: String,
     google_token: String,

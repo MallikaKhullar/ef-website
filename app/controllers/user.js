@@ -10,6 +10,7 @@ exports.incrementHearsById = async(function*(id) {
         if (err) { return next(err); }
         user.hearts.current_week_hearts = (user.hearts.current_week_hearts || 0) + 1;
         user.hearts.total_hearts = (user.hearts.total_hearts || 0) + 1;
+        user.modified_timestamp = moment().format('x');
         user.save((err) => {
             if (err) {
                 return next(err);
