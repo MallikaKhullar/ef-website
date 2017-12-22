@@ -3,6 +3,7 @@ const Pledge = require('../repo/mongo/pledge');
 const { wrap: async } = require('co');
 var fn = require('./../utils/functions');
 var deferred = require('./../utils/deferred.js');
+var moment = require('moment');
 
 
 exports.incrementHearsById = async(function*(id) {
