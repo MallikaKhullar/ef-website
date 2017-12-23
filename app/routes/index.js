@@ -56,14 +56,14 @@ var allRoutes = function(app, passport) {
 
     app.get('/robots.txt', function(req, res) {
         res.type('text/plain');
-        res.send("User-agent: *\n" +
-            "Disallow: /blog/jljl11kj\n" +
-            "Disallow: /blog/sophie_1\n" +
-            "Disallow: /blog/sophie_1\n" +
-            "Disallow: /blog?type=tech_1\n" +
-            "Disallow: /blog?type=news\n" +
-            "Disallow: /blog?type=tech\n" +
-            "Disallow: /blog/ngos_dog_adoption");
+        res.send("User-agent: *" +
+            "\nDisallow: /blog/jljl11kj" +
+            "\nDisallow: /blog/sophie_1" +
+            "\nDisallow: /blog?type=tech_1" +
+            "\nDisallow: /blog?type=news" +
+            "\nDisallow: /blog?type=tech" +
+            "\nDisallow: /blog/jlj" +
+            "\nDisallow: /blog/ngos_dog_adoption");
     });
 
     // route for facebook authentication and login
