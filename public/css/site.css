@@ -2233,3 +2233,26 @@ button:focus {
     margin-top: 80px;
     padding: 30px 30px 5px 30px;
 }
+
+.small-margin-top {
+    margin-top: 10px;
+}
+
+.big-margin-top {
+    margin-top: 60px;
+}
+
+.small-margin-bottom {
+    margin-bottom: 10px;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-desc {
+    display: none
+}
