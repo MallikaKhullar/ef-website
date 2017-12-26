@@ -12,7 +12,7 @@ var ultron = require('./ultron');
 var blogs = require('./blogs');
 var contactPage = require('./contact');
 var aboutPage = require('./about-us');
-var newTabTest = require('./new-tab-test');
+// var newTabTest = require('./new-tab-test');
 
 var allRoutes = function(app, passport) {
 
@@ -54,7 +54,7 @@ var allRoutes = function(app, passport) {
     app.use('/new-tab', newTab);
     app.use('/faqs', faqs);
     app.use('/blog', blogs);
-    app.use('/new-tab-test', newTabTest);
+    // app.use('/new-tab-test', newTabTest);
 
     app.get('/robots.txt', function(req, res) {
         res.type('text/plain');
@@ -67,6 +67,7 @@ var allRoutes = function(app, passport) {
             "\nDisallow: /blog?type=flutur" +
             "\nDisallow: /blog/jlj" +
             "\nDisallow: /blog/mall" +
+            "\nDisallow: /blog/pregnet" +
             "\nDisallow: /blog/ngos_dog_adoption");
     });
 
