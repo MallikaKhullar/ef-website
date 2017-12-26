@@ -81,7 +81,7 @@ function constructPayload(data) {
         previousCause: data.previousCause || {},
         stats: {
             donations: "Rs. " + Utils.getCommaSeparatedMoney(data.numDonations),
-            followers: Utils.getCommaSeparatedNumber(data.numUsers),
+            followers: Utils.getCommaSeparatedNumber(50 + data.numUsers),
             remainingTime: remainingTime
         }
     };
