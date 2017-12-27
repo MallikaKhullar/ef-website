@@ -2,6 +2,7 @@ var config = require('config');
 var Utils = require('../utils');
 
 var homePage = require('./home-page');
+var homePageDisable = require('./home-page-disable');
 var topApps = require('./top-apps');
 var newTab = require('./new-tab');
 var termsAndConditions = require('./terms');
@@ -46,7 +47,7 @@ var allRoutes = function(app, passport) {
     app.use('/', homePage);
     app.use('/contact', contactPage);
     app.use('/aboutUs', aboutPage);
-    app.use('/home', homePage);
+    app.use('/home', homePageDisable);
     app.use('/donate', donate);
     app.use('/login', login);
     app.use('/top-apps', topApps);
