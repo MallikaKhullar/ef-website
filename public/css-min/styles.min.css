@@ -255,7 +255,7 @@ html {
 }
 
 .display-number {
-    font-size: 27px;
+    font-size: 22px;
     color: #fff;
     font-family: Quicksand;
     font-weight: 700
@@ -289,7 +289,7 @@ html {
 }
 
 .env-icon {
-    width: 40%;
+    width: 35%;
     padding: 12px 0
 }
 

@@ -72,7 +72,7 @@
         }
         
         #user-profile-container {
-            padding-left: 50px;
+            padding-left: 30px;
         }
     </style>
 </head>
@@ -213,7 +213,7 @@
 
             <div class="right-bar">
                 <% if (user.state === 'donate_pending') { %>
-                    <div style="text-align: center; padding: 10% 7%">
+                    <div style="text-align: center; padding: 8% 7%">
                         <div class="thick-text white" style="font-size:16px;">WEEKLY MISSION</div>
                         <div class="thick-text green big-text" style="font-size:22px">COMPLETE!</div>
                         <img alt="Flutur Cause" class="env-icon" src="<%- cause.img_url %>" /></a>
@@ -238,7 +238,7 @@
                         </ul>
                     </div>
                     <% } else if (user.state === 'cause_selection_pending') { %>
-                        <div style="text-align: center; padding: 15% 15%">
+                        <div style="text-align: center; padding: 12% 15%">
                             <div class="thick-text center-element white big-text">
                                 <img alt="Flutur Heart" style="height:22px" src="/image/heart.png" />
                                 <%- user.previous_donation.previous_week_hearts %>
@@ -320,7 +320,7 @@
                         </div>
                     </div>
 
-                    <div style="width: 15%; float:left; padding-top:5px">
+                    <div style="width: 25%; float:left; padding-top:5px">
                         <div class="display-number-title">People on Flutur</div>
                         <div class="display-number" style="margin-top:2px">
                             <%- stats.followers %>
