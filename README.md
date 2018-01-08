@@ -1,5 +1,7 @@
 # Website for EFoundation
 
+Check out http://www.flutur.org for more details 
+
 ### Framework: 
 * node.js 
 * express 
