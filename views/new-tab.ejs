@@ -637,6 +637,7 @@
 <body style="display:none;">
     <header>
         <!-- background image -->
+        <div id="background-image-white" style="background-color:white"></div>
         <div id="background-image" class="background" style="background: url('<%- dailyImage %>');"></div>
         <div id="background-image-overlay" class="background background-gradient-layer"></div>
 
@@ -1222,6 +1223,7 @@
         switch (window.theme) {
             case "white":
                 $("#myBar").css("background-color", "#00F79F");
+                $("#background-image-white").hide();
                 $("#background-image-overlay").hide();
                 $("#background-image").show();
                 $("#background-image").css("background", "white");
@@ -1249,6 +1251,7 @@
 
             case "unsplash":
             default:
+                $("#background-image-white").show();
                 $(".page-text").css("color", "white");
                 $("#background-image-overlay").show();
                 $("#background-image").show();
@@ -1274,6 +1277,7 @@
                 break;
 
             case "gradient":
+                $("#background-image-white").hide();
                 $("#myBar").css("background-color", "#38FFFC");
                 $(".page-text").css("color", "white");
                 $("#background-image-overlay").hide();
