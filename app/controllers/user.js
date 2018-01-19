@@ -26,6 +26,12 @@ exports.insertPledge = function(pledgeObj) {
     });
 };
 
+exports.changeColorTheme = function(id, theme) {
+    return fn.defer(fn.bind(User, 'setColorTheme'))({ id, theme }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+
 exports.getAllUserCount = function() {
     return fn.defer(fn.bind(User, 'getUserCount'))({}).pipe(function(res) {
         return deferred.success(res);

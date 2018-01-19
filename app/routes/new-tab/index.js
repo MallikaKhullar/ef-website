@@ -10,7 +10,10 @@ var causeController = require('../../controllers/cause');
 var ngoController = require('../../controllers/ngo');
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
+var constants = require('./../../utils/constants');
 var moment = require('moment');
+const prettyMs = require('pretty-ms');
+
 
 router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
     if (req.query && req.query.cause_id) {
@@ -42,7 +45,6 @@ function redirectForNewUser(user, res) {
 }
 
 router.get('/', continueIfLoggedIn, function(req, res) {
-
     if (redirectForNewUser(req.user, res)) return;
 
     var def = {
@@ -67,13 +69,33 @@ router.get('/', continueIfLoggedIn, function(req, res) {
     userController.incrementHearsById(req.user.id);
 });
 
+router.get('/theme-toggle', function(req, res) {
+    var theme = req.query.currentTheme.replace(" ", "");
+    var index = constants.themes.indexOf(theme);
+    index++;
+    var newTheme = constants.themes[(index) % constants.themes.length];
+    userController.changeColorTheme(req.user.user_id, newTheme).pipe(function(data) {
+        res.send(newTheme);
+    });
+});
+
+router.get('/theme-change', function(req, res) {
+    var newTheme = req.query.selectedTheme;
+    userController.changeColorTheme(req.user.user_id, newTheme).pipe(function(data) {
+        res.send(newTheme);
+    });
+});
+
 
 function constructPayload(data) {
     var hoursToGo = Utils.timePeriodInHours(data.user.hearts.target_end_time, moment().format('x'));
     var remainingTime = hoursToGo >= 24 ? (hoursToGo / 24 > 1 ? Math.floor(hoursToGo / 24) + " days " : Math.floor(hoursToGo / 24) + " day ") :
         (hoursToGo > 1 ? Math.floor(hoursToGo) + " hours " : "1 hour ");
+
     var progress = Utils.calculateProgress(data.user.hearts.current_week_hearts, data.cause.total_hearts);
     data.user.progress = progress;
+
+    var shortRemaining = prettyMs(data.user.hearts.target_end_time - moment().format('x'), { compact: true });
 
     var newdata = {
         user: data.user,
@@ -82,9 +104,20 @@ function constructPayload(data) {
         stats: {
             donations: "Rs. " + Utils.getCommaSeparatedMoney(data.numDonations),
             followers: Utils.getCommaSeparatedNumber(50 + data.numUsers),
-            remainingTime: remainingTime
+            remainingTime: remainingTime,
+            shortRemaining: shortRemaining.replace("~", "")
         }
     };
+
+    var total_hearts_text = data.user.hearts.total_hearts == 1 ? " heart" : " hearts";
+
+    var daysPassed = Utils.timePeriodInDays(moment().format('x'), data.user.timestamp);
+
+    newdata.timeElapsed = moment().format('x') > data.user.hearts.target_end_time;
+    newdata.dailyImage = constants.images[Math.round(daysPassed) % constants.images.length];
+    newdata.user.first_name = Utils.firstName(newdata.user.name);
+    newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
+    newdata.user.hearts.total_hearts_text = data.user.hearts.total_hearts + total_hearts_text;
 
     if (data.user.state == 'cause_selection_pending') {
         return ngoController.getNgosFromCauseId(data.previousCause.cause_id).pipe(function(res) {
@@ -92,8 +125,6 @@ function constructPayload(data) {
             return deferred.success(newdata);
         });
     }
-
-    newdata.timeElapsed = moment().format('x') > data.user.hearts.target_end_time;
 
     if (newdata.timeElapsed &&
         data.user.state !== "cause_selection_pending" &&

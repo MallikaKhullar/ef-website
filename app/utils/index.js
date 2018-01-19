@@ -346,4 +346,8 @@ Utils.prototype.timePeriodInHours = function(time1, time2) {
     return parseInt(timePeriodInMilliseconds(time1, time2) / parseInt(3600000));
 }
 
+Utils.prototype.firstName = function(name) {
+    return name.split(' ')[0];
+}
+
 module.exports = new Utils();

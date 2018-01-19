@@ -12,6 +12,8 @@ var userSchema = mongoose.Schema({
     google_id: String,
     google_token: String,
     state: { type: String, enum: ['uninitiated', 'week_ongoing', 'donate_pending', 'cause_selection_pending'] },
+    color_theme: { type: String, enum: ['white', 'unsplash', 'gradient'] },
+    picture: String,
     previous_donation: {
         previous_cause_id: String,
         previous_week_hearts: String
@@ -50,6 +52,10 @@ userSchema.statics = {
         this.findOneAndUpdate({ user_id: data.id }, { $set: { 'hearts.current_cause_id': data.cause_id } }, {}, cb);
     },
 
+    setColorTheme: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.id }, { $set: { 'color_theme': data.theme } }, {}, cb);
+    },
+
     getUsersByIds: function(data, cb) {
         this.find({ user_id: { $in: data.users } }).lean().exec(cb);
     },
@@ -65,11 +71,10 @@ userSchema.statics = {
     addDonation: function(data, cb) {
 
         this.findOne({ user_id: data.user_id }, function(err, res) {
-            res.previous_donation.previous_week_hearts = res.hearts.current_week_hearts;
+            res.previous_donation.previous_week_hearts = res.hearts.current_week_hearts - 1;
             res.previous_donation.previous_cause_id = res.hearts.current_cause_id;
             res.hearts.current_week_hearts = 0;
             res.state = "cause_selection_pending";
-            console.log("New user to update", res);
             res.save();
         });
     },

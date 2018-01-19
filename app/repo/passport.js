@@ -54,6 +54,7 @@ module.exports = function(passport) {
                     } else {
                         // if there is no user found with that facebook id, create them
                         var newUser = new User();
+                        console.log(profile);
 
                         // set all of the facebook information in our user model
                         newUser.facebook_id = profile.id; // set the users facebook id                   
@@ -64,6 +65,10 @@ module.exports = function(passport) {
                         newUser.web_version = "0.0.1";
                         newUser.timestamp = moment().format('x');
                         newUser.state = "uninitiated";
+                        newUser.picture = profile.photos ? profile.photos[0].value : '/image/user.png';
+                        newUser.color_theme = "unsplash";
+                        newUser.hearts = {};
+                        newUser.hearts.total_hearts = 0;
                         // save our user to the database
                         newUser.save(function(err) {
                             if (err)
@@ -98,6 +103,7 @@ module.exports = function(passport) {
 
                     if (user) return done(null, user); //if user exists in DB
                     else {
+                        console.log(profile._json);
 
                         // if the user isnt in our database, create a new user
                         var newUser = new User();
@@ -111,7 +117,10 @@ module.exports = function(passport) {
                         newUser.web_version = "0.0.1";
                         newUser.state = "uninitiated";
                         newUser.user_id = "user" + moment().format('x');
-
+                        newUser.color_theme = "unsplash";
+                        newUser.picture = profile._json.image.url == null || profile._json.image.url == undefined ? "/image/user.png" : profile._json.image.url;
+                        newUser.hearts = {};
+                        newUser.hearts.total_hearts = 0;
                         // save the user
                         newUser.save(function(err) {
                             if (err)
@@ -121,6 +130,5 @@ module.exports = function(passport) {
                     }
                 });
             });
-
         }));
 };

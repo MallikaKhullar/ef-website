@@ -36,6 +36,8 @@
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
+    "pretty-ms": "3.1.0",
+    "pretty-time": "0.2.0",
     "qs": "^6.5.1",
     "redis": "^2.8.0",
     "startbootstrap-new-age": "^3.3.7",
