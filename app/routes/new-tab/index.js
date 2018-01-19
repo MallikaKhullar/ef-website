@@ -12,7 +12,7 @@ var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
 var constants = require('./../../utils/constants');
 var moment = require('moment');
-const prettyMs = require('pretty-ms');
+// const prettyMs = require('pretty-ms');
 
 
 router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
@@ -95,7 +95,7 @@ function constructPayload(data) {
     var progress = Utils.calculateProgress(data.user.hearts.current_week_hearts, data.cause.total_hearts);
     data.user.progress = progress;
 
-    var shortRemaining = prettyMs(data.user.hearts.target_end_time - moment().format('x'), { compact: true });
+    var shortRemaining = "6d"; //prettyMs(data.user.hearts.target_end_time - moment().format('x'), { compact: true });
 
     var newdata = {
         user: data.user,
