@@ -169,7 +169,7 @@
         }
         
         .navbar-brand>img {
-            height: 85%;
+            height: 80%;
         }
         
         .horul>li {
@@ -238,9 +238,9 @@
         
         .apps-container {
             float: right;
-            border-radius: 5px;
-            background-color: #222222;
-            box-shadow: 0 0 3px 0 #000000;
+            border-radius: 4px;
+            background-color: #1f1f1f;
+            box-shadow: 2px 2px 17px 1px #00000057;
             color: white;
             position: relative;
             width: 20%;
@@ -249,6 +249,12 @@
             margin-right: 50px;
             z-index: 1000;
             padding-left: 13px;
+            width: 295px;
+            height: 400px;
+            padding-top: 33px;
+            padding-bottom: 26px;
+            margin-top: 70px;
+            margin-right: 46px;
         }
         
         .apps-container::after {
@@ -277,8 +283,8 @@
         }
         
         .quicklink-img-med {
-            height: 40px;
-            width: 40px;
+            height: 42px;
+            width: 42px;
             margin: 15px 5px 15px 15px;
             cursor: pointer;
         }
@@ -766,7 +772,7 @@
                             <img alt="Apps icon" id="app-icon" onclick='openAppsDrawer()' class="quicklink-img-small" src="/image/all_apps.png" />
                         </li>
                         <li>
-                            <img alt="Hamburger icon" id="hamburger-icon" style="margin-right:15px;width: 30px;" onclick='openRightNav()' class="quicklink-img-small" src="/image/drive-icon.png" />
+                            <img alt="Hamburger icon" id="hamburger-icon" style="margin-right:15px;width: 25px;" onclick='openRightNav()' class="quicklink-img-small" src="/image/drive-icon.png" />
                         </li>
                     </ul>
                 </div>
@@ -815,7 +821,9 @@
 
                     <br><br>
 
-                    <ul class="centerUL">
+                    <ul class="centerUL" style=" width: 267px;
+                    margin-left: 0px;
+                    margin-right: 0px;">
                         <li>
                             <a target="_top" href="http://www.google.com/sheets/about/">
                                 <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-sheets.png" />
@@ -855,8 +863,8 @@
 
                         <div>
                             <img src="/image/circ_white.png" class="theme-icon" />
-                            <div class="small-bold">Simple White Theme</div>
-                            <div style="float:right"> <label class="input-toggle"><input id="white-input" type="checkbox"><span></span></label>
+                            <div class="small-bold">Simple White</div>
+                            <div style="float:right"> <label class="input-toggle"><input id="white-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
                             </div>
                         </div>
 
@@ -864,9 +872,9 @@
 
                         <div>
                             <img src="/image/circ_unsplash.png" class="theme-icon" />
-                            <div class="small-bold">Inspirational Background Theme</div>
+                            <div class="small-bold">Inspirational Background</div>
                             <div style="float:right">
-                                <label class="input-toggle"><input id="unsplash-input" type="checkbox"><span></span></label>
+                                <label class="input-toggle"><input id="unsplash-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
                             </div>
                         </div>
                     </div>
@@ -875,9 +883,9 @@
 
                     <div>
                         <img src="/image/circ_grad.png" class="theme-icon" />
-                        <div class="small-bold">Gradient Colors Theme</div>
+                        <div class="small-bold">Gradient Colors</div>
                         <div style="float:right">
-                            <label class="input-toggle"><input id="grad-input" type="checkbox"><span></span></label>
+                            <label class="input-toggle"><input id="grad-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
                         </div>
                     </div>
 
@@ -1227,6 +1235,7 @@
                 $("#background-image-overlay").hide();
                 $("#background-image").show();
                 $("#background-image").css("background", "white");
+                $(".hey-sexy").css("color", "#5e5e5e");
                 $("#autocomplete").css("background-color", "rgba(255,255,255,0.55)");
                 $("#autocomplete").css("background-color", "rgba(255,255,255,0.55)");
                 $("#hamburger-icon").attr("src", "/image/right_nav_black.png");
@@ -1251,6 +1260,7 @@
 
             case "unsplash":
             default:
+                $(".hey-sexy").css("color", "white");
                 $("#background-image-white").show();
                 $(".page-text").css("color", "white");
                 $("#background-image-overlay").show();
@@ -1277,6 +1287,8 @@
                 break;
 
             case "gradient":
+                $(".hey-sexy").css("color", "white");
+
                 $("#background-image-white").hide();
                 $("#myBar").css("background-color", "#38FFFC");
                 $(".page-text").css("color", "white");
