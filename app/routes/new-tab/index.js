@@ -12,7 +12,7 @@ var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
 var constants = require('./../../utils/constants');
 var moment = require('moment');
- const prettyMs = require('pretty-ms');
+const prettyMs = require('pretty-ms');
 
 
 router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
@@ -74,6 +74,7 @@ router.get('/theme-toggle', function(req, res) {
     var index = constants.themes.indexOf(theme);
     index++;
     var newTheme = constants.themes[(index) % constants.themes.length];
+    console.log("Theme toggle", req.user.user_id, newTheme);
     userController.changeColorTheme(req.user.user_id, newTheme).pipe(function(data) {
         res.send(newTheme);
     });
@@ -81,6 +82,7 @@ router.get('/theme-toggle', function(req, res) {
 
 router.get('/theme-change', function(req, res) {
     var newTheme = req.query.selectedTheme;
+    console.log("Theme change", req.user.user_id, newTheme);
     userController.changeColorTheme(req.user.user_id, newTheme).pipe(function(data) {
         res.send(newTheme);
     });
