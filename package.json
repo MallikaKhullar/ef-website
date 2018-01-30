@@ -1,10 +1,11 @@
 {
   "name": "epic",
   "version": "1.0.0",
-  "description": "",
+  "description": "### Framework:  * node.js  * express  * html  * css  * ejs  * js",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -46,5 +47,13 @@
   },
   "devDependencies": {
     "cssnano": "3.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MallikaKhullar/ef-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MallikaKhullar/ef-website/issues"
+  },
+  "homepage": "https://github.com/MallikaKhullar/ef-website#readme"
 }
