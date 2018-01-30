@@ -62,8 +62,8 @@ body,
 }
 
 .quicklink-img-small {
-    height: 16px;
-    width: 16px;
+    height: 15px;
+    width: 15px;
     margin: 15px;
     cursor: pointer;
 }
@@ -128,7 +128,7 @@ body,
 
 #autocomplete {
     width: 62%;
-    height: 52px;
+    height: 48px;
     text-indent: 7px;
     /* border-radius: 5px; */
     border-width: 0px;
@@ -280,7 +280,7 @@ body,
 }
 
 .display-number {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     font-family: Quicksand;
     font-weight: bold;

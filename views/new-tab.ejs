@@ -108,7 +108,7 @@
         
         #user-profile-container {
             padding-left: 30px;
-            width: 50%;
+            width: 20%;
             background-color: transparent;
         }
         
@@ -121,8 +121,8 @@
         #autocomplete {
             border-radius: 5px;
             background-color: rgba(0, 0, 0, 0.55);
-            color: white;
             width: 50%;
+            font-size: 18px;
         }
         
         input.formWhite::-webkit-input-placeholder {
@@ -143,33 +143,37 @@
         
          ::-webkit-input-placeholder {
             color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
         }
         
          :-moz-placeholder {
             /* Firefox 18- */
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.8);
         }
         
          ::-moz-placeholder {
             /* Firefox 19+ */
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+            color: rgba(133, 42, 42, 0.8);
         }
         
          :-ms-input-placeholder {
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.8);
         }
         
         .hey-sexy {
             color: #FFFFFF;
             font-family: Quicksand;
-            font-size: 45px;
+            font-size: 38px;
             font-weight: 500;
             line-height: 56px;
             text-align: center;
         }
         
         .navbar-brand>img {
-            height: 80%;
+            height: 75%;
         }
         
         .horul>li {
@@ -204,14 +208,17 @@
             bottom: 0;
             left: 50%;
             right: 0;
+            z-index: 10;
             height: 90px;
+            width: 728px;
             transform: translate(-50%, 0%);
         }
         
         .ad-footer-right {
             position: absolute;
             bottom: 0;
-            left: 75%;
+            left: 78%;
+            z-index: 11;
             right: 0;
             height: 90px;
         }
@@ -230,7 +237,7 @@
         
         .small-env-icon {
             width: 18%;
-            margin-right: 30px;
+            margin-right: 25px;
             position: absolute;
             bottom: -1600%;
             right: 0;
@@ -276,7 +283,7 @@
         }
         
         .oval-container-image {
-            height: 40px;
+            height: 27px;
             width: auto;
             margin-left: 30px;
             margin-right: 30px;
@@ -538,7 +545,7 @@
         
         .pink-box {
             font-weight: 500;
-            width: 40%;
+            width: 50%;
             right: 30%;
             top: 40%;
             text-align: center;
@@ -599,7 +606,7 @@
         }
         
         .font-xs {
-            font-size: 12px;
+            font-size: 11px;
             font-family: Roboto;
             font-weight: 300;
         }
@@ -741,12 +748,12 @@
                             <div class="quicksand white font-weight-500" style="margin-top:15px;font-size:20px;">
                                 Hearts donated succesfully!
                             </div>
-                            <div class="quicksand white weight-300" style="margin-top:15px;font-size:20px;">
+                            <!-- <div class="quicksand white weight-300" style="margin-top:15px;font-size:20px;">
                                 Choose this week's mission
-                            </div>
+                            </div> -->
 
                             <div class="quicksand white pink-box-big" id="choose-mission" style="margin-top:15px;">
-                                SELECT NEXT MISSION
+                                CHOOSE NEXT MISSION
                             </div>
                         </div>
                     </div>
@@ -766,13 +773,13 @@
 
                     <ul class="nav navbar-nav navbar-right" style="margin-top:5px">
                         <li>
-                            <img alt="Theme icon" id="theme-icon" onclick='toggleTheme()' class="quicklink-img-small" src="/image/theme_change.png" />
+                            <img alt="Theme icon" id="theme-icon" onclick='toggleTheme()' style="height: 16px; width: 16px;" class="quicklink-img-small" src="/image/theme_change.png" />
                         </li>
                         <li>
                             <img alt="Apps icon" id="app-icon" onclick='openAppsDrawer()' class="quicklink-img-small" src="/image/all_apps.png" />
                         </li>
                         <li>
-                            <img alt="Hamburger icon" id="hamburger-icon" style="margin-right:15px;width: 25px;" onclick='openRightNav()' class="quicklink-img-small" src="/image/drive-icon.png" />
+                            <img alt="Hamburger icon" id="hamburger-icon" style="margin-right:15px;width: 20px;" onclick='openRightNav()' class="quicklink-img-small" src="/image/drive-icon.png" />
                         </li>
                     </ul>
                 </div>
@@ -1033,16 +1040,26 @@
                     </div>
                 </div>
             </div>
-            <div class="ad-footer-center">
+
+            <div style="text-align:center;width: 100%;height: 90px;position: absolute;bottom: 0;">
+                <div class="ad-footer-center">
+                    <script type="text/javascript" language="javascript">
+                        var aax_size = '728x90';
+                        var aax_pubname = 'flutur-21';
+                        var aax_src = '302';
+                    </script>
+                    <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
+                </div>
+            </div>
+
+            <!-- <div class="ad-footer-center">
                 <script type="text/javascript" language="javascript">
                     var aax_size = '728x90';
                     var aax_pubname = 'flutur-21';
                     var aax_src = '302';
                 </script>
                 <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
-            </div>
-
-
+            </div> -->
 
             <% if (user.state === 'donate_pending') { %>
 
@@ -1057,7 +1074,7 @@
                     </div>
 
                     <div>
-                        <div class="quicksand white pink-box" id="donate-now">DONATE HEARTS <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                        <div class="quicksand white pink-box" id="donate-now">DONATE HEARTS</div>
                     </div>
                 </div>
 
@@ -1077,8 +1094,7 @@
                         </div>
 
                         <div>
-                            <div class="quicksand white pink-box pink-box-lower" id="choose-now">CHOOSE NEW MISSION
-                                <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
+                            <div class="quicksand white pink-box pink-box-lower" id="choose-now">NEW MISSION
                             </div>
                         </div>
                     </div>
@@ -1235,14 +1251,14 @@
                 $("#background-image").show();
                 $("#background-image").css("background", "white");
                 $(".hey-sexy").css("color", "#5e5e5e");
-                $("#autocomplete").css("background-color", "rgba(255,255,255,0.55)");
-                $("#autocomplete").css("background-color", "rgba(255,255,255,0.55)");
                 $("#hamburger-icon").attr("src", "/image/right_nav_black.png");
                 $("#logo-icon").attr("src", "/image/flutur_logo_black.png");
                 $("#app-icon").attr("src", "/image/all_apps_purple.png");
                 $("#theme-icon").attr("src", "/image/theme_change_black.png");
                 document.getElementById("autocomplete").classList.add("formWhite");
                 $("#autocomplete").css("border", "1px solid rgba(152,152,152,0.66)");
+                $("#autocomplete").css("background-color", "rgba(255,255,255,0.55)");
+                $("#autocomplete").css("color", "#5e5e5e");
                 $("#autocomplete").css("border-radius", "5px");
                 $("#logo-icon").attr("src", "/image/flutur_logo_black.png");
                 $(".display-number-title").css("color", "black");
@@ -1271,10 +1287,11 @@
                 $("#theme-icon").attr("src", "/image/theme_change.png");
                 $("#logo-icon").attr("src", "/image/flutur_logo_white.png");
                 $("#autocomplete").css("background-color", "rgba(0, 0, 0, 0.55)");
+                $("#autocomplete").css("color", "white");
+                $("#autocomplete").css("border", "0px solid rgba(152,152,152,0.66)");
                 $("#myProgress").css("background-color", "rgba(255,255,255, 0.17)");
                 $("#myBar").css("background-color", "#38FFFC");
                 document.getElementById("autocomplete").classList.remove("formWhite");
-                $("#autocomplete").css("border", "0px solid rgba(152,152,152,0.66)");
                 $(".display-number-title").css("color", "white");
                 $(".display-number").css("color", "white");
                 // $(".oval-container").css("background-color", "rgba(0, 0, 0, 0.48)");
@@ -1287,7 +1304,6 @@
 
             case "gradient":
                 $(".hey-sexy").css("color", "white");
-
                 $("#background-image-white").hide();
                 $("#myBar").css("background-color", "#38FFFC");
                 $(".page-text").css("color", "white");
@@ -1297,9 +1313,10 @@
                 $("#app-icon").attr("src", "/image/all_apps.png");
                 $("#theme-icon").attr("src", "/image/theme_change.png");
                 $("#logo-icon").attr("src", "/image/flutur_logo_white.png");
-                $("#autocomplete").css("background-color", "rgba(0, 0, 0, 0.07)");
                 $("#myProgress").css("background-color", "rgba(1, 1, 1, 0.13)");
                 $("#autocomplete").css("border", "0px solid rgba(152,152,152,0.6)");
+                $("#autocomplete").css("color", "white");
+                $("#autocomplete").css("background-color", "rgba(0, 0, 0, 0.07)");
                 document.getElementById("autocomplete").classList.remove("formWhite");
                 $(".display-number-title").css("color", "white");
                 $(".display-number").css("color", "white");
