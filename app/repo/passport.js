@@ -40,8 +40,10 @@ module.exports = function(passport) {
             // asynchronous
             process.nextTick(function() {
 
-                // find the user in the database based on their facebook id
-                User.findOne({ 'email': profile.emails[0].value }, function(err, user) {
+                var findId = (profile.emails == undefined || profile.emails[0] == undefined) ? profile.id : profile.emails[0].value;
+
+                // find the user in the database based on their facebook id / email
+                User.findOne({ 'email': findId }, function(err, user) {
 
                     // if there is an error, stop everything and return that
                     // ie an error connecting to the database
@@ -60,7 +62,7 @@ module.exports = function(passport) {
                         newUser.facebook_id = profile.id; // set the users facebook id                   
                         newUser.facebook_token = token; // we will save the token that facebook provides to the user                    
                         newUser.name = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
-                        newUser.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+                        newUser.email = (profile.emails == undefined || profile.emails[0] == undefined) ? profile.id : profile.emails[0].value;
                         newUser.user_id = "user" + moment().format('x');
                         newUser.web_version = "0.0.1";
                         newUser.timestamp = moment().format('x');
@@ -78,10 +80,8 @@ module.exports = function(passport) {
                             return done(null, newUser);
                         });
                     }
-
                 });
             });
-
         }));
 
 
