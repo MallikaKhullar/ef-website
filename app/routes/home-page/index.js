@@ -26,9 +26,8 @@ router.get('/', function(req, res) {
         ngos: ngoController.getAllNgos(),
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
-        allBlogs: blogController.getBlogOverviews({ count: 6 })
+        allBlogs: blogController.getBlogOverviews({ count: 6, filter: { starred: true } })
     };
-
 
     deferred.combine(def).pipe(function(data) {
 

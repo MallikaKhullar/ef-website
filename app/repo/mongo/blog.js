@@ -24,7 +24,8 @@ var blogSchema = mongoose.Schema({
     author_photo_url: String,
     timestamp: { type: Number, required: true, index: true },
     paragraphs: [paragraphSchema],
-    visible: Boolean
+    visible: Boolean,
+    starred: { type: Boolean, default: false }
 });
 blogSchema.statics = {
     getAllBlogs: function(data, cb) {
