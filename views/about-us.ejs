@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/blog.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jquery-ui.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
@@ -114,10 +115,17 @@
             border-radius: 10px;
         }
         
-        .blog-short-desc {
+        .short-desc {
             margin-bottom: 0px;
-            -webkit-line-clamp: 3;
-            height: 80px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            color: #4C4C4C;
+            font-family: Source Serif Pro;
+            font-size: 14px;
+            line-height: 18px;
+            margin: 10px;
+            -webkit-line-clamp: 5;
         }
         
         h1,
@@ -132,6 +140,7 @@
         .grid-column {
             text-align: center;
             padding: 10px 20px 10px 20px;
+            width: 25%;
         }
     </style>
 </head>
@@ -142,37 +151,49 @@
 
         <div class="terms-container" style="width:80%; margin: 0 auto; padding: 10px 10px 10px 10px;">
             <div class="big-title" style="margin:20px 0px 0px 0px">About Us</div>
-            <!-- <h2>Why did we start Flutur</h2>
-            <p><span style="font-weight: 400;"> </span></p> -->
 
             <h2>Who are we?</h2>
             <p><span style="font-weight: 400;"> </span></p>
 
-            <div class="grid-row" style="margin:50px 200px 50px 0px;">
+            <div class="grid-row" style="margin:50px 0px 50px 0px;">
                 <div class="grid-column">
                     <div class="blog-img" style="background-image:url('https://scontent.fblr8-1.fna.fbcdn.net/v/t31.0-8/13920186_10157172257165176_653980194679104627_o.jpg?oh=d9f3b16f2550c062912d0a3165bb8379&oe=5A89ADCD');">
                     </div>
                     <h2 class="blog-outside-title"> Joel John Koshy </h2>
-                    <h3 class="blog-short-desc">pretends is too cool.</h3>
-                    <a href="https://www.facebook.com/j.j.k892" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
-                    <a href="https://www.linkedin.com/in/joel-john-koshy-5565bb53/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
+                    <h3 class="short-desc">pretends is too cool.</h3>
+                    <div style="margin-bottom:50px">
+                        <a href="https://www.facebook.com/j.j.k892" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
+                        <a href="https://www.linkedin.com/in/joel-john-koshy-5565bb53/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
+                    </div>
                 </div>
                 <div class="grid-column">
                     <div class="blog-img" style="background-image:url('https://scontent.fblr8-1.fna.fbcdn.net/v/t1.0-9/14910293_10154119009838576_3485779856412403027_n.jpg?oh=59218c10912121683f2ca1753a616b45&oe=5AD35437');">
                     </div>
                     <h2 class="blog-outside-title"> Mallika Priya Khullar</h2>
-                    <h3 class="blog-short-desc">still listens to eminem. also binge watches jimmy fallon #hashtag videos.</h3>
-                    <a href="https://www.facebook.com/mallika.khullar" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
-                    <a href="https://www.linkedin.com/in/mallikakhullar/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
+                    <h3 class="short-desc">still listens to eminem. also binge watches jimmy fallon #hashtag videos. can quote LOTR and HP dialogues in sleep. loves doggos.</h3>
+                    <div style="margin-bottom:50px">
+                        <a href="https://www.facebook.com/mallika.khullar" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
+                        <a href="https://www.linkedin.com/in/mallikakhullar/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
+                    </div>
                 </div>
                 <div class="grid-column">
                     <div class="blog-img" style="background-image:url('http://res.cloudinary.com/epicfoundation/image/upload/v1513594070/rah_cpyuep.jpg');">
                     </div>
                     <h2 class="blog-outside-title"> Rahul Mallapur </h2>
-                    <h3 class="blog-short-desc">pretends is too smart.</h3>
-                    <div style="display:block">
+                    <h3 class="short-desc">pretends is too smart.</h3>
+                    <div style="display:block; margin-bottom:50px">
                         <a href="https://www.facebook.com/rahulkmallapur" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
                         <a href="https://www.linkedin.com/in/rahul-mallapur-8a078630/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
+                    </div>
+                </div>
+                <div class="grid-column">
+                    <div class="blog-img" style="background-image:url('https://res.cloudinary.com/epicfoundation/image/upload/v1518676231/unnamed_tbsmiy.jpg');">
+                    </div>
+                    <h2 class="blog-outside-title"> Akanksha Thapa </h2>
+                    <h3 class="short-desc">pretends is too awesome.</h3>
+                    <div style="display:block; margin-bottom: 50px;">
+                        <a href="https://www.facebook.com/akanksha.thapa.44" class="inline-block"><img style="height:40px; width: 40px; margin-right:5px" src="/image/facebook-icon.png" /></a>
+                        <a href="https://www.linkedin.com/in/akanksha-thapa-69a2b878/" class="inline-block"><img style="height:40px; width: 40px; " src="/image/linked-icon.png" /></a>
                     </div>
                 </div>
             </div>
@@ -192,7 +213,9 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        console.log("hi there");
         $("body").fadeIn(800);
+        console.log("done");
     });
 </script>
 </html
