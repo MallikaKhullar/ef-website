@@ -25,7 +25,8 @@ var blogSchema = mongoose.Schema({
     timestamp: { type: Number, required: true, index: true },
     paragraphs: [paragraphSchema],
     visible: Boolean,
-    starred: { type: Boolean, default: false }
+    starred: { type: Boolean, default: false },
+    tag: String
 });
 blogSchema.statics = {
     getAllBlogs: function(data, cb) {
