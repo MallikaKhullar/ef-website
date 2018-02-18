@@ -65,7 +65,7 @@ router.get('/:blogId', function(req, res) {
 
     deferred.combine(def1).pipe(function(data) {
         var filterSimilar = {
-            filter: { category_id: data.details.category_id, blog_id: { $nin: [blog_id] } },
+            filter: { category_id: data.details.category_id, tag: data.details.tag, blog_id: { $nin: [blog_id] } },
             count: 3,
             offset: 0,
             sortBy: { 'timestamp': -1 },
