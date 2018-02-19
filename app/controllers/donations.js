@@ -41,7 +41,8 @@ exports.getAllDonationCount = function() {
             var total_rev = 1000 + (incremental_rev * TIME_PASSED / 2);
 
             //return deferred.success(total_rev.toFixed(2));
-            return deferred.success(4723.95);
+            console.log(total_rev.toFixed(2));
+            return deferred.success(4725.42);
         });
     });
 };
