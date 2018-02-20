@@ -42,7 +42,7 @@ exports.getAllDonationCount = function() {
 
             //return deferred.success(total_rev.toFixed(2));
             // console.log(total_rev.toFixed(2));
-            return deferred.success(4725.42);
+            return deferred.success(4727.18);
         });
     });
 };
