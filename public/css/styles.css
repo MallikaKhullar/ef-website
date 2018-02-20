@@ -650,8 +650,6 @@ body,
     width: 4em;
     height: 4em;
     margin: -2em;
-    /* 2em = 4em/2 */
-    /* half the width */
 }
 
 .circle-container img {
