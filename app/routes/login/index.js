@@ -10,6 +10,9 @@ var Utils = require('../../utils');
 
 router.get('/', function(req, res) {
 
+    console.log("Login page hit");
+    if (req != undefined && req.user != undefined && req.user.email != undefined) console.log(req.user.email);
+    else console.log("No user");
     var def = {
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount()

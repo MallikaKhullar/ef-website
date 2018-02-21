@@ -52,11 +52,12 @@ module.exports = function(passport) {
 
                     // if the user is found, then log them in
                     if (user) {
+                        console.log("FB log in => ", findId);
                         return done(null, user); // user found, return that user
                     } else {
+                        console.log("FB Sign up =>", findId);
                         // if there is no user found with that facebook id, create them
                         var newUser = new User();
-                        console.log(profile);
 
                         // set all of the facebook information in our user model
                         newUser.facebook_id = profile.id; // set the users facebook id                   
@@ -101,9 +102,11 @@ module.exports = function(passport) {
 
                     if (err) return done(err);
 
-                    if (user) return done(null, user); //if user exists in DB
-                    else {
-                        console.log(profile._json);
+                    if (user) {
+                        console.log("G+ Sign in =>", profile.emails[0].value);
+                        return done(null, user); //if user exists in DB
+                    } else {
+                        console.log("G+ Sign up =>", profile.emails[0].value);
 
                         // if the user isnt in our database, create a new user
                         var newUser = new User();
