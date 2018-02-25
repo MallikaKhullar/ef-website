@@ -1162,7 +1162,8 @@
 <script type="text/javascript" src="js/adframe.js"></script>
 
 <script type="text/javascript">
-    if (adblock) {
+    var redirect = "<%- redirected %>";
+    if (adblock == true && JSON.parse(redirect) == true) {
         $(".dark-gradient-ad").show();
     } else {
         $(".dark-gradient-ad").hide();
@@ -1246,7 +1247,6 @@
     });
 
     function setupThemeUI() {
-        console.log("Theme is ", window.theme);
         switch (window.theme) {
             case "white":
                 $("#myBar").css("background-color", "#00F79F");

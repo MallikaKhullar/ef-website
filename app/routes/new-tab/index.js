@@ -20,9 +20,9 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
         var start = moment().format('x');
         var end = Utils.getEndTime(start);
         userController.setCause(req.user.user_id, req.query.cause_id, start, end).pipe(function(data) {
-            res.redirect('/new-tab');
+            res.redirect('/new-tab?redirect=true');
         });
-    } else res.redirect('/new-tab');
+    } else res.redirect('/new-tab?redirect=true');
 });
 
 
@@ -60,7 +60,8 @@ router.get('/', continueIfLoggedIn, function(req, res) {
             cause: data.currentCause,
             numDonations: data.donationCount,
             numUsers: data.userCount,
-            previousCause: data.previousCause
+            previousCause: data.previousCause,
+            req: req
         }).pipe(function(result) {
             res.render("new-tab.ejs", result);
         });
@@ -74,7 +75,6 @@ router.get('/theme-toggle', function(req, res) {
     var index = constants.themes.indexOf(theme);
     index++;
     var newTheme = constants.themes[(index) % constants.themes.length];
-    console.log("Theme toggle", req.user.user_id, newTheme);
     userController.changeColorTheme(req.user.user_id, newTheme).pipe(function(data) {
         res.send(newTheme);
     });
@@ -90,6 +90,8 @@ router.get('/theme-change', function(req, res) {
 
 
 function constructPayload(data) {
+    var redirected = data.req != undefined && data.req.query != undefined && data.req.query.redirect != undefined ? JSON.parse(data.req.query.redirect.toLowerCase()) : false;
+
     var hoursToGo = Utils.timePeriodInHours(data.user.hearts.target_end_time, moment().format('x'));
     var remainingTime = hoursToGo >= 24 ? (hoursToGo / 24 > 1 ? Math.floor(hoursToGo / 24) + " days " : Math.floor(hoursToGo / 24) + " day ") :
         (hoursToGo > 1 ? Math.floor(hoursToGo) + " hours " : "1 hour ");
@@ -108,7 +110,8 @@ function constructPayload(data) {
             followers: Utils.getCommaSeparatedNumber(50 + data.numUsers),
             remainingTime: remainingTime,
             shortRemaining: shortRemaining.replace("~", "")
-        }
+        },
+        redirected: redirected
     };
 
     var total_hearts_text = data.user.hearts.total_hearts == 1 ? " heart" : " hearts";
