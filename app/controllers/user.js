@@ -34,7 +34,7 @@ exports.changeColorTheme = function(id, theme) {
 
 exports.getAllUserCount = function() {
     return fn.defer(fn.bind(User, 'getUserCount'))({}).pipe(function(res) {
-        return deferred.success(res);
+        return deferred.success(151);
     });
 };
 
