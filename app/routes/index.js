@@ -54,8 +54,29 @@ var allRoutes = function(app, passport) {
     app.use('/privacy', termsAndConditions);
     app.use('/new-tab', newTab);
     app.use('/faqs', faqs);
+
+    app.all("/blog/didn't-teach-me-in-school-maharashtra-farmers", function(req, res, next) {
+        res.redirect(301, "http://www.flutur.org/blog/didnt-teach-me-in-school-maharashtra-farmers");
+    });
+
+    app.all("/blog/cat1", function(req, res, next) {
+        res.redirect(301, "http://www.flutur.org/blog");
+    });
+
+    app.all("/blog/mall1", function(req, res, next) {
+        res.redirect(301, "http://www.flutur.org/blog");
+    });
+    app.all("/blog/123tay", function(req, res, next) {
+        res.redirect(301, "http://www.flutur.org/blog");
+    });
+    app.all("/blog/pregnet", function(req, res, next) {
+        res.redirect(301, "http://www.flutur.org/blog");
+    });
+    app.all("/blog/taykath", function(req, res, next) {
+        res.redirect(301, "http://www.flutur.org/blog");
+    });
+
     app.use('/blog', blogs);
-    // app.use('/new-tab-test', newTabTest);
 
     app.get('/robots.txt', function(req, res) {
         res.type('text/plain');
@@ -68,6 +89,10 @@ var allRoutes = function(app, passport) {
             "\nDisallow: /blog?type=flutur" +
             "\nDisallow: /blog/jlj" +
             "\nDisallow: /blog/mall" +
+            "\nDisallow: /blog/mall1" +
+            "\nDisallow: /blog/cat1" +
+            "\nDisallow: /blog/taykath" +
+            "\nDisallow: /blog/123tay" +
             "\nDisallow: /blog/pregnet" +
             "\nDisallow: /blog/ngos_dog_adoption");
     });
