@@ -13,6 +13,189 @@
     <title>Flutur New Tab - Blogs
     </title>
 
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111348597-1');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/new-age.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mobile-view.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
+    <style>
+        @media all and (max-width: 699px) {
+            #am-container {
+                display: none;
+            }
+            .paginate-big {
+                display: none;
+            }
+            .paginate-small {
+                padding: 20px 20px 50px 20px;
+                display: block;
+            }
+            .navbar-brand>img {
+                height: 90%;
+                padding: 10px 0 0 15px;
+                width: auto;
+            }
+            .grid-container {
+                padding: 0px 20px 10px 20px;
+            }
+            .blog-outside-title {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                font-family: Roboto;
+                font-size: 22px;
+                font-weight: bold;
+                line-height: 28px;
+                margin: 10px 0px;
+            }
+            .blog-short-desc {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                color: #4C4C4C;
+                font-family: "Source Serif Pro";
+                font-size: 17px;
+                line-height: 22px;
+                margin: 7px 0px;
+                height: 45px;
+            }
+            .grid-column {
+                float: left;
+                width: 100%;
+                padding: 0px 10px 0px 10px;
+                cursor: pointer;
+            }
+            .grid-column img {
+                margin-top: 50px;
+                border-radius: 5px;
+            }
+            .big-title {
+                color: #000000;
+                font-family: Quicksand;
+                font-size: 35px;
+                font-weight: bold;
+                line-height: 30px;
+                margin: 30px 0px -20px 10px;
+            }
+            .category-container {
+                display: none;
+            }
+            .category-container-small {
+                display: block;
+                width: 100%;
+                padding: 15px;
+            }
+            #blog-header {
+                display: none;
+            }
+            #blog-header-small {
+                display: block;
+                padding: 20px 0px;
+                overflow: auto;
+            }
+        }
+        
+        @media screen and (min-width: 700px) {
+            .paginate-small {
+                display: none;
+            }
+            .paginate-big {
+                display: block;
+            }
+            .category-container {
+                margin: 90px 0px 10px 0px;
+                padding: 10px 130px 0px 126px;
+                width: 100%;
+                height: 80px;
+            }
+            .category-container-small {
+                display: none;
+            }
+            #blog-header {
+                display: block;
+            }
+            #blog-header-small {
+                display: none;
+            }
+        }
+        
+        .blog-short-desc {
+            margin: 0px 0px 15px 0px;
+        }
+        
+        .blog-outside-title {
+            margin: 10px 0px 5px 0px;
+        }
+        
+        .more-pink-title {
+            color: #EF2A67;
+            font-family: Quicksand;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        .center-align {
+            text-align: center;
+        }
+        
+        .small-margin-top {
+            margin-top: 10px;
+        }
+        
+        .big-margin-top {
+            margin-top: 60px;
+        }
+        
+        .small-margin-bottom {
+            margin-bottom: 10px;
+        }
+        
+        .footer-title {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-desc {
+            display: none
+        }
+        
+        .footer-icons {
+            font-size: 20px;
+        }
+        
+        .side-margin-5 {
+            margin: 0 15px;
+        }
+    </style>
+
     <% if (typeof category != 'undefined') { %>
         <meta name="keywords" content="flutur, flutur effect, flutur bengaluru, flutur india, flutur foundation, flutur chrome tab, tabs for a change, chrome new tab, flutur tabs for a change, flutur new tab, flutur ngos donation, flutur donatewithoutdonating, flutur <%- category.category_name%>"
         />
@@ -20,184 +203,6 @@
             <meta name="keywords" content=" flutur new tab, flutur, flutur effect, flutur bengaluru, flutur india, flutur foundation, flutur chrome tab, tabs for a change, chrome new tab, flutur tabs for a change, flutur ngos donation, flutur donatewithoutdonating"
             />
             <% } %>
-
-                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-
-                    function gtag() {
-                        dataLayer.push(arguments);
-                    }
-                    gtag('js', new Date());
-
-                    gtag('config', 'UA-111348597-1');
-                </script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-                <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
-
-                <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-                <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                <link rel="stylesheet" href="/css/new-age.css">
-                <link rel="stylesheet" href="/css/styles.css">
-                <link rel="stylesheet" href="/css/mobile-view.css">
-                <link rel="stylesheet" href="/css/blog.css">
-
-                <style>
-                    @media all and (max-width: 699px) {
-                        .paginate-big {
-                            display: none;
-                        }
-                        .paginate-small {
-                            padding: 20px 20px 50px 20px;
-                            display: block;
-                        }
-                        .navbar-brand>img {
-                            height: 90%;
-                            padding: 10px 0 0 15px;
-                            width: auto;
-                        }
-                        .grid-container {
-                            padding: 0px 20px 10px 20px;
-                        }
-                        .blog-outside-title {
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            -webkit-line-clamp: 2;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            font-family: Roboto;
-                            font-size: 22px;
-                            font-weight: bold;
-                            line-height: 28px;
-                            margin: 10px 0px;
-                        }
-                        .blog-short-desc {
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            -webkit-line-clamp: 2;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            color: #4C4C4C;
-                            font-family: "Source Serif Pro";
-                            font-size: 17px;
-                            line-height: 22px;
-                            margin: 7px 0px;
-                            height: 45px;
-                        }
-                        .grid-column {
-                            float: left;
-                            width: 100%;
-                            padding: 0px 10px 0px 10px;
-                            cursor: pointer;
-                        }
-                        .grid-column img {
-                            margin-top: 50px;
-                            border-radius: 5px;
-                        }
-                        .big-title {
-                            color: #000000;
-                            font-family: Quicksand;
-                            font-size: 35px;
-                            font-weight: bold;
-                            line-height: 30px;
-                            margin: 30px 0px -20px 10px;
-                        }
-                        .category-container {
-                            display: none;
-                        }
-                        .category-container-small {
-                            display: block;
-                            width: 100%;
-                            padding: 15px;
-                        }
-                        #blog-header {
-                            display: none;
-                        }
-                        #blog-header-small {
-                            display: block;
-                            padding: 20px 0px;
-                            overflow: auto;
-                        }
-                    }
-                    
-                    @media screen and (min-width: 700px) {
-                        .paginate-small {
-                            display: none;
-                        }
-                        .paginate-big {
-                            display: block;
-                        }
-                        .category-container {
-                            margin: 90px 0px 10px 0px;
-                            padding: 10px 130px 0px 126px;
-                            width: 100%;
-                            height: 80px;
-                        }
-                        .category-container-small {
-                            display: none;
-                        }
-                        #blog-header {
-                            display: block;
-                        }
-                        #blog-header-small {
-                            display: none;
-                        }
-                    }
-                    
-                    .blog-short-desc {
-                        margin: 0px 0px 15px 0px;
-                    }
-                    
-                    .blog-outside-title {
-                        margin: 10px 0px 5px 0px;
-                    }
-                    
-                    .more-pink-title {
-                        color: #EF2A67;
-                        font-family: Quicksand;
-                        font-size: 14px;
-                        font-weight: bold;
-                        line-height: 18px;
-                    }
-                    
-                    .center-align {
-                        text-align: center;
-                    }
-                    
-                    .small-margin-top {
-                        margin-top: 10px;
-                    }
-                    
-                    .big-margin-top {
-                        margin-top: 60px;
-                    }
-                    
-                    .small-margin-bottom {
-                        margin-bottom: 10px;
-                    }
-                    
-                    .footer-title {
-                        font-size: 16px;
-                        font-weight: bold;
-                        line-height: 20px;
-                        margin-bottom: 20px;
-                    }
-                    
-                    .footer-desc {
-                        display: none
-                    }
-                    
-                    .footer-icons {
-                        font-size: 20px;
-                    }
-                    
-                    .side-margin-5 {
-                        margin: 0 15px;
-                    }
-                </style>
 </head>
 
 <body style="display:none">
@@ -268,14 +273,15 @@
 
         <%- include all-blogs-container.ejs %>
 
-
-            <div class="center-align">
-                <script type="text/javascript" language="javascript">
-                    var aax_size = '728x90';
-                    var aax_pubname = 'flutur-21';
-                    var aax_src = '302';
-                </script>
-                <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
+            <div id="am-container">
+                <div class="center-align">
+                    <script type="text/javascript" language="javascript">
+                        var aax_size = '728x90';
+                        var aax_pubname = 'flutur-21';
+                        var aax_src = '302';
+                    </script>
+                    <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
+                </div>
             </div>
 
             <div class="paginate-big row" style="padding:35px 30px 50px 30px;">
@@ -299,14 +305,14 @@
             <div class="paginate-small" style="margin-bottom:15px">
                 <div style="float:left;">
                     <% if (currentPage > 0) { %>
-                        <a id="prev-page" class="black-quicksand-title">
+                        <a id="prev-page-small" class="black-quicksand-title">
                             <i class="fa fa-angle-double-left" aria-hidden="true"></i>
                         </a>
                         <% } %>
                 </div>
                 <div style="float:right">
                     <% if (!endOfPagination) { %>
-                        <a id="next-page" class="black-quicksand-title">
+                        <a id="next-page-small" class="black-quicksand-title">
                             <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                         </a>
                         <% } %>
@@ -331,6 +337,8 @@
         var category = "<%- currentCategoryId %>";
         $("#next-page").attr("href", "/blog?page=" + (page + 1) + "&type=" + category);
         $("#prev-page").attr("href", "/blog?page=" + (page - 1) + "&type=" + category);
+        $("#next-page-small").attr("href", "/blog?page=" + (page + 1) + "&type=" + category);
+        $("#prev-page-small").attr("href", "/blog?page=" + (page - 1) + "&type=" + category);
 
         if (typeof category != 'undefined') {
             $('#' + category).addClass("pink");
