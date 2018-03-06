@@ -91,8 +91,7 @@
         }
         
         h2 {
-            margin-top: 50px;
-            margin-bottom: 20px;
+            margin-top: 30px;
             font-weight: 700;
             font-size: 25px;
         }
@@ -108,11 +107,38 @@
         }
         
         .terms-container {
-            padding: 125px 0px;
+            padding: 15px 0px;
         }
         
         .big-subtitle {
             line-height: 50px;
+        }
+        
+        .big-title {
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 80px;
+            font-weight: bold;
+            line-height: 100px;
+        }
+        
+        .info {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .resp-footer {
+            margin-top: 50px;
+        }
+        
+        .small-resp-footer {
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 700px) {
+            .big-title {
+                font-size: 50px;
+            }
         }
     </style>
 </head>
@@ -122,18 +148,27 @@
     <%- include standard-header.ejs %>
 
         <div class="terms-container" style="width:80%; margin: 0 auto;">
-            <h1 class="big-title" style="margin:20px 0px 0px 0px">Contact Us</h1>
-            <div class="big-subtitle">Feel free to reach out to us for volunteer or collaboration opportunities! We love new friends :D
-            </div>
+            <h1 class="big-title">Contact Us</h1>
+            <br><br>
+            <span class="info" style="font-weight: 400;">
+                    Flutur is always looking out for interesting people, opportunities &amp; collaborations! 
+                    <br>All you have to do to get in touch with us, state your purpose and say hello :)</span>
 
-            <ul>
-                <li>
-                    Email us at: hello@flutur.org
-                </li>
-                <li>
-                    Contact us at: 8310753447
-                </li>
-            </ul>
+            <h2>Looking to volunteer or do an internship with us? </h2>
+            <span class="info" style="font-weight: 400;">
+            Volunteer or intern with us from any part of the world!<br>
+            Fill up this <a href='https://goo.gl/forms/pc8kMcdEJQyIPCfJ3'>tiny form</a> to get started!
+            </span>
+
+            <h2>Want to collaborate or just drop in some feedback?</h2>
+            <span class="info" style="font-weight: 400;">Drop an email to us with your thoughts - hello@flutur.org <br>Or send a message to us at - +91 8310753447
+            </span>
+
+
+            <h2>Send us a mail by post or magical owl here:</h2>
+            <span class="info" style="font-weight: 400;">
+                    Joel John Koshy, <br>#81 Da Costa Square, <br>St. Thomas town, <br>Bangalore - 560084.              
+                </span>
         </div>
 
         <div class="resp-footer">
