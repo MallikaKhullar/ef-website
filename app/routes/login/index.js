@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
         var newdata = {
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(50 + data.userCount)
+                followers: Utils.getCommaSeparatedNumber(data.userCount)
             }
         };
 

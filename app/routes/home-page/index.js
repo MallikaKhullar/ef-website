@@ -35,7 +35,7 @@ router.get('/', function(req, res) {
             ngos: data.ngos,
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(50 + data.userCount)
+                followers: Utils.getCommaSeparatedNumber(data.userCount)
             },
             blogs: data.allBlogs
         };

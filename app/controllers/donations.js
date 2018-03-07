@@ -32,17 +32,12 @@ exports.getAllDonationCount = function() {
                 DAU_PER_30D_INSTALLS = 0.7,
                 TABS_PER_USER_MIN = 0.011;
 
-            // TABS_PER_USER_MIN = moment(currentTime).isBetween(morn, after) ? 0.0011 :
-            //     (moment(currentTime).isBetween(after, eve) ? 0.0175 : 0.0125);
-
             TIME_PASSED = (moment().format('x') - user.timestamp) / (1000 * 60);
 
             var incremental_rev = REV_PER_TAB * TABS_PER_USER_MIN * USER_COUNT * DAU_PER_30D_INSTALLS * ADBLOCK_DISABLED;
             var total_rev = (incremental_rev * TIME_PASSED / 2);
 
-            // return deferred.success(total_rev.toFixed(2));
-            console.log(total_rev.toFixed(2));
-            return deferred.success(4736);
+            return deferred.success(total_rev.toFixed(2));
         });
     });
 };

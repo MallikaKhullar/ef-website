@@ -37,7 +37,7 @@ router.get('/', function(req, res) {
             blogs: data.all,
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(50 + data.userCount)
+                followers: Utils.getCommaSeparatedNumber(data.userCount)
             },
             currentPage: page,
             currentCategoryId: type,
@@ -79,7 +79,7 @@ router.get('/:blogId', function(req, res) {
             recent: data.recent,
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(50 + data.userCount)
+                followers: Utils.getCommaSeparatedNumber(data.userCount)
             }
         };
 
