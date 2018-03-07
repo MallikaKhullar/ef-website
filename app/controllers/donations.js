@@ -38,9 +38,9 @@ exports.getAllDonationCount = function() {
             TIME_PASSED = (moment().format('x') - user.timestamp) / (1000 * 60);
 
             var incremental_rev = REV_PER_TAB * TABS_PER_USER_MIN * USER_COUNT * DAU_PER_30D_INSTALLS * ADBLOCK_DISABLED;
-            var total_rev = 1000 + (incremental_rev * TIME_PASSED / 2);
+            var total_rev = 500 + (incremental_rev * TIME_PASSED / 2);
 
-            //return deferred.success(total_rev.toFixed(2));
+            // return deferred.success(total_rev.toFixed(2));
             // console.log(total_rev.toFixed(2));
             return deferred.success(4736);
         });
