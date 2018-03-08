@@ -20,7 +20,6 @@ router.get('/submit-email', function(req, res) {
 
 
 router.get('/', function(req, res) {
-    if (req != undefined && req.query != undefined) console.log(req.query);
 
     var def = {
         ngos: ngoController.getAllNgos(),
