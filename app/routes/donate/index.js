@@ -9,6 +9,12 @@ var moment = require('moment');
 router.get('/', function(req, res) {
     console.log("Donate endpoint called");
     var donation_id = "donation" + moment().format('x');
+
+    if (req.user == undefined || req.user.hearts == undefined) {
+        res.send("Donate complete");
+        return;
+    }
+
     donationController.createDump(req.user.hearts.current_week_hearts, donation_id, req.user.user_id, req.user.hearts.current_cause_id).pipe(function(data) {
         console.log("Dump created, calling user donate ...");
         userController.donate(donation_id, req.user.user_id);
