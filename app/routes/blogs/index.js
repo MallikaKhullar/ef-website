@@ -45,7 +45,6 @@ router.get('/', function(req, res) {
         };
 
         if (data.category) newdata.category = data.category;
-        console.log(newdata);
 
         res.render("blogs.ejs", newdata);
     });
