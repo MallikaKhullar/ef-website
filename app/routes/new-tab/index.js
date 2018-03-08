@@ -46,6 +46,7 @@ function redirectForNewUser(user, res) {
 
 router.get('/', continueIfLoggedIn, function(req, res) {
     if (redirectForNewUser(req.user, res)) return;
+    if (req != undefined && req.query != undefined) console.log(req.query);
 
     var def = {
         userCount: userController.getAllUserCount(),
