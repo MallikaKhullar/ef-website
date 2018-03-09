@@ -283,10 +283,11 @@
         }
         
         .oval-container-image {
-            height: 27px;
-            width: auto;
-            margin-left: 30px;
-            margin-right: 30px;
+            margin-left: 40px;
+            margin-right: 40px;
+            height: auto;
+            width: 55px;
+            padding: 20px;
         }
         
         .quicklink-img-med {
@@ -647,6 +648,11 @@
             color: rgba(190, 190, 190, 0.8) !important;
             text-decoration: none !important;
         }
+        
+        .square-rect {
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.55);
+        }
     </style>
 
 </head>
@@ -939,35 +945,19 @@
 
                     <div id="centerDiv">
                         <ul class="centerUL" style="line-height:10px">
-                            <li>
-                                <a target="_top" href="http://www.facebook.com">
-                                    <div class="font-xs link white oval-container">
-                                        <img alt="Flutur Facebook" class="oval-container-image" src="/image/facebook-icon.png" />
-                                        <br> <br><i>Facebook</i>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_top" class="font-xs link white oval-container" href="http://www.youtube.com">
-                                    <img alt="Flutur Youtube" class="oval-container-image" src="/image/youtube-icon.png" /><br><br><i>Youtube</i>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_top" class="font-xs link white oval-container" href="http://www.drive.google.com">
-                                    <img alt="Flutur Google Drive" class="oval-container-image" src="/image/drive-icon.png" />
-                                    <br> <br><i>Drive</i>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_top" class="font-xs link white oval-container" href="http://docs.google.com/spreadsheets/u/0/">
-                                    <img alt="Flutur Google sheets" class="oval-container-image" src="/image/sheets-icon.png" /><br> <br><i>Sheets</i>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_top" class="font-xs link white oval-container" href="http://www.gmail.com">
-                                    <img alt="Flutur Gmail" class="oval-container-image" src="/image/gmail-icon.png" /><br> <br><i>Gmail</i>
-                                </a>
-                            </li>
+
+                            <% if (typeof mostVisited != 'undefined') { %>
+                                <% for(var i=0; i<mostVisited.length; i++) { %>
+                                    <li>
+                                        <a target="_top" class="font-m link white oval-container" href="http://www.gmail.com">
+                                            <div class="oval-container-image square-rect">
+                                                <%- mostVisited[i].icon %>
+                                            </div><br> <br><i> <%- mostVisited[i].title %> </i>
+                                        </a>
+                                    </li>
+
+                                    <% } %>
+                                        <% } %>
                         </ul>
                     </div>
                 </div>

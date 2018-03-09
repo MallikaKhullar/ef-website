@@ -44,9 +44,39 @@ function redirectForNewUser(user, res) {
     return false;
 }
 
+
+function isEmpty(obj) {
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return true;
+}
+
+
+function getFirstAlphabet(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] >= 'A' && str[i] <= 'z') return str[i];
+    }
+    return '*';
+}
+
+function constructQuery(query) {
+    var mostVisited = [];
+
+    if (query == undefined || !query.hasOwnProperty('urls') || !query.hasOwnProperty('titles') || query.urls.constructor !== Array || query.titles.constructor !== Array) return mostVisited;
+
+    for (i in query.urls) {
+        if (i > query.titles.length || query.urls[i] == undefined || query.titles[i] == undefined) return mostVisited;
+        mostVisited.push({ "url": query.urls[i], "title": query.titles[i].split('+').join(' ').slice(0, 15) + " ...", "icon": getFirstAlphabet(query.titles[i]) });
+    }
+    return mostVisited;
+}
+
 router.get('/', continueIfLoggedIn, function(req, res) {
     if (redirectForNewUser(req.user, res)) return;
-//    if (req != undefined && req.query != undefined) console.log(req.query);
+
 
     var def = {
         userCount: userController.getAllUserCount(),
@@ -55,6 +85,8 @@ router.get('/', continueIfLoggedIn, function(req, res) {
         previousCause: causeController.getCauseFromId(req.user.previous_donation.previous_cause_id)
     };
 
+
+
     deferred.combine(def).pipe(function(data) {
         constructPayload({
             user: req.user,
@@ -62,7 +94,7 @@ router.get('/', continueIfLoggedIn, function(req, res) {
             numDonations: data.donationCount,
             numUsers: data.userCount,
             previousCause: data.previousCause,
-            req: req
+            req: req,
         }).pipe(function(result) {
             res.render("new-tab.ejs", result);
         });
@@ -83,7 +115,6 @@ router.get('/theme-toggle', function(req, res) {
 
 router.get('/theme-change', function(req, res) {
     var newTheme = req.query.selectedTheme;
-    console.log("Theme change", req.user.user_id, newTheme);
     userController.changeColorTheme(req.user.user_id, newTheme).pipe(function(data) {
         res.send(newTheme);
     });
@@ -115,6 +146,15 @@ function constructPayload(data) {
         redirected: redirected
     };
 
+    //extract most visited from the query params, to send to the view
+    if (data.req != undefined && data.req.query != undefined && !isEmpty(data.req.query)) {
+        visited = constructQuery(data.req.query);
+        if (visited != undefined && !isEmpty(visited)) {
+            newdata.mostVisited = visited;
+        }
+    }
+
+
     var total_hearts_text = data.user.hearts.total_hearts == 1 ? " heart" : " hearts";
 
     var daysPassed = Utils.timePeriodInDays(moment().format('x'), data.user.timestamp);
@@ -124,6 +164,8 @@ function constructPayload(data) {
     newdata.user.first_name = Utils.firstName(newdata.user.name);
     newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
     newdata.user.hearts.total_hearts_text = data.user.hearts.total_hearts + total_hearts_text;
+
+    console.log(newdata);
 
     if (data.user.state == 'cause_selection_pending') {
         return ngoController.getNgosFromCauseId(data.previousCause.cause_id).pipe(function(res) {
