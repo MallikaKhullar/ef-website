@@ -44,7 +44,6 @@ function redirectForNewUser(user, res) {
     return false;
 }
 
-
 function isEmpty(obj) {
     for (var prop in obj) {
         if (obj.hasOwnProperty(prop))
@@ -53,7 +52,6 @@ function isEmpty(obj) {
 
     return true;
 }
-
 
 function getFirstAlphabet(str) {
     for (var i = 0; i < str.length; i++) {
@@ -76,7 +74,6 @@ function constructQuery(query) {
 
 router.get('/', continueIfLoggedIn, function(req, res) {
     if (redirectForNewUser(req.user, res)) return;
-
 
     var def = {
         userCount: userController.getAllUserCount(),
@@ -147,12 +144,12 @@ function constructPayload(data) {
     };
 
     //extract most visited from the query params, to send to the view
-    if (data.req != undefined && data.req.query != undefined && !isEmpty(data.req.query)) {
-        visited = constructQuery(data.req.query);
-        if (visited != undefined && !isEmpty(visited)) {
-            newdata.mostVisited = visited;
-        }
-    }
+    // if (data.req != undefined && data.req.query != undefined && !isEmpty(data.req.query)) {
+    //     visited = constructQuery(data.req.query);
+    //     if (visited != undefined && !isEmpty(visited)) {
+    //         newdata.mostVisited = visited;
+    //     }
+    // }
 
 
     var total_hearts_text = data.user.hearts.total_hearts == 1 ? " heart" : " hearts";

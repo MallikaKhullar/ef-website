@@ -283,11 +283,10 @@
         }
         
         .oval-container-image {
-            margin-left: 40px;
-            margin-right: 40px;
-            height: auto;
-            width: 55px;
-            padding: 20px;
+            height: 27px;
+            width: auto;
+            margin-left: 30px;
+            margin-right: 30px;
         }
         
         .quicklink-img-med {
@@ -945,84 +944,39 @@
 
                     <div id="centerDiv">
                         <ul class="centerUL" style="line-height:10px">
-
-                            <% if (typeof mostVisited != 'undefined') { %>
-                                <% for(var i=0; i<mostVisited.length; i++) { %>
-                                    <li>
-                                        <a target="_top" class="font-m link white oval-container" href="http://www.gmail.com">
-                                            <div class="oval-container-image square-rect">
-                                                <%- mostVisited[i].icon %>
-                                            </div><br> <br><i> <%- mostVisited[i].title %> </i>
-                                        </a>
-                                    </li>
-
-                                    <% } %>
-                                        <% } %>
+                            <li>
+                                <a target="_top" href="http://www.facebook.com">
+                                    <div class="font-xs link white oval-container">
+                                        <img alt="Flutur Facebook" class="oval-container-image" src="/image/facebook-icon.png" />
+                                        <br> <br><i>Facebook</i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.youtube.com">
+                                    <img alt="Flutur Youtube" class="oval-container-image" src="/image/youtube-icon.png" /><br><br><i>Youtube</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.drive.google.com">
+                                    <img alt="Flutur Google Drive" class="oval-container-image" src="/image/drive-icon.png" />
+                                    <br> <br><i>Drive</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://docs.google.com/spreadsheets/u/0/">
+                                    <img alt="Flutur Google sheets" class="oval-container-image" src="/image/sheets-icon.png" /><br> <br><i>Sheets</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.gmail.com">
+                                    <img alt="Flutur Gmail" class="oval-container-image" src="/image/gmail-icon.png" /><br> <br><i>Gmail</i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <!-- 
-            <div class="right-bar" style="display:none">
-                <% if (user.state === 'donate_pending') { %>
-                    <div style="text-align: center; padding: 8% 7%">
-                        <div class="thick-text white" style="font-size:16px;">WEEKLY MISSION</div>
-                        <div class="thick-text green big-text" style="font-size:22px">COMPLETE!</div>
-                        <img alt="Flutur Cause" class="env-icon" src="<%- cause.img_url %>" /></a>
-                        <div class="thick-text center-element white" style="font-size:26px">
-                            <img alt="Flutur Heart" style="height:22px" src="/image/heart.png" />
-                            <%- user.hearts.current_week_hearts %>
-                        </div>
-                        <div class="thin-text white">Hearts collected!</div>
-
-                        <div id="donate-now" class="small-pink-button" style="margin-top: 8%">
-                            <div class="thick-text white center-text" style="font-size:12px">DONATE NOW</div>
-                        </div>
-
-                        <div class="thin-text white" style="margin-top: 8%; font-size:12px">Benefiting NGOs</div>
-
-                    </div>
-                    <% } else if (user.state === 'cause_selection_pending') { %>
-                        <div style="text-align: center; padding: 12% 15%">
-                            <div class="thick-text center-element white big-text">
-                                <img alt="Flutur Heart" style="height:22px" src="/image/heart.png" />
-                                <%- user.previous_donation.previous_week_hearts %>
-                            </div>
-                            <div class="thick-text big-text white">Hearts Donated!</div>
-                            <img alt="Flutur Cause" class="env-icon" src="<%- previousCause.img_url %>" /></a>
-
-                            <ul class="hor-list" style="margin:20px 0;">
-                                <% for(var i=0; i<previousCause.ngoList.length; i++) { %>
-                                    <li>
-                                        <img alt="Flutur NGO" style="height:22%; width:22%; margin-left:5px" src="<%- previousCause.ngoList[i].logo_url %>" />
-                                    </li>
-                                    <% } %>
-                            </ul>
-
-                            <a href="/new-tab/choose-mission">
-                                <div id="choose-mission" class="small-pink-button" style="margin-top: 8%">
-                                    <div class="thick-text white center-text" style="font-size:12px">Choose your next mission</div>
-                                </div>
-                            </a>
-
-                        </div>
-                        <% } else {%>
-                            <div class="thick-text center-element" style="padding-top:25px; font-size:16px">MY MISSION THIS WEEK</div>
-                            <div class="thin-text center-element">
-                                <%- cause.cause_name %>!</div>
-                            <div class="center-element">
-                                <img alt="Flutur Cause" class="env-icon" src="<%- cause.img_url %>" /></a>
-                            </div>
-
-                            <div class="thick-text center-element weight-500">
-                                <%- stats.remainingTime %> to go!
-                            </div>
-
-                            <div class="thin-text center-element" style="margin:20px; padding:0 30px; font-size:12px">
-                                Open new tabs to collect more hearts!
-                            </div>
-                            <% } %>
-            </div> -->
 
             <div class="ad-footer-left">
                 <div id="user-profile-container" class="small-shadow">
@@ -1046,14 +1000,6 @@
                 </div>
             </div>
 
-            <!-- <div class="ad-footer-center">
-                <script type="text/javascript" language="javascript">
-                    var aax_size = '728x90';
-                    var aax_pubname = 'flutur-21';
-                    var aax_src = '302';
-                </script>
-                <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
-            </div> -->
 
             <% if (user.state === 'donate_pending') { %>
 
