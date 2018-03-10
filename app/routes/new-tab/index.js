@@ -20,9 +20,9 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
         var start = moment().format('x');
         var end = Utils.getEndTime(start);
         userController.setCause(req.user.user_id, req.query.cause_id, start, end).pipe(function(data) {
-            res.redirect('/new-tab?redirect=true');
+            res.redirect('/new-tab');
         });
-    } else res.redirect('/new-tab?redirect=true');
+    } else res.redirect('/new-tab');
 });
 
 
