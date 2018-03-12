@@ -2061,7 +2061,8 @@ button:focus {
 }
 
 @media screen and (min-width: 700px) {
-    .resp-footer {
+    .resp-footer,
+    .pledge-section {
         display: block;
     }
     .small-trans-box,
@@ -2070,6 +2071,7 @@ button:focus {
     .small-header-content-inner,
     .small-laptop-container,
     .small-content-box,
+    .small-pledge-section,
     .small-mobile-header {
         display: none;
     }
@@ -2091,6 +2093,7 @@ button:focus {
     .trans-box,
     .resp-footer,
     .big-screen-sections,
+    .pledge-section,
     .main-header {
         display: none;
     }
@@ -2100,8 +2103,14 @@ button:focus {
     .small-header-content-inner,
     .tab-laptop-container,
     .small-content-box,
-    .small-mobile-header {
+    .small-mobile-header,
+    .small-pledge-section {
         display: block;
+    }
+    .small-pledge-section {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
     }
     header {
         padding: 80px 5px 0px 5px;
@@ -2115,7 +2124,6 @@ button:focus {
         position: relative;
     }
     .about-container,
-    .pledge-section,
     .small-project-details-container,
     .benefitting-ngos {
         padding: 50px 15px 50px 15px;
