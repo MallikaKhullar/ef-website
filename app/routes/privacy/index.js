@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
             }
         };
 
-        res.render("terms.ejs", newdata);
+        res.render("privacy.ejs", newdata);
     });
 });
 
