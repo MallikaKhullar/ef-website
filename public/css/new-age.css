@@ -76,6 +76,16 @@ h6 {
     font-weight: 500;
 }
 
+.poppins-thick {
+    font-family: 'Poppins', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 700;
+}
+
+.poppins-thin {
+    font-family: 'Poppins', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 300;
+}
+
 .stats {
     margin-top: 50px;
 }
@@ -233,6 +243,14 @@ header .header-content {
 
 .white-btn {
     background-color: #FFFFFF;
+}
+
+.red-btn {
+    background-color: #DC4738;
+}
+
+.blue-btn {
+    background-color: #396BAF;
 }
 
 .red-txt {

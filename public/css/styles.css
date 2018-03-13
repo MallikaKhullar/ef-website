@@ -982,3 +982,9 @@ button:focus {
     color: #777777;
     background-color: white;
 }
+
+.featured-green {
+    padding: 10px 50px 10px 10px;
+    background-color: #3EFFDE;
+    color: black;
+}
