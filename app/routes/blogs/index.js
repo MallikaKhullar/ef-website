@@ -11,7 +11,7 @@ var moment = require('moment');
 router.get('/', function(req, res) {
     var type = req.query.type || "all";
     var page = req.query.page || 0;
-    var count = 12;
+    var count = 15;
     var offset = page * count;
 
     var def1 = {
