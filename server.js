@@ -11,8 +11,8 @@ var express = require('express'),
     helmet = require('helmet');
 var session = require('express-session');
 var redisStore = require('connect-redis')(session);
-var redis   = require("redis");
-var client  = redis.createClient();
+var redis = require("redis");
+var client = redis.createClient();
 
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
@@ -26,8 +26,8 @@ app.use(helmet());
 app.use(session({
     secret: 'deveshIsSexy',
     // create new redis store.
-    store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  60000 * 24 * 30 * 100}),
-    cookie: {maxAge: (60000 * 24 * 30 * 100)},
+    store: new redisStore({ host: 'localhost', port: 6379, client: client, ttl: 60000 * 24 * 30 * 100 }),
+    cookie: { maxAge: (60000 * 24 * 30 * 1000) },
     saveUninitialized: false,
     resave: false
 }));
