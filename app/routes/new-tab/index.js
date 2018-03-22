@@ -26,9 +26,18 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
 });
 
 
+// router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
+//     causeController.getAllCauses().pipe(function(data) {
+//         res.render("select-cause.ejs", { data });
+//     });
+// });
+
 router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
-    causeController.getAllCauses().pipe(function(data) {
-        res.render("select-cause.ejs", { data });
+    causeController.getAllCauses().pipe(function(missions) {
+        var data = {};
+        data.missions = missions;
+        data.dailyImage = constants.images[Math.round(0) % constants.images.length];
+        res.render("select-cause.ejs", data);
     });
 });
 
