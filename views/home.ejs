@@ -20,6 +20,7 @@
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,6 +42,14 @@
     <meta name="description" content="At Flutur, we convert your otherwise wasted hours into real donations through the Flutur effect. Try out the Flutur New Tab Chrome Extention">
 
     <style>
+        .popup-small-title {
+            color: #000;
+            font-family: Poppins;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 13px;
+        }
+        
         .blog-img {
             width: 100%;
             height: 250px;
@@ -49,6 +58,33 @@
             background-size: cover;
             border-radius: 10px;
         }
+        
+        .rounded-pink-box {
+            font-size: 12px;
+            cursor: pointer;
+            padding: 10px 50px;
+            text-align: center;
+            border-radius: 29px;
+            background-color: #FF1F70;
+        }
+        
+        .mt-10 {
+            margin-top: 10rem;
+        }
+        
+        .mt-5 {
+            margin-top: 5rem;
+        }
+        
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        
+        .mt-3 {
+            margin-top: 3rem;
+        }
+        
+        .big-laptop-container {}
         
         .more-pink-title {
             color: #EF2A67;
@@ -86,6 +122,22 @@
             letter-spacing: 0px;
         }
         
+        .poppins-thick {
+            font-family: 'Poppins', 'Helvetica', 'Arial', 'sans-serif';
+            font-weight: 700;
+        }
+        
+        .mission-box-container {
+            padding: 100px;
+            margin: 0 auto;
+        }
+        
+        .featured-green {
+            padding: 10px 50px 10px 10px;
+            background-color: #3EFFDE;
+            color: black;
+        }
+        
         @media all and (max-width: 699px) {
             .category-container {
                 display: none;
@@ -97,6 +149,9 @@
             }
             .blogs-link {
                 padding: 30px 30px 60px 30px;
+            }
+            .welcome {
+                display: none;
             }
         }
         
@@ -112,6 +167,34 @@
             .category-container-small {
                 display: none;
             }
+            .welcome {
+                width: 350px;
+            }
+        }
+        
+        .welcome {
+            position: absolute;
+            background-color: #FFFFFF;
+            padding: 25px 50px;
+            text-align: center;
+            height: 270px;
+            display: none;
+            z-index: 20;
+            right: 5%;
+            margin: 30px;
+            box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.5);
+        }
+        
+        .welcome::after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            margin-left: -25px;
+            width: 0;
+            height: 0;
+            bottom: 100%;
+            border-bottom: solid 25px #fff;
+            border-left: solid 25px transparent;
         }
     </style>
 
@@ -167,10 +250,6 @@
                                 <b> CHROME PLUGIN</b>
                                 <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
                             </div>
-                            <!-- <a class="white" target="_top" href="https://chrome.google.com/webstore/detail/flutur-small-flutters-cau/onebagjpomhjadhoiianmnelkbcnllnf" style="padding: 20px; text-decoration:none!important; height:100%; width:100%">
-                                <b> CHROME PLUGIN</b>
-                                <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
-                            </a> -->
                         </div>
                     </li>
                 </ul>
@@ -182,8 +261,10 @@
         <%- include mobile_home_partial.ejs %>
     </div>
     <div>
-        <%- include desktop_home_partial.ejs %>
+        <%- include desktop-homepage-mission-partial.ejs %>
     </div>
+
+
 
 
     <section class="bg-lightgrey blogs-link">
@@ -290,7 +371,7 @@
         </div>
     </section>
 
-    <section class="benefitting-ngos bg-lightgrey">
+    <!-- <section class="benefitting-ngos bg-lightgrey">
         <div class="black-quicksand-big-title" style="margin-bottom: 40px">Benefitting NGOs</div>
         <div>
             <div class="container-fluid">
@@ -322,7 +403,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <div class="resp-footer">
         <%- include footer_partial.ejs %>
@@ -351,6 +432,22 @@
         }
 
         changeImpactGrid();
+    });
+
+    $(document).ready(function() {
+        // $('#welcomepopup').show();
+
+        var isshow = localStorage.getItem('isshow');
+        if (isshow == null) {
+            localStorage.setItem('isshow', 1);
+            $('#welcomepopup').show();
+        }
+    });
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 0) {
+            $('#welcomepopup').hide();
+        }
     });
 
     $("#desktop-footer-motivation").find("a").click(function(e) {

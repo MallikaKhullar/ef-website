@@ -12,23 +12,13 @@
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:400,700" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link href="/css-min/new-age.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,700" rel="stylesheet">
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="/css/mission-select.css">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-111348597-1');
-    </script>
 
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -36,38 +26,30 @@
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 
     <style>
-        li.selected {
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: scroll;
+        }
+        /* li.selected {
             -webkit-box-shadow: inset 0px 0px 0px 2px #b626ff;
             -moz-box-shadow: inset 0px 0px 0px 2px #b626ff;
             box-shadow: inset 0px 0px 0px 2px #b626ff;
             border-radius: 20px;
-        }
+        } */
         
-        .hor-list li {
-            display: table-cell;
-            padding: 10px 20px;
-            margin-left: 10px;
-            margin-right: 10px;
-            vertical-align: middle;
+        .mission-li {
+            margin: 40px;
+            width: 25%;
             cursor: pointer;
-        }
-        
-        li img {
-            vertical-align: middle;
-            width: 70%;
-        }
-        
-        .hor-list {
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin: 0 auto;
-            width: 80%;
+            display: inline-block;
         }
         
         body,
         html {
-            background: white;
             text-align: center;
+            color: white;
         }
         
         .big-title {
@@ -99,46 +81,82 @@
         }
         
         .mission-li:hover {
-            border: 1px solid #e8e8e8;
-            border-radius: 20px;
+            background-color: #000000;
+        }
+        
+        a,
+        a:hover {
+            text-decoration: none!;
+            color: white;
         }
     </style>
 
 </head>
 
 <body>
+    <img src='<%- dailyImage %>' id="bg" alt="" />
+    <img id="bg" />
 
-    <div style="position:relative; width:100%; height:100%">
+    <div class="choose-title mb-5 pt-5">Choose your mission!</div>
 
-        <div style="width:100%; position:absolute; text-align:center; padding: 40px 0px">
+    <a href='/new-tab/mission-selected?cause_id=<%-missions[0].cause_id%>'>
+        <div class="large-dialog-overlay mb-5">
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4"><br><b>Progress line</b><br><br><br></div>
+            </div>
 
-            <div class="big-title">Choose your mission!</div>
-            <div class="medium-title">Tabs opened will raise funds towards your selected mission</div>
-            <div class="small-title" style="color:#989898">Select a different one every week!</div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <img alt="Flutur Environment Saving" style="width:70%; height:auto;" src="<%- missions[0].img_url %>" />
+                </div>
 
-            <ul class="hor-list" style="margin-bottom:50px">
-                <% for(var i=0; i<data.length; i++) { %>
-                    <li class="mission-li" id="<%-data[i].cause_id%>" style="width:20%">
-                        <img alt="Flutur Cause" src="<%- data[i].character.img_url %>">
-                        <div class="medium-title">
-                            <%- data[i].character.name %>
-                        </div>
-                        <div class="small-title" style="color:#989898; padding:0 5px;">
-                            <%- data[i].character.desc %>
-                        </div>
-                    </li>
-                    <% } %>
-            </ul>
-            <div id="lets-go-button">
-                <div id="donate-now" class="grey-button disabled">
-                    <div class="thick-text white center-text" style="font-size:20px"><i style="margin-right:10px" class="fa fa-heart" aria-hidden="true"></i>Let's Go</div>
+                <div class="col-sm-4">
+                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">
+                        <%- missions[0].character.name %>
+                    </div>
+                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
+                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
+                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
+                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div>Choose now</div>
                 </div>
             </div>
         </div>
-    </div>
+    </a>
 
+    <div class="mw-80 mb-5">
+        <% for(var i=1; i<missions.length; i++) { %>
+            <a href='/new-tab/mission-selected?cause_id=<%-missions[i].cause_id%>' />
+            <div class="mission-li secondary-mission pt-5" id="<%-missions[i].cause_id%>">
+                <img alt="Flutur Environment Saving" style="width:50%; height:auto;" src="<%- missions[0].img_url %>" />
+                <div class="mb-5">
+                    <%- missions[i].character.name %>
+                </div>
+                <div class="mb-5">
+                    <%- missions[i].character.desc %>
+                </div>
+            </div>
+            </a>
+            <% } %>
     </div>
-    </div>
+    <!-- </div>
+    </div> -->
+
+
+
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui.js"></script>
