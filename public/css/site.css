@@ -2094,6 +2094,7 @@ button:focus {
     .resp-footer,
     .big-screen-sections,
     .pledge-section,
+    .desktop-content,
     .main-header {
         display: none;
     }

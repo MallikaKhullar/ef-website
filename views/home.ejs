@@ -76,6 +76,18 @@
             margin-top: 5rem;
         }
         
+        .mb-5 {
+            margin-bottom: 5rem;
+        }
+        
+        .mb-3 {
+            margin-bottom: 3rem;
+        }
+        
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+        
         .mt-2 {
             margin-top: 2rem;
         }
@@ -83,8 +95,6 @@
         .mt-3 {
             margin-top: 3rem;
         }
-        
-        .big-laptop-container {}
         
         .more-pink-title {
             color: #EF2A67;
@@ -129,6 +139,11 @@
         
         .mission-box-container {
             padding: 100px;
+            margin: 0 auto;
+        }
+        
+        .other-missions-box-container {
+            padding: 70px 100px;
             margin: 0 auto;
         }
         
@@ -195,6 +210,16 @@
             bottom: 100%;
             border-bottom: solid 25px #fff;
             border-left: solid 25px transparent;
+        }
+        
+        body {
+            background: linear-gradient(30deg, #3CC58F, #3CC58F, #23D2AF, #54A5C1, #4CA7E4, #C479E2, #B553F1, #DC4AA6, #E5458C);
+            background-size: 800% 800%;
+            animation: AnimationName 18s ease infinite;
+        }
+        
+        header {
+            background: none!important;
         }
     </style>
 
@@ -263,8 +288,6 @@
     <div>
         <%- include desktop-homepage-mission-partial.ejs %>
     </div>
-
-
 
 
     <section class="bg-lightgrey blogs-link">
@@ -365,45 +388,11 @@
             <div class="col-sm-4">
                 <img alt="Flutur Effect Lorenz Attractor" src="/image/flutur_logo.gif" style="height:auto; width:70%" />
             </div>
-
             <div class="col-sm-1"></div>
-
         </div>
     </section>
 
-    <!-- <section class="benefitting-ngos bg-lightgrey">
-        <div class="black-quicksand-big-title" style="margin-bottom: 40px">Benefitting NGOs</div>
-        <div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-2">
-                    </div>
-                    <% for(var i=0; i<4; i++) { %>
-                        <div class="col-md-2 ngo-icon">
-                            <img alt="<%- ngos[i].ngo_name %> Flutur donations" style="height:80px;padding:10px" src="<%- ngos[i].logo_url %>" />
-                        </div>
-                        <% } %>
-                            <div class="col-md-2">
-                            </div>
-                </div>
 
-                <div class="row ngo-container">
-                    <div class="col-md-2">
-                    </div>
-                    <% for(var i=4; i<ngos.length; i++) { %>
-                        <div class="col-md-2 ngo-icon">
-                            <img alt="<%- ngos[i].ngo_name %> Flutur donations" value="<%- ngos[i].ngo_name %>" style="height:80px;padding:10px" src="<%- ngos[i].logo_url %>" />
-                        </div>
-                        <% } %>
-                            <div class="col-md-2">
-                            </div>
-                </div>
-                <div class="row">
-                    <%- include contact_partial.ejs %>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <div class="resp-footer">
         <%- include footer_partial.ejs %>
