@@ -41,12 +41,20 @@ router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
     });
 });
 
+function hasExpired(user) {
+    if (user.state != "week_ongoing") return true;
+    var timeElapsed = moment().format('x') > user.hearts.target_end_time;
+    if (timeElapsed &&
+        user.state !== "cause_selection_pending" &&
+        user.state !== 'donate_pending_dismissed') {
+        return true;
+    }
+}
 
 function redirectForNewUser(user, res) {
-    if (user.state === "uninitiated") {
-
-        causeController.getAllCauses().pipe(function(data) {
-            res.render("select-cause.ejs", { data });
+    if (hasExpired(user)) {
+        donationController.getAllStats().pipe(function(data) {
+            res.render("move-on.ejs", { data });
         });
         return true;
     }
@@ -152,15 +160,6 @@ function constructPayload(data) {
         redirected: redirected
     };
 
-    //extract most visited from the query params, to send to the view
-    // if (data.req != undefined && data.req.query != undefined && !isEmpty(data.req.query)) {
-    //     visited = constructQuery(data.req.query);
-    //     if (visited != undefined && !isEmpty(visited)) {
-    //         newdata.mostVisited = visited;
-    //     }
-    // }
-
-
     var total_hearts_text = data.user.hearts.total_hearts == 1 ? " heart" : " hearts";
 
     var daysPassed = Utils.timePeriodInDays(moment().format('x'), data.user.timestamp);
@@ -171,7 +170,6 @@ function constructPayload(data) {
     newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
     newdata.user.hearts.total_hearts_text = data.user.hearts.total_hearts + total_hearts_text;
 
-    console.log(newdata);
 
     if (data.user.state == 'cause_selection_pending') {
         return ngoController.getNgosFromCauseId(data.previousCause.cause_id).pipe(function(res) {
@@ -183,7 +181,6 @@ function constructPayload(data) {
     if (newdata.timeElapsed &&
         data.user.state !== "cause_selection_pending" &&
         data.user.state !== 'donate_pending_dismissed') {
-
         newdata.user.state = "donate_pending";
 
         return ngoController.getNgosFromCauseId(data.cause.cause_id).pipe(function(res) {

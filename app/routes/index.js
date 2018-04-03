@@ -12,6 +12,7 @@ var faqs = require('./faqs');
 var donate = require('./donate');
 var ultron = require('./ultron');
 var blogs = require('./blogs');
+var projects = require('./projects');
 var contactPage = require('./contact');
 var aboutPage = require('./about-us');
 // var newTabTest = require('./new-tab-test');
@@ -79,6 +80,7 @@ var allRoutes = function(app, passport) {
     });
 
     app.use('/blog', blogs);
+    app.use('/projects', projects);
 
     app.get('/robots.txt', function(req, res) {
         res.type('text/plain');

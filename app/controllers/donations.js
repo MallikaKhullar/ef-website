@@ -41,3 +41,9 @@ exports.getAllDonationCount = function() {
         });
     });
 };
+
+exports.getAllStats = function(userId) {
+    return fn.defer(fn.bind(Donation, 'getDonationsByUserId'))(userId).pipe(function(data) {
+        return deferred.success(data);
+    });
+};

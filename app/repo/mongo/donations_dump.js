@@ -30,6 +30,9 @@ donationDumpSchema.statics = {
 
     getDonationsByCauseId: function(data, cb) {
         this.findOne({ cause_id: data.cause_id }).lean().exec(cb);
+    },
+    getDonationsByUserId: function(id, cb) {
+        this.findOne({ user_id: id }).lean().exec(cb);
     }
 };
 

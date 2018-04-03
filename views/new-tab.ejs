@@ -732,6 +732,7 @@
             </div>
         </div>
 
+
         <div class="dark-gradient-donate" style="display:none">
             <% if (user.state === 'donate_pending') { %>
                 <div class="small-dialog-overlay">
@@ -1115,6 +1116,7 @@
     $(document).ready(function() {
         window.theme = "<%- user.color_theme %>";
         setupThemeUI();
+        alert("<%- user.state %>");
     });
 
     function showSnackbar() {
@@ -1187,6 +1189,9 @@
             setTheme();
         }
     });
+
+
+
 
     function setupThemeUI() {
         switch (window.theme) {

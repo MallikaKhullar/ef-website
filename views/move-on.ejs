@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Flutur | Select Donation Mission | DonateWithoutDonating </title>
+    <link rel="icon" href="image/header_logo.png" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:400,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,700" rel="stylesheet">
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/mission-select.css">
+
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: scroll;
+        }
+        /* li.selected {
+            -webkit-box-shadow: inset 0px 0px 0px 2px #b626ff;
+            -moz-box-shadow: inset 0px 0px 0px 2px #b626ff;
+            box-shadow: inset 0px 0px 0px 2px #b626ff;
+            border-radius: 20px;
+        } */
+        
+        .mission-li {
+            margin: 40px;
+            width: 25%;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        body,
+        html {
+            text-align: center;
+            color: white;
+        }
+        
+        .big-title {
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+        }
+        
+        .medium-title {
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 25px;
+            text-align: center;
+        }
+        
+        .small-title {
+            color: #4C4C4C;
+            font-family: Quicksand;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .mission-li:hover {
+            background-color: #000000;
+        }
+        
+        a,
+        a:hover {
+            text-decoration: none!;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="color:black">helooooooo</div>Congrats!!!
+
+
+
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+    var $li = $('.hor-list li').click(function() {
+        $("li").removeClass("mission-li");
+        $li.removeClass('selected');
+        $(this).addClass('selected');
+        document.getElementById("lets-go-button").innerHTML = "<a class=\"pointer-class\" style=\"margin-top: 20px\" id=\"link\" href=\"/new-tab/mission-selected?cause_id=xyz\"><div id=\"donate-now\" class=\"pink-button disabled\"><div class=\"thick-text white center-text\" style=\"font-size:20px\"><i style=\"margin-right:10px\" class=\"fa fa-heart\" aria-hidden=\"true\"></i>Let's Go</div></div></a>";
+        $("#link").attr("href", "/new-tab/mission-selected?cause_id=" + $(this).attr("id"));
+    });
+</script>
+
+</html>

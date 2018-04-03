@@ -1,0 +1,45 @@
+<div class="grid-container">
+    <div class="grid-row">
+        <div class="grid-column">
+            <% for(var i=0; i<Math.ceil(projects.length/3); i++) { %>
+                <a href="/projects/<%-projects[i].projectId%>">
+                        <img src="<%-projects[i].photoUrl%>" style="width:100%">
+                        <div class="blog-outside-title black">
+                            <%- projects[i].projectTitle%>
+                        </div>
+                        <!-- <div class="blog-short-desc">
+                            <%- projects[i].project_short_desc%>
+                        </div> -->
+                    </a>
+                <% } %>
+        </div>
+
+        <div class="grid-column">
+            <% for(var i= Math.ceil(projects.length/3); i < Math.ceil(2 * projects.length/3); i++) { %>
+                <a href="/projects/<%-projects[i].projectId%>">
+                        <img src="<%-projects[i].photoUrl%>" style="width:100%">
+                        <div class="blog-outside-title black">
+                            <%- projects[i].projectTitle%>
+                        </div>
+                        <!-- <div class="blog-short-desc">
+                            <%- projects[i].project_short_desc%>
+                        </div> -->
+                    </a>
+                <% } %>
+        </div>
+
+        <div class="grid-column">
+            <% for(var i= Math.ceil(2 * projects.length/3); i<projects.length; i++) { %>
+                <a href="/projects/<%-projects[i].projectId%>">
+                        <img src="<%-projects[i].photoUrl%>" style="width:100%">
+                        <div class="blog-outside-title black">
+                            <%- projects[i].projectTitle%>
+                        </div>
+                        <!-- <div class="blog-short-desc">
+                            <%- projects[i].project_short_desc%>
+                        </div> -->
+                    </a>
+                <% } %>
+        </div>
+    </div>
+</div>
