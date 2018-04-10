@@ -26,12 +26,6 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
 });
 
 
-// router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
-//     causeController.getAllCauses().pipe(function(data) {
-//         res.render("select-cause.ejs", { data });
-//     });
-// });
-
 router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
     causeController.getAllCauses().pipe(function(missions) {
         var data = {};
