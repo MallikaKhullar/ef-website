@@ -8,6 +8,7 @@ var blogController = require('../../controllers/blog');
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
 var Utils = require('../../utils');
+var projectController = require('../../controllers/project');
 
 
 router.get('/submit-email', function(req, res) {
@@ -25,7 +26,8 @@ router.get('/', function(req, res) {
         ngos: ngoController.getAllNgos(),
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
-        allBlogs: blogController.getBlogOverviews({ count: 9, filter: { starred: true } })
+        allBlogs: blogController.getBlogOverviews({ count: 9, filter: { starred: true } }),
+        projects: projectController.getProjectOverviews({})
     };
 
     deferred.combine(def).pipe(function(data) {
@@ -39,9 +41,12 @@ router.get('/', function(req, res) {
             blogs: data.allBlogs
         };
 
+        newdata = Utils.appendProjects(newdata, data.projects);
         res.render("home.ejs", newdata);
     });
 });
+
+
 
 
 module.exports = router;

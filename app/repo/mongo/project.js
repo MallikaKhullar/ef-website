@@ -5,7 +5,15 @@ var projectSchema = mongoose.Schema({
     projectId: { type: String, unique: true, required: true, index: true },
     projectTitle: String,
     isFeatured: { type: Boolean, default: false },
-    photoUrl: String
+    showcasePhoto: String,
+    missionPhoto: String,
+    actionTitle: String,
+    shortDescription: String,
+    homeDescription: String,
+    unitIcon: String,
+    currentUnits: Number,
+    currentUnitMeasure: String,
+    ngoId: String
 });
 
 projectSchema.statics = {

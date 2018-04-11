@@ -9,7 +9,6 @@ var userController = require('../../controllers/user');
 var donationController = require('../../controllers/donations');
 
 router.get('/', function(req, res) {
-    console.log("projec");
     var def1 = {
         projects: projectController.getProjectOverviews({}),
         donationCount: donationController.getAllDonationCount()
@@ -27,7 +26,6 @@ router.get('/', function(req, res) {
 
 
 router.get('/:projectId', function(req, res) {
-    console.log("hello");
     var projectId = req.params.projectId;
 
     var def1 = {

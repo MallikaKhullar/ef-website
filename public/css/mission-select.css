@@ -24,11 +24,11 @@
         
         .large-dialog-overlay {
             width: 70%;
-            height: 70%;
+            height: 70vh;
             /* left: 15%;
             top: 15%; */
+            padding-left: 50px;
             margin: 0 auto;
-            padding: 20px 40px 0px 40px;
             z-index: 3;
             border-radius: 10px;
             background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
@@ -72,9 +72,150 @@
         
         .secondary-mission {
             border-radius: 8px;
-            background: linear-gradient(140deg, #472E24 0%, #372017 100%);
+            background: linear-gradient(140deg, #3A5E69 0%, #1B3042 100%)
         }
         
         .secondary-mission:hover {
             background: linear-gradient(140deg, #000 0%, #000 100%);
+        }
+        
+        .action-desc {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 10.4px;
+            line-height: 16px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .action-desc-left {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 10.4px;
+            line-height: 16px;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .action-title {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 26.6px;
+            font-weight: bold;
+            padding: 25px;
+            text-transform: uppercase;
+            line-height: 32px;
+            text-align: right;
+            text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+        }
+        
+        .action-title-inner {
+            padding-left: 20%;
+        }
+        
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: scroll;
+        }
+        
+        .mission-li {
+            margin: 40px;
+            width: 25%;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        body,
+        html {
+            text-align: center;
+            color: white;
+        }
+        
+        .big-title {
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+        }
+        
+        .medium-title {
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 25px;
+            text-align: center;
+        }
+        
+        .small-title {
+            color: #4C4C4C;
+            font-family: Quicksand;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .mission-li:hover {
+            background-color: #000000;
+        }
+        
+        a,
+        a:hover {
+            text-decoration: none!;
+            color: white;
+        }
+        
+        .mission-img {
+            width: 50%;
+            height: auto;
+        }
+        
+        .mission-img-container {
+            text-align: left;
+        }
+        
+        .units {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 25px;
+            margin-left: 10px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .featured-hover {
+            z-index: 3;
+            border-radius: 0 10px 10px 0;
+            height: 70vh;
+        }
+        
+        .featured-green {
+            padding: 10px 50px 10px 10px;
+            background-color: #3EFFDE;
+            color: black;
+        }
+        
+        .open-new-tabs-to {
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 14px;
+            line-height: 21px;
+        }
+        
+        .choose-mission-featured {
+            height: 28px;
+            width: 211px;
+            color: #3EFFDE;
+            font-family: Poppins;
+            font-size: 22px;
+            line-height: 28px;
         }

@@ -3,9 +3,11 @@ const { wrap: async } = require('co');
 var fn = require('./../utils/functions');
 var deferred = require('./../utils/deferred.js');
 var moment = require('moment');
+var Utils = require('./../utils');
 
 exports.getProjectDetails = function(data, cb) {
     return fn.defer(fn.bind(Project, 'getProjectDetails'))({ projectId: data.projectId }).pipe(function(res) {
+        res.shortDescription = Utils.trunc(res.shortDescription);
         return deferred.success(res);
     });
 }
@@ -19,21 +21,15 @@ exports.getProjectOutlinePage = function() {
 
 exports.getProjectOverviews = function() {
     return fn.defer(fn.bind(Project, 'getAllProjects'))().pipe(function(projects) {
-        for (var i = 0; i < projects.length; i++) projects[i] = constructPayload(projects[i]);
+        for (i in projects) {
+            projects[i] = constructPayload(projects[i]);
+        }
         return deferred.success(projects);
     });
 };
 
 function constructPayload(project) {
-    return {
-        isFeatured: project.isFeatured,
-        projectId: project.projectId,
-        projectTitle: project.projectTitle,
-        photoUrl: project.photoUrl
-
-        // blog_id: blog.blog_id,
-        // blog_title: blog.blog_title,
-        // title_photo_url: blog.title_photo_url,
-        // blog_short_desc: blog.blog_short_desc
-    }
+    project.shortDescription = Utils.trunc(project.shortDescription);
+    project.unitString = project.currentUnits + " " + (project.currentUnits == 1 ? project.currentUnitMeasure : project.currentUnitMeasure + "s");
+    return project;
 }

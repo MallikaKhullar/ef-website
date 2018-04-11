@@ -25,71 +25,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 
-    <style>
-        html,
-        body {
-            padding: 0;
-            margin: 0;
-            overflow: scroll;
-        }
-        /* li.selected {
-            -webkit-box-shadow: inset 0px 0px 0px 2px #b626ff;
-            -moz-box-shadow: inset 0px 0px 0px 2px #b626ff;
-            box-shadow: inset 0px 0px 0px 2px #b626ff;
-            border-radius: 20px;
-        } */
-        
-        .mission-li {
-            margin: 40px;
-            width: 25%;
-            cursor: pointer;
-            display: inline-block;
-        }
-        
-        body,
-        html {
-            text-align: center;
-            color: white;
-        }
-        
-        .big-title {
-            color: #000000;
-            font-family: Quicksand;
-            font-size: 40px;
-            font-weight: bold;
-            line-height: 50px;
-            text-align: center;
-        }
-        
-        .medium-title {
-            color: #000000;
-            font-family: Quicksand;
-            font-size: 20px;
-            font-weight: bold;
-            line-height: 25px;
-            text-align: center;
-        }
-        
-        .small-title {
-            color: #4C4C4C;
-            font-family: Quicksand;
-            font-size: 14px;
-            line-height: 18px;
-            margin-bottom: 20px;
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        .mission-li:hover {
-            background-color: #000000;
-        }
-        
-        a,
-        a:hover {
-            text-decoration: none!;
-            color: white;
-        }
-    </style>
+
 
 </head>
 
@@ -99,54 +35,51 @@
 
     <div class="choose-title mb-5 pt-5">Choose your mission!</div>
 
-    <a href='/new-tab/mission-selected?cause_id=<%-missions[0].cause_id%>'>
-        <div class="large-dialog-overlay mb-5">
+    <a href='/new-tab/mission-selected?cause_id=<%-featuredProject.projectId%>'>
+        <div class="featured large-dialog-overlay mb-5">
             <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"><br><b>Progress line</b><br><br><br></div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <img alt="Flutur Environment Saving" style="width:70%; height:auto;" src="<%- missions[0].img_url %>" />
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">
-                        <%- missions[0].character.name %>
+                <div class="col-sm-3">
+                    <img alt="Flutur Chrome Extension" src="/image/aarambh_title_1.png" class="img-responsive" /></div>
+                <div class="col-sm-5 tab-project-details-container">
+                    <div class="open-new-tabs-to" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Open new tabs to</div>
+                    <div class="action-title" style="margin-top:20px;font-size: 44px; line-height:40px;">
+                        <%- featuredProject.actionTitle %>
                     </div>
-                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
-                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
-                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
-                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
-                </div>
 
-                <div class="col-sm-4">
-                    <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">Line</div>
+                    <div class="featured-green">
+                        <div class="poppins-thin xs-text" style="padding-right:50px;">Featured Mission</div>
+                        <div class="poppins-thin xs-text" style="padding-right:50px;">April - May 2018</div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <div>Choose now</div>
+                <div class="col-sm-4 featured-hover">
+                    <div class="action-desc-left" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
+                        <%- featuredProject.homeDescription %>
+                    </div>
+                    <a href='projects/<%- featuredProject.projectId %>'>
+                        <div class="choose-mission-featured" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Choose mission</div>
+                    </a>
                 </div>
             </div>
         </div>
     </a>
 
     <div class="mw-80 mb-5">
-        <% for(var i=1; i<missions.length; i++) { %>
-            <a href='/new-tab/mission-selected?cause_id=<%-missions[i].cause_id%>' />
-            <div class="mission-li secondary-mission pt-5" id="<%-missions[i].cause_id%>">
-                <img alt="Flutur Environment Saving" style="width:50%; height:auto;" src="<%- missions[0].img_url %>" />
-                <div class="mb-5">
-                    <%- missions[i].character.name %>
+        <% for(var i=0; i<projects.length; i++) { %>
+            <a href='/new-tab/mission-selected?cause_id=<%-projects[i].projectId%>' />
+            <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>">
+                <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[0].showcasePhoto %>" /></div>
+                <div class="action-title">
+                    <div class="action-title-inner">
+                        <%- projects[i].actionTitle %>
+                    </div>
                 </div>
-                <div class="mb-5">
-                    <%- missions[i].character.desc %>
+                <div class="mb-5 action-desc">
+                    <%- projects[i].shortDescription %>
+                </div>
+
+                <div class="mb-5 units">
+                    <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
+                    <%- projects[i].unitString %>
                 </div>
             </div>
             </a>
@@ -167,6 +100,15 @@
         $(this).addClass('selected');
         document.getElementById("lets-go-button").innerHTML = "<a class=\"pointer-class\" style=\"margin-top: 20px\" id=\"link\" href=\"/new-tab/mission-selected?cause_id=xyz\"><div id=\"donate-now\" class=\"pink-button disabled\"><div class=\"thick-text white center-text\" style=\"font-size:20px\"><i style=\"margin-right:10px\" class=\"fa fa-heart\" aria-hidden=\"true\"></i>Let's Go</div></div></a>";
         $("#link").attr("href", "/new-tab/mission-selected?cause_id=" + $(this).attr("id"));
+    });
+
+    $(document).ready(function() {
+        $(".featured").mouseenter(function() {
+            $(".featured-hover").css("background", "black");
+        });
+        $(".featured").mouseleave(function() {
+            $(".featured-hover").css("background", "none");
+        });
     });
 </script>
 

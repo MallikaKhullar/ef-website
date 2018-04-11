@@ -259,6 +259,15 @@ Utils.prototype.ellipsize = function(string, length) {
     return string;
 };
 
+Utils.prototype.appendProjects = function(newdata, projects) {
+    newdata.projects = [];
+    for (i in projects) {
+        if (projects[i].isFeatured == true) newdata.featuredProject = projects[i];
+        else newdata.projects.push(projects[i]);
+    }
+    return newdata;
+}
+
 function addParamsToPath(path, paramObj) {
 
     var newPath = path;
@@ -336,6 +345,10 @@ function timePeriodInMilliseconds(time1, time2) {
 
 Utils.prototype.timePeriodInDays = function(time1, time2) {
     return timePeriodInMilliseconds(time1, time2) / 86400000;
+}
+
+Utils.prototype.trunc = function(str) {
+    return str.substring(0, 200) + '...';
 }
 
 Utils.prototype.getEndTime = function(time1) {
