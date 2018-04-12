@@ -14,7 +14,11 @@ var projectSchema = mongoose.Schema({
     currentUnits: Number,
     currentUnitMeasure: String,
     primaryMissionPhoto: String,
-    ngoId: String
+    ngo: { //older ngos table is deprecated in v1
+        ngoName: String,
+        ngoUrl: String,
+        ngoPhotoUrl: String
+    }
 });
 
 projectSchema.statics = {
