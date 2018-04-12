@@ -52,6 +52,12 @@ Utils.prototype.updateSessionData = function(sessionData, req, callback) {
     });
 };
 
+Utils.prototype.getUserVersion = function(user) {
+    if (user.state.includes('v1')) return "v1";
+    if (user.state.includes('v2')) return "v2";
+    else return "v0";
+};
+
 Utils.prototype.updateUserDataInSession = function(updateParams, req) {
 
     var currentUserData = null;
@@ -260,6 +266,7 @@ Utils.prototype.ellipsize = function(string, length) {
 };
 
 Utils.prototype.appendProjects = function(newdata, projects) {
+    console.log("\n\n***Trying to append project", projects, "\n\n\n*****");
     newdata.projects = [];
     for (i in projects) {
         if (projects[i].isFeatured == true) newdata.featuredProject = projects[i];
@@ -347,12 +354,16 @@ Utils.prototype.timePeriodInDays = function(time1, time2) {
     return timePeriodInMilliseconds(time1, time2) / 86400000;
 }
 
-Utils.prototype.trunc = function(str) {
-    return str.substring(0, 200) + '...';
+Utils.prototype.trunc = function(str, val) {
+    return str.substring(0, val) + '...';
 }
 
 Utils.prototype.getEndTime = function(time1) {
     return parseInt(7 * 86400000) + parseInt(time1);
+}
+
+Utils.prototype.getTwoWeekTime = function(time1) {
+    return parseInt(7 * 86400000 * 2) + parseInt(time1);
 }
 
 Utils.prototype.timePeriodInHours = function(time1, time2) {
