@@ -39,40 +39,31 @@ exports.getAllUserCount = function() {
 };
 
 exports.donate = function(donation_id, user_id) {
-    //clear current week hearts
     fn.defer(fn.bind(User, 'addDonation'))({ donation_id, user_id }).pipe(function(res) {
         deferred.success(res);
     });
 };
 
 exports.initiateCauseChoosing = function(user_id) {
-    //clear current week hearts
     return fn.defer(fn.bind(User, 'initiateCauseChoosing'))({ user_id }).pipe(function(res) {
         return deferred.success(res);
     });
 };
 
 exports.setDonatePending = function(user_id) {
-    //clear current week hearts
     return fn.defer(fn.bind(User, 'setDonatePending'))({ user_id }).pipe(function(res) {
         return deferred.success(res);
     });
 };
 exports.setCause = function(user_id, cause_id, start, end) {
-    //clear current week hearts
     return fn.defer(fn.bind(User, 'setCause'))({ user_id, cause_id, start, end }).pipe(function(res) {
         return deferred.success(res);
     });
 };
 
-exports.selectNewCause = function(id, cause_id) {
-    //set new current cause
-    //new target start and end times
-    var def = {
-        fn1: fn.bind(User, 'setCurrentCause')({ id, cause_id }),
-    };
-
-    deferred.combine(def).pipe(function(data) {
-        return deferred.success(data);
+exports.setProject = function(user_id, cause_id, start, end) {
+    return fn.defer(fn.bind(User, 'setProject'))({ user_id, cause_id, start, end }).pipe(function(res) {
+        console.log("Project has been put into user object=>", res, "\n\n\n");
+        return deferred.success(res);
     });
 };
