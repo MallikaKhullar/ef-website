@@ -32,7 +32,13 @@ donationDumpSchema.statics = {
         this.findOne({ cause_id: data.cause_id }).lean().exec(cb);
     },
     getDonationsByUserId: function(id, cb) {
-        this.findOne({ user_id: id }).lean().exec(cb);
+        this.aggregate([
+            { $match: { user_id: id } },
+            {
+                $group: { _id: "$cause_id", hearts: { $sum: "$num_hearts" } }
+            }
+        ], cb);
+
     }
 };
 
