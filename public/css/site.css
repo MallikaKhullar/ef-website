@@ -797,6 +797,7 @@ footer {
     background-color: #222222;
     background-color: #3C3C3C;
     padding: 25px 50px;
+    margin-bottom: -100px;
 }
 
 footer p {
@@ -1629,6 +1630,13 @@ body,
     font-size: 50px;
     line-height: 50px;
     font-weight: bold;
+}
+
+.black-page-title {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    font-family: Quicksand;
 }
 
 .black-quicksand-big-title {
