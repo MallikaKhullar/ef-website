@@ -266,7 +266,6 @@ Utils.prototype.ellipsize = function(string, length) {
 };
 
 Utils.prototype.appendProjects = function(newdata, projects) {
-    console.log("\n\n***Trying to append project", projects, "\n\n\n*****");
     newdata.projects = [];
     for (i in projects) {
         if (projects[i].isFeatured == true) newdata.featuredProject = projects[i];
