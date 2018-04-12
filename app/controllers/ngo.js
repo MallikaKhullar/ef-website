@@ -8,6 +8,11 @@ exports.getNgosFromCauseId = function(id) {
         return deferred.success(res);
     });
 };
+exports.getNgoById = function(id) {
+    return fn.defer(fn.bind(Ngo, 'getNgoById'))({ id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
 
 exports.getAllNgos = function() {
     return fn.defer(fn.bind(Ngo, 'getAllNgos'))().pipe(function(res) {
