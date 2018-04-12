@@ -11,7 +11,19 @@ var userSchema = mongoose.Schema({
     name: String,
     google_id: String,
     google_token: String,
-    state: { type: String, enum: ['uninitiated', 'week_ongoing', 'donate_pending', 'cause_selection_pending'] },
+    state: {
+        type: String,
+        enum: [
+            'v1_week_ongoing',
+            'v1_uninitiated',
+            'v1_donate_pending',
+            'v1_cause_selection_pending',
+            'uninitiated',
+            'week_ongoing',
+            'donate_pending',
+            'cause_selection_pending'
+        ]
+    },
     color_theme: { type: String, enum: ['white', 'unsplash', 'gradient'] },
     picture: String,
     previous_donation: {
@@ -26,6 +38,13 @@ var userSchema = mongoose.Schema({
         total_hearts: Number,
         current_cause_id: String,
         donations_till_date: [String]
+    },
+    project: {
+        current_hearts: Number,
+        target_end_time: Number,
+        target_start_time: Number,
+        project_id: String
+
     },
     web_version: String
 });
@@ -87,6 +106,18 @@ userSchema.statics = {
                 "hearts.target_start_time": data.start,
                 "hearts.target_end_time": data.end,
                 "hearts.current_cause_id": data.cause_id,
+            }
+        }, {}, cb);
+    },
+
+    setProject: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: {
+                'project.current_hearts': 0,
+                "state": "project_week_ongoing",
+                "project.target_start_time": data.start,
+                "project.target_end_time": data.end,
+                "project.project_id": data.cause_id,
             }
         }, {}, cb);
     },
