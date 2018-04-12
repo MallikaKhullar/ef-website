@@ -26,36 +26,68 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
     } else res.redirect('/new-tab');
 });
 
+router.get('/new-cause-selected', continueIfLoggedIn, function(req, res) {
+    if (req.query && req.query.project_id) {
+
+        projectController.getProjectFeaturedDetail(req.query.project_id).pipe(function(proj) {
+
+            var end, start = moment().format('x');
+            if (proj.isFeatured == true) end = Utils.getTwoWeekTime(start);
+            else end = Utils.getEndTime(start);
+
+            userController.setProject(req.user.user_id, req.query.project_id, start, end).pipe(function(result) {
+                console.log("reached here");
+                res.redirect('/new-tab');
+            });
+        });
+    } else res.redirect('/new-tab');
+});
+
 
 router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
-    console.log("reached here");
-    projectController.getProjectOverviews({}).pipe(function(projects) {
+    projectController.getProjectOverviews({ truncShortDesc: true, truncShort: 200 }).pipe(function(projects) {
         var data = {};
         data = Utils.appendProjects(data, projects);
-        console.log(data);
         data.dailyImage = constants.images[Math.round(0) % constants.images.length];
         res.render("select-cause.ejs", data);
     });
 });
 
 function hasExpired(user) {
-    if (user.state != "week_ongoing") return true;
-    var timeElapsed = moment().format('x') > user.hearts.target_end_time;
-    if (timeElapsed &&
-        user.state !== "cause_selection_pending" &&
-        user.state !== 'donate_pending_dismissed') {
-        return true;
-    }
+    if (user.state != "week_ongoing" && Utils.getUserVersion(user) == "v0") return true;
+    return false;
 }
 
 function redirectForNewUser(user, res) {
     if (hasExpired(user)) {
-        donationController.getAllStats().pipe(function(data) {
-            res.render("move-on.ejs", { data });
+        var def = {
+            projects: projectController.getProjectOverviews({ truncShortDesc: true, truncShort: 70, truncHomeDesc: true, truncHome: 200 }),
+            donations: donationController.getAllStats(user.user_id)
+        };
+
+        deferred.combine(def).pipe(function(data) {
+            var newdata = {};
+            newdata = Utils.appendProjects(newdata, data.projects);
+
+            var causesIds = data.donations.map(a => a._id);
+            causeController.getAllCausesByIds(causesIds).pipe(function(allCauses) {
+                for (i in allCauses) {
+                    allCauses[i].user_progress = findUserProgress(data.donations, allCauses[i].cause_id);
+                }
+                newdata.causes = allCauses;
+                res.render("move-on.ejs", newdata);
+            });
         });
+
         return true;
     }
     return false;
+}
+
+function findUserProgress(causes, id) {
+    for (i in causes) {
+        if (causes[i]._id == id) return causes[i].hearts;
+    }
 }
 
 function isEmpty(obj) {
@@ -89,6 +121,43 @@ function constructQuery(query) {
 router.get('/', continueIfLoggedIn, function(req, res) {
     if (redirectForNewUser(req.user, res)) return;
 
+    switch (Utils.getUserVersion(user)) {
+        default:
+            case "v0":
+            handlev0Users(req, res);
+        return;
+        case "v1":
+                handlev1Users(req, res);
+            return;
+        case "v2":
+    }
+});
+
+function handlev1Users(req, res) {
+    var def = {
+        userCount: userController.getAllUserCount(),
+        donationCount: donationController.getAllDonationCount(),
+        currentProject: projectController.getProjectDetails(req.user.project.current_cause_id),
+    };
+
+    deferred.combine(def).pipe(function(data) {
+        constructPayload({
+            user: req.user,
+            cause: data.currentCause,
+            numDonations: data.donationCount,
+            numUsers: data.userCount,
+            previousCause: data.previousCause,
+            req: req,
+        }).pipe(function(result) {
+            res.render("project-new-tab.ejs", result);
+        });
+    });
+
+    userController.incrementHearsById(req.user.id);
+}
+
+function handlev0Users(req, res) {
+
     var def = {
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
@@ -106,14 +175,13 @@ router.get('/', continueIfLoggedIn, function(req, res) {
             previousCause: data.previousCause,
             req: req,
         }).pipe(function(result) {
-            console.log("reached here11111 new tab");
 
             res.render("new-tab.ejs", result);
         });
     });
 
     userController.incrementHearsById(req.user.id);
-});
+}
 
 router.get('/theme-toggle', function(req, res) {
     var theme = req.query.currentTheme.replace(" ", "");
@@ -163,7 +231,6 @@ function constructPayload(data) {
 
     var total_hearts_text = data.user.hearts.total_hearts == 1 ? " heart" : " hearts";
 
-
     var daysPassed = Utils.timePeriodInDays(moment().format('x'), data.user.timestamp);
 
     newdata.timeElapsed = moment().format('x') > data.user.hearts.target_end_time;
@@ -171,8 +238,6 @@ function constructPayload(data) {
     newdata.user.first_name = Utils.firstName(newdata.user.name);
     newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
     newdata.user.hearts.total_hearts_text = data.user.hearts.total_hearts + total_hearts_text;
-    console.log("reached here new 4444 tab");
-
 
 
     if (data.user.state == 'cause_selection_pending') {
@@ -182,7 +247,6 @@ function constructPayload(data) {
         });
     }
 
-    console.log("reached here new 1111999 tab");
 
     if (newdata.timeElapsed &&
         data.user.state !== "cause_selection_pending" &&
