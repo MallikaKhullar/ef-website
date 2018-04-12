@@ -101,6 +101,11 @@ var allRoutes = function(app, passport) {
             "\nDisallow: /blog/ngos_dog_adoption");
     });
 
+    app.get('/ads.txt', function(req, res) {
+        res.type('text/plain');
+        res.send("Infolinks.com, 3083843 , DIRECT \nappnexus.com, 3251, RESELLER\nopenx.com, 118151, RESELLER, 6a698e2ec38604c6\nPubmatic.com, 60809,RESELLER,5d62403b186f2ace\nAdtech.com, 11409, Reseller\ngoogle.com, pub-6373315980741255, RESELLER, f08c47fec0942fa0\ngoogle.com, pub-2697483239283649, RESELLER, f08c47fec0942fa0\naol.com, 6202, RESELLER\naol.com, 17744, RESELLER\nlkqd.net, 295, RESELLER, 59c49fa9598a0117\nlkqd.com, 295, RESELLER, 59c49fa9598a0117\nFreewheel.tv, 482337, RESELLER\nFreewheel.tv, 480609, RESELLER\nrevcontent.com, 29124, RESELLER\nappnexus.com, 7666, RESELLER, f5ab79cb980f11d1\nrubiconproject.com, 156042, RESELLER, 0bfd66d529a55807\nrubiconproject.com, 156042, RESELLER, 0bfd66d529a55807\nadvertising.com, 8603, RESELLER\nadvertising.com, 3531, RESELLER\nappnexus.com, 3364, RESELLER\nIndexexchange.com, 183756, RESELLER\nopenx.com, 539154393, RESELLER\nrubiconproject.com, 16698, RESELLER, 0bfd66d529a55807");
+    });
+
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', {
         scope: 'email'
