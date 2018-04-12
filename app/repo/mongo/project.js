@@ -6,13 +6,14 @@ var projectSchema = mongoose.Schema({
     projectTitle: String,
     isFeatured: { type: Boolean, default: false },
     showcasePhoto: String,
-    missionPhoto: String,
+    secondaryMissionPhoto: String,
     actionTitle: String,
     shortDescription: String,
     homeDescription: String,
     unitIcon: String,
     currentUnits: Number,
     currentUnitMeasure: String,
+    primaryMissionPhoto: String,
     ngoId: String
 });
 
