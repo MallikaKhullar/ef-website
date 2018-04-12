@@ -16,3 +16,9 @@ exports.getAllCauses = function() {
         return deferred.success(res);
     });
 };
+
+exports.getAllCausesByIds = function(ids) {
+    return fn.defer(fn.bind(Cause, 'getCausesByIds'))({ ids }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
