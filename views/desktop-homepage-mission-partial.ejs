@@ -53,13 +53,13 @@
     <section id="mission" class="mission-box-container bg-lightgrey">
         <div class="row tab-project-container">
             <div class="col-sm-3 ">
-                <img alt="Flutur Chrome Extension" src="/image/aarambh_title_1.png" class="img-responsive" /></div>
+                <img alt="Flutur Chrome Extension" src="<%-featuredProject.showcasePhoto%>" class="img-responsive" /></div>
             <div class="col-sm-5 tab-project-details-container">
                 <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Open new tabs to</div>
-                <div class="poppins-thick" style="margin-top:20px;font-size: 44px; line-height:40px;">
-                    <%- featuredProject.actionTitle %>
+                <div class="poppins-thick" style="margin:10px 0;font-size: 44px; line-height:40px;">
+                    <%- featuredProject.featureActionTitle %>
                 </div>
-                <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
+                <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px; margin: 10px 0">
                     Just one more step and you're ready to start raising funds. Happy tabbing!</div>
                 <div class="featured-green">
                     <div class="poppins-thin xs-text" style="padding-right:50px;">Featured Mission</div>
@@ -82,15 +82,17 @@
 
         <div class="row">
             <% for(var i=0; i<projects.length; i++) { %>
-                <div class="col-sm-4">
-                    <img src="<%- projects[i].showcasePhoto%>" class="mb-2" style="height:150px; width:150px" />
-                    <div class="thick-text black font-small" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
-                        <%- projects[i].projectTitle%>
+                <a href='projects/<%- projects[i].projectId %>'>
+                    <div class="col-sm-4">
+                        <img src="<%- projects[i].showcasePhoto%>" class="mb-2" style="height:150px; width:150px" />
+                        <div class="thick-text black font-small" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
+                            <%- projects[i].projectTitle%>
+                        </div>
+                        <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
+                            <%- projects[i].homeDescription%>
+                        </div>
                     </div>
-                    <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
-                        <%- projects[i].homeDescription%>
-                    </div>
-                </div>
+                </a>
                 <% } %>
         </div>
     </section>
