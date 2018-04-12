@@ -37,7 +37,7 @@ exports.getAllDonationCount = function() {
             var incremental_rev = REV_PER_TAB * TABS_PER_USER_MIN * USER_COUNT * DAU_PER_30D_INSTALLS * ADBLOCK_DISABLED;
             var total_rev = 11000 + (incremental_rev * TIME_PASSED / 2);
 
-            return deferred.success(total_rev);
+            return deferred.success(total_rev.toFixed(0));
         });
     });
 };
