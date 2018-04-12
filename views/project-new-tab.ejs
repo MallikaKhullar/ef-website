@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>New Tab</title>
+    <link rel="icon" href="image/header_logo.png" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/new-tab.css">
+    <link rel="stylesheet" href="/css-min/jquery-ui.css">
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111348597-1');
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4793002394044661",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        @-webkit-keyframes AnimationName {
+            0% {
+                background-position: 0% 52%
+            }
+            50% {
+                background-position: 100% 49%
+            }
+            100% {
+                background-position: 0% 52%
+            }
+        }
+        
+        @-moz-keyframes AnimationName {
+            0% {
+                background-position: 0% 52%
+            }
+            50% {
+                background-position: 100% 49%
+            }
+            100% {
+                background-position: 0% 52%
+            }
+        }
+        
+        @keyframes AnimationName {
+            0% {
+                background-position: 0% 52%
+            }
+            50% {
+                background-position: 100% 49%
+            }
+            100% {
+                background-position: 0% 52%
+            }
+        }
+        
+        .ui-menu .ui-menu-item-wrapper {
+            background-color: #ffffff;
+        }
+        
+        .btn-outline {
+            color: white;
+            border-color: white;
+            border: 1px solid;
+        }
+        
+        .btn-med {
+            font-family: Quicksand;
+            border-radius: 300px;
+            padding: 6px 16px;
+            font-size: 12px;
+        }
+        
+        .footer-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+        }
+        
+        .footer {
+            left: 728px;
+        }
+        
+        #user-profile-container {
+            padding-left: 30px;
+            width: 20%;
+            background-color: transparent;
+        }
+        
+        body,
+        html {
+            background: white;
+            font-family: Quicksand;
+        }
+        
+        #autocomplete {
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.55);
+            width: 50%;
+            font-size: 18px;
+        }
+        
+        input.formWhite::-webkit-input-placeholder {
+            color: grey;
+        }
+        
+        input.formWhite:-moz-placeholder {
+            color: grey;
+        }
+        
+        input.formWhite::-moz-placeholder {
+            color: grey;
+        }
+        
+        input.formWhite:-ms-input-placeholder {
+            color: grey;
+        }
+        
+         ::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+        }
+        
+         :-moz-placeholder {
+            /* Firefox 18- */
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+         ::-moz-placeholder {
+            /* Firefox 19+ */
+            font-size: 18px;
+            color: rgba(133, 42, 42, 0.8);
+        }
+        
+         :-ms-input-placeholder {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .hey-sexy {
+            color: #FFFFFF;
+            font-family: Quicksand;
+            font-size: 38px;
+            font-weight: 500;
+            line-height: 56px;
+            text-align: center;
+        }
+        
+        .navbar-brand>img {
+            height: 75%;
+        }
+        
+        .horul>li {
+            float: left;
+        }
+        
+        div#centerDiv {
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        ul.centerUL {
+            margin: 2px auto;
+            line-height: 1.4;
+            padding-left: 0;
+        }
+        
+        .centerUL li {
+            display: inline;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        .background-gradient-layer {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+        }
+        
+        .ad-footer-center {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            right: 0;
+            z-index: 10;
+            height: 90px;
+            width: 728px;
+            transform: translate(-50%, 0%);
+        }
+        
+        .ad-footer-right {
+            position: absolute;
+            bottom: 0;
+            left: 78%;
+            z-index: 11;
+            right: 0;
+            height: 90px;
+        }
+        
+        .ad-footer-left {
+            position: absolute;
+            bottom: 0;
+            left: 0%;
+            right: 0;
+            height: 90px;
+        }
+        /* .small-env-icon {
+            width: 15%;
+            margin-right: 30px;
+        } */
+        
+        .small-env-icon {
+            width: 18%;
+            margin-right: 25px;
+            position: absolute;
+            bottom: -1600%;
+            right: 0;
+        }
+        
+        .apps-container {
+            float: right;
+            border-radius: 4px;
+            background-color: #1f1f1f;
+            box-shadow: 2px 2px 17px 1px #00000057;
+            color: white;
+            position: relative;
+            width: 20%;
+            padding-right: 15px;
+            margin-top: 80px;
+            margin-right: 50px;
+            z-index: 1000;
+            padding-left: 13px;
+            width: 295px;
+            height: 400px;
+            padding-top: 33px;
+            padding-bottom: 26px;
+            margin-top: 70px;
+            margin-right: 46px;
+        }
+        
+        .apps-container::after {
+            content: '';
+            position: absolute;
+            left: 81%;
+            margin-left: -3px;
+            width: 0;
+            height: 0;
+            bottom: 100%;
+            border-bottom: solid 10px #222222;
+            border-left: solid 10px transparent;
+            border-right: solid 10px transparent;
+        }
+        
+        .oval-container {
+            background-color: rgba(0, 0, 0, 0.0);
+            display: inline-block;
+        }
+        
+        .oval-container-image {
+            height: 27px;
+            width: auto;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        
+        .quicklink-img-med {
+            height: 42px;
+            width: 42px;
+            margin: 15px 5px 15px 15px;
+            cursor: pointer;
+        }
+        
+        a:hover {
+            color: transparent;
+        }
+        
+        .semi-dark-container {
+            background-color: rgba(0, 0, 0, 0.45);
+            width: 100%;
+            height: 100%;
+            z-index: 60;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+        }
+        
+        .transparent-container {
+            background-color: rgba(0, 0, 0, 0.00);
+            width: 100%;
+            height: 100%;
+            z-index: 60;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+        }
+        
+        .right-drawer {
+            right: 0;
+            top: 0;
+            width: 25%;
+            height: 100%;
+            position: absolute;
+            background: white;
+            z-index: 61;
+            padding: 20px;
+        }
+        
+        .med-env-icon {
+            width: 20%;
+            margin-right: 30px;
+        }
+        
+        label.input-toggle {
+            line-height: 0;
+            font-size: 0;
+            display: inline-block;
+            margin: 0;
+            background: transparent;
+            box-shadow: 0 0 0 0;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        label.input-toggle>span {
+            display: inline-block;
+            position: relative;
+            background-image: -webkit-linear-gradient(left, #c4c4c4 0%, #c4c4c4 50%, #7cbcbf 50%, #7cbcbf 100%);
+            background-image: linear-gradient(to right, #c4c4c4 0%, #c4c4c4 50%, #7cbcbf 50%, #7cbcbf 100%);
+            background-size: 64px 14px;
+            background-position: 0%;
+            border-radius: 32px;
+            width: 32px;
+            height: 14px;
+            cursor: pointer;
+            -webkit-transition: background-position 0.2s ease-in;
+            transition: background-position 0.2s ease-in;
+        }
+        
+        label.input-toggle>input:checked+span {
+            background-position: -100%;
+        }
+        
+        blockquote {
+            border: none;
+        }
+        
+        label.input-toggle>span:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: #F1F1F1;
+            -webkit-align-self: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+            top: 50%;
+            left: 0;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            border-radius: 100%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            -webkit-transition: left 0.2s ease-in, background-color 0.2s ease-in, -webkit-transform 0.3s ease;
+            transition: left 0.2s ease-in, background-color 0.2s ease-in, -webkit-transform 0.3s ease;
+            transition: left 0.2s ease-in, background-color 0.2s ease-in, transform 0.3s ease;
+            transition: left 0.2s ease-in, background-color 0.2s ease-in, transform 0.3s ease, -webkit-transform 0.3s ease;
+        }
+        
+        label.input-toggle>input:checked+span:after {
+            left: calc(100% - 18px);
+            background-color: #1D8B90;
+        }
+        
+        label.input-toggle>span:active:after {
+            -webkit-transform: translateY(-50%) scale3d(1.15, 0.85, 1);
+            transform: translateY(-50%) scale3d(1.15, 0.85, 1);
+        }
+        
+        label.input-toggle>input:disabled+span:active:after {
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        
+        label.input-toggle>input:disabled+span {
+            cursor: default;
+        }
+        
+        label.input-toggle>input:disabled+span {
+            background: #D5D5D5;
+        }
+        
+        label.input-toggle>input:disabled+span:after {
+            background: #BDBDBD;
+        }
+        
+        label.input-toggle>input {
+            display: block;
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .profile-card {
+            float: left;
+            width: 100%;
+            margin: 40px 0 40px 0;
+        }
+        
+        .profile-card p {
+            font-weight: 300;
+            font-size: 0.8em;
+            color: #989898;
+            font-family: Quicksand;
+            line-height: 13px;
+        }
+        
+        .profile-img {
+            border-radius: 100%;
+            float: left;
+            margin: 0 10px 15px 0;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .profile-name {
+            box-sizing: border-box;
+            margin: 0;
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .cross-icon {
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            padding: 5px;
+        }
+        
+        .theme-layout {
+            color: #5E5E5E;
+            font-family: Quicksand;
+            font-size: 14px;
+            line-height: 15px;
+        }
+        
+        .small-bold {
+            color: #000000;
+            font-family: Quicksand;
+            font-size: 10px;
+            font-weight: bold;
+            line-height: 13px;
+            position: absolute;
+            color: black;
+            float: left;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+        
+        .theme-icon {
+            position: absolute;
+            float: left;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        
+        .bold-heading {
+            font-family: Quicksand;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            margin-top: 25px;
+            margin-right: 15px;
+            color: black;
+        }
+        
+        #myProgress {
+            vertical-align: top;
+            margin-top: 5px;
+        }
+        
+        .progress-container {
+            margin-top: 40px;
+            position: absolute;
+            width: 100%;
+            right: 12%;
+            display: inline-block;
+        }
+        
+        .ad-footer-right-button-box {
+            position: absolute;
+            bottom: 0;
+            left: 80%;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.55);
+            height: 160px;
+            border-radius: 5px 0px 0 0;
+            text-align: center;
+        }
+        
+        .ad-footer-right-big-button-box {
+            position: absolute;
+            bottom: 0;
+            left: 80%;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.55);
+            height: 360px;
+            border-radius: 5px 0px 0 0;
+            text-align: center;
+        }
+        
+        .small-up-arrow {
+            position: absolute;
+            right: 6%;
+            top: -5%;
+            width: 15px;
+            height: 15px;
+        }
+        
+        .pink-box {
+            font-weight: 500;
+            width: 50%;
+            right: 30%;
+            top: 40%;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            font-size: 12px;
+            background-color: #FF197F;
+            border-radius: 5px;
+        }
+        
+        .pink-box-big {
+            font-weight: 500;
+            width: 70%;
+            text-align: center;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 12px;
+            background-color: #FF197F;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .pink-box-lower {
+            top: 50%;
+            width: 55%;
+        }
+        
+        .font-weight-500 {
+            font-weight: 500;
+        }
+        
+        .weight-300 {
+            font-weight: 300;
+        }
+        
+        .dotted-box {
+            width: 60%;
+            height: 30%;
+            border-width: 1px;
+            border-style: dashed;
+        }
+        
+        .donate-img-container {
+            position: absolute;
+            width: 100%;
+            float: right;
+            padding-left: 10px;
+            padding-top: 5px;
+            text-align: right;
+        }
+        
+        .heart-details {
+            right: 35%;
+            position: absolute;
+            font-size: 25px;
+            margin-top: 5px;
+        }
+        
+        .font-xs {
+            font-size: 11px;
+            font-family: Roboto;
+            font-weight: 300;
+        }
+        
+        .font-s {
+            font-size: 14px;
+        }
+        
+        .font-m {
+            font-size: 16px;
+        }
+        
+        .font-l {
+            font-size: 25px;
+        }
+        
+        .font-xl {
+            font-size: 30px;
+        }
+        
+        .progressbar {
+            right: 0%;
+            top: 40%;
+            position: absolute;
+            width: 70%;
+        }
+        
+        .link:hover {
+            color: rgba(190, 190, 190, 0.8) !important;
+            text-decoration: none !important;
+        }
+        
+        .hover-gray:hover {
+            color: rgba(190, 190, 190, 0.8) !important;
+            text-decoration: none !important;
+        }
+        
+        .square-rect {
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.55);
+        }
+    </style>
+
+</head>
+
+<body style="display:none;">
+    <header>
+        <div id="background-image-white" class="background" style="background-color:white;"></div>
+        <div id="background-image" class="background" style="background: url('<%- dailyImage %>');"></div>
+        <div id="background-image-overlay" class="background background-gradient-layer"></div>
+
+        <div class="dark-gradient-ad" style="display:none">
+            <div class="large-dialog-overlay">
+                <div class="row">
+                    <div class="col-sm-8"></div>
+                    <div class="col-sm-4">
+                        <div class="btn-outline btn-med" style="text-align:center; cursor:pointer">
+                            <a href="" style=" text-decoration:none!important; color:white;" onclick="dummy(0);return false;">
+                                <b>CONTINUE TO CHANGE THE WORLD</b>
+                            </a>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div>
+                            <div style="display: table; height: 100px; width:100%; margin: 50px 0px 10px 0px">
+                                <img alt="Flutur Ad block disable" src=" /image/exclamation.png" style="float:left; vertical-align:middle; height:95%; width:auto; display:table-cell; padding: 10px" />
+                                <div style="vertical-align:middle; display:table-cell; float:left; font-size:2vw" class="white-title">
+                                    <b>OH NO!</b><br> Adblock Detected!
+                                </div>
+                            </div>
+                            <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">
+                                Please turn off your ad blocker for this page. We show non-intrusive tiny ads which raise funds for the NGOs.
+                            </div>
+                            <a href="/faqs" style="text-decoration:none;">
+                                <div class="know-how" style="color:white">Know why?</div>
+                                <div style="box-sizing: border-box; width: 87px; border: 1px solid #fff;"></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div style="text-align:center">
+                            <img alt="Flutur Environment Saving" style="width:90%; height:auto; margin-top:5%" src=" /image/sad_earth.png" /></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="position:absolute; bottom:40px; right:40px; width:100%;">
+                    <div class="col-sm-8"></div>
+                    <div class="col-sm-4">
+                        <div style="float:right;">
+                            <div class="display-number-title">People on Flutur</div>
+                            <div class="display-number">
+                                <%- stats.followers %>
+                            </div>
+                        </div>
+                        <div style="float:right;margin-right:50px">
+                            <div class="display-number-title">Donations So Far</div>
+                            <div class="display-number">
+                                <%- stats.donations %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="dark-gradient-donate" style="display:none">
+            <% if (user.state === 'donate_pending') { %>
+                <div class="small-dialog-overlay">
+                    <div class="row">
+                        <div class="col-sm-5"></div>
+                        <div class="col-sm-7" style="margin-top:-35px; text-align: right">
+                            <img src="/image/cross_white.png" class="cross-icon" id="cross-icon" onclick="dismissDrawer()" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div style="text-align:center">
+                            </div>
+
+                            <div class="thin-text white" style="text-align:center;margin-top: 8%; font-size:12px">Benefiting NGOs</div>
+
+                            <ul class="hor-list" style="margin-top:5px">
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-7" style="text-align:left">
+                            <div class="quicksand white font-weight-500" style="margin-top:15px;font-size:40px;">
+                                <img alt="Flutur Heart" style="margin-top:-5px;height:35px" src="/image/heart.png" />
+                                <%- user.hearts.current_week_hearts %>
+                            </div>
+                            <div class="quicksand white font-weight-500" style="margin-top:15px;font-size:20px;">
+                                Hearts donated succesfully!
+                            </div>
+
+
+                            <div class="quicksand white pink-box-big" id="choose-mission" style="margin-top:15px;">
+                                CHOOSE NEXT MISSION
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+
+
+        <div class="page-container">
+            <nav class="navbar navbar-default" style="padding-top:10px;">
+                <div class="container-fluid" style="width:97%">
+                    <div class="navbar-header">
+                        <a target="_top" class="navbar-brand" href="http://www.flutur.org">
+                            <img alt="Flutur Chrome Extension New Tab" id="logo-icon" src="/image/flutur_logo_white.png" />
+                        </a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right" style="margin-top:5px">
+                        <li>
+                            <img alt="Theme icon" id="theme-icon" onclick='toggleTheme()' style="height: 16px; width: 16px;" class="quicklink-img-small" src="/image/theme_change.png" />
+                        </li>
+                        <li>
+                            <img alt="Apps icon" id="app-icon" onclick='openAppsDrawer()' class="quicklink-img-small" src="/image/all_apps.png" />
+                        </li>
+                        <li>
+                            <img alt="Hamburger icon" id="hamburger-icon" style="margin-right:15px;width: 20px;" onclick='openRightNav()' class="quicklink-img-small" src="/image/drive-icon.png" />
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div id="apps-container-overlay" class="transparent-container" onclick="dismissApps()" style="display:none">
+                <div class="apps-container">
+                    <ul class="centerUL">
+                        <li>
+                            <a target="_top" href="http://www.gmail.com">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-gmail.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.drive.google.com">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-drive.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://calendar.google.com/calendar/r">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-calendar.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.google.com/contacts/?hl=en">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-contacts.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://hangouts.google.com/">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-hangouts.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.youtube.com">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-youtube.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="https://plus.google.com/discover">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-plus.png" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <br><br>
+
+                    <ul class="centerUL" style=" width: 267px;
+                    margin-left: 0px;
+                    margin-right: 0px;">
+                        <li>
+                            <a target="_top" href="http://www.google.com/sheets/about/">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-sheets.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.docs.google.com">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-docs.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://docs.google.com/presentation/u/0/">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-slides.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="drawer-container-overlay" class="semi-dark-container" onclick="dismissApps()" style="display:none">
+                <div class="right-drawer">
+
+                    <img src="/image/cross_right_bar.png" class="cross-icon" onclick="dismissDrawer()" />
+
+                    <div class="profile-card">
+                        <img class="profile-img" src="<%- user.picture %>" />
+                        <h2 class="profile-name">
+                            <%- user.name %>
+                        </h2>
+                        <p style="line-height: 19px">
+                            <%- user.hearts.total_hearts_text %> collected</p>
+                    </div>
+
+                    <div>
+                        <div class="theme-layout"><img src="/image/painting _icon.png" style="height:12px; width:12px; margin-right:5px;">THEMES</div>
+                        <br>
+
+                        <div>
+                            <img src="/image/circ_white.png" class="theme-icon" />
+                            <div class="small-bold">Simple White</div>
+                            <div style="float:right"> <label class="input-toggle"><input id="white-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
+                            </div>
+                        </div>
+
+                        <br><br>
+
+                        <div>
+                            <img src="/image/circ_unsplash.png" class="theme-icon" />
+                            <div class="small-bold">Inspirational Background</div>
+                            <div style="float:right">
+                                <label class="input-toggle"><input id="unsplash-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div>
+                        <img src="/image/circ_grad.png" class="theme-icon" />
+                        <div class="small-bold">Gradient Colors</div>
+                        <div style="float:right">
+                            <label class="input-toggle"><input id="grad-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 10px; margin-left:-20px; margin-right:-20px; height: 50%; text-align:right; margin-top:130px; background:#f9f9f9">
+                        <div class="bold-heading">
+                            <a target="_top" class="hover-gray black" href="/blog">
+                                Blogs</a>
+                        </div>
+                        <div class="bold-heading">
+                            <a target="_top" class="hover-gray black" href="/privacy">
+                                Privacy</a>
+                        </div>
+                        <div class="bold-heading">
+                            <a target="_top" class="hover-gray black" href="/faqs">
+                                FAQs</a>
+                        </div>
+
+                        <div class="bold-heading">
+                            <a target="_top" class="hover-gray black" href="/">
+                                Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="widgets show-widgets">
+                <div id="middle">
+                    <div class="hey-sexy" class="transition">
+                        <strong></strong>Hey,</strong>
+                        <%- user.first_name %>
+                    </div>
+                    <br>
+                </div>
+
+                <div id="middle-below">
+                    <div>
+                        <input id="autocomplete" title="type &quot;a&quot;" placeholder="&#xf002;  Search" style="font-family: FontAwesome, Quicksand">
+                    </div>
+
+                    <div id="centerDiv">
+                        <ul class="centerUL" style="line-height:10px">
+                            <li>
+                                <a target="_top" href="http://www.facebook.com">
+                                    <div class="font-xs link white oval-container">
+                                        <img alt="Flutur Facebook" class="oval-container-image" src="/image/facebook-icon.png" />
+                                        <br> <br><i>Facebook</i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.youtube.com">
+                                    <img alt="Flutur Youtube" class="oval-container-image" src="/image/youtube-icon.png" /><br><br><i>Youtube</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.drive.google.com">
+                                    <img alt="Flutur Google Drive" class="oval-container-image" src="/image/drive-icon.png" />
+                                    <br> <br><i>Drive</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://docs.google.com/spreadsheets/u/0/">
+                                    <img alt="Flutur Google sheets" class="oval-container-image" src="/image/sheets-icon.png" /><br> <br><i>Sheets</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.gmail.com">
+                                    <img alt="Flutur Gmail" class="oval-container-image" src="/image/gmail-icon.png" /><br> <br><i>Gmail</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ad-footer-left">
+                <div id="user-profile-container" class="small-shadow">
+                    <div style="width: 100%; float:left; padding-left:10px; padding-top:5px">
+                        <div class="display-number-title">Flutur's Donations</div>
+                        <div class="display-number" style="margin-top:2px">
+                            <%- stats.donations %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;width: 100%;height: 90px;position: absolute;bottom: 0;">
+                <div class="ad-footer-center">
+                    <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top: 30px;font-family: Quicksand;">
+                        We are launching an update soon, stay tuned!
+                    </div>
+                </div>
+            </div>
+
+
+            <% if (user.state === 'donate_pending') { %>
+
+                <div class="ad-footer-right">
+                    <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                    </div>
+
+                    <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
+                        <img alt="Flutur Heart" style="margin-top:-5px;height:25px" src="/image/heart.png" />
+                    </div>
+
+                    <div>
+                        <div class="quicksand white pink-box" id="donate-now">DONATE HEARTS</div>
+                    </div>
+                </div>
+
+                <% } else if (user.state === 'cause_selection_pending') { %>
+                    <div class="ad-footer-right">
+                        <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                            <img alt="Flutur Cause" class="small-env-icon" /></a>
+                        </div>
+
+                        <div class="page-text quicksand white center-element weight-500" style="right:30%; position: absolute;font-size:15px;">
+                            <img alt="Flutur Heart" style="margin-top:-5px;height:15px" src="/image/heart.png" />
+                            <%- user.previous_donation.previous_week_hearts %> hearts
+                        </div>
+
+                        <div class="page-text quicksand white center-element" style="top:23%;right:30%; position: absolute;font-size:12px;">
+                            Donated last week
+                        </div>
+
+                        <div>
+                            <div class="quicksand white pink-box pink-box-lower" id="choose-now">NEW MISSION
+                            </div>
+                        </div>
+                    </div>
+
+                    <% } else {%>
+
+                        <div class="ad-footer-right">
+                            <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                            </div>
+
+                            <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
+                                <img alt="Flutur Heart" style="margin-top:-5px;height:25px" src="/image/heart.png" />
+                            </div>
+
+                            <div class="progressbar">
+                                <div id="myProgress">
+                                    <div id="myBar"></div>
+                                </div>
+                            </div>
+                            <div class="page-text quicksand white center-element" style="margin-top:50px;right:30%; position: absolute;font-size:14px;">
+                                <%- stats.shortRemaining %> left!
+                            </div>
+                        </div>
+
+                        <% } %>
+        </div>
+        </div>
+        </div>
+
+    </header>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<!-- <script src="js/clock.js"></script> -->
+<script src="js/searchbar.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("body").fadeIn(500);
+
+        if (document.getElementById("myBar") != null && document.getElementById("myBar").style != null) {
+            document.getElementById("myBar").style.width = <%= user.progress %> + "%";
+        }
+
+        if (document.getElementById("donate-now") != null && document.getElementById("donate-now").style != null) {
+            document.getElementById('donate-now').onclick = function() {
+                $.get('/donate', {}, function(data) {
+                    $(".dark-gradient-donate").show();
+                });
+            };
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    var adblock = true;
+</script>
+
+<script type="text/javascript" src="js/adframe.js"></script>
+
+<script type="text/javascript">
+    var redirect = "<%- redirected %>";
+    if (adblock == true && JSON.parse(redirect) == true) {
+        $(".dark-gradient-ad").show();
+    } else {
+        $(".dark-gradient-ad").hide();
+    }
+
+
+    $(document).ready(function() {
+        window.theme = "<%- user.color_theme %>";
+        setupThemeUI();
+        alert("<%- user.state %>");
+    });
+
+    function showSnackbar() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function() {
+            x.className = x.className.replace("show", "");
+        }, 1000);
+    }
+
+    $("#tell-friends").click(function() {
+        $(".copy-link-box").css("display", "block");
+    });
+
+    $(".dark-gradient-donate").click(function() {
+        reload();
+    });
+    $("#cross-icon").click(function() {
+        reload();
+    });
+
+    function reload() {
+        window.location.reload(true);
+    }
+
+    $("#choose-now").click(function() {
+        window.location.href = '/new-tab/choose-mission';
+    });
+
+    $("#choose-mission").click(function(e) {
+        window.location.href = '/new-tab/choose-mission';
+        e.stopPropagation();
+    });
+
+    $("#grad-input").change(function() {
+        if (this.checked) {
+            $("#white-input").prop("checked", false);
+            $("#unsplash-input").prop("checked", false);
+            window.theme = "gradient";
+            setTheme();
+        } else {
+            $("#unsplash-input").prop("checked", true);
+            window.theme = "unsplash";
+            setTheme();
+        }
+    });
+
+    $("#white-input").change(function() {
+        if (this.checked) {
+            $("#grad-input").prop("checked", false);
+            $("#unsplash-input").prop("checked", false);
+            window.theme = "white";
+            setTheme();
+        } else {
+            $("#unsplash-input").prop("checked", true);
+            window.theme = "unsplash";
+            setTheme();
+        }
+    });
+
+    $("#unsplash-input").change(function() {
+        if (this.checked) {
+            $("#white-input").prop("checked", false);
+            $("#grad-input").prop("checked", false);
+            window.theme = "unsplash";
+            setTheme();
+        } else {
+            $("#white-input").prop("checked", true);
+            window.theme = "white";
+            setTheme();
+        }
+    });
+
+
+    function setupThemeUI() {
+        switch (window.theme) {
+            case "white":
+                $("#myBar").css("background-color", "#00F79F");
+                $("#background-image-white").hide();
+                $("#background-image-overlay").hide();
+                $("#background-image").show();
+                $("#background-image").css("background", "white");
+                $(".hey-sexy").css("color", "#5e5e5e");
+                $("#hamburger-icon").attr("src", "/image/right_nav_black.png");
+                $("#logo-icon").attr("src", "/image/flutur_logo_black.png");
+                $("#app-icon").attr("src", "/image/all_apps_purple.png");
+                $("#theme-icon").attr("src", "/image/theme_change_black.png");
+                document.getElementById("autocomplete").classList.add("formWhite");
+                $("#autocomplete").css("border", "1px solid rgba(152,152,152,0.66)");
+                $("#autocomplete").css("background-color", "rgba(255,255,255,0.55)");
+                $("#autocomplete").css("color", "#5e5e5e");
+                $("#autocomplete").css("border-radius", "5px");
+                $("#logo-icon").attr("src", "/image/flutur_logo_black.png");
+                $(".display-number-title").css("color", "black");
+                $(".page-text").css("color", "black");
+                $(".display-number").css("color", "black");
+                $("#myProgress").css("background-color", "rgba(1, 1, 1, 0.13)");
+                // $(".oval-container").css("background-color", "rgba(77,214,238,0.14)");
+                $("#white-input").prop("checked", true);
+                $("#unsplash-input").prop("checked", false);
+                $("#grad-input").prop("checked", false);
+                $(".font-xs").removeClass("white");
+                $(".font-xs").addClass("black");
+                break;
+
+            case "unsplash":
+            default:
+                $(".hey-sexy").css("color", "white");
+                $("#background-image-white").show();
+                $(".page-text").css("color", "white");
+                $("#background-image-overlay").show();
+                $("#background-image").show();
+                $("#background-image").css("background", "");
+                $("#background-image").css("background-image", "url('<%- dailyImage %>')");
+                $("#hamburger-icon").attr("src", "/image/right_nav_white.png");
+                $("#app-icon").attr("src", "/image/all_apps.png");
+                $("#theme-icon").attr("src", "/image/theme_change.png");
+                $("#logo-icon").attr("src", "/image/flutur_logo_white.png");
+                $("#autocomplete").css("background-color", "rgba(0, 0, 0, 0.55)");
+                $("#autocomplete").css("color", "white");
+                $("#autocomplete").css("border", "0px solid rgba(152,152,152,0.66)");
+                $("#myProgress").css("background-color", "rgba(255,255,255, 0.17)");
+                $("#myBar").css("background-color", "#38FFFC");
+                document.getElementById("autocomplete").classList.remove("formWhite");
+                $(".display-number-title").css("color", "white");
+                $(".display-number").css("color", "white");
+                // $(".oval-container").css("background-color", "rgba(0, 0, 0, 0.48)");
+                $("#white-input").prop("checked", false);
+                $("#unsplash-input").prop("checked", true);
+                $("#grad-input").prop("checked", false);
+                $(".font-xs").removeClass("black");
+                $(".font-xs").addClass("white");
+                break;
+
+            case "gradient":
+                $(".hey-sexy").css("color", "white");
+                $("#background-image-white").hide();
+                $("#myBar").css("background-color", "#38FFFC");
+                $(".page-text").css("color", "white");
+                $("#background-image-overlay").hide();
+                $("#background-image").hide();
+                $("#hamburger-icon").attr("src", "/image/right_nav_white.png");
+                $("#app-icon").attr("src", "/image/all_apps.png");
+                $("#theme-icon").attr("src", "/image/theme_change.png");
+                $("#logo-icon").attr("src", "/image/flutur_logo_white.png");
+                $("#myProgress").css("background-color", "rgba(1, 1, 1, 0.13)");
+                $("#autocomplete").css("border", "0px solid rgba(152,152,152,0.6)");
+                $("#autocomplete").css("color", "white");
+                $("#autocomplete").css("background-color", "rgba(0, 0, 0, 0.07)");
+                document.getElementById("autocomplete").classList.remove("formWhite");
+                $(".display-number-title").css("color", "white");
+                $(".display-number").css("color", "white");
+                // $(".oval-container").css("background-color", "rgba(0, 0, 0, 0.07)");
+                $("#white-input").prop("checked", false);
+                $("#unsplash-input").prop("checked", false);
+                $("#grad-input").prop("checked", true);
+                $(".font-xs").removeClass("black");
+                $(".font-xs").addClass("white");
+                break;
+        }
+    }
+
+    function copyToClipboard(text) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(text).select();
+        document.execCommand("copy");
+        $temp.remove();
+        $(".copy-link-box").css("display", "none");
+        showSnackbar();
+    }
+
+    function toggleTheme() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/theme-toggle?currentTheme=" + window.theme,
+            success: function(result) {
+                window.theme = result;
+                window.location.reload(true);
+            },
+            error: function(result) {}
+        });
+    }
+
+    function setTheme() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/theme-change?selectedTheme=" + window.theme,
+            success: function(result) {
+                window.location.reload(true);
+            },
+            error: function(result) {
+
+            }
+        });
+    }
+
+    function openAppsDrawer() {
+        $("#apps-container-overlay").toggle();
+    }
+
+    function dismissApps() {
+        $("#apps-container-overlay").hide();
+        $("#drawer-container-overlay").hide();
+    }
+
+    function dismissDrawer() {
+        $("#drawer-container-overlay").hide();
+    }
+
+    function openRightNav() {
+        $("#drawer-container-overlay").toggle();
+    }
+
+    function showBigDonateBox() {
+        $(".ad-footer-right-big-button-box").show();
+        $(".ad-footer-right-button-box").hide();
+    }
+
+    function hideBigDonateBox() {
+        $(".ad-footer-right-big-button-box").hide();
+        $(".ad-footer-right-button-box").show();
+    }
+
+    function showBigMissionBox() {
+        $(".ad-footer-right-big-mission-box").show();
+        $(".ad-footer-right-mission-box").hide();
+    }
+
+    function hideBigMissionBox() {
+        $(".ad-footer-right-big-mission-box").hide();
+        $(".ad-footer-right-mission-box").show();
+    }
+
+    $(".copy-link-box").click(function() {
+        copyToClipboard("www.flutur.org");
+    });
+
+    $(document).click(function(event) {
+        if (!$(event.target).hasClass('copy-link-box') && !$(event.target).hasClass('tell-friends')) {
+            $(".copy-link-box").css("display", "none");
+        }
+    });
+
+    $(".right-drawer").click(function(e) {
+        e.stopPropagation();
+    })
+</script>
+
+</html>
