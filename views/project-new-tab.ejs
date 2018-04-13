@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="/css/new-tab.css">
     <link rel="stylesheet" href="/css-min/jquery-ui.css">
 
+    <link rel="stylesheet" href="/css/styles.css">
+
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -79,6 +81,10 @@
             }
         }
         
+        header {
+            background: none!important;
+        }
+        
         .ui-menu .ui-menu-item-wrapper {
             background-color: #ffffff;
         }
@@ -114,9 +120,15 @@
             background-color: transparent;
         }
         
-        body,
         html {
             background: white;
+            font-family: Quicksand;
+        }
+        
+        body {
+            background: linear-gradient(30deg, #3CC58F, #3CC58F, #23D2AF, #54A5C1, #4CA7E4, #C479E2, #B553F1, #DC4AA6, #E5458C);
+            background-size: 800% 800%;
+            animation: AnimationName 18s ease infinite;
             font-family: Quicksand;
         }
         
@@ -349,6 +361,10 @@
             padding: 0px;
         }
         
+        .fleft {
+            float: left;
+        }
+        
         label.input-toggle>span {
             display: inline-block;
             position: relative;
@@ -496,6 +512,24 @@
             border-radius: 50%;
         }
         
+        .theme-small-text {
+            color: #5E5E5E;
+            font-family: Quicksand;
+            font-size: 10px;
+            line-height: 16px;
+        }
+        
+        .mb-1 {
+            margin-bottom: 1em;
+            ;
+        }
+        
+        .theme-display-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        
         .bold-heading {
             font-family: Quicksand;
             font-size: 16px;
@@ -539,6 +573,27 @@
             height: 360px;
             border-radius: 5px 0px 0 0;
             text-align: center;
+        }
+        
+        .borderClass {
+            border-color: blue;
+            border-width: 3px;
+            border-style: solid;
+        }
+        
+        #unsplash-input,
+        #white-input,
+        #grad-input {
+            cursor: pointer;
+        }
+        
+        .right-nav-title {
+            margin: 0 0 10px 0;
+            font-size: 21px;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 21px;
+            text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
         }
         
         .small-up-arrow {
@@ -615,6 +670,13 @@
             font-size: 11px;
             font-family: Roboto;
             font-weight: 300;
+        }
+        
+        .action-desc-left {
+            font-size: 8px;
+            line-height: 10px;
+            letter-spacing: 0.5px;
+            text-align: left;
         }
         
         .font-s {
@@ -738,7 +800,9 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div style="text-align:center">
+                                <img alt="Flutur Environment Saving" style="width:30%; height:auto;" src="<%- project.img_url %>" /></a>
                             </div>
+
 
                             <div class="thin-text white" style="text-align:center;margin-top: 8%; font-size:12px">Benefiting NGOs</div>
 
@@ -868,55 +932,63 @@
                             <%- user.hearts.total_hearts_text %> collected</p> -->
                     </div>
 
-                    <div>
+                    <div class="theme-small-text mb-1">
                         <div class="theme-layout"><img src="/image/painting _icon.png" style="height:12px; width:12px; margin-right:5px;">THEMES</div>
                         <br>
 
-                        <div>
-                            <img src="/image/circ_white.png" class="theme-icon" />
-                            <div class="small-bold">Simple White</div>
-                            <div style="float:right"> <label class="input-toggle"><input id="white-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
+                        <div style="padding:0px; margin:0 10px; float:left">
+                            <div style="text-align:center">
+                                <img id="white-input" src="/image/circ_white.png" class="theme-display-icon" />
+                                <div> WHITE</div>
                             </div>
                         </div>
-
-                        <br><br>
-
-                        <div>
-                            <img src="/image/circ_unsplash.png" class="theme-icon" />
-                            <div class="small-bold">Inspirational Background</div>
-                            <div style="float:right">
-                                <label class="input-toggle"><input id="unsplash-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
+                        <div style="padding:0px; margin:0 50px; float:left; text-align:center">
+                            <div style="text-align:center">
+                                <img id="grad-input" src="/image/circ_grad.png" class="theme-display-icon" />
+                                <div>ALIVE</div>
+                            </div>
+                        </div>
+                        <div style="padding:0px; margin:0 10px; float:left; text-align:center">
+                            <div style="text-align:center">
+                                <img id="unsplash-input" src="/image/circ_unsplash.png" class="theme-display-icon" />
+                                <div>PHOTOS</div>
                             </div>
                         </div>
                     </div>
 
-                    <br><br>
+                    <br><br><br>
 
-                    <div>
-                        <img src="/image/circ_grad.png" class="theme-icon" />
-                        <div class="small-bold">Gradient Colors</div>
-                        <div style="float:right">
-                            <label class="input-toggle"><input id="grad-input" style="margin-top: 15px;" type="checkbox"><span></span></label>
+                    <div style="background:#f9f9f9;margin-left:-20px; margin-right:-20px; height: 50%;padding:30px">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="right-nav-title">
+                                        <%- project.actionTitle %>
+                                    </div>
+                                    <div class="action-desc-left">
+                                        <%- project.shortDescription %>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img alt="Flutur Chrome Extension" src="<%- project.primaryMissionPhoto %>" class="img-responsive" /></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div style="padding-top: 10px; margin-left:-20px; margin-right:-20px; height: 50%; text-align:right; margin-top:130px; background:#f9f9f9">
-                        <div class="bold-heading">
-                            <a target="_top" class="hover-gray black" href="/blog">
+                        <div style="position: absolute;bottom:0; padding:30px">
+                            <div class="bold-heading fleft">
+                                <a target="_top" class="hover-gray black" href="/blog">
                                 Blogs</a>
-                        </div>
-                        <div class="bold-heading">
-                            <a target="_top" class="hover-gray black" href="/privacy">
-                                Privacy</a>
-                        </div>
-                        <div class="bold-heading">
-                            <a target="_top" class="hover-gray black" href="/faqs">
-                                FAQs</a>
-                        </div>
+                            </div>
 
-                        <div class="bold-heading">
-                            <a target="_top" class="hover-gray black" href="/">
+
+                            <div class="bold-heading fleft">
+                                <a target="_top" class="hover-gray black" href="/">
                                 Home</a>
+                            </div>
+                            <div class="bold-heading fleft">
+                                <a target="_top" class="hover-gray black" href="/aboutus">
+                                About Flutur</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -996,7 +1068,7 @@
 
                 <div class="ad-footer-right">
                     <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
-                        <img alt="Flutur Cause" class="small-env-icon" src="/image/heart.png" />
+                        <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
                     </div>
 
                     <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
@@ -1011,7 +1083,7 @@
                 <% } else if (user.state === 'v1_cause_selection_pending') { %>
                     <div class="ad-footer-right">
                         <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
-                            <img alt="Flutur Cause" class="small-env-icon" src="/image/heart.png" />
+                            <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
                         </div>
 
                         <div class="page-text quicksand white center-element weight-500" style="right:30%; position: absolute;font-size:15px;">
@@ -1032,6 +1104,8 @@
 
                         <div class="ad-footer-right">
                             <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                                <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
+
                             </div>
 
                             <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
@@ -1085,8 +1159,7 @@
 <script type="text/javascript" src="js/adframe.js"></script>
 
 <script type="text/javascript">
-    var redirect = "<%- redirected %>";
-    if (adblock == true && JSON.parse(redirect) == true) {
+    if (adblock == true) {
         $(".dark-gradient-ad").show();
     } else {
         $(".dark-gradient-ad").hide();
@@ -1096,7 +1169,6 @@
     $(document).ready(function() {
         window.theme = "<%- user.color_theme %>";
         setupThemeUI();
-        alert("<%- user.state %>");
     });
 
     function showSnackbar() {
@@ -1131,44 +1203,19 @@
         e.stopPropagation();
     });
 
-    $("#grad-input").change(function() {
-        if (this.checked) {
-            $("#white-input").prop("checked", false);
-            $("#unsplash-input").prop("checked", false);
-            window.theme = "gradient";
-            setTheme();
-        } else {
-            $("#unsplash-input").prop("checked", true);
-            window.theme = "unsplash";
-            setTheme();
-        }
+    $("#grad-input").click(function() {
+        window.theme = "gradient";
+        setTheme();
+    });
+    $("#white-input").click(function() {
+        window.theme = "white";
+        setTheme();
+    });
+    $("#unsplash-input").click(function() {
+        window.theme = "unsplash";
+        setTheme();
     });
 
-    $("#white-input").change(function() {
-        if (this.checked) {
-            $("#grad-input").prop("checked", false);
-            $("#unsplash-input").prop("checked", false);
-            window.theme = "white";
-            setTheme();
-        } else {
-            $("#unsplash-input").prop("checked", true);
-            window.theme = "unsplash";
-            setTheme();
-        }
-    });
-
-    $("#unsplash-input").change(function() {
-        if (this.checked) {
-            $("#white-input").prop("checked", false);
-            $("#grad-input").prop("checked", false);
-            window.theme = "unsplash";
-            setTheme();
-        } else {
-            $("#white-input").prop("checked", true);
-            window.theme = "white";
-            setTheme();
-        }
-    });
 
 
     function setupThemeUI() {
@@ -1194,10 +1241,9 @@
                 $(".page-text").css("color", "black");
                 $(".display-number").css("color", "black");
                 $("#myProgress").css("background-color", "rgba(1, 1, 1, 0.13)");
-                // $(".oval-container").css("background-color", "rgba(77,214,238,0.14)");
-                $("#white-input").prop("checked", true);
-                $("#unsplash-input").prop("checked", false);
-                $("#grad-input").prop("checked", false);
+                $("#grad-input").removeClass('borderClass');
+                $("#white-input").addClass('borderClass');
+                $("#unsplash-input").removeClass('borderClass');
                 $(".font-xs").removeClass("white");
                 $(".font-xs").addClass("black");
                 break;
@@ -1223,10 +1269,9 @@
                 document.getElementById("autocomplete").classList.remove("formWhite");
                 $(".display-number-title").css("color", "white");
                 $(".display-number").css("color", "white");
-                // $(".oval-container").css("background-color", "rgba(0, 0, 0, 0.48)");
-                $("#white-input").prop("checked", false);
-                $("#unsplash-input").prop("checked", true);
-                $("#grad-input").prop("checked", false);
+                $("#grad-input").removeClass('borderClass');
+                $("#white-input").removeClass('borderClass');
+                $("#unsplash-input").addClass('borderClass');
                 $(".font-xs").removeClass("black");
                 $(".font-xs").addClass("white");
                 break;
@@ -1249,10 +1294,9 @@
                 document.getElementById("autocomplete").classList.remove("formWhite");
                 $(".display-number-title").css("color", "white");
                 $(".display-number").css("color", "white");
-                // $(".oval-container").css("background-color", "rgba(0, 0, 0, 0.07)");
-                $("#white-input").prop("checked", false);
-                $("#unsplash-input").prop("checked", false);
-                $("#grad-input").prop("checked", true);
+                $("#grad-input").addClass('borderClass');
+                $("#white-input").removeClass('borderClass');
+                $("#unsplash-input").removeClass('borderClass');
                 $(".font-xs").removeClass("black");
                 $(".font-xs").addClass("white");
                 break;
