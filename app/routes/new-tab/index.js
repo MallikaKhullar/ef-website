@@ -44,12 +44,14 @@ router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
 router.get('/project-selected', continueIfLoggedIn, function(req, res) {
     if (req.query && req.query.project_id) {
 
-        //set project into the user table
+        //this call is only required to get info on if the project is featured or not
+        //if it IS featured, then end time is TWO weeks, otherwise ONE week
         projectController.getProjectFeaturedDetail(req.query.project_id).pipe(function(proj) {
-            var end, start = moment().format('x');
-            if (proj.isFeatured == true) end = Utils.getTwoWeekTime(start);
-            else end = Utils.getEndTime(start);
 
+            var start = moment().format('x');
+            var end = proj.isFeatured == true ? Utils.getTwoWeekTime(start) : Utils.getEndTime(start);
+
+            //set project (start, end, project Id) into the user object
             userController.setProject(req.user.user_id, req.query.project_id, start, end).pipe(function(result) {
                 res.redirect('/new-tab');
             });
@@ -61,7 +63,6 @@ router.get('/project-selected', continueIfLoggedIn, function(req, res) {
 router.get('/', continueIfLoggedIn, function(req, res) {
     if (redirectForNewUser(req.user, res)) return;
 
-    console.log("not expired user", Utils.getUserVersion(req.user));
     switch (Utils.getUserVersion(req.user)) {
         default:
             case "v0":
@@ -71,6 +72,7 @@ router.get('/', continueIfLoggedIn, function(req, res) {
                 handlev1Users(req, res);
             return;
         case "v2":
+                return;
     }
 });
 
@@ -122,29 +124,27 @@ function renderMoveOnPage(user, res) {
 
 function redirectForNewUser(user, res) {
     if (hasExpired(user)) {
-        console.log("expired");
         renderMoveOnPage(user, res);
         return true;
     }
-    console.log("Not expired");
     return false;
 }
 
 function handlev1Users(req, res) {
+
     var def = {
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
-        currentProject: projectController.getProjectDetails(req.user.project.project_id),
+        currentProject: projectController.getProjectDetails({ projectId: req.user.project.project_id })
     };
 
     deferred.combine(def).pipe(function(data) {
-        constructPayload({
+        v1_constructPayload({
             user: req.user,
-            cause: data.currentCause,
             numDonations: data.donationCount,
             numUsers: data.userCount,
-            previousCause: data.previousCause,
-            req: req,
+            currentProject: data.currentProject,
+            req: req
         }).pipe(function(result) {
             res.render("project-new-tab.ejs", result);
         });
@@ -309,6 +309,8 @@ function v1_constructPayload(data) {
     newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
     if (newdata.timeElapsed) newdata.user.state = "v1_donate_pending"; //during v1_week_ongoing, time elapsed
 
+    newdata.project = data.currentProject;
+
     return deferred.success(newdata);
 }
 
@@ -318,8 +320,14 @@ function continueIfLoggedIn(req, res, next) {
 }
 
 function hasExpired(user) {
-    console.log("Checking for expiry", user.state, Utils.getUserVersion(user));
-    if (user.state != "week_ongoing" && Utils.getUserVersion(user) == "v0") return true;
+    if (hasWeekElapsed(user) && Utils.getUserVersion(user) == "v0") return true;
+    return false;
+}
+
+function hasWeekElapsed(user) {
+    if (user.state != "week_ongoing" || //if user is in any other donation state
+        moment().format('x') > user.hearts.target_end_time) //or if week is ongoing but time just elapsed
+        return true;
     return false;
 }
 

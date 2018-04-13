@@ -114,7 +114,7 @@ userSchema.statics = {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: {
                 'project.current_hearts': 0,
-                "state": "project_week_ongoing",
+                "state": "v1_week_ongoing",
                 "project.target_start_time": data.start,
                 "project.target_end_time": data.end,
                 "project.project_id": data.cause_id,
@@ -130,6 +130,11 @@ userSchema.statics = {
     setDonatePending: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "state": "donate_pending" }
+        }, {}, cb);
+    },
+    setV1WeekOngoing: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: { "state": "v1_week_ongoing" }
         }, {}, cb);
     }
 }

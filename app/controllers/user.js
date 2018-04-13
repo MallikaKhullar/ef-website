@@ -55,6 +55,13 @@ exports.setDonatePending = function(user_id) {
         return deferred.success(res);
     });
 };
+
+exports.initV1Week = function(user_id) {
+    return fn.defer(fn.bind(User, 'setV1WeekOngoing'))({ user_id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+
 exports.setCause = function(user_id, cause_id, start, end) {
     return fn.defer(fn.bind(User, 'setCause'))({ user_id, cause_id, start, end }).pipe(function(res) {
         return deferred.success(res);
@@ -63,7 +70,6 @@ exports.setCause = function(user_id, cause_id, start, end) {
 
 exports.setProject = function(user_id, cause_id, start, end) {
     return fn.defer(fn.bind(User, 'setProject'))({ user_id, cause_id, start, end }).pipe(function(res) {
-        console.log("Project has been put into user object=>", res, "\n\n\n");
         return deferred.success(res);
     });
 };
