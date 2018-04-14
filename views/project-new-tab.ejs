@@ -10,8 +10,12 @@
     <link rel="icon" href="image/header_logo.png" />
 
     <!-- fonts -->
+    <!-- TODO - use all three fonts? -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,700" rel="stylesheet">
+
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
     <!-- css -->
@@ -19,7 +23,7 @@
     <link rel="stylesheet" href="/css/new-tab.css">
     <link rel="stylesheet" href="/css-min/jquery-ui.css">
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/new-tabs.css">
 
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -44,694 +48,20 @@
         });
     </script>
 
-    <style>
-        @-webkit-keyframes AnimationName {
-            0% {
-                background-position: 0% 52%
-            }
-            50% {
-                background-position: 100% 49%
-            }
-            100% {
-                background-position: 0% 52%
-            }
-        }
-        
-        @-moz-keyframes AnimationName {
-            0% {
-                background-position: 0% 52%
-            }
-            50% {
-                background-position: 100% 49%
-            }
-            100% {
-                background-position: 0% 52%
-            }
-        }
-        
-        @keyframes AnimationName {
-            0% {
-                background-position: 0% 52%
-            }
-            50% {
-                background-position: 100% 49%
-            }
-            100% {
-                background-position: 0% 52%
-            }
-        }
-        
-        header {
-            background: none!important;
-        }
-        
-        .ui-menu .ui-menu-item-wrapper {
-            background-color: #ffffff;
-        }
-        
-        .btn-outline {
-            color: white;
-            border-color: white;
-            border: 1px solid;
-        }
-        
-        .btn-med {
-            font-family: Quicksand;
-            border-radius: 300px;
-            padding: 6px 16px;
-            font-size: 12px;
-        }
-        
-        .footer-left {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 90px;
-        }
-        
-        .footer {
-            left: 728px;
-        }
-        
-        #user-profile-container {
-            padding-left: 30px;
-            width: 20%;
-            background-color: transparent;
-        }
-        
-        html {
-            background: white;
-            font-family: Quicksand;
-        }
-        
-        body {
-            background: linear-gradient(30deg, #3CC58F, #3CC58F, #23D2AF, #54A5C1, #4CA7E4, #C479E2, #B553F1, #DC4AA6, #E5458C);
-            background-size: 800% 800%;
-            animation: AnimationName 18s ease infinite;
-            font-family: Quicksand;
-        }
-        
-        #autocomplete {
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.55);
-            width: 50%;
-            font-size: 18px;
-        }
-        
-        input.formWhite::-webkit-input-placeholder {
-            color: grey;
-        }
-        
-        input.formWhite:-moz-placeholder {
-            color: grey;
-        }
-        
-        input.formWhite::-moz-placeholder {
-            color: grey;
-        }
-        
-        input.formWhite:-ms-input-placeholder {
-            color: grey;
-        }
-        
-         ::-webkit-input-placeholder {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 18px;
-        }
-        
-         :-moz-placeholder {
-            /* Firefox 18- */
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-         ::-moz-placeholder {
-            /* Firefox 19+ */
-            font-size: 18px;
-            color: rgba(133, 42, 42, 0.8);
-        }
-        
-         :-ms-input-placeholder {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .hey-sexy {
-            color: #FFFFFF;
-            font-family: Quicksand;
-            font-size: 38px;
-            font-weight: 500;
-            line-height: 56px;
-            text-align: center;
-        }
-        
-        .navbar-brand>img {
-            height: 75%;
-        }
-        
-        .horul>li {
-            float: left;
-        }
-        
-        div#centerDiv {
-            width: 100%;
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        ul.centerUL {
-            margin: 2px auto;
-            line-height: 1.4;
-            padding-left: 0;
-        }
-        
-        .centerUL li {
-            display: inline;
-            text-align: center;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        
-        .background-gradient-layer {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
-        }
-        
-        .ad-footer-center {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            right: 0;
-            z-index: 10;
-            height: 90px;
-            width: 728px;
-            transform: translate(-50%, 0%);
-        }
-        
-        .ad-footer-right {
-            position: absolute;
-            bottom: 0;
-            left: 78%;
-            z-index: 11;
-            right: 0;
-            height: 90px;
-        }
-        
-        .ad-footer-left {
-            position: absolute;
-            bottom: 0;
-            left: 0%;
-            right: 0;
-            height: 90px;
-        }
-        /* .small-env-icon {
-            width: 15%;
-            margin-right: 30px;
-        } */
-        
-        .small-env-icon {
-            width: 18%;
-            margin-right: 25px;
-            position: absolute;
-            bottom: -1600%;
-            right: 0;
-        }
-        
-        .apps-container {
-            float: right;
-            border-radius: 4px;
-            background-color: #1f1f1f;
-            box-shadow: 2px 2px 17px 1px #00000057;
-            color: white;
-            position: relative;
-            width: 20%;
-            padding-right: 15px;
-            margin-top: 80px;
-            margin-right: 50px;
-            z-index: 1000;
-            padding-left: 13px;
-            width: 295px;
-            height: 400px;
-            padding-top: 33px;
-            padding-bottom: 26px;
-            margin-top: 70px;
-            margin-right: 46px;
-        }
-        
-        .apps-container::after {
-            content: '';
-            position: absolute;
-            left: 81%;
-            margin-left: -3px;
-            width: 0;
-            height: 0;
-            bottom: 100%;
-            border-bottom: solid 10px #222222;
-            border-left: solid 10px transparent;
-            border-right: solid 10px transparent;
-        }
-        
-        .oval-container {
-            background-color: rgba(0, 0, 0, 0.0);
-            display: inline-block;
-        }
-        
-        .oval-container-image {
-            height: 27px;
-            width: auto;
-            margin-left: 30px;
-            margin-right: 30px;
-        }
-        
-        .quicklink-img-med {
-            height: 42px;
-            width: 42px;
-            margin: 15px 5px 15px 15px;
-            cursor: pointer;
-        }
-        
-        a:hover {
-            color: transparent;
-        }
-        
-        .semi-dark-container {
-            background-color: rgba(0, 0, 0, 0.45);
-            width: 100%;
-            height: 100%;
-            z-index: 60;
-            left: 0px;
-            top: 0px;
-            position: absolute;
-        }
-        
-        .transparent-container {
-            background-color: rgba(0, 0, 0, 0.00);
-            width: 100%;
-            height: 100%;
-            z-index: 60;
-            left: 0px;
-            top: 0px;
-            position: absolute;
-        }
-        
-        .right-drawer {
-            right: 0;
-            top: 0;
-            width: 25%;
-            height: 100%;
-            position: absolute;
-            background: white;
-            z-index: 61;
-            padding: 20px;
-        }
-        
-        .med-env-icon {
-            width: 20%;
-            margin-right: 30px;
-        }
-        
-        label.input-toggle {
-            line-height: 0;
-            font-size: 0;
-            display: inline-block;
-            margin: 0;
-            background: transparent;
-            box-shadow: 0 0 0 0;
-            margin: 0px;
-            padding: 0px;
-        }
-        
-        .fleft {
-            float: left;
-        }
-        
-        label.input-toggle>span {
-            display: inline-block;
-            position: relative;
-            background-image: -webkit-linear-gradient(left, #c4c4c4 0%, #c4c4c4 50%, #7cbcbf 50%, #7cbcbf 100%);
-            background-image: linear-gradient(to right, #c4c4c4 0%, #c4c4c4 50%, #7cbcbf 50%, #7cbcbf 100%);
-            background-size: 64px 14px;
-            background-position: 0%;
-            border-radius: 32px;
-            width: 32px;
-            height: 14px;
-            cursor: pointer;
-            -webkit-transition: background-position 0.2s ease-in;
-            transition: background-position 0.2s ease-in;
-        }
-        
-        label.input-toggle>input:checked+span {
-            background-position: -100%;
-        }
-        
-        blockquote {
-            border: none;
-        }
-        
-        label.input-toggle>span:after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #F1F1F1;
-            -webkit-align-self: center;
-            -ms-flex-item-align: center;
-            align-self: center;
-            top: 50%;
-            left: 0;
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-            border-radius: 100%;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-            -webkit-transition: left 0.2s ease-in, background-color 0.2s ease-in, -webkit-transform 0.3s ease;
-            transition: left 0.2s ease-in, background-color 0.2s ease-in, -webkit-transform 0.3s ease;
-            transition: left 0.2s ease-in, background-color 0.2s ease-in, transform 0.3s ease;
-            transition: left 0.2s ease-in, background-color 0.2s ease-in, transform 0.3s ease, -webkit-transform 0.3s ease;
-        }
-        
-        label.input-toggle>input:checked+span:after {
-            left: calc(100% - 18px);
-            background-color: #1D8B90;
-        }
-        
-        label.input-toggle>span:active:after {
-            -webkit-transform: translateY(-50%) scale3d(1.15, 0.85, 1);
-            transform: translateY(-50%) scale3d(1.15, 0.85, 1);
-        }
-        
-        label.input-toggle>input:disabled+span:active:after {
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-        }
-        
-        label.input-toggle>input:disabled+span {
-            cursor: default;
-        }
-        
-        label.input-toggle>input:disabled+span {
-            background: #D5D5D5;
-        }
-        
-        label.input-toggle>input:disabled+span:after {
-            background: #BDBDBD;
-        }
-        
-        label.input-toggle>input {
-            display: block;
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .profile-card {
-            float: left;
-            width: 100%;
-            margin: 40px 0 40px 0;
-        }
-        
-        .profile-card p {
-            font-weight: 300;
-            font-size: 0.8em;
-            color: #989898;
-            font-family: Quicksand;
-            line-height: 13px;
-        }
-        
-        .profile-img {
-            border-radius: 100%;
-            float: left;
-            margin: 0 10px 15px 0;
-            width: 50px;
-            height: 50px;
-        }
-        
-        .profile-name {
-            box-sizing: border-box;
-            margin: 0;
-            color: #000000;
-            font-family: Quicksand;
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        
-        .cross-icon {
-            cursor: pointer;
-            width: 25px;
-            height: 25px;
-            padding: 5px;
-        }
-        
-        .theme-layout {
-            color: #5E5E5E;
-            font-family: Quicksand;
-            font-size: 14px;
-            line-height: 15px;
-        }
-        
-        .small-bold {
-            color: #000000;
-            font-family: Quicksand;
-            font-size: 10px;
-            font-weight: bold;
-            line-height: 13px;
-            position: absolute;
-            color: black;
-            float: left;
-            margin-left: 40px;
-            margin-top: 10px;
-        }
-        
-        .theme-icon {
-            position: absolute;
-            float: left;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-        
-        .theme-small-text {
-            color: #5E5E5E;
-            font-family: Quicksand;
-            font-size: 10px;
-            line-height: 16px;
-        }
-        
-        .mb-1 {
-            margin-bottom: 1em;
-            ;
-        }
-        
-        .theme-display-icon {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-        
-        .bold-heading {
-            font-family: Quicksand;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 20px;
-            margin-top: 25px;
-            margin-right: 15px;
-            color: black;
-        }
-        
-        #myProgress {
-            vertical-align: top;
-            margin-top: 5px;
-        }
-        
-        .progress-container {
-            margin-top: 40px;
-            position: absolute;
-            width: 100%;
-            right: 12%;
-            display: inline-block;
-        }
-        
-        .ad-footer-right-button-box {
-            position: absolute;
-            bottom: 0;
-            left: 80%;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.55);
-            height: 160px;
-            border-radius: 5px 0px 0 0;
-            text-align: center;
-        }
-        
-        .ad-footer-right-big-button-box {
-            position: absolute;
-            bottom: 0;
-            left: 80%;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.55);
-            height: 360px;
-            border-radius: 5px 0px 0 0;
-            text-align: center;
-        }
-        
-        .borderClass {
-            border-color: blue;
-            border-width: 3px;
-            border-style: solid;
-        }
-        
-        #unsplash-input,
-        #white-input,
-        #grad-input {
-            cursor: pointer;
-        }
-        
-        .right-nav-title {
-            margin: 0 0 10px 0;
-            font-size: 21px;
-            font-weight: 700;
-            text-transform: uppercase;
-            line-height: 21px;
-            text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
-        }
-        
-        .small-up-arrow {
-            position: absolute;
-            right: 6%;
-            top: -5%;
-            width: 15px;
-            height: 15px;
-        }
-        
-        .pink-box {
-            font-weight: 500;
-            width: 50%;
-            right: 30%;
-            top: 40%;
-            text-align: center;
-            cursor: pointer;
-            padding: 10px;
-            position: absolute;
-            font-size: 12px;
-            background-color: #FF197F;
-            border-radius: 5px;
-        }
-        
-        .pink-box-big {
-            font-weight: 500;
-            width: 70%;
-            text-align: center;
-            cursor: pointer;
-            padding: 12px;
-            font-size: 12px;
-            background-color: #FF197F;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        
-        .pink-box-lower {
-            top: 50%;
-            width: 55%;
-        }
-        
-        .font-weight-500 {
-            font-weight: 500;
-        }
-        
-        .weight-300 {
-            font-weight: 300;
-        }
-        
-        .dotted-box {
-            width: 60%;
-            height: 30%;
-            border-width: 1px;
-            border-style: dashed;
-        }
-        
-        .donate-img-container {
-            position: absolute;
-            width: 100%;
-            float: right;
-            padding-left: 10px;
-            padding-top: 5px;
-            text-align: right;
-        }
-        
-        .heart-details {
-            right: 35%;
-            position: absolute;
-            font-size: 25px;
-            margin-top: 5px;
-        }
-        
-        .font-xs {
-            font-size: 11px;
-            font-family: Roboto;
-            font-weight: 300;
-        }
-        
-        .action-desc-left {
-            font-size: 8px;
-            line-height: 10px;
-            letter-spacing: 0.5px;
-            text-align: left;
-        }
-        
-        .font-s {
-            font-size: 14px;
-        }
-        
-        .font-m {
-            font-size: 16px;
-        }
-        
-        .font-l {
-            font-size: 25px;
-        }
-        
-        .font-xl {
-            font-size: 30px;
-        }
-        
-        .progressbar {
-            right: 0%;
-            top: 40%;
-            position: absolute;
-            width: 70%;
-        }
-        
-        .link:hover {
-            color: rgba(190, 190, 190, 0.8) !important;
-            text-decoration: none !important;
-        }
-        
-        .hover-gray:hover {
-            color: rgba(190, 190, 190, 0.8) !important;
-            text-decoration: none !important;
-        }
-        
-        .square-rect {
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.55);
-        }
-    </style>
-
 </head>
 
-<body style="display:none;">
+<body class="no-disp">
     <header>
-        <div id="background-image-white" class="background" style="background-color:white;"></div>
+        <div id="background-image-white" class="background bg-white"></div>
         <div id="background-image" class="background" style="background: url('<%- dailyImage %>');"></div>
         <div id="background-image-overlay" class="background background-gradient-layer"></div>
 
-        <div class="dark-gradient-ad" style="display:none">
+        <div class="dark-gradient-ad no-disp">
             <div class="large-dialog-overlay">
                 <div class="row">
                     <div class="col-sm-8"></div>
                     <div class="col-sm-4">
-                        <div class="btn-outline btn-med" style="text-align:center; cursor:pointer">
+                        <div class="btn-outline btn-med ta-c" style="cursor:pointer">
                             <a href="" style=" text-decoration:none!important; color:white;" onclick="dummy(0);return false;">
                                 <b>CONTINUE TO CHANGE THE WORLD</b>
                             </a>
@@ -760,7 +90,7 @@
                     </div>
 
                     <div class="col-sm-5">
-                        <div style="text-align:center">
+                        <div class="ta-c">
                             <img alt="Flutur Environment Saving" style="width:90%; height:auto; margin-top:5%" src=" /image/sad_earth.png" /></a>
                         </div>
                     </div>
@@ -786,8 +116,10 @@
             </div>
         </div>
 
+        <div class="ad-block-bar no-disp">Only advertisements are used to raise funds for the cause! Please turn off your ad blocker!</div>
 
-        <div class="dark-gradient-donate" style="display:none">
+
+        <div class="dark-gradient-donate no-disp">
             <% if (user.state === 'donate_pending') { %>
                 <div class="small-dialog-overlay">
                     <div class="row">
@@ -799,12 +131,12 @@
 
                     <div class="row">
                         <div class="col-sm-5">
-                            <div style="text-align:center">
+                            <div class="ta-c">
                                 <img alt="Flutur Environment Saving" style="width:30%; height:auto;" src="<%- project.img_url %>" /></a>
                             </div>
 
 
-                            <div class="thin-text white" style="text-align:center;margin-top: 8%; font-size:12px">Benefiting NGOs</div>
+                            <div class="thin-text white ta-c" style="margin-top: 8%; font-size:12px">Benefiting NGOs</div>
 
                             <ul class="hor-list" style="margin-top:5px">
 
@@ -937,19 +269,19 @@
                         <br>
 
                         <div style="padding:0px; margin:0 10px; float:left">
-                            <div style="text-align:center">
+                            <div class="ta-c">
                                 <img id="white-input" src="/image/circ_white.png" class="theme-display-icon" />
                                 <div> WHITE</div>
                             </div>
                         </div>
                         <div style="padding:0px; margin:0 50px; float:left; text-align:center">
-                            <div style="text-align:center">
+                            <div class="ta-c">
                                 <img id="grad-input" src="/image/circ_grad.png" class="theme-display-icon" />
                                 <div>ALIVE</div>
                             </div>
                         </div>
                         <div style="padding:0px; margin:0 10px; float:left; text-align:center">
-                            <div style="text-align:center">
+                            <div class="ta-c">
                                 <img id="unsplash-input" src="/image/circ_unsplash.png" class="theme-display-icon" />
                                 <div>PHOTOS</div>
                             </div>
@@ -1005,11 +337,17 @@
                 </div>
 
                 <div id="middle-below">
-                    <div>
-                        <input id="autocomplete" title="type &quot;a&quot;" placeholder="&#xf002;  Search" style="font-family: FontAwesome, Quicksand">
+                    <div class="search search-cont middle-below-search">
+                        <span class="search-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
+                        </span>
+                        <input id="autocomplete" title="Search for something" placeholder="&#xf002;  Search" style="font-family: FontAwesome, Quicksand">
                     </div>
+                </div>
 
-                    <div id="centerDiv">
+                <div id="centerDiv" class="middle-below-app">
+                    <div class="app-bar">
+                        <span class="app-bar-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
+                        </span>
                         <ul class="centerUL" style="line-height:10px">
                             <li>
                                 <a target="_top" href="http://www.facebook.com">
@@ -1067,6 +405,10 @@
             <% if (user.state === 'v1_donate_pending') { %>
 
                 <div class="ad-footer-right">
+                    <span class="donate-info">
+                        <div class="hover-right bold mb-1 uc">Donate now!</div>
+                        <div class="hover-right">TODO fix this some long thing here check</div>
+                    </span>
                     <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
                         <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
                     </div>
@@ -1082,6 +424,11 @@
 
                 <% } else if (user.state === 'v1_cause_selection_pending') { %>
                     <div class="ad-footer-right">
+                        <span class="donate-info">
+                                <div class="hover-right bold mb-1 uc">Choose your next cause/div>
+                                <div class="hover-right">TODO fix this some long thing here check</div>
+                    
+                        </span>
                         <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
                             <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
                         </div>
@@ -1103,6 +450,11 @@
                     <% } else {%>
 
                         <div class="ad-footer-right">
+                            <span class="donate-info">
+                                    <div class="hover-right bold mb-1 uc"><%- project.donateFTUE.title %></div>
+                                    <div class="hover-right"><%- project.donateFTUE.info %></div>
+                        
+                            </span>
                             <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
                                 <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
 
@@ -1165,10 +517,10 @@
         $(".dark-gradient-ad").hide();
     }
 
-
     $(document).ready(function() {
         window.theme = "<%- user.color_theme %>";
         setupThemeUI();
+        setupWidgets();
     });
 
     function showSnackbar() {
@@ -1216,6 +568,20 @@
         setTheme();
     });
 
+
+    function setupWidgets() {
+        if ("<%- user.ui_settings.app_bar %>" == "true") {
+            $(".middle-below-app").css('visibility', 'visible');
+        } else {
+            $(".middle-below-app").css('visibility', 'hidden');
+        }
+
+        if ("<%- user.ui_settings.search_visible %>" == "true") {
+            $("#middle-below").css('visibility', 'visible');
+        } else {
+            $("#middle-below").css('visibility', 'hidden');
+        }
+    }
 
 
     function setupThemeUI() {
@@ -1313,6 +679,38 @@
         showSnackbar();
     }
 
+    function hideSearch() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/mask-search",
+            error: function(result) {}
+        });
+    }
+
+    function hideAppBar() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/mask-apps",
+            error: function(result) {}
+        });
+    }
+
+    function showSearch() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/unmask-search",
+            error: function(result) {}
+        });
+    }
+
+    function showAppBar() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/unmask-apps",
+            error: function(result) {}
+        });
+    }
+
     function toggleTheme() {
         $.ajax({
             type: "GET",
@@ -1388,6 +786,40 @@
     $(".right-drawer").click(function(e) {
         e.stopPropagation();
     })
+
+    $(".search-cross").click(function(e) {
+        $("#middle-below").css('position', 'absolute');
+        $("#middle-below").css('left', '100%');
+        $("#middle-below").css('width', '0px');
+        $("#middle-below").css('height', '0px');
+        $("#middle-below").css('top', '-10%');
+        $("#middle-below").css('opacity', '0.0');
+        hideSearch();
+        setTimeout(function() {
+            $("#hamburger-icon").addClass("pulse");
+            setTimeout(function() {
+                $("#hamburger-icon").removeClass("pulse")
+            }, 100);
+        }, 400);
+
+    });
+
+    $(".app-bar-cross").click(function(e) {
+        $(".middle-below-app").css('position', 'absolute');
+        $(".middle-below-app").css('left', '100%');
+        $(".middle-below-app").css('width', '0px');
+        $(".middle-below-app").css('height', '0px');
+        $(".middle-below-app").css('top', '-10%');
+        $(".middle-below-app").css('opacity', '0.0');
+        hideAppBar();
+        setTimeout(function() {
+            $("#hamburger-icon").addClass("pulse");
+            setTimeout(function() {
+                $("#hamburger-icon").removeClass("pulse")
+            }, 100);
+        }, 400);
+
+    });
 </script>
 
 </html>
