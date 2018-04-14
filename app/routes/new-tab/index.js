@@ -40,6 +40,7 @@ router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
     });
 });
 
+
 //v1 route
 router.get('/project-selected', continueIfLoggedIn, function(req, res) {
     if (req.query && req.query.project_id) {
@@ -61,7 +62,8 @@ router.get('/project-selected', continueIfLoggedIn, function(req, res) {
 
 //v0, v1 route
 router.get('/', continueIfLoggedIn, function(req, res) {
-    if (redirectForNewUser(req.user, res)) return;
+    if (redirectForV0UserUpgradeReady(req.user, res)) return;
+    if (redirectForNewUser(req, res)) return;
 
     switch (Utils.getUserVersion(req.user)) {
         default:
@@ -69,7 +71,7 @@ router.get('/', continueIfLoggedIn, function(req, res) {
             handlev0Users(req, res);
         return;
         case "v1":
-                handlev1Users(req, res);
+                handlev1Users(req, res, false);
             return;
         case "v2":
                 return;
@@ -95,7 +97,23 @@ router.get('/theme-change', function(req, res) {
     });
 });
 
+router.get('/mask-search', function(req, res) {
+    console.log("mask");
+    userController.hideSearch(req.user.user_id).pipe(function(data) {});
+});
 
+router.get('/mask-apps', function(req, res) {
+    console.log("masaak");
+    userController.hideAppBar(req.user.user_id).pipe(function(data) {});
+});
+
+router.get('/unmask-search', function(req, res) {
+    userController.showSearch(req.user.user_id).pipe(function(data) {});
+});
+
+router.get('/unmask-apps', function(req, res) {
+    userController.showAppBar(req.user.user_id).pipe(function(data) {});
+});
 
 /**
  *-------------------------------- CONTROLLERS -----------------------------*
@@ -122,7 +140,7 @@ function renderMoveOnPage(user, res) {
     });
 }
 
-function redirectForNewUser(user, res) {
+function redirectForV0UserUpgradeReady(user, res) {
     if (hasExpired(user)) {
         renderMoveOnPage(user, res);
         return true;
@@ -130,7 +148,19 @@ function redirectForNewUser(user, res) {
     return false;
 }
 
+function redirectForNewUser(req, res) {
+    if (req.user.state.includes("uninitiated")) {
+
+        //we have to autoassign the featured project to the users
+        handleNewv1Users(req, res, true);
+        return true;
+    }
+    return false;
+}
+
+
 function handlev1Users(req, res) {
+    console.log("1");
 
     var def = {
         userCount: userController.getAllUserCount(),
@@ -138,15 +168,45 @@ function handlev1Users(req, res) {
         currentProject: projectController.getProjectDetails({ projectId: req.user.project.project_id })
     };
 
+
     deferred.combine(def).pipe(function(data) {
+        console.log("2", data.currentProject);
         v1_constructPayload({
             user: req.user,
             numDonations: data.donationCount,
             numUsers: data.userCount,
-            currentProject: data.currentProject,
-            req: req
+            project: data.currentProject,
+            req: req,
         }).pipe(function(result) {
             res.render("project-new-tab.ejs", result);
+        });
+    });
+
+    userController.incrementHearsById(req.user.id);
+}
+
+function handleNewv1Users(req, res) {
+    var def = {
+        userCount: userController.getAllUserCount(),
+        donationCount: donationController.getAllDonationCount(),
+        currentProject: projectController.getFeaturedProject()
+    };
+
+    deferred.combine(def).pipe(function(data) {
+
+        var start = moment().format('x');
+        var end = Utils.getTwoWeekTime(start);
+        userController.setProject(req.user.user_id, data.currentProject.projectId, start, end).pipe(function(proj) {
+            v1_constructPayload({
+                user: req.user,
+                numDonations: data.donationCount,
+                numUsers: data.userCount,
+                project: data.currentProject,
+                req: req,
+            }).pipe(function(result) {
+
+                res.render("project-new-tab.ejs", result);
+            });
         });
     });
 
@@ -276,6 +336,7 @@ function v0_constructPayload(data) {
 }
 
 function v1_constructPayload(data) {
+    console.log("1new");
 
     var hoursToGo = Utils.timePeriodInHours(data.user.project.target_end_time, moment().format('x'));
     var remainingTime = hoursToGo >= 24 ? (hoursToGo / 24 > 1 ? Math.floor(hoursToGo / 24) + " days " : Math.floor(hoursToGo / 24) + " day ") :
@@ -287,8 +348,10 @@ function v1_constructPayload(data) {
     //     var progress = Utils.calculateProgress(data.user.hearts.current_week_hearts, data.cause.total_hearts);
     //     data.user.progress = progress;
     // }
+    console.log("2new", data.user.project.target_end_time);
 
     var shortRemaining = prettyMs(data.user.project.target_end_time - moment().format('x'), { compact: true });
+    console.log("13new");
 
     var newdata = {
         user: data.user,
@@ -301,15 +364,23 @@ function v1_constructPayload(data) {
         },
     };
 
+    console.log("3new");
+
     var daysPassed = Utils.timePeriodInDays(moment().format('x'), data.user.timestamp);
     newdata.dailyImage = constants.images[Math.round(daysPassed) % constants.images.length];
+
+    console.log("4new");
 
     newdata.timeElapsed = moment().format('x') > data.user.project.target_end_time;
     newdata.user.first_name = Utils.firstName(newdata.user.name);
     newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
     if (newdata.timeElapsed) newdata.user.state = "v1_donate_pending"; //during v1_week_ongoing, time elapsed
 
-    newdata.project = data.currentProject;
+    console.log("5new", data, "\n\nData end----*");
+
+    newdata.project = data.project;
+
+    console.log("6new", newdata, "\n\nNew data end -----*");
 
     return deferred.success(newdata);
 }
