@@ -18,6 +18,10 @@ var projectSchema = mongoose.Schema({
         ngoName: String,
         ngoUrl: String,
         ngoPhotoUrl: String
+    },
+    donateFTUE: {
+        title: String,
+        info: String
     }
 });
 
@@ -28,6 +32,9 @@ projectSchema.statics = {
 
     getProjectDetails: function(data, cb) {
         this.findOne({ projectId: data.projectId }).lean().exec(cb);
+    },
+    getFeaturedProject: function(cb) {
+        this.findOne({ isFeatured: true }).lean().exec(cb);
     }
 }
 
