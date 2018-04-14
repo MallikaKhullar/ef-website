@@ -296,13 +296,19 @@ Utils.prototype.getCompleteUrl = function(req) {
     return req.method + " " + req.protocol + ':// ' + req.get('host') + " " + req.originalUrl;
 };
 
-Utils.prototype.getCommaSeparatedNumber = function(string) {
-    return string; //TODO: write function
+Utils.prototype.getCommaSeparatedNumber = function(x) {
+    return x; //TODO: write function
 };
 
-Utils.prototype.getCommaSeparatedMoney = function(string) {
-    return string; //TODO: write function
-};
+
+Utils.prototype.getCommaSeparatedMoney = function(x) {
+    var lastThree = x.substring(x.length - 3);
+    var otherNumbers = x.substring(0, x.length - 3);
+    if (otherNumbers != '')
+        lastThree = ',' + lastThree;
+    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+    return res; //TODO: write function};
+}
 
 Utils.prototype.addGETParamsToUrl = function(url, params1, param1Val) {
 
