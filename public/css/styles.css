@@ -126,21 +126,6 @@ body,
     text-align: center;
 }
 
-#autocomplete {
-    width: 62%;
-    height: 48px;
-    text-indent: 7px;
-    /* border-radius: 5px; */
-    border-width: 0px;
-    font-size: 20px;
-    color: #000000;
-    padding-left: 20px;
-    z-index: 15;
-    font-size: 20px;
-    font-family: Quicksand;
-    background-color: white;
-}
-
 .background {
     background-color: transparent;
     background-size: cover;
