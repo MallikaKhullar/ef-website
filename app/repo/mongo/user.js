@@ -24,6 +24,10 @@ var userSchema = mongoose.Schema({
             'cause_selection_pending'
         ]
     },
+    ui_settings: {
+        search_visible: { type: Boolean, default: true },
+        app_bar: { type: Boolean, default: true }
+    },
     color_theme: { type: String, enum: ['white', 'unsplash', 'gradient'] },
     picture: String,
     previous_donation: {
@@ -135,6 +139,26 @@ userSchema.statics = {
     setV1WeekOngoing: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "state": "v1_week_ongoing" }
+        }, {}, cb);
+    },
+    hideSearch: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: { "ui_settings.search_visible": false }
+        }, {}, cb);
+    },
+    hideAppBar: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: { "ui_settings.app_bar": false }
+        }, {}, cb);
+    },
+    showSearch: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: { "ui_settings.search_visible": true }
+        }, {}, cb);
+    },
+    showAppBar: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: { "ui_settings.app_bar": true }
         }, {}, cb);
     }
 }

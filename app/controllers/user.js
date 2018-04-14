@@ -73,3 +73,23 @@ exports.setProject = function(user_id, cause_id, start, end) {
         return deferred.success(res);
     });
 };
+exports.hideAppBar = function(user_id) {
+    return fn.defer(fn.bind(User, 'hideAppBar'))({ user_id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+exports.hideSearch = function(user_id) {
+    return fn.defer(fn.bind(User, 'hideSearch'))({ user_id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+exports.showAppBar = function(user_id) {
+    return fn.defer(fn.bind(User, 'showAppBar'))({ user_id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+exports.showSearch = function(user_id) {
+    return fn.defer(fn.bind(User, 'showSearch'))({ user_id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
