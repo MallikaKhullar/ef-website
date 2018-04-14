@@ -67,7 +67,7 @@ module.exports = function(passport) {
                         newUser.user_id = "user" + moment().format('x');
                         newUser.web_version = "0.0.1";
                         newUser.timestamp = moment().format('x');
-                        newUser.state = "uninitiated";
+                        newUser.state = "v1_uninitiated";
                         newUser.picture = profile.photos ? profile.photos[0].value : '/image/user.png';
                         newUser.color_theme = "unsplash";
                         newUser.hearts = {};
@@ -118,7 +118,7 @@ module.exports = function(passport) {
                         newUser.email = profile.emails[0].value; // pull the first email
                         newUser.timestamp = moment().format('x');
                         newUser.web_version = "0.0.1";
-                        newUser.state = "uninitiated";
+                        newUser.state = "v1_uninitiated";
                         newUser.user_id = "user" + moment().format('x');
                         newUser.color_theme = "unsplash";
                         newUser.picture = profile._json.image.url == null || profile._json.image.url == undefined ? "/image/user.png" : profile._json.image.url;
