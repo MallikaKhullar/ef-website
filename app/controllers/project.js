@@ -6,7 +6,14 @@ var moment = require('moment');
 var Utils = require('./../utils');
 
 exports.getProjectDetails = function(data) {
+    if (data == null || data.projectId == null) return deferred.success({});
     return fn.defer(fn.bind(Project, 'getProjectDetails'))({ projectId: data.projectId }).pipe(function(res) {
+        res.shortDescription = Utils.trunc(res.shortDescription);
+        return deferred.success(res);
+    });
+}
+exports.getFeaturedProject = function() {
+    return fn.defer(fn.bind(Project, 'getFeaturedProject'))().pipe(function(res) {
         res.shortDescription = Utils.trunc(res.shortDescription);
         return deferred.success(res);
     });
