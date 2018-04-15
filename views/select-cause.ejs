@@ -30,76 +30,71 @@
 </head>
 
 <body>
-    <img src='<%- dailyImage %>' id="bg" alt="" />
-    <img id="bg" />
+    <div style="width: 100%;background-color: #000000cc;">
+        <img src='<%- dailyImage %>' id="bg" alt="" />
+        <img id="bg" />
 
-    <div class="choose-title mb-5 pt-5">Choose your mission!</div>
+        <div class="choose-title mb-5 pt-5">Choose your mission!</div>
 
-    <a href='/new-tab/mission-selected?cause_id=<%-featuredProject.projectId%>'>
-        <div class="featured large-dialog-overlay mb-5">
-            <div class="row">
-                <div class="col-sm-3" style="padding-top:80px">
-                    <img alt="Flutur Chrome Extension" src="/image/aarambh_title_1.png" class="img-responsive" /></div>
-                <div class="col-sm-5 tab-project-details-container" style="padding-top:80px">
-                    <div class="open-new-tabs-to" style="line-height:1.5; margin-top:30px; letter-spacing: 0.5px;text-align:left;padding-right:50px;">Open new tabs to</div>
-                    <div class="action-title" style="font-size: 40px; padding:0; margin:10px 0px;text-align:left;line-height:38px;">
-                        <%- featuredProject.actionTitle %>
-                    </div>
+        <a href='/new-tab/project-selected?cause_id=<%-featuredProject.projectId%>'>
+            <div class="featured large-dialog-overlay mb-5">
+                <div class="row">
+                    <div class="col-sm-3 pt-80">
+                        <img alt="Flutur Chrome Extension" src="<%- featuredProject.primaryMissionPhoto %>" class="img-responsive" /></div>
+                    <div class="col-sm-5 tab-project-details-container">
+                        <div class="open-new-tabs-to" style="line-height:1.5; margin-top:30px; letter-spacing: 0.5px;text-align:left;padding-right:50px;">Open new tabs to</div>
+                        <div class="big-action-title">
+                            <%- featuredProject.featureActionTitle %>
+                        </div>
 
-                    <div class="featured-green">
-                        <div class="poppins-thin xs-text" style="padding-right:50px;">Featured Mission</div>
-                        <div class="poppins-thin xs-text" style="padding-right:50px;">April - May 2018</div>
+                        <div class="featured-green">
+                            <div class="poppins-thin xs-text">Featured Mission</div>
+                            <div class="poppins-thin xs-text">April - May 2018</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-4 featured-hover" style="padding-top:80px">
-                    <div class="action-desc-left" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
-                        <%- featuredProject.homeDescription %>
+                    <div class="col-sm-4 featured-hover pt-80">
+                        <div class="action-desc-left primary-text">
+                            <%- featuredProject.homeDescription %>
+                        </div>
+                        <div class="choose-mission-featured bold uc choose-box" style="line-height:1.5; letter-spacing: 0.5px;">Choose mission </div>
                     </div>
-                    <a href='projects/<%- featuredProject.projectId %>'>
-                        <div class="choose-mission-featured bold" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Choose mission</div>
-                    </a>
                 </div>
             </div>
+        </a>
+
+        <div class="mw-80 mb-5">
+            <% for(var i=0; i<projects.length; i++) { %>
+                <a href='/new-tab/project-selected?cause_id=<%-projects[i].projectId%>' />
+                <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>">
+                    <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[0].showcasePhoto %>" /></div>
+                    <div class="action-title">
+                        <div class="action-title-inner">
+                            <%- projects[i].actionTitle %>
+                        </div>
+                    </div>
+                    <div class="mb-5 action-desc">
+                        <%- projects[i].shortDescription %>
+                    </div>
+
+                    <div class="mb-5 units">
+                        <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
+                        <%- projects[i].unitString %>
+                    </div>
+                </div>
+                </a>
+                <% } %>
         </div>
-    </a>
-
-    <div class="mw-80 mb-5">
-        <% for(var i=0; i<projects.length; i++) { %>
-            <a href='/new-tab/mission-selected?cause_id=<%-projects[i].projectId%>' />
-            <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>">
-                <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[0].showcasePhoto %>" /></div>
-                <div class="action-title">
-                    <div class="action-title-inner">
-                        <%- projects[i].actionTitle %>
-                    </div>
-                </div>
-                <div class="mb-5 action-desc">
-                    <%- projects[i].shortDescription %>
-                </div>
-
-                <div class="mb-5 units">
-                    <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
-                    <%- projects[i].unitString %>
-                </div>
-            </div>
-            </a>
-            <% } %>
-    </div>
-    <!-- </div>
+        <!-- </div>
     </div> -->
 
 
-
+    </div>
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script type="text/javascript">
     var $li = $('.hor-list li').click(function() {
-        $("li").removeClass("mission-li");
-        $li.removeClass('selected');
-        $(this).addClass('selected');
-        document.getElementById("lets-go-button").innerHTML = "<a class=\"pointer-class\" style=\"margin-top: 20px\" id=\"link\" href=\"/new-tab/mission-selected?cause_id=xyz\"><div id=\"donate-now\" class=\"pink-button disabled\"><div class=\"thick-text white center-text\" style=\"font-size:20px\"><i style=\"margin-right:10px\" class=\"fa fa-heart\" aria-hidden=\"true\"></i>Let's Go</div></div></a>";
-        $("#link").attr("href", "/new-tab/mission-selected?cause_id=" + $(this).attr("id"));
+        $("#link").attr("href", "/new-tab/project-selected?cause_id=" + $(this).attr("id"));
     });
 
     $(document).ready(function() {
