@@ -30,8 +30,9 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
     } else res.redirect('/new-tab');
 });
 
-//v1 route (replaced the old choose mission)
+//v0 route 
 router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
+    console.log("choose mission page");
     projectController.getProjectOverviews({ truncShortDesc: true, truncShort: 200 }).pipe(function(projects) {
         var data = {};
         data = Utils.appendProjects(data, projects);
@@ -40,20 +41,32 @@ router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
     });
 });
 
+//v1 route
+router.get('/choose-project', continueIfLoggedIn, function(req, res) {
+    projectController.getProjectOverviews({ truncShortDesc: true, truncShort: 200 }).pipe(function(projects) {
+        var data = {};
+        data = Utils.appendProjects(data, projects);
+        data.dailyImage = constants.images[Math.round(0) % constants.images.length];
+        console.log("CHOSE PROJ");
+        res.render("select-cause.ejs", data);
+    });
+});
+
 
 //v1 route
 router.get('/project-selected', continueIfLoggedIn, function(req, res) {
-    if (req.query && req.query.project_id) {
+    console.log(req.query.cause_id);
+    if (req.query && req.query.cause_id) {
 
         //this call is only required to get info on if the project is featured or not
         //if it IS featured, then end time is TWO weeks, otherwise ONE week
-        projectController.getProjectFeaturedDetail(req.query.project_id).pipe(function(proj) {
+        projectController.getProjectFeaturedDetail(req.query.cause_id).pipe(function(proj) {
 
             var start = moment().format('x');
             var end = proj.isFeatured == true ? Utils.getTwoWeekTime(start) : Utils.getEndTime(start);
 
             //set project (start, end, project Id) into the user object
-            userController.setProject(req.user.user_id, req.query.project_id, start, end).pipe(function(result) {
+            userController.setProject(req.user.user_id, req.query.cause_id, start, end).pipe(function(result) {
                 res.redirect('/new-tab');
             });
         });
@@ -182,14 +195,15 @@ function handlev1Users(req, res) {
         });
     });
 
-    userController.incrementHearsById(req.user.id);
+    //TODO - reinstate
+    // userController.incrementTabsById(req.user.id);
 }
 
 function handleNewv1Users(req, res) {
     var def = {
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
-        currentProject: projectController.getFeaturedProject()
+        currentProject: projectController.getFeaturedProject() //for new users, assign them featured project
     };
 
     deferred.combine(def).pipe(function(data) {
@@ -210,7 +224,7 @@ function handleNewv1Users(req, res) {
         });
     });
 
-    userController.incrementHearsById(req.user.id);
+    userController.incrementTabsById(req.user.id);
 }
 
 function handlev0Users(req, res) {
@@ -245,6 +259,7 @@ function handlev0Users(req, res) {
  *-------------------------------- UTILS -----------------------------*
  */
 
+//v0 route
 function findUserProgress(causes, id) {
     for (i in causes) {
         if (causes[i]._id == id) return causes[i].hearts;
@@ -374,14 +389,31 @@ function v1_constructPayload(data) {
     newdata.timeElapsed = moment().format('x') > data.user.project.target_end_time;
     newdata.user.first_name = Utils.firstName(newdata.user.name);
     newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
-    if (newdata.timeElapsed) newdata.user.state = "v1_donate_pending"; //during v1_week_ongoing, time elapsed
+    if (newdata.timeElapsed && !newdata.user.state.includes("cause")) newdata.user.state = "v1_donate_pending"; //during v1_week_ongoing, time elapsed
 
-    console.log("5new", data, "\n\nData end----*");
+
+    console.log("5new,", newdata.timeElapsed, newdata.user.state);
 
     newdata.project = data.project;
 
-    console.log("6new", newdata, "\n\nNew data end -----*");
+    if (newdata.user.state == "v1_cause_selection_pending") {
+        //i've lost details of the current donation that i just made
+        //need that data for stuff like "You just donated 5 helpdesks"
+        //so i'll need to pull the last project
+        return projectController.getProjectDetails({ projectId: newdata.user.project.project_id }).pipe(function(last_proj) {
+            newdata.project.unitsCreated = eval((newdata.user.last_project.tabs) + "" + last_proj.conversionFormula) + 1;
+            newdata.project.unitrep = (newdata.project.unitsCreated == 1.00 ? last_proj.currentUnitMeasure : last_proj.currentUnitMeasure + "s")
+            return deferred.success(newdata);
+        });
+    }
 
+
+    if (newdata.user.state == "v1_donate_pending") {
+        newdata.project.unitsCreated = eval((newdata.user.project.tabs) + "" + data.project.conversionFormula) + 1;
+        newdata.project.unitrep = (newdata.project.unitsCreated == 1.00 ? data.project.currentUnitMeasure : data.project.currentUnitMeasure + "s")
+    } else {
+
+    }
     return deferred.success(newdata);
 }
 
