@@ -34,6 +34,10 @@ var userSchema = mongoose.Schema({
         previous_cause_id: String,
         previous_week_hearts: String
     },
+    last_project: {
+        tabs: String,
+        project_id: String
+    },
     progress: Number,
     hearts: {
         target_end_time: Number,
@@ -43,12 +47,13 @@ var userSchema = mongoose.Schema({
         current_cause_id: String,
         donations_till_date: [String]
     },
+    all_project_donations: [String],
+    total_tabs: Number,
     project: {
-        current_hearts: Number,
+        tabs: Number,
         target_end_time: Number,
         target_start_time: Number,
         project_id: String
-
     },
     web_version: String
 });
@@ -91,8 +96,8 @@ userSchema.statics = {
         this.count({}).lean().exec(cb);
     },
 
+    //v0 route
     addDonation: function(data, cb) {
-
         this.findOne({ user_id: data.user_id }, function(err, res) {
             res.previous_donation.previous_week_hearts = res.hearts.current_week_hearts - 1;
             res.previous_donation.previous_cause_id = res.hearts.current_cause_id;
@@ -102,6 +107,19 @@ userSchema.statics = {
         });
     },
 
+    //v1 route
+    addProjectDonation: function(data, cb) {
+        this.findOne({ user_id: data.user_id }, function(err, res) {
+            res.last_project.tabs = res.project.tabs - 1;
+            res.last_project.project_id = res.project.last_project;
+            res.project.tabs = 0;
+            res.state = "v1_cause_selection_pending";
+            res.all_project_donations.push(data.donation_id)
+            res.save();
+        });
+    },
+
+    //v0 route
     setCause: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: {
@@ -114,10 +132,12 @@ userSchema.statics = {
         }, {}, cb);
     },
 
+    //v1 route
     setProject: function(data, cb) {
+        console.log("Reached repo", data);
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: {
-                'project.current_hearts': 0,
+                'project.tabs': 0,
                 "state": "v1_week_ongoing",
                 "project.target_start_time": data.start,
                 "project.target_end_time": data.end,
@@ -128,12 +148,12 @@ userSchema.statics = {
 
     initiateCauseChoosing: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
-            $set: { "state": "cause_selection_pending" }
+            $set: { "state": "v1_cause_selection_pending" }
         }, {}, cb);
     },
     setDonatePending: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
-            $set: { "state": "donate_pending" }
+            $set: { "state": "v1_donate_pending" }
         }, {}, cb);
     },
     setV1WeekOngoing: function(data, cb) {
