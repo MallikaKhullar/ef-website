@@ -6,11 +6,27 @@ var deferred = require('./../utils/deferred.js');
 var moment = require('moment');
 
 
+//v0 routes
 exports.incrementHearsById = async(function*(id) {
     User.findById(id, function(err, user) {
         if (err) { return next(err); }
         user.hearts.current_week_hearts = (user.hearts.current_week_hearts || 0) + 1;
         user.hearts.total_hearts = (user.hearts.total_hearts || 0) + 1;
+        user.modified_timestamp = moment().format('x');
+        user.save((err) => {
+            if (err) {
+                return next(err);
+            }
+        });
+    });
+});
+
+//v1 routes
+exports.incrementTabsById = async(function*(id) {
+    User.findById(id, function(err, user) {
+        if (err) { return next(err); }
+        user.project.tabs = (user.project.tabs || 0) + 1;
+        user.total_tabs = (user.total_tabs || 0) + 1;
         user.modified_timestamp = moment().format('x');
         user.save((err) => {
             if (err) {
@@ -39,7 +55,7 @@ exports.getAllUserCount = function() {
 };
 
 exports.donate = function(donation_id, user_id) {
-    fn.defer(fn.bind(User, 'addDonation'))({ donation_id, user_id }).pipe(function(res) {
+    fn.defer(fn.bind(User, 'addProjectDonation'))({ donation_id, user_id }).pipe(function(res) {
         deferred.success(res);
     });
 };
