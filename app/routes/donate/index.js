@@ -20,5 +20,19 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/donate-project', function(req, res) {
+    var donation_id = "donation" + moment().format('x');
+
+    if (req.user == undefined || req.user.project == undefined) {
+        res.send("Donate incomplete");
+        return;
+    }
+
+    donationController.createDumpv1(req.user.project.tabs, donation_id, req.user.user_id, req.user.project.project_id).pipe(function(data) {
+        userController.donate(donation_id, req.user.user_id);
+        res.send("Donate complete");
+    });
+});
+
 
 module.exports = router;
