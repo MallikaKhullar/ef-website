@@ -3,16 +3,21 @@ var moment = require('moment');
 
 var donationDumpSchema = mongoose.Schema({
     num_hearts: Number,
+    num_tabs: Number,
     cause_id: String,
     ngo_id: String,
     user_id: String,
     donation_id: String,
-    timestamp: Number
+    timestamp: Number,
+    project_id: String
 });
 
 donationDumpSchema.statics = {
     getAllDonations: function(data, cb) {
         this.find({}).lean().exec(cb);
+    },
+    getAllDonationsByProject: function(data, cb) {
+        this.find({ project_id: data.project_id }).lean().exec(cb);
     },
 
     createDonation: function(donationObj, cb) {
@@ -31,6 +36,8 @@ donationDumpSchema.statics = {
     getDonationsByCauseId: function(data, cb) {
         this.findOne({ cause_id: data.cause_id }).lean().exec(cb);
     },
+
+    //needed to transition old users into new version
     getDonationsByUserId: function(id, cb) {
         this.aggregate([
             { $match: { user_id: id } },
@@ -38,8 +45,8 @@ donationDumpSchema.statics = {
                 $group: { _id: "$cause_id", hearts: { $sum: "$num_hearts" } }
             }
         ], cb);
+    },
 
-    }
 };
 
 module.exports = mongoose.model('DonationDump', donationDumpSchema);
