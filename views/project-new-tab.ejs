@@ -11,9 +11,7 @@
 
     <!-- fonts -->
     <!-- TODO - use all three fonts? -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,700" rel="stylesheet">
 
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
@@ -51,76 +49,21 @@
 </head>
 
 <body class="no-disp">
+
     <header>
+
         <div id="background-image-white" class="background bg-white"></div>
         <div id="background-image" class="background" style="background: url('<%- dailyImage %>');"></div>
         <div id="background-image-overlay" class="background background-gradient-layer"></div>
 
-        <div class="dark-gradient-ad no-disp">
-            <div class="large-dialog-overlay">
-                <div class="row">
-                    <div class="col-sm-8"></div>
-                    <div class="col-sm-4">
-                        <div class="btn-outline btn-med ta-c" style="cursor:pointer">
-                            <a href="" style=" text-decoration:none!important; color:white;" onclick="dummy(0);return false;">
-                                <b>CONTINUE TO CHANGE THE WORLD</b>
-                            </a>
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-7">
-                        <div>
-                            <div style="display: table; height: 100px; width:100%; margin: 50px 0px 10px 0px">
-                                <img alt="Flutur Ad block disable" src=" /image/exclamation.png" style="float:left; vertical-align:middle; height:95%; width:auto; display:table-cell; padding: 10px" />
-                                <div style="vertical-align:middle; display:table-cell; float:left; font-size:2vw" class="white-title">
-                                    <b>OH NO!</b><br> Adblock Detected!
-                                </div>
-                            </div>
-                            <div class="white font-smaller quicksand" style="width:70%; margin-bottom:10px">
-                                Please turn off your ad blocker for this page. We show non-intrusive tiny ads which raise funds for the NGOs.
-                            </div>
-                            <a href="/faqs" style="text-decoration:none;">
-                                <div class="know-how" style="color:white">Know why?</div>
-                                <div style="box-sizing: border-box; width: 87px; border: 1px solid #fff;"></div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-5">
-                        <div class="ta-c">
-                            <img alt="Flutur Environment Saving" style="width:90%; height:auto; margin-top:5%" src=" /image/sad_earth.png" /></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" style="position:absolute; bottom:40px; right:40px; width:100%;">
-                    <div class="col-sm-8"></div>
-                    <div class="col-sm-4">
-                        <div style="float:right;">
-                            <div class="display-number-title">People on Flutur</div>
-                            <div class="display-number">
-                                <%- stats.followers %>
-                            </div>
-                        </div>
-                        <div style="float:right;margin-right:50px">
-                            <div class="display-number-title">Donations So Far</div>
-                            <div class="display-number">
-                                <%- stats.donations %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="ad-block-bar no-disp">
+            <div style="background-color: #FFFFFF; padding:15px 0;width:75%;position: relative; float:left">
+                <img src="/image/heart.png" style="height:10px" /> Only advertisements are used to raise funds for the cause! Please turn off your ad blocker!</div>
+            <div style="float:left; padding:15px 0;position: relative;background-color:pink;width:25%">switch off ></div>
         </div>
 
-        <div class="ad-block-bar no-disp">Only advertisements are used to raise funds for the cause! Please turn off your ad blocker!</div>
-
-
         <div class="dark-gradient-donate no-disp">
-            <% if (user.state === 'donate_pending') { %>
+            <% if (user.state === 'v1_donate_pending') { %>
                 <div class="small-dialog-overlay">
                     <div class="row">
                         <div class="col-sm-5"></div>
@@ -132,7 +75,7 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="ta-c">
-                                <img alt="Flutur Environment Saving" style="width:30%; height:auto;" src="<%- project.img_url %>" /></a>
+                                <img alt="Flutur Environment Saving" style="width:30%; height:auto;" src="<%- project.primaryMissionPhoto %>" /></a>
                             </div>
 
 
@@ -143,14 +86,16 @@
                             </ul>
                         </div>
                         <div class="col-sm-7" style="text-align:left">
-                            <div class="quicksand white font-weight-500" style="margin-top:15px;font-size:40px;">
-                                <img alt="Flutur Heart" style="margin-top:-5px;height:35px" src="/image/heart.png" />
-                                <%- user.hearts.current_week_hearts %>
+                            <div class="congrats-title mint uc" style="margin-top:15px;">
+                                <%- project.unitsCreated %>
+                                    <span class="white"><%- project.unitrep %></span>
                             </div>
-                            <div class="quicksand white font-weight-500" style="margin-top:15px;font-size:20px;">
-                                Hearts donated succesfully!
+                            <div class="donation-details white uc">
+                                donated successfully
                             </div>
-
+                            <div class="donated-successfully white">
+                                <%- project.donateThanks %>
+                            </div>
 
                             <div class="quicksand white pink-box-big" id="choose-mission" style="margin-top:15px;">
                                 CHOOSE NEXT MISSION
@@ -340,7 +285,7 @@
                     <div class="search search-cont middle-below-search">
                         <span class="search-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
                         </span>
-                        <input id="autocomplete" title="Search for something" placeholder="&#xf002;  Search" style="font-family: FontAwesome, Quicksand">
+                        <input id="autocomplete" title="Search for something" placeholder="&#xf002;  Search">
                     </div>
                 </div>
 
@@ -413,69 +358,73 @@
                         <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
                     </div>
 
-                    <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
-                        <img alt="Flutur Heart" style="margin-top:-5px;height:25px" src="/image/heart.png" />
+                    <div class="page-text quicksand white center-element weight-500" style="right:30%; position: absolute;font-size:15px;">
+                        <img alt="Flutur Heart" style="margin-top:-5px;height:15px" src="<%-project.unitIcon%>" /> You've made
                     </div>
 
+                    <div class="page-text quicksand white center-element" style="top:23%;right:30%; position: absolute;font-size:12px;">
+                        <%- project.unitsCreated %>
+                            <%- project.unitrep %>! </div>
                     <div>
-                        <div class="quicksand white pink-box" id="donate-now">DONATE HEARTS</div>
-                    </div>
-                </div>
-
-                <% } else if (user.state === 'v1_cause_selection_pending') { %>
-                    <div class="ad-footer-right">
-                        <span class="donate-info">
-                                <div class="hover-right bold mb-1 uc">Choose your next cause/div>
-                                <div class="hover-right">TODO fix this some long thing here check</div>
-                    
-                        </span>
-                        <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
-                            <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
-                        </div>
-
-                        <div class="page-text quicksand white center-element weight-500" style="right:30%; position: absolute;font-size:15px;">
-                            <img alt="Flutur Heart" style="margin-top:-5px;height:15px" src="/image/heart.png" /> 5 helpdesks - link here todo
-                        </div>
-
-                        <div class="page-text quicksand white center-element" style="top:23%;right:30%; position: absolute;font-size:12px;">
-                            Donated
-                        </div>
-
                         <div>
-                            <div class="quicksand white pink-box pink-box-lower" id="choose-now">NEW MISSION
-                            </div>
+                            <div class="quicksand white pink-box" id="donate-now">DONATE HEARTS</div>
                         </div>
                     </div>
 
-                    <% } else {%>
-
+                    <% } else if (user.state === 'v1_cause_selection_pending') { %>
                         <div class="ad-footer-right">
                             <span class="donate-info">
+                                <div class="hover-right bold mb-1 uc">Choose your next cause</div>
+                                <div class="hover-right">TODO fix this some long thing here check</div>
+                        </span>
+
+                            <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                                <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
+                            </div>
+
+                            <div class="page-text quicksand white center-element weight-500" style="right:30%; position: absolute;font-size:15px;">
+                                <img alt="Flutur Heart" style="margin-top:-5px;height:15px" src=" <%- project.unitIcon %>" /> You donated
+
+                            </div>
+
+                            <div class="page-text quicksand white center-element" style="top:23%;right:30%; position: absolute;font-size:12px;">
+                                <%- project.unitsCreated %>
+                                    <%- project.unitrep %>! </div>
+                            <div>
+                                <div class="quicksand white pink-box pink-box-lower" id="choose-now">NEW MISSION
+                                </div>
+                            </div>
+                        </div>
+
+                        <% } else {%>
+
+                            <div class="ad-footer-right">
+                                <span class="donate-info">
                                     <div class="hover-right bold mb-1 uc"><%- project.donateFTUE.title %></div>
                                     <div class="hover-right"><%- project.donateFTUE.info %></div>
                         
                             </span>
-                            <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
-                                <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
+                                <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                                    <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
 
-                            </div>
+                                </div>
 
-                            <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
-                                <img alt="Flutur Heart" style="margin-top:-5px;height:25px" src="/image/heart.png" />
-                            </div>
+                                <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
+                                    <img alt="Flutur Heart" style="margin-top:-5px;height:25px" src="/image/heart.png" />
+                                </div>
 
-                            <div class="progressbar">
-                                <div id="myProgress">
-                                    <div id="myBar"></div>
+                                <div class="progressbar">
+                                    <div id="myProgress">
+                                        <div id="myBar"></div>
+                                    </div>
+                                </div>
+                                <div class="page-text quicksand white center-element" style="margin-top:50px;right:30%; position: absolute;font-size:14px;">
+                                    <%- stats.shortRemaining %> left!
                                 </div>
                             </div>
-                            <div class="page-text quicksand white center-element" style="margin-top:50px;right:30%; position: absolute;font-size:14px;">
-                                <%- stats.shortRemaining %> left!
-                            </div>
-                        </div>
 
-                        <% } %>
-        </div>
+                            <% } %>
+                </div>
         </div>
         </div>
 
@@ -496,7 +445,7 @@
 
         if (document.getElementById("donate-now") != null && document.getElementById("donate-now").style != null) {
             document.getElementById('donate-now').onclick = function() {
-                $.get('/donate', {}, function(data) {
+                $.get('/donate/donate-project', {}, function(data) {
                     $(".dark-gradient-donate").show();
                 });
             };
@@ -512,9 +461,9 @@
 
 <script type="text/javascript">
     if (adblock == true) {
-        $(".dark-gradient-ad").show();
+        $(".ad-block-bar").show();
     } else {
-        $(".dark-gradient-ad").hide();
+        $(".ad-block-bar").hide();
     }
 
     $(document).ready(function() {
@@ -547,11 +496,11 @@
     }
 
     $("#choose-now").click(function() {
-        window.location.href = '/new-tab/choose-mission';
+        window.location.href = '/new-tab/choose-project';
     });
 
     $("#choose-mission").click(function(e) {
-        window.location.href = '/new-tab/choose-mission';
+        window.location.href = '/new-tab/choose-project';
         e.stopPropagation();
     });
 
