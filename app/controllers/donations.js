@@ -17,6 +17,13 @@ exports.createDump = function(num_hearts, donation_id, user_id, cause_id) {
     });
 };
 
+
+exports.createDumpv1 = function(num_tabs, donation_id, user_id, project_id) {
+    return fn.defer(fn.bind(Donation, 'createDonation'))({ num_tabs, donation_id, user_id, project_id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+
 exports.getAllDonationCount = function() {
     return fn.defer(fn.bind(User, 'getUserCount'))({}).pipe(function(USER_COUNT) {
         return fn.defer(fn.bind(User, 'getUserById'))("123").pipe(function(user) {
