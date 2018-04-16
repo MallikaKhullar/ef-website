@@ -437,7 +437,6 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("body").fadeIn(500);
-
         if (document.getElementById("myBar") != null && document.getElementById("myBar").style != null) {
             document.getElementById("myBar").style.width = <%= user.progress %> + "%";
         }
@@ -567,7 +566,9 @@
                 $(".hey-sexy").css("color", "white");
                 $("#background-image-white").show();
                 $(".page-text").css("color", "white");
-                $("#background-image-overlay").show();
+                setTimeout(function() {
+                    $("#background-image-overlay").fadeIn(3000);
+                }, 1000);
                 $("#background-image").show();
                 $("#background-image").css("background", "");
                 $("#background-image").css("background-image", "url('<%- dailyImage %>')");

@@ -1,3 +1,20 @@
+        #autocomplete {
+            height: 48px;
+            text-indent: 7px;
+            font-size: 20px;
+            padding-left: 20px;
+            z-index: 15;
+            font-size: 5px;
+            font-family: FontAwesome, Poppins;
+            color: white;
+            border: 0px solid rgba(152, 152, 152, 0.66);
+            border-width: 0px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.55);
+            width: 100%;
+            font-size: 18px;
+        }
+        
         @media (min-width: 800px) {
             .oval-container-image {
                 height: 27px;
@@ -7,9 +24,9 @@
             }
             .hey-sexy {
                 color: #FFFFFF;
-                font-family: Quicksand;
+                font-family: Poppins;
                 font-size: 38px;
-                font-weight: 500;
+                font-weight: 700;
                 line-height: 56px;
                 text-align: center;
             }
@@ -17,12 +34,12 @@
                 font-weight: 300;
                 font-size: 11px;
                 color: white;
-                font-family: Quicksand;
+                font-family: Poppins;
             }
             .display-number {
                 font-size: 25px;
                 color: white;
-                font-family: Quicksand;
+                font-family: Poppins;
                 font-weight: bold;
             }
         }
@@ -36,7 +53,7 @@
             }
             .hey-sexy {
                 color: #FFFFFF;
-                font-family: Quicksand;
+                font-family: Poppins;
                 font-size: 20px;
                 font-weight: 500;
                 line-height: 20px;
@@ -47,32 +64,14 @@
                 font-weight: 300;
                 font-size: 9px;
                 color: white;
-                font-family: Quicksand;
+                font-family: Poppins;
             }
             .display-number {
                 font-size: 15px;
                 color: white;
-                font-family: Quicksand;
+                font-family: Poppins;
                 font-weight: bold;
             }
-        }
-        
-        #autocomplete {
-            height: 48px;
-            text-indent: 7px;
-            font-size: 20px;
-            padding-left: 20px;
-            z-index: 15;
-            font-size: 5px;
-            font-family: Quicksand;
-            font-family: FontAwesome, Quicksand;
-            color: white;
-            border: 0px solid rgba(152, 152, 152, 0.66);
-            border-width: 0px;
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.55);
-            width: 100%;
-            font-size: 18px;
         }
         
         .navbar-brand>img {
@@ -311,7 +310,7 @@
         }
         
         .btn-med {
-            font-family: Quicksand;
+            font-family: Poppins;
             border-radius: 300px;
             padding: 6px 16px;
             font-size: 12px;
@@ -338,7 +337,7 @@
         html {
             background: white;
             height: 100vh;
-            font-family: Quicksand;
+            font-family: Poppins;
         }
         
         body {
@@ -346,7 +345,7 @@
             background: linear-gradient(30deg, #3CC58F, #3CC58F, #23D2AF, #54A5C1, #4CA7E4, #C479E2, #B553F1, #DC4AA6, #E5458C);
             background-size: 800% 800%;
             animation: AnimationName 18s ease infinite;
-            font-family: Quicksand;
+            font-family: Poppins;
         }
         
         .dark-gradient,
@@ -386,7 +385,7 @@
         .white-title {
             color: white;
             z-index: 3;
-            font-family: Quicksand;
+            font-family: Poppins;
             font-size: 40px;
         }
         
@@ -394,8 +393,8 @@
             font-size: 16px;
         }
         
-        .quicksand {
-            font-family: Quicksand;
+        .Poppins {
+            font-family: Poppins;
         }
         
         .white {
@@ -404,7 +403,7 @@
         
         .know-how {
             color: #000000;
-            font-family: Quicksand;
+            font-family: Poppins;
             font-size: 16px;
             font-weight: bold;
         }
@@ -460,6 +459,48 @@
         
         input.formWhite:-ms-input-placeholder {
             color: grey;
+        }
+        
+        .donation-details {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: 5px;
+            line-height: 25px;
+        }
+        
+        .donated-successfully {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 13.5px;
+            line-height: 20px;
+            margin-top: 5px;
+        }
+        
+        .congrats-title {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 35px;
+            font-weight: bold;
+            line-height: 53px;
+        }
+        
+        .mint {
+            color: #23D2AF;
+        }
+        
+        .small-dialog-overlay {
+            background-color: #1C1C1C;
+            width: 50%;
+            height: 50%;
+            border-radius: 10px;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
+            left: 25%;
+            top: 25%;
+            padding: 50px;
+            z-index: 3;
+            position: absolute;
         }
         
          ::-webkit-input-placeholder {
@@ -780,7 +821,7 @@
             font-weight: 300;
             font-size: 0.8em;
             color: #989898;
-            font-family: Quicksand;
+            font-family: Poppins;
             line-height: 13px;
         }
         
@@ -796,7 +837,7 @@
             box-sizing: border-box;
             margin: 0;
             color: #000000;
-            font-family: Quicksand;
+            font-family: Poppins;
             font-size: 20px;
             font-weight: bold;
             margin-top: 10px;
@@ -811,14 +852,14 @@
         
         .theme-layout {
             color: #5E5E5E;
-            font-family: Quicksand;
+            font-family: Poppins;
             font-size: 14px;
             line-height: 15px;
         }
         
         .small-bold {
             color: #000000;
-            font-family: Quicksand;
+            font-family: Poppins;
             font-size: 10px;
             font-weight: bold;
             line-height: 13px;
@@ -839,9 +880,24 @@
         
         .theme-small-text {
             color: #5E5E5E;
-            font-family: Quicksand;
+            font-family: Poppins;
             font-size: 10px;
             line-height: 16px;
+        }
+        
+        .ad-block-bar {
+            top: 0;
+            position: absolute;
+            left: 0;
+            width: 100vw;
+            height: 50px;
+            z-index: 999;
+            text-align: center;
+            color: #000000;
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 21px;
         }
         
         .mb-1 {
@@ -859,7 +915,7 @@
         }
         
         .bold-heading {
-            font-family: Quicksand;
+            font-family: Poppins;
             font-size: 16px;
             font-weight: 500;
             line-height: 20px;
