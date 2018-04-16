@@ -22,18 +22,146 @@
             color: white
         }
         
-        .large-dialog-overlay {
-            width: 70%;
-            height: 70vh;
-            /* left: 15%;
-            top: 15%; */
-            padding-left: 50px;
-            margin: 0 auto;
-            z-index: 3;
-            border-radius: 10px;
-            background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
-            box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38);
+        .primary-text {
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            width: 18vw
         }
+        
+        @media (min-width: 900px) {
+            .big-action-title {
+                font-size: 3em;
+                padding: 0;
+                margin: 10px 0px;
+                text-align: left;
+                line-height: 38px;
+                font-weight: bold;
+                font-family: Poppins;
+            }
+            .action-title {
+                color: #FFFFFF;
+                font-family: Poppins;
+                font-size: 26.6px;
+                font-weight: bold;
+                padding: 25px;
+                text-transform: uppercase;
+                line-height: 32px;
+                text-align: right;
+                text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+            }
+            .large-dialog-overlay {
+                width: 70vw;
+                height: 70vh;
+                /* left: 15%;
+                top: 15%; */
+                margin: 0 auto;
+                z-index: 3;
+                border-radius: 10px;
+                background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
+                box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38);
+            }
+            .choose-mission-featured {
+                color: #3EFFDE;
+                font-family: Poppins;
+                font-size: 18px;
+                line-height: 20px;
+            }
+            .action-desc-left {
+                color: #FFFFFF;
+                font-family: Poppins;
+                font-size: 10.4px;
+                line-height: 16px;
+                padding: 15px;
+                text-align: left;
+            }
+            .choose-box {
+                border: 1px solid #FFFFFF;
+                border-radius: 5px;
+                text-align: center;
+                padding: 5px 10px;
+                width: 80%;
+            }
+            .pt-80,
+            .tab-project-details-container {
+                padding-top: 80px
+            }
+        }
+        
+        @media (max-width: 899px) {
+            .pt-80,
+            .tab-project-details-container {
+                padding-top: 20px 0
+            }
+            .img-responsive {
+                width: 10vw
+            }
+            .big-action-title {
+                font-size: 20px;
+                padding: 0;
+                margin: 5px 0px;
+                text-align: left;
+                font-weight: bold;
+                font-family: Poppins;
+                line-height: 18px;
+            }
+            .action-title {
+                color: #FFFFFF;
+                font-family: Poppins;
+                font-size: 16.6px;
+                font-weight: bold;
+                padding: 5px;
+                text-transform: uppercase;
+                line-height: 22px;
+                text-align: right;
+                text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+            }
+            .large-dialog-overlay {
+                width: 70vw;
+                height: 70vh;
+                padding-left: 20px;
+                margin: 0 auto;
+                z-index: 3;
+                border-radius: 10px;
+                background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
+                box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38);
+            }
+            .choose-mission-featured {
+                color: #3EFFDE;
+                font-family: Poppins;
+                font-size: 12px;
+                line-height: 14px;
+            }
+            .action-desc-left {
+                color: #FFFFFF;
+                font-family: Poppins;
+                font-size: 8.4px;
+                line-height: 10px;
+                padding: 10px;
+                text-align: left;
+            }
+            .choose-box {
+                border: 1px solid #FFFFFF;
+                border-radius: 5px;
+                text-align: center;
+                padding: 2px 5px;
+                width: 70%;
+            }
+        }
+        
+        .primary-text {
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            width: 18vw
+        }
+        
+        .large-dialog-overlay:hover .primary-text {
+            width: 18vw
+        }
+        /* .large-dialog-overlay:hover {
+            width: 75vw;
+            height: 75vh;
+            margin-top: -5px;
+        } */
         
         .mb-5 {
             margin-bottom: 5rem;
@@ -75,6 +203,14 @@
             background: linear-gradient(140deg, #3A5E69 0%, #1B3042 100%)
         }
         
+        .mission-li:hover {
+            margin: 40px;
+            width: 25%;
+            cursor: pointer;
+            /* padding: 15px 0px; */
+            display: inline-block;
+        }
+        
         .secondary-mission:hover {
             background: linear-gradient(140deg, #000 0%, #000 100%);
         }
@@ -86,27 +222,6 @@
             line-height: 16px;
             padding: 15px;
             text-align: center;
-        }
-        
-        .action-desc-left {
-            color: #FFFFFF;
-            font-family: Poppins;
-            font-size: 10.4px;
-            line-height: 16px;
-            padding: 15px;
-            text-align: left;
-        }
-        
-        .action-title {
-            color: #FFFFFF;
-            font-family: Poppins;
-            font-size: 26.6px;
-            font-weight: bold;
-            padding: 25px;
-            text-transform: uppercase;
-            line-height: 32px;
-            text-align: right;
-            text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
         }
         
         .action-title-inner {
@@ -165,10 +280,19 @@
             background-color: #000000;
         }
         
+        .uc {
+            text-transform: uppercase;
+        }
+        
         a,
         a:hover {
             text-decoration: none!;
             color: white;
+        }
+        
+        .no-underline,
+        .no-underline:hover {
+            text-decoration: none!
         }
         
         .mission-img {
@@ -178,6 +302,10 @@
         
         .mission-img-container {
             text-align: left;
+        }
+        
+        .bold {
+            font-weight: bold;
         }
         
         .units {
@@ -195,12 +323,14 @@
             z-index: 3;
             border-radius: 0 10px 10px 0;
             height: 70vh;
+            padding-right: 15px;
         }
         
         .featured-green {
             padding: 10px 50px 10px 10px;
             background-color: #3EFFDE;
             color: black;
+            text-align: left;
         }
         
         .open-new-tabs-to {
@@ -209,13 +339,4 @@
             font-family: Poppins;
             font-size: 14px;
             line-height: 21px;
-        }
-        
-        .choose-mission-featured {
-            height: 28px;
-            width: 211px;
-            color: #3EFFDE;
-            font-family: Poppins;
-            font-size: 22px;
-            line-height: 28px;
         }
