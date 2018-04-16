@@ -55,7 +55,6 @@ router.get('/choose-project', continueIfLoggedIn, function(req, res) {
 
 //v1 route
 router.get('/project-selected', continueIfLoggedIn, function(req, res) {
-    console.log(req.query.cause_id);
     if (req.query && req.query.cause_id) {
 
         //this call is only required to get info on if the project is featured or not
@@ -111,12 +110,10 @@ router.get('/theme-change', function(req, res) {
 });
 
 router.get('/mask-search', function(req, res) {
-    console.log("mask");
     userController.hideSearch(req.user.user_id).pipe(function(data) {});
 });
 
 router.get('/mask-apps', function(req, res) {
-    console.log("masaak");
     userController.hideAppBar(req.user.user_id).pipe(function(data) {});
 });
 
