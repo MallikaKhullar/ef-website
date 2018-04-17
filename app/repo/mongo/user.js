@@ -111,7 +111,7 @@ userSchema.statics = {
     addProjectDonation: function(data, cb) {
         this.findOne({ user_id: data.user_id }, function(err, res) {
             res.last_project.tabs = res.project.tabs - 1;
-            res.last_project.project_id = res.project.last_project;
+            res.last_project.project_id = res.project.project_id;
             res.project.tabs = 0;
             res.state = "v1_cause_selection_pending";
             res.all_project_donations.push(data.donation_id)
@@ -134,7 +134,6 @@ userSchema.statics = {
 
     //v1 route
     setProject: function(data, cb) {
-        console.log("Reached repo", data);
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: {
                 'project.tabs': 0,
@@ -146,36 +145,51 @@ userSchema.statics = {
         }, {}, cb);
     },
 
+    //v1 route
+    updateUserState: function(data, cb) {
+        this.findOneAndUpdate({ user_id: data.user_id }, {
+            $set: {
+                "state": data.state
+            }
+        }, {}, cb);
+    },
+
     initiateCauseChoosing: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "state": "v1_cause_selection_pending" }
         }, {}, cb);
     },
+
     setDonatePending: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "state": "v1_donate_pending" }
         }, {}, cb);
     },
+
     setV1WeekOngoing: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "state": "v1_week_ongoing" }
         }, {}, cb);
     },
+
     hideSearch: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "ui_settings.search_visible": false }
         }, {}, cb);
     },
+
     hideAppBar: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "ui_settings.app_bar": false }
         }, {}, cb);
     },
+
     showSearch: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "ui_settings.search_visible": true }
         }, {}, cb);
     },
+
     showAppBar: function(data, cb) {
         this.findOneAndUpdate({ user_id: data.user_id }, {
             $set: { "ui_settings.app_bar": true }
