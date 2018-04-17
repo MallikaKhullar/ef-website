@@ -34,7 +34,6 @@ router.get('/mission-selected', continueIfLoggedIn, function(req, res) {
 
 //v0 route 
 router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
-    console.log("choose mission page");
     projectController.getProjectOverviews({ truncShortDesc: true, truncShort: 200 }).pipe(function(projects) {
         var data = {};
         data = Utils.appendProjects(data, projects);
@@ -114,7 +113,7 @@ router.get('/', continueIfLoggedIn, function(req, res) {
                 return true;
             } else {
                 console.log("*7");
-                newTabController_v1.render_weekOngoing_v0(req, res);
+                newTabController_v0.render_weekOngoing_v0(req, res);
                 return true;
             }
 
