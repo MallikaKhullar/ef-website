@@ -29,8 +29,6 @@ router.get('/', function(req, res) {
         };
 
         newdata = Utils.appendProjects(newdata, data.projects);
-
-        console.log("FINAL OBJECT", newdata);
         res.render("login-helpdesk.ejs", newdata);
     });
 });
