@@ -16,6 +16,7 @@ var projectSchema = mongoose.Schema({
     currentUnitMeasure: String,
     primaryMissionPhoto: String,
     conversionFormula: String,
+    weeklyTargetTabs: Number,
     ngo: { //older ngos table is deprecated in v1
         ngoName: String,
         ngoUrl: String,
