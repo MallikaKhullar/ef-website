@@ -10,6 +10,23 @@ Utils.prototype.calculateProgress = function(num, denom) {
     return Math.min((num * 100) / denom, 100);
 };
 
+Utils.prototype.hasTimeElapsedSince = function(time) {
+    return moment().format('x') > time;
+}
+
+
+Utils.prototype.hasExpired = function(user) {
+    if (hasWeekElapsed(user) && getUserVersion(user) == "v0") return true;
+    return false;
+}
+
+function hasWeekElapsed(user) {
+    if (user.state != "week_ongoing" || //if user is in any other donation state
+        moment().format('x') > user.hearts.target_end_time) //or if week is ongoing but time just elapsed
+        return true;
+    return false;
+}
+
 Utils.prototype.respond = function(res, tpl, obj, status) {
     res.format({
         html: () => res.render(tpl, obj),
@@ -52,10 +69,23 @@ Utils.prototype.updateSessionData = function(sessionData, req, callback) {
     });
 };
 
-Utils.prototype.getUserVersion = function(user) {
+function getUserVersion(user) {
     if (user.state.includes('v1')) return "v1";
     if (user.state.includes('v2')) return "v2";
     else return "v0";
+};
+
+Utils.prototype.getActivityVersionState = function(user) {
+    switch (user.state) {
+        case "week_ongoing":
+        case 'v1_week_ongoing':
+        case 'v1_uninitiated':
+        case 'v1_donate_pending':
+        case 'v1_cause_selection_pending':
+        case 'uninitiated':
+        case 'donate_pending':
+        case 'cause_selection_pending':
+    }
 };
 
 Utils.prototype.updateUserDataInSession = function(updateParams, req) {
@@ -373,6 +403,9 @@ Utils.prototype.getTwoWeekTime = function(time1) {
 
 Utils.prototype.timePeriodInHours = function(time1, time2) {
     return parseInt(timePeriodInMilliseconds(time1, time2) / parseInt(3600000));
+}
+Utils.prototype.isMoreThanDay = function(time1, time2) {
+    return (parseInt(timePeriodInMilliseconds(time1, time2) / parseInt(3600000))) > 24;
 }
 
 Utils.prototype.firstName = function(name) {
