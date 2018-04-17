@@ -4,6 +4,7 @@ var fn = require('./../utils/functions');
 var deferred = require('./../utils/deferred.js');
 var moment = require('moment');
 var Utils = require('./../utils');
+const prettyMs = require('pretty-ms');
 
 exports.getProjectDetails = function(data) {
     if (data == null || data.projectId == null) return deferred.success({});
