@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Flutur | Login | DonateWithoutDonating</title>
+    <link rel="icon" href="image/header_logo.png" />
+
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,700" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+
+    <link href="/css/carter-new-age.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/carter-styles.css">
+
+    <style>
+        header .header-content {
+            text-align: left;
+            padding: 0;
+        }
+        
+        .login-btn {
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 0px;
+            line-height: 22px;
+        }
+        
+        .red {
+            color: #D13732;
+        }
+        
+        .blue {
+            color: #2E4587;
+        }
+        
+        #left-side {
+            width: 50vw;
+            height: auto;
+            background-repeat: repeat-y;
+            overflow: hidden;
+            position: absolute;
+            font-size: 16px;
+            background: #392D28;
+        }
+        
+        #right-side {
+            width: 50vw;
+            position: fixed;
+            right: 0;
+            background: #29221E;
+            height: 100vh;
+            padding-bottom: 30px;
+            padding: 0px 100px 50px 100px;
+            overflow: auto;
+        }
+        
+        .sign-in-to-begin {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 33px;
+            font-weight: 600;
+            line-height: 50px;
+            text-align: center;
+        }
+        
+        .sign-in-stats {
+            color: #FFFFFF;
+            font-family: Poppins;
+            font-size: 28px;
+            font-weight: 300;
+            text-align: center;
+            line-height: 42px;
+        }
+        
+        #left-container {
+            padding-right: 50px;
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111348597-1');
+    </script>
+</head>
+
+<body class="white">
+
+    <div id='left-side'>
+        <nav id="mainNav">
+            <div class="navbar-header" style="padding: 10px;">
+                <a target="_top" class="navbar-brand" href="http://www.flutur.org">
+                    <img src="/image/flutur_logo_white.png" />
+                </a>
+            </div>
+        </nav>
+
+        <div class="row" style="margin-top:200px; padding-right:50px">
+            <div class="col-sm-5">
+                <img src='http://res.cloudinary.com/epicfoundation/image/upload/v1523957642/alalal_lmc2xm.png' style="width:100%;margin-top:-40px">
+            </div>
+
+            <div class="col-sm-7">
+                <div class="featured-green">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/image/google_white.png" style="height:25px; margin-top:10px" />
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="poppins-thin xs-text" style="padding-right:50px;">Featured Mission</div>
+                            <div class="poppins-thin xs-text" style="padding-right:50px;">March - April 2018</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poppins-thin smaller-text" style="margin-top:30px;padding-right:50px;">Open new tabs to</div>
+                <div class="poppins-thick" style="margin-top:20px;font-size: 44px; line-height:40px;">BUILD SCHOOL HELPDESKS</div>
+                <div class="poppins-thin smaller-text" style="margin-top:20px;padding-right:50px;">Just one more step and you're ready to start raising funds. Happy tabbing!</div>
+            </div>
+        </div>
+
+        <div style="padding:250px 20px 20px 20px">
+            <div class="poppins-thick" style="font-size: 34px; line-height:25px; margin-bottom:20px">MISSION</div>
+            <div class="poppins-thin smaller-text">Every new tab that you open will generate funds towards creating help desks which also act as school bags. Each bag costs around Rs 20 to make.</div>
+            <div style="margin-top:30px"><object style="width:100%;height:25vw" data="https://www.youtube.com/embed/ZPUFpEbkOoc"></object></div>
+        </div>
+
+        <div style="background-color: white; margin-top:250px; color:black">
+            <div style="padding:20px">
+                <div class="poppins-thick medium-text" style="margin-top:10px">Choose from other missions <br> after 2 weeks!</div>
+                <div class="poppins-thin smaller-text" style="color: purple; font-size: 14px;">KNOW WHY ?</div>
+                <div class="small-text poppins-thick" style="margin:50px 0px">OTHER MISSIONS - </div>
+
+
+                <% for(var i=0; i<projects.length; i++) { %>
+                    <div class="row" style="margin:50px 0px">
+                        <div class="col-sm-3">
+                            <img src="<%- projects[i].showcasePhoto%>" style="margin-top:10px; height:120px; width:120px" />
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="poppins-thin medium-text" style="padding-right:50px;">
+                                <%- projects[i].projectTitle%>
+                            </div>
+                            <div class="poppins-thin xsmall-text" style="padding-right:50px;">
+                                <%- projects[i].homeDescription%>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% } %>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id='right-side'>
+        <div style="margin-top:200px">
+            <div class="sign-in-stats">32 helpdesks so far</div>
+            <div class="sign-in-to-begin">SIGN IN TO BEGIN</div>
+            <div>
+                <a href="/auth/google" target="_top" class="full-width btn btn-xl red-btn login-btn white" style="margin-top: 10px">
+                    <!-- <img src="/image/google_white.png" style="height:25px; margin-right:10px; margin-bottom:2px" /> -->
+                    Google Plus</a>
+            </div>
+            <div>
+                <a href="/auth/facebook" target="_top" class="btn full-width btn-xl blue-btn login-btn white" style="margin-top: 10px">
+                    <!-- <img src="/image/facebook_white.png" style="height:20px; margin-right:10px; margin-bottom:2px" /> -->
+                    Facebook</a>
+            </div>
+        </div>
+        <div style="margin-top:30px; text-align:center" class="poppins-thin smaller-text"><i class="fa fa-power-off" aria-hidden="true"></i> Please turn your Ad blocker off for this site!</div>
+
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="/vendor/jquery/jquery.min.js "></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js "></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js "></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js "></script>
+
+</body>
+
+</html>

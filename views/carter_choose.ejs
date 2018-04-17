@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Flutur | Select Donation Mission | DonateWithoutDonating </title>
+    <link rel="icon" href="image/header_logo.png" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand:400,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,700" rel="stylesheet">
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/carter-mission-select.css">
+
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <div style="width: 100%;background-color: #000000cc;">
+        <img src='<%- dailyImage %>' id="bg" alt="" />
+        <img id="bg" />
+
+        <div class="choose-title mb-3 pt-5">Choose your mission!</div>
+
+        <a href='/new-tab/project-selected?cause_id=<%-featuredProject.projectId%>'>
+            <div class="featured large-dialog-overlay mb-5">
+                <div class="row">
+                    <div class="col-sm-3 pt-80">
+                        <img alt="Flutur Chrome Extension" src="<%- featuredProject.primaryMissionPhoto %>" class="img-responsive" /></div>
+                    <div class="col-sm-5 tab-project-details-container">
+                        <div class="open-new-tabs-to" style="line-height:1.5; margin-top:30px; letter-spacing: 0.5px;text-align:left;padding-right:50px;">Open new tabs to</div>
+                        <div class="big-action-title">
+                            <%- featuredProject.featureActionTitle %>
+                        </div>
+
+                        <div class="featured-green">
+                            <div class="poppins-thin xs-text">Featured Mission</div>
+                            <div class="poppins-thin xs-text">April - May 2018</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 featured-hover pt-80">
+                        <div class="action-desc-left primary-text">
+                            <%- featuredProject.homeDescription %>
+                        </div>
+                        <div class="choose-mission-featured bold uc choose-box" style="line-height:1.5; letter-spacing: 0.5px;">Choose mission </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <div class="or-select-from-these">. . .<br>Or select from these awesome missions!
+        </div>
+
+        <div class="mb-5">
+            <a href="#mission" id="click">
+                <img src="/image/down_white.png" style="width:30px; height:15px">
+            </a>
+        </div>
+
+
+        <div id="mission" class="mw-80 mb-5 mt-5">
+            <% for(var i=0; i<projects.length; i++) { %>
+
+                <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>">
+                    <div class="adjust">
+                        <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[i].secondaryMissionPhoto %>" /></div>
+                        <div class="action-title">
+                            <div class="action-title-inner">
+                                <%- projects[i].actionTitle %>
+                            </div>
+                        </div>
+                        <div class="mb-3 action-desc">
+                            <%- projects[i].shortDescription %>
+                        </div>
+
+                        <div class="units">
+                            <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
+                            <%- projects[i].unitString %>
+                        </div>
+                        <div class="choose-box-secondary-rect" id="choose-<%-projects[i].projectId%>" style="display:none">
+                            CHOOSE MISSION
+                        </div>
+                        <div class="choose-box-secondary" id="hide-<%-projects[i].projectId%>">
+                            CHOOSE MISSION
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+        <!-- </div>
+    </div> -->
+
+
+    </div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+    var $li = $('.hor-list li').click(function() {
+        $("#link").attr("href", "/new-tab/project-selected?cause_id=" + $(this).attr("id"));
+    });
+
+    $(document).ready(function() {
+        $(".featured").mouseenter(function() {
+            $(".featured-hover").css("background", "black");
+        });
+        $(".featured").mouseleave(function() {
+            $(".featured-hover").css("background", "none");
+        });
+
+        $(".mission-li").mouseenter(function() {
+            var id = $(this).attr('id');
+            $("#choose-" + id).show();
+            $("#hide-" + id).hide();
+            // $(".hidethis").hide();
+        });
+        $(".mission-li").mouseleave(function() {
+            var id = $(this).attr('id');
+            $("#choose-" + id).hide();
+            $("#hide-" + id).show();
+            // $(".hidethis").show();
+        });
+
+        $(".choose-box-secondary-rect").click(function() {
+            var id = $(this).attr('id');
+            window.location.href = '/new-tab/project-selected?cause_id=' + id.replace("choose-", "");
+        });
+
+        $("#click").click(function(e) {
+            e.preventDefault();
+            var section = $(this).attr("href");
+            $("html, body").animate({
+                scrollTop: $(section).offset().top
+            });
+        });
+    });
+</script>
+
+</html>

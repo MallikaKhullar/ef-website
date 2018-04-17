@@ -1,0 +1,975 @@
+html,
+body,
+.all-content-container {
+    height: 100%;
+    background-size: 800% 800%;
+    animation: AnimationName 18s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+    50% {
+        background-position: 100% 49%
+    }
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+    50% {
+        background-position: 100% 49%
+    }
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 52%
+    }
+    50% {
+        background-position: 100% 49%
+    }
+    100% {
+        background-position: 0% 52%
+    }
+}
+
+.navbar-default {
+    z-index: 59;
+    background: transparent;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.navbar-brand {
+    padding: 0px;
+    min-height: 60px;
+}
+
+.navbar-brand>img {
+    height: 100%;
+    padding: 10px 0 0 15px;
+    width: auto;
+    /* filter: drop-shadow(1px 1px 3px #505050); */
+}
+
+.quicklink-img-small {
+    height: 15px;
+    width: 15px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.quicklink-img {
+    height: 35px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: auto;
+    /* filter: drop-shadow(1px 1px 3px #505050); */
+}
+
+.navbar-right {
+    margin-top: -2px;
+    min-height: 60px;
+}
+
+.navbar {
+    min-height: 60px;
+}
+
+#clockbox {
+    font-size: 120px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    display: inline-block;
+}
+
+.clock {
+    color: white;
+    font-family: Roboto;
+    padding: 20px 0;
+    margin-top: -30px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+#clockbox-pm {
+    font-size: 20.5px;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.weight-500 {
+    color: #FFFFFF;
+    font-family: Quicksand;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+}
+
+.thin-greeting {
+    color: white;
+    font-family: Quicksand;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 47px;
+    text-align: center;
+}
+
+.background {
+    background-color: transparent;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.widgets {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity .3s ease;
+    position: absolute;
+}
+
+#bottom,
+.widgets.show-widgets {
+    opacity: 1
+}
+
+#full {
+    height: 100%
+}
+
+#bottom,
+#bottom-left,
+#bottom-right,
+#middle,
+#center-above,
+#middle-below,
+#top-left,
+#top-right {
+    position: absolute;
+}
+
+#middle {
+    display: block;
+    top: 35%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%)
+}
+
+#center-above,
+#middle-below {
+    display: block;
+    top: 87%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%)
+}
+
+#center-above,
+#middle-below {
+    left: 0;
+    top: 40%;
+    -webkit-transform: translate(0, 0);
+    z-index: 5;
+}
+
+#bottom {
+    width: 50%;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%)
+}
+
+#top-right {
+    top: 0;
+    right: 0;
+    z-index: 2
+}
+
+#top-bar,
+#top-left {
+    top: 0;
+    left: 0;
+    z-index: 2
+}
+
+#bottom-right {
+    bottom: 0;
+    right: 0;
+    z-index: 2
+}
+
+#bottom-left {
+    bottom: 1px;
+    left: 0;
+    z-index: 2
+}
+
+.metric,
+.widget-bottom-right {
+    display: inline-block;
+    text-align: right
+}
+
+#center-above {
+    top: 0;
+    z-index: 2
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    height: 90px;
+}
+
+#user-profile,
+.profile-drawer {
+    width: 555px;
+    background: #3c3c3c;
+}
+
+#user-profile-container {
+    color: #DB8282;
+    position: relative;
+    height: 100%;
+    padding: 10px 10px 10px 10px;
+    /* border-radius: 5px 0px 0px 0px; */
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.display-number {
+    font-size: 25px;
+    color: white;
+    font-family: Quicksand;
+    font-weight: bold;
+}
+
+.display-number-title {
+    font-weight: 300;
+    font-size: 11px;
+    color: white;
+    font-family: Quicksand;
+}
+
+.thin-text {
+    font-family: Quicksand;
+    font-weight: 300;
+}
+
+.thick-text {
+    font-family: Quicksand;
+    font-weight: 700;
+}
+
+.bold-text {
+    font-family: Quicksand;
+    font-weight: bold;
+}
+
+.center-element {
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.footer {
+    z-index: 59;
+}
+
+.env-icon {
+    width: 40%;
+    padding: 12px 0;
+}
+
+.circle {
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.54);
+    border: 1px solid #38FFFC;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 50px;
+    margin-left: -5px;
+    z-index: 10;
+}
+
+#myProgress {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.17);
+    border-radius: 50px;
+}
+
+#myBar {
+    width: 0%;
+    border-radius: 50px;
+    height: 5px;
+    background-color: #38FFFC;
+}
+
+.highzindex {
+    z-index: 25;
+}
+
+
+/* #all-content-container { */
+
+
+/* display: hidden;
+    } */
+
+.dialog-overlay {
+    position: absolute;
+    top: 50%!important;
+    left: 50%!important;
+    transform: translate(-50%, -50%)!important;
+    -ms-transform: translate(-50%, -50%)!important;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.right-bar {
+    color: white;
+    position: absolute;
+    padding: 15px 10px s15px 10px;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.07);
+    width: 20%;
+    float: right;
+    margin-right: 30px;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -52%);
+    border-radius: 10px;
+    z-index: 7;
+}
+
+.ad-on-right {
+    z-index: 9999;
+    float: right;
+    margin-right: 5%;
+    width: 300px;
+    background-color: olive;
+    height: 900px;
+    margin-bottom: 100px;
+}
+
+.dark-gradient,
+.dark-gradient-ad,
+.dark-gradient-donate {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.small-dialog-overlay {
+    background-color: rgba(0, 0, 0, 0.76);
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
+    left: 25%;
+    top: 25%;
+    padding: 50px;
+    z-index: 3;
+    position: absolute;
+}
+
+.large-dialog-overlay {
+    background: linear-gradient(to top right, rgba(101, 226, 189, 0.9) 0%, rgba(91, 134, 184, 0.9) 80%);
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
+    left: 15%;
+    top: 15%;
+    padding: 20px 40px 0px 40px;
+    z-index: 3;
+    position: absolute;
+}
+
+.page-container {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    position: absolute;
+}
+
+.white-title {
+    color: white;
+    z-index: 3;
+    font-family: Quicksand;
+    font-size: 40px;
+}
+
+.white {
+    color: white;
+}
+
+.fa-red {
+    color: red;
+}
+
+.pink-button {
+    border-radius: 31px;
+    background-color: #ff3b83;
+    padding: 15px 80px 15px 80px;
+    display: inline-block
+}
+
+.grey-button {
+    border-radius: 31px;
+    padding: 15px 80px 15px 80px;
+    display: inline-block;
+    background-color: #b8b8b8;
+}
+
+.pointer-class {
+    cursor: pointer;
+}
+
+.small-pink-button {
+    cursor: pointer;
+    border-radius: 31px;
+    background-color: #ff3b83;
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.center-text {
+    margin: 0 auto;
+}
+
+.dialog-title {
+    color: #FFFFFF;
+    font-family: Quicksand;
+    font-size: 26px;
+    line-height: 33px;
+}
+
+.hor-list {
+    padding: 0;
+}
+
+.hor-list li {
+    display: inline;
+}
+
+.share-text {
+    color: white;
+    font-family: Quicksand;
+    font-size: 14px;
+    position: absolute;
+    bottom: 20%;
+}
+
+.share-text a {
+    font-family: Roboto;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #29FFEA;
+}
+
+.big-thin-text {
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.green {
+    color: #22FFA0;
+}
+
+.black {
+    color: black;
+}
+
+.big-text {
+    font-size: 20px;
+}
+
+.quicksand {
+    font-family: Quicksand;
+}
+
+.black-quicksand-title {
+    color: #000000;
+    font-family: Quicksand;
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.black-quicksand-big-title {
+    color: #000000;
+    font-family: Quicksand;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.pink-quicksand-title {
+    color: #FB117E;
+    font-family: Quicksand;
+    font-size: 32.76px;
+    font-weight: bold;
+    line-height: 41px;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-lightgrey {
+    background-color: #f9f9f9;
+}
+
+.font-small {
+    font-size: 18px;
+}
+
+.font-smaller {
+    font-size: 16px;
+}
+
+.gradient-box {
+    padding: 15px;
+    opacity: 0.94;
+    background: linear-gradient(90deg, #C768FF 0%, #FF1F7B 100%);
+}
+
+.rounded-gradient-box {
+    opacity: 0.94;
+    border-radius: 19.71px;
+    background: linear-gradient(90deg, #C768FF 0%, #FF1F7B 100%);
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.white-button {
+    padding: 20px 20px 20px 50px;
+    border-radius: 36px;
+    background-color: #FFFFFF;
+    box-shadow: -2px 4px 10px 0 rgba(0, 0, 0, 0.24);
+}
+
+.red-orange-brown {
+    /* background-image: linear-gradient(90deg, #C768FF 0%, #FF1F7B 100%);
+        color: transparent;
+        -webkit-background-clip: text; */
+    background-clip: text;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Quicksand;
+}
+
+
+/**
+ * Position icons into circle (SO)
+ * http://stackoverflow.com/q/12813573/1397351 
+ */
+
+.circle-container {
+    position: relative;
+    width: 24em;
+    height: 14em;
+    padding: 1.8em;
+    /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
+    border-radius: 50%;
+    margin: 1.75em auto 0;
+}
+
+.circle-container a {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    margin: -2em;
+}
+
+.circle-container img {
+    display: block;
+    width: 100%;
+}
+
+.deg0 {
+    transform: translate(12em);
+}
+
+
+/* 12em = half the width of the wrapper */
+
+.deg45 {
+    transform: rotate(45deg) translate(12em) rotate(-45deg);
+}
+
+.deg135 {
+    transform: rotate(135deg) translate(12em) rotate(-135deg);
+}
+
+.deg180 {
+    transform: translate(-12em);
+}
+
+.deg225 {
+    transform: rotate(225deg) translate(12em) rotate(-225deg);
+}
+
+.deg315 {
+    transform: rotate(315deg) translate(12em) rotate(-315deg);
+}
+
+.circle-container a:hover:before {
+    opacity: 1;
+}
+
+
+/* this is for showing the circle on which the images are placed */
+
+.circle-container:after {
+    position: absolute;
+    top: 2.8em;
+    left: 2.8em;
+    width: 24em;
+    height: 24em;
+    border-radius: 50%;
+    opacity: .3;
+    pointer-events: none;
+    content: '';
+}
+
+.circle-container:hover:after {
+    opacity: 1;
+}
+
+.circle-container:hover a:after {
+    opacity: 1;
+}
+
+.circle-container a:hover:after {
+    opacity: .3;
+}
+
+.basic-slide {
+    width: 355px;
+    padding: 15px 25px;
+    box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+    background: #fff;
+    border: 0.5px solid #efefef;
+    border-radius: 5px 0 0px 5px;
+    color: #000;
+    font-family: Quicksand;
+    font-size: 20px;
+}
+
+ ::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #b8b8b8;
+}
+
+ :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #b8b8b8;
+    opacity: 1;
+}
+
+ ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #b8b8b8;
+    opacity: 1;
+}
+
+ :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #b8b8b8;
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #b8b8b8;
+}
+
+ ::placeholder {
+    /* Most modern browsers support this now. */
+    color: #b8b8b8;
+}
+
+label {
+    color: #fff;
+    font-family: Quicksand;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: -5px;
+    border-radius: 0px 5px 5px 0px;
+    padding: 16.5px 25px;
+    background: #FF0F96;
+    box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.trans-box {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    z-index: 7;
+    display: none;
+    padding: 55px 50px 0px 50px;
+    width: 90%;
+    height: 55%;
+}
+
+.email-submit {
+    width: 92%;
+    padding: 20px;
+    border: 1.5px solid #E5E5E5;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    /* box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1); */
+    color: #17B487;
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.outer-div {
+    display: table;
+    height: 100%;
+}
+
+.middle-div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner-div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.impact-img {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+#impact-grid {
+    text-align: center;
+}
+
+.know-how {
+    color: #000000;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.quick-weight-bold {
+    font-family: Quicksand;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+.copy-link-box {
+    padding: 20px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    color: #01FFCA;
+    font-family: Quicksand;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    -webkit-transform: translate(-50%, 0);
+    background-color: #2B2B2B;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.copy-link-box:before {
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 10px);
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid;
+    border-bottom-color: #2b2b2b;
+}
+
+.know-how-container {
+    padding-right: 10px
+}
+
+.pledge-section {
+    padding: 165px 0;
+}
+
+#footer-motivation {
+    margin-top: -50px;
+}
+
+.main-home-title {
+    visibility: hidden;
+    letter-spacing: -1px;
+    font-size: 48px;
+    line-height: 50px;
+}
+
+.benefitting-ngos {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.big-title {
+    color: #000000;
+    font-family: Quicksand;
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 100px;
+}
+
+.big-subtitle {
+    color: #4D4D4D;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    color: #777777;
+    background-color: white;
+}
+
+.featured-green {
+    padding: 10px 50px 10px 10px;
+    background-color: #3EFFDE;
+    color: black;
+}
