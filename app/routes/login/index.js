@@ -3,7 +3,8 @@ var router = express.Router();
 var RouteHandler = require('../../handlers/route_handler');
 var userController = require('../../controllers/user');
 var donationController = require('../../controllers/donations');
-var causeController = require('../../controllers/cause');
+var projectController = require('../../controllers/project');
+
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
 var Utils = require('../../utils');
@@ -14,7 +15,8 @@ router.get('/', function(req, res) {
     else console.log("Login page hit");
     var def = {
         userCount: userController.getAllUserCount(),
-        donationCount: donationController.getAllDonationCount()
+        donationCount: donationController.getAllDonationCount(),
+        projects: projectController.getProjectOverviews({})
     };
 
     deferred.combine(def).pipe(function(data) {
@@ -26,7 +28,10 @@ router.get('/', function(req, res) {
             }
         };
 
-        res.render("helpdesk_login.ejs", newdata);
+        newdata = Utils.appendProjects(newdata, data.projects);
+
+        console.log("FINAL OBJECT", newdata);
+        res.render("login-helpdesk.ejs", newdata);
     });
 });
 

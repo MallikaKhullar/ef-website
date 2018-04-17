@@ -143,27 +143,26 @@
                 <div class="poppins-thick medium-text" style="margin-top:10px">Choose from other missions <br> after 2 weeks!</div>
                 <div class="poppins-thin smaller-text" style="color: purple; font-size: 14px;">KNOW WHY ?</div>
                 <div class="small-text poppins-thick" style="margin:50px 0px">OTHER MISSIONS - </div>
-                <div class="row" style="margin:50px 0px">
-                    <div class="col-sm-3">
-                        <img src="/image/facebook-icon.png" style="margin-top:10px" />
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="poppins-thin medium-text" style="padding-right:50px;">AFFORDABLE SANITARY NAPKINS</div>
-                        <div class="poppins-thin xsmall-text" style="padding-right:50px;">The role of a good cook ware in the preparation of a sumptuous meal cannot be overemphasized. When one consider purchasing a good cookware the first point that comes to the mind is the budget. Buying a standard cookware within
-                            one’s budget and at the same time obtaining all the pieces and features one has in mind is no simple task. </div>
-                    </div>
-                </div>
 
-                <div class="row" style="margin:50px 0px">
-                    <div class="col-sm-3">
-                        <img src="/image/facebook-icon.png" style="margin-top:10px" />
+
+                <% for(var i=0; i<projects.length; i++) { %>
+                    <div class="row" style="margin:50px 0px">
+                        <div class="col-sm-3">
+                            <img src="<%- projects[i].showcasePhoto%>" style="margin-top:10px; height:120px; width:120px" />
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="poppins-thin medium-text" style="padding-right:50px;">
+                                <%- projects[i].projectTitle%>
+                            </div>
+                            <div class="poppins-thin xsmall-text" style="padding-right:50px;">
+                                <%- projects[i].homeDescription%>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-9">
-                        <div class="poppins-thin medium-text" style="padding-right:50px;">AFFORDABLE SANITARY NAPKINS</div>
-                        <div class="poppins-thin xsmall-text" style="padding-right:50px;">The role of a good cook ware in the preparation of a sumptuous meal cannot be overemphasized. When one consider purchasing a good cookware the first point that comes to the mind is the budget. Buying a standard cookware within
-                            one’s budget and at the same time obtaining all the pieces and features one has in mind is no simple task. </div>
-                    </div>
-                </div>
+
+                    <% } %>
+
+
             </div>
         </div>
     </div>
