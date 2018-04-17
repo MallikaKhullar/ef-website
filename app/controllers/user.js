@@ -67,8 +67,14 @@ exports.initiateCauseChoosing = function(user_id) {
 };
 
 exports.setDonatePending = function(user_id) {
-    return fn.defer(fn.bind(User, 'setDonatePending'))({ user_id }).pipe(function(res) {
-        return deferred.success(res);
+    fn.defer(fn.bind(User, 'setDonatePending'))({ user_id }).pipe(function(res) {
+        deferred.success(res);
+    });
+};
+
+exports.setDonatePending = function(user_id) {
+    fn.defer(fn.bind(User, 'setDonatePending'))({ user_id }).pipe(function(res) {
+        deferred.success(res);
     });
 };
 
@@ -106,6 +112,11 @@ exports.showAppBar = function(user_id) {
 };
 exports.showSearch = function(user_id) {
     return fn.defer(fn.bind(User, 'showSearch'))({ user_id }).pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+exports.showSearch = function(user_id, state) {
+    return fn.defer(fn.bind(User, 'updateUserState'))({ user_id, state }).pipe(function(res) {
         return deferred.success(res);
     });
 };
