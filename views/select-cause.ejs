@@ -34,7 +34,7 @@
         <img src='<%- dailyImage %>' id="bg" alt="" />
         <img id="bg" />
 
-        <div class="choose-title mb-5 pt-5">Choose your mission!</div>
+        <div class="choose-title mb-3 pt-5">Choose your mission!</div>
 
         <a href='/new-tab/project-selected?cause_id=<%-featuredProject.projectId%>'>
             <div class="featured large-dialog-overlay mb-5">
@@ -62,26 +62,43 @@
             </div>
         </a>
 
-        <div class="mw-80 mb-5">
+        <div class="or-select-from-these">. . .<br>Or select from these awesome missions!
+        </div>
+
+        <div class="mb-5">
+            <a href="#mission" id="click">
+                <img src="/image/down_white.png" style="width:30px; height:15px">
+            </a>
+        </div>
+
+
+        <div id="mission" class="mw-80 mb-5 mt-5">
             <% for(var i=0; i<projects.length; i++) { %>
-                <a href='/new-tab/project-selected?cause_id=<%-projects[i].projectId%>' />
+
                 <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>">
-                    <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[0].showcasePhoto %>" /></div>
-                    <div class="action-title">
-                        <div class="action-title-inner">
-                            <%- projects[i].actionTitle %>
+                    <div class="adjust">
+                        <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[i].secondaryMissionPhoto %>" /></div>
+                        <div class="action-title">
+                            <div class="action-title-inner">
+                                <%- projects[i].actionTitle %>
+                            </div>
+                        </div>
+                        <div class="mb-3 action-desc">
+                            <%- projects[i].shortDescription %>
+                        </div>
+
+                        <div class="units">
+                            <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
+                            <%- projects[i].unitString %>
+                        </div>
+                        <div class="choose-box-secondary-rect" id="choose-<%-projects[i].projectId%>" style="display:none">
+                            CHOOSE MISSION
+                        </div>
+                        <div class="choose-box-secondary" id="hide-<%-projects[i].projectId%>">
+                            CHOOSE MISSION
                         </div>
                     </div>
-                    <div class="mb-5 action-desc">
-                        <%- projects[i].shortDescription %>
-                    </div>
-
-                    <div class="mb-5 units">
-                        <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
-                        <%- projects[i].unitString %>
-                    </div>
                 </div>
-                </a>
                 <% } %>
         </div>
         <!-- </div>
@@ -103,6 +120,32 @@
         });
         $(".featured").mouseleave(function() {
             $(".featured-hover").css("background", "none");
+        });
+
+        $(".mission-li").mouseenter(function() {
+            var id = $(this).attr('id');
+            $("#choose-" + id).show();
+            $("#hide-" + id).hide();
+            // $(".hidethis").hide();
+        });
+        $(".mission-li").mouseleave(function() {
+            var id = $(this).attr('id');
+            $("#choose-" + id).hide();
+            $("#hide-" + id).show();
+            // $(".hidethis").show();
+        });
+
+        $(".choose-box-secondary-rect").click(function() {
+            var id = $(this).attr('id');
+            window.location.href = '/new-tab/project-selected?cause_id=' + id.replace("choose-", "");
+        });
+
+        $("#click").click(function(e) {
+            e.preventDefault();
+            var section = $(this).attr("href");
+            $("html, body").animate({
+                scrollTop: $(section).offset().top
+            });
         });
     });
 </script>

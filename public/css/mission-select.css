@@ -1,342 +1,451 @@
-        .choose-title {
-            color: #FFFFFF;
-            font-family: Poppins;
-            font-size: 28px;
-            font-weight: bold;
-            line-height: 42px;
-            text-align: center;
-            text-transform: uppercase;
-        }
-        
-        .background-gradient-layer {
-            min-width: 100vw;
-            min-height: 100vh;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .bg {
-            background-attachment: fixed;
-            min-width: 100vw;
-            /* position: fixed; */
-            min-height: 100vh;
-            color: white
-        }
-        
-        .primary-text {
-            line-height: 1.5;
-            letter-spacing: 0.5px;
-            width: 18vw
-        }
-        
-        @media (min-width: 900px) {
-            .big-action-title {
-                font-size: 3em;
-                padding: 0;
-                margin: 10px 0px;
-                text-align: left;
-                line-height: 38px;
-                font-weight: bold;
-                font-family: Poppins;
-            }
-            .action-title {
-                color: #FFFFFF;
-                font-family: Poppins;
-                font-size: 26.6px;
-                font-weight: bold;
-                padding: 25px;
-                text-transform: uppercase;
-                line-height: 32px;
-                text-align: right;
-                text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
-            }
-            .large-dialog-overlay {
-                width: 70vw;
-                height: 70vh;
-                /* left: 15%;
-                top: 15%; */
-                margin: 0 auto;
-                z-index: 3;
-                border-radius: 10px;
-                background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
-                box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38);
-            }
-            .choose-mission-featured {
-                color: #3EFFDE;
-                font-family: Poppins;
-                font-size: 18px;
-                line-height: 20px;
-            }
-            .action-desc-left {
-                color: #FFFFFF;
-                font-family: Poppins;
-                font-size: 10.4px;
-                line-height: 16px;
-                padding: 15px;
-                text-align: left;
-            }
-            .choose-box {
-                border: 1px solid #FFFFFF;
-                border-radius: 5px;
-                text-align: center;
-                padding: 5px 10px;
-                width: 80%;
-            }
-            .pt-80,
-            .tab-project-details-container {
-                padding-top: 80px
-            }
-        }
-        
-        @media (max-width: 899px) {
-            .pt-80,
-            .tab-project-details-container {
-                padding-top: 20px 0
-            }
-            .img-responsive {
-                width: 10vw
-            }
-            .big-action-title {
-                font-size: 20px;
-                padding: 0;
-                margin: 5px 0px;
-                text-align: left;
-                font-weight: bold;
-                font-family: Poppins;
-                line-height: 18px;
-            }
-            .action-title {
-                color: #FFFFFF;
-                font-family: Poppins;
-                font-size: 16.6px;
-                font-weight: bold;
-                padding: 5px;
-                text-transform: uppercase;
-                line-height: 22px;
-                text-align: right;
-                text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
-            }
-            .large-dialog-overlay {
-                width: 70vw;
-                height: 70vh;
-                padding-left: 20px;
-                margin: 0 auto;
-                z-index: 3;
-                border-radius: 10px;
-                background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
-                box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38);
-            }
-            .choose-mission-featured {
-                color: #3EFFDE;
-                font-family: Poppins;
-                font-size: 12px;
-                line-height: 14px;
-            }
-            .action-desc-left {
-                color: #FFFFFF;
-                font-family: Poppins;
-                font-size: 8.4px;
-                line-height: 10px;
-                padding: 10px;
-                text-align: left;
-            }
-            .choose-box {
-                border: 1px solid #FFFFFF;
-                border-radius: 5px;
-                text-align: center;
-                padding: 2px 5px;
-                width: 70%;
-            }
-        }
-        
-        .primary-text {
-            line-height: 1.5;
-            letter-spacing: 0.5px;
-            width: 18vw
-        }
-        
-        .large-dialog-overlay:hover .primary-text {
-            width: 18vw
-        }
-        /* .large-dialog-overlay:hover {
-            width: 75vw;
-            height: 75vh;
-            margin-top: -5px;
-        } */
-        
-        .mb-5 {
-            margin-bottom: 5rem;
-        }
-        
-        .mb-10 {
-            margin-bottom: 10rem;
-        }
-        
-        .pt-5 {
-            padding-top: 5rem;
-        }
-        
-        .pb-5 {
-            padding-top: 5rem;
-        }
-        
-        .pb-10 {
-            padding-top: 10rem;
-        }
-        
-        #bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            /* Preserve aspet ratio */
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -10
-        }
-        
-        .mw-80 {
-            width: 100%;
-            margin: 0 auto;
-        }
-        
-        .secondary-mission {
-            border-radius: 8px;
-            background: linear-gradient(140deg, #3A5E69 0%, #1B3042 100%)
-        }
-        
-        .mission-li:hover {
-            margin: 40px;
-            width: 25%;
-            cursor: pointer;
-            /* padding: 15px 0px; */
-            display: inline-block;
-        }
-        
-        .secondary-mission:hover {
-            background: linear-gradient(140deg, #000 0%, #000 100%);
-        }
-        
-        .action-desc {
-            color: #FFFFFF;
-            font-family: Poppins;
-            font-size: 10.4px;
-            line-height: 16px;
-            padding: 15px;
-            text-align: center;
-        }
-        
-        .action-title-inner {
-            padding-left: 20%;
-        }
-        
-        html,
-        body {
-            padding: 0;
-            margin: 0;
-            overflow: scroll;
-        }
-        
-        .mission-li {
-            margin: 40px;
-            width: 25%;
-            cursor: pointer;
-            display: inline-block;
-        }
-        
-        body,
-        html {
-            text-align: center;
-            color: white;
-        }
-        
-        .big-title {
-            color: #000000;
-            font-family: Quicksand;
-            font-size: 40px;
-            font-weight: bold;
-            line-height: 50px;
-            text-align: center;
-        }
-        
-        .medium-title {
-            color: #000000;
-            font-family: Quicksand;
-            font-size: 20px;
-            font-weight: bold;
-            line-height: 25px;
-            text-align: center;
-        }
-        
-        .small-title {
-            color: #4C4C4C;
-            font-family: Quicksand;
-            font-size: 14px;
-            line-height: 18px;
-            margin-bottom: 20px;
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        .mission-li:hover {
-            background-color: #000000;
-        }
-        
-        .uc {
-            text-transform: uppercase;
-        }
-        
-        a,
-        a:hover {
-            text-decoration: none!;
-            color: white;
-        }
-        
-        .no-underline,
-        .no-underline:hover {
-            text-decoration: none!
-        }
-        
-        .mission-img {
-            width: 50%;
-            height: auto;
-        }
-        
-        .mission-img-container {
-            text-align: left;
-        }
-        
-        .bold {
-            font-weight: bold;
-        }
-        
-        .units {
-            color: #FFFFFF;
-            font-family: Poppins;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 25px;
-            margin-left: 10px;
-            text-align: center;
-            text-transform: uppercase;
-        }
-        
-        .featured-hover {
-            z-index: 3;
-            border-radius: 0 10px 10px 0;
-            height: 70vh;
-            padding-right: 15px;
-        }
-        
-        .featured-green {
-            padding: 10px 50px 10px 10px;
-            background-color: #3EFFDE;
-            color: black;
-            text-align: left;
-        }
-        
-        .open-new-tabs-to {
-            text-transform: uppercase;
-            color: #FFFFFF;
-            font-family: Poppins;
-            font-size: 14px;
-            line-height: 21px;
-        }
+.choose-title {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 42px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.background-gradient-layer {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg {
+    background-attachment: fixed;
+    min-width: 100vw;
+    /* position: fixed; */
+    min-height: 100vh;
+    color: white
+}
+
+.primary-text {
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    width: 18vw
+}
+
+@media (min-width: 900px) {
+    .mission-img {
+        width: 50%;
+        height: 30vh;
+    }
+    .big-action-title {
+        font-size: 3em;
+        padding: 0;
+        margin: 10px 0px;
+        text-align: left;
+        line-height: 38px;
+        font-weight: bold;
+        font-family: Poppins;
+    }
+    .action-title {
+        color: #FFFFFF;
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 20px;
+        text-transform: uppercase;
+        line-height: 32px;
+        text-align: right;
+        text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    }
+    /* .mission-li:hover .action-title {
+        font-size: 28.6px;
+    } */
+    .large-dialog-overlay {
+        width: 70vw;
+        height: 65vh;
+        margin: 0 auto;
+        z-index: 3;
+        border-radius: 10px;
+        background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
+        box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38);
+    }
+    .large-dialog-overlay:hover {
+        -webkit-animation: pulses 0.2s linear;
+        -moz-animation: pulses 0.2s linear;
+        -o-animation: pulses 0.2s linear;
+        animation: pulses 0.2s linear;
+    }
+    .choose-mission-featured {
+        color: #3EFFDE;
+        font-family: Poppins;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .action-desc-left {
+        color: #FFFFFF;
+        font-family: Poppins;
+        font-size: 10.4px;
+        line-height: 16px;
+        padding: 15px;
+        text-align: left;
+    }
+    .choose-box {
+        border: 1px solid #FFFFFF;
+        border-radius: 5px;
+        text-align: center;
+        padding: 5px 10px;
+        width: 80%;
+    }
+    .pt-80,
+    .tab-project-details-container {
+        padding-top: 80px
+    }
+}
+
+@media (max-width: 899px) {
+    .mission-img {
+        width: 50%;
+        height: 20vh;
+    }
+    .pt-80,
+    .tab-project-details-container {
+        padding-top: 20px 0
+    }
+    .img-responsive {
+        width: 10vw
+    }
+    .big-action-title {
+        font-size: 20px;
+        padding: 0;
+        margin: 5px 0px;
+        text-align: left;
+        font-weight: bold;
+        font-family: Poppins;
+        line-height: 18px;
+    }
+    .action-title {
+        color: #FFFFFF;
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px;
+        text-transform: uppercase;
+        line-height: 22px;
+        text-align: right;
+        text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    }
+    /* .mission-li:hover .action-title {
+        font-size: 18.6px;
+    }
+    */
+    .large-dialog-overlay {
+        width: 70vw;
+        height: 65vh;
+        padding-left: 20px;
+        margin: 0 auto;
+        z-index: 3;
+        border-radius: 10px;
+        background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
+        box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38);
+    }
+    /* .large-dialog-overlay:hover {
+        width: 72vw
+    } */
+    .choose-mission-featured {
+        color: #3EFFDE;
+        font-family: Poppins;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .action-desc-left {
+        color: #FFFFFF;
+        font-family: Poppins;
+        font-size: 8.4px;
+        line-height: 10px;
+        padding: 10px;
+        text-align: left;
+    }
+    .choose-box {
+        border: 1px solid #FFFFFF;
+        border-radius: 5px;
+        text-align: center;
+        padding: 2px 5px;
+        width: 70%;
+    }
+}
+
+.primary-text {
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    width: 18vw
+}
+
+.large-dialog-overlay:hover .primary-text {
+    width: 20vw
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-10 {
+    margin-bottom: 10rem;
+}
+
+.pt-5 {
+    padding-top: 5rem;
+}
+
+.pb-5 {
+    padding-top: 5rem;
+}
+
+.pb-10 {
+    padding-top: 10rem;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -10
+}
+
+.mw-80 {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.secondary-mission {
+    border-radius: 8px;
+}
+
+.choose-mission {
+    height: 32px;
+    width: 215px;
+    color: #3EFFDE;
+    font-family: Poppins;
+    font-size: 23.1px;
+    line-height: 34px;
+    text-align: right;
+}
+
+.choose-box-secondary {
+    color: rgba(0, 0, 0, 0.00);
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    margin: 10px auto 0px auto;
+    font-size: 15.1px;
+    font-weight: 700;
+    padding: 5px 10px;
+    text-decoration: none!
+}
+
+.choose-box-secondary-rect {
+    color: #3EFFDE;
+    font-size: 15.1px;
+    text-decoration: none!;
+    margin: 10px auto 0px auto;
+    cursor: pointer;
+    font-weight: 700;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    width: 60%;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.units {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* .secondary-mission:hover .action-desc {
+    font-size: 12px;
+} */
+
+.action-desc {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 10.4px;
+    line-height: 16px;
+    padding: 0px 15px;
+    text-align: center;
+}
+
+.action-title-inner {
+    padding-left: 20%;
+    margin-top: -120px;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    overflow: inherit;
+}
+
+.or-select-from-these {
+    color: #FFFFFF;
+    font-family: Poppins;
+    margin-top: -30px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 46px;
+    text-align: center;
+}
+
+.mission-li {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 5rem;
+    width: 23%;
+    height: 63vh;
+    background: linear-gradient(140deg, #3A5E69 0%, #1B3042 100%);
+    display: inline-block;
+}
+
+@-webkit-keyframes pulses {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.01);
+    }
+}
+
+@-moz-keyframes pulses {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.01);
+    }
+}
+
+@-o-keyframes pulses {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.01);
+    }
+}
+
+@keyframes pulses {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.01);
+    }
+}
+
+.mission-li:hover {
+    margin-bottom: 5rem;
+    -webkit-animation: pulses 0.2s linear;
+    -moz-animation: pulses 0.2s linear;
+    -o-animation: pulses 0.2s linear;
+    animation: pulses 0.2s linear;
+    /* IE 10+, Fx 29+ */
+    /* margin-left: 1%;
+    margin-right: 1%;
+    width: 27%;
+    height: 70vh;
+    margin-top: -20px;
+    background: linear-gradient(140deg, #3A5E69 0%, #1B3042 100%);
+    display: inline-block; */
+}
+
+body,
+html {
+    text-align: center;
+    color: white;
+}
+
+.big-title {
+    color: #000000;
+    font-family: Quicksand;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+}
+
+.medium-title {
+    color: #000000;
+    font-family: Quicksand;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
+}
+
+.small-title {
+    color: #4C4C4C;
+    font-family: Quicksand;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.uc {
+    text-transform: uppercase;
+}
+
+a,
+a:hover {
+    text-decoration: none!;
+    color: white;
+}
+
+.no-underline,
+.no-underline:hover {
+    text-decoration: none!
+}
+
+.mission-img-container {
+    text-align: left;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.featured-hover {
+    z-index: 3;
+    border-radius: 0 10px 10px 0;
+    height: 65vh;
+    padding-right: 15px;
+}
+
+.featured-green {
+    padding: 10px 50px 10px 10px;
+    background-color: #3EFFDE;
+    color: black;
+    text-align: left;
+}
+
+.open-new-tabs-to {
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 14px;
+    line-height: 21px;
+}
