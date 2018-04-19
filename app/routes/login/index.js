@@ -29,7 +29,7 @@ router.get('/', function(req, res) {
         };
 
         newdata = Utils.appendProjects(newdata, data.projects);
-        res.render("login-helpdesk.ejs", newdata);
+        res.render("login-tbs.ejs", newdata);
     });
 });
 
