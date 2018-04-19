@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
     var def = {
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
-        projects: projectController.getProjectOverviews({})
+        projects: projectController.getProjectOverviews({ truncHomeDesc: true, truncHome: 250 })
     };
 
     deferred.combine(def).pipe(function(data) {

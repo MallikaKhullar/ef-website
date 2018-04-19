@@ -390,7 +390,7 @@ Utils.prototype.timePeriodInDays = function(time1, time2) {
 }
 
 Utils.prototype.trunc = function(str, val) {
-    return str.substring(0, val) + '...';
+    return str.substring(0, val) + ' . . .';
 }
 
 Utils.prototype.getEndTime = function(time1) {
