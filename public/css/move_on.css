@@ -48,7 +48,7 @@
 
 .hearts-donated {
     color: #000000;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 18px;
 }
 
@@ -70,6 +70,12 @@ a:hover {
 .open-new-tabs-to {
     font-size: 7px;
     line-height: 10px;
+    font-weight: 200;
+    margin: 2px 0;
+}
+
+.ta-c {
+    text-align: center
 }
 
 .secondary-mission {
@@ -91,10 +97,12 @@ a:hover {
     line-height: 16px;
     text-align: center;
     line-height: 1.5;
+    font-weight: 200;
     letter-spacing: 0.5px;
 }
 
 .action-desc-left {
+    font-weight: 200;
     font-size: 8px;
     line-height: 12px;
     letter-spacing: 0.5px;
@@ -142,20 +150,28 @@ a:hover {
 
 .action-title {
     font-size: 1em;
+    margin: -50px 10px 20px 0;
+    text-align: right;
+    line-height: 15px;
+}
+
+.prim-action-title {
+    font-size: 1em;
     line-height: 17px;
 }
 
 .mission-li {
     margin: 8px;
-    width: 28%;
+    width: 30%;
     cursor: pointer;
     display: inline-block;
 }
 
 .featured-green {
-    padding: 10px;
     background-color: #3EFFDE;
     color: black;
+    width: 70%;
+    padding: 5px;
 }
 
 .featured-mission {
@@ -181,7 +197,7 @@ a:hover {
 }
 
 .large-dialog-overlay {
-    width: 95%;
+    width: 100%;
     margin-bottom: 20px;
     padding: 50px;
     margin: 0 auto;
@@ -198,6 +214,38 @@ a:hover {
     margin-top: 30px;
 }
 
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
 .cat-head {
     font-family: Poppins;
     font-size: 12px;
@@ -210,4 +258,67 @@ a:hover {
 
 .mt-2 {
     margin-top: 2em;
+}
+
+header .header-content {
+    text-align: left;
+    padding: 0;
+}
+
+.small-env-icon {
+    height: 80px;
+}
+
+.login-btn {
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 0px;
+    line-height: 22px;
+}
+
+.red {
+    color: #D13732;
+}
+
+.blue {
+    color: #2E4587;
+}
+
+#left-side {
+    width: 50vw;
+    height: auto;
+    position: absolute;
+    font-size: 16px;
+}
+
+#right-side {
+    width: 50vw;
+    position: fixed;
+    background-color: #f9f9f9;
+    right: 0;
+    height: 100vh;
+    padding: 50px 70px;
+    overflow: auto;
+}
+
+.sign-in-to-begin {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sign-in-stats {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 42px;
+}
+
+#left-container {
+    padding-right: 50px;
 }

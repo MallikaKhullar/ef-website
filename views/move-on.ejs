@@ -13,75 +13,12 @@
 
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,700" rel="stylesheet">
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/css/move_on.css">
 
-    <style>
-        header .header-content {
-            text-align: left;
-            padding: 0;
-        }
-        
-        .small-env-icon {
-            height: 80px;
-        }
-        
-        .login-btn {
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 0px;
-            line-height: 22px;
-        }
-        
-        .red {
-            color: #D13732;
-        }
-        
-        .blue {
-            color: #2E4587;
-        }
-        
-        #left-side {
-            width: 50vw;
-            height: auto;
-            position: absolute;
-            font-size: 16px;
-        }
-        
-        #right-side {
-            width: 50vw;
-            position: fixed;
-            background-color: #f9f9f9;
-            right: 0;
-            height: 100vh;
-            padding: 50px;
-            overflow: auto;
-        }
-        
-        .sign-in-to-begin {
-            color: #FFFFFF;
-            font-family: Poppins;
-            font-size: 33px;
-            font-weight: 600;
-            line-height: 50px;
-            text-align: center;
-        }
-        
-        .sign-in-stats {
-            color: #FFFFFF;
-            font-family: Poppins;
-            font-size: 28px;
-            font-weight: 300;
-            text-align: center;
-            line-height: 42px;
-        }
-        
-        #left-container {
-            padding-right: 50px;
-        }
-    </style>
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
     <script>
@@ -136,11 +73,12 @@
                                 <div class="col-sm-3">
                                     <img alt="Flutur Cause" class="small-env-icon" src="<%- causes[i].img_url %>" />
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-sm-9" style="padding-left:20px">
                                     <div class="cat-head uc mt-30">
                                         <%- causes[i].cause_name %>
                                     </div>
                                     <div class="hearts-donated bold">
+                                        <img alt="Flutur Heart" style="margin-bottom:3px;height:12px" src="/image/heart.png" />
                                         <%- causes[i].user_progress %> hearts
                                     </div>
                                 </div>
@@ -176,23 +114,30 @@
     </div>
 
     <div id='right-side'>
-        <div class="col-sm-12 poppins bold subtitle">
+        <div class=" poppins bold subtitle uc mb-1">
             Our New Missions
         </div>
-        <div class="mt-2">
+        <div>
             <div class="featured large-dialog-overlay mb-5">
                 <div class="row">
                     <div class="col-sm-3">
                         <img alt="Flutur Chrome Extension" src="<%- featuredProject.primaryMissionPhoto %>" class="img-responsive" /></div>
                     <div class="col-sm-5 tab-project-details-container">
                         <div class="open-new-tabs-to uc">Open new tabs to</div>
-                        <div class="action-title bold uc">
+                        <div class="prim-action-title mb-1 mt-1 bold uc">
                             <%- featuredProject.featureActionTitle %>
                         </div>
 
                         <div class="featured-green">
-                            <div class="featured-mission bold" style="padding-right:50px;">Featured Mission</div>
-                            <div class="featured-mission" style="padding-right:50px;">April - May 2018</div>
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <img src="/image/black_star.png" style="height:10px;margin-bottom:2px;" />
+                                </div>
+                                <div class="col-sm-7" style="padding-left:0">
+                                    <div class="featured-mission bold uc">Featured Mission</div>
+                                    <div class="featured-mission">April - May 2018</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4 featured-hover">
@@ -203,18 +148,24 @@
                 </div>
             </div>
 
-            <div class="poppins white mw-80 mb-5">
+            <div class="poppins para mt-1 ta-c mb-1">Everybody is alloted the featured mission to start off with! You can change this later.</div>
+
+            <div class="poppins ta-c white mb-5">
                 <% for(var i=0; i<projects.length; i++) { %>
                     <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>">
-                        <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[0].secondaryMissionPhoto %>" /></div>
-                        <div class="action-title bold uc" style="margin:15px 0px">
+                        <div class="mission-img-container">
+                            <img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[0].secondaryMissionPhoto %>" />
+                        </div>
+                        <div class="action-title bold uc">
+                            <div class="open-new-tabs-to uc">Open new tabs to</div>
                             <div class="action-title-inner">
                                 <%- projects[i].actionTitle %>
                             </div>
+                            <div class="open-new-tabs-to uc">For Karauli</div>
                         </div>
 
 
-                        <div class="mb-5 units">
+                        <div class="mb-4 mt-1 units">
                             <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
                             <%- projects[i].unitString %>
                         </div>

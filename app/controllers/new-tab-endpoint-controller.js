@@ -55,6 +55,7 @@ exports.render_weekOngoing_v1 = function(req, res, setAsDonatePending) {
             req: req,
         }).pipe(function(result) {
             result.showMissionSelectedPopup = false;
+            console.log("NEW TAB DATA", result);
             res.render("project-new-tab.ejs", result);
         });
     });
