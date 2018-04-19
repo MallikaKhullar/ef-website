@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>New Tab</title>
+    <link rel="icon" href="image/header_logo.png" />
+
+    <!-- fonts -->
+    <!-- TODO - use all three fonts? -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/new-tab.css">
+    <link rel="stylesheet" href="/css-min/jquery-ui.css">
+
+    <link rel="stylesheet" href="/css/new-tabs.css">
+
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111348597-1');
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4793002394044661",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+
+<body class="no-disp">
+
+    <header>
+
+        <div id="background-image-white" class="background bg-white"></div>
+        <div id="background-image" class="background" style="background: url('<%- dailyImage %>');"></div>
+        <div id="background-image-overlay" class="background background-gradient-layer"></div>
+
+        <div class="ad-block-bar no-disp">
+            <div style="background-color: #FFFFFF; padding:15px 0;width:75%;position: relative; float:left">
+                <img src="/image/heart.png" style="height:10px" /> Only advertisements are used to raise funds for the cause! Please turn off your ad blocker!</div>
+            <div style="float:left; padding:15px 0;position: relative;background-color:pink;width:25%">switch off ></div>
+        </div>
+
+        <div class="dark-gradient-donate no-disp">
+            <% if (user.state === 'v1_donate_pending') { %>
+                <div class="small-dialog-overlay">
+
+
+                    <div class="row">
+                        <div class="col-sm-5"></div>
+                        <div class="col-sm-7" style="margin-top:-35px; padding-right:30px; text-align: right">
+                            <img src="/image/cross_white.png" class="cross-icon" id="cross-icon" onclick="dismissDrawer()">
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="ta-c">
+                                <img alt="Flutur Environment Saving" style="width:30%; height:auto;" src="<%- project.primaryMissionPhoto %>" /></a>
+                            </div>
+
+                            <div>
+                                <img alt="Flutur NGO" style="float:left;position:relative;margin-top:5px; height:22%; width:22%; margin-left:50px" src="http://www.aarambh.org/images/logo.jpg">
+                                <div class="thin-text white" style="float:left;margin-top: 8%; font-size:12px">
+                                    <div>Benefiting NGOs</div>
+                                    <div>
+                                        <%- project.ngo.ngoName %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="text-align:left">
+                            <div class="congrats-title mint uc" style="margin-top:15px;">
+                                <%- project.unitsCreated %>
+                                    <span class="white"><%- project.unitrep %></span>
+                            </div>
+                            <div class="donation-details white uc">
+                                donated successfully
+                            </div>
+                            <div class="donated-successfully white">
+                                <%- project.donateThanks %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quicksand white pink-box-big" id="choose-mission">
+                        CHOOSE NEXT MISSION
+                    </div>
+                </div>
+                <% } %>
+        </div>
+
+
+        <div class="page-container">
+            <nav class="navbar navbar-default" style="padding-top:10px;">
+                <div class="container-fluid" style="width:97%">
+                    <div class="navbar-header">
+                        <a target="_top" class="navbar-brand" href="http://www.flutur.org">
+                            <img alt="Flutur Chrome Extension New Tab" id="logo-icon" src="/image/flutur_logo_white.png" />
+                        </a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right" style="margin-top:5px">
+                        <li>
+                            <img alt="Theme icon" id="theme-icon" onclick='toggleTheme()' style="height: 16px; width: 16px;" class="quicklink-img-small" src="/image/theme_change.png" />
+                        </li>
+                        <li>
+                            <img alt="Apps icon" id="app-icon" onclick='openAppsDrawer()' class="quicklink-img-small" src="/image/all_apps.png" />
+                        </li>
+                        <li>
+                            <img alt="Hamburger icon" id="hamburger-icon" style="margin-right:15px;width: 20px;" onclick='openRightNav()' class="quicklink-img-small" src="/image/drive-icon.png" />
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div id="apps-container-overlay" class="transparent-container" onclick="dismissApps()" style="display:none">
+                <div class="apps-container">
+                    <ul class="centerUL">
+                        <li>
+                            <a target="_top" href="http://www.gmail.com">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-gmail.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.drive.google.com">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-drive.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://calendar.google.com/calendar/r">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-calendar.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.google.com/contacts/?hl=en">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-contacts.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://hangouts.google.com/">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-hangouts.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.youtube.com">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-youtube.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="https://plus.google.com/discover">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-plus.png" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <br><br>
+
+                    <ul class="centerUL" style=" width: 267px;
+                    margin-left: 0px;
+                    margin-right: 0px;">
+                        <li>
+                            <a target="_top" href="http://www.google.com/sheets/about/">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-sheets.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://www.docs.google.com">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-docs.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_top" href="http://docs.google.com/presentation/u/0/">
+                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-slides.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="drawer-container-overlay" class="semi-dark-container" onclick="dismissApps()" style="display:none">
+                <div class="right-drawer">
+
+                    <img src="/image/cross_right_bar.png" class="cross-icon" onclick="dismissDrawer()" />
+
+                    <div class="profile-card">
+                        <img class="profile-img" src="<%- user.picture %>" />
+                        <h2 class="profile-name">
+                            <%- user.name %>
+                        </h2>
+                        <!-- <p style="line-height: 19px">
+                            <%- user.hearts.total_hearts_text %> collected</p> -->
+                    </div>
+
+                    <div class="theme-small-text mb-1">
+                        <div class="theme-layout"><img src="/image/painting _icon.png" style="height:12px; width:12px; margin-right:5px;">THEMES</div>
+                        <br>
+
+                        <div style="padding:0px; margin:0 10px; float:left">
+                            <div class="ta-c">
+                                <img id="white-input" src="/image/circ_white.png" class="theme-display-icon" />
+                                <div> WHITE</div>
+                            </div>
+                        </div>
+                        <div style="padding:0px; margin:0 50px; float:left; text-align:center">
+                            <div class="ta-c">
+                                <img id="grad-input" src="/image/circ_grad.png" class="theme-display-icon" />
+                                <div>ALIVE</div>
+                            </div>
+                        </div>
+                        <div style="padding:0px; margin:0 10px; float:left; text-align:center">
+                            <div class="ta-c">
+                                <img id="unsplash-input" src="/image/circ_unsplash.png" class="theme-display-icon" />
+                                <div>PHOTOS</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><br><br>
+
+                    <div style="background:#f9f9f9;margin-left:-20px; margin-right:-20px; height: 50%;padding:30px">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="right-nav-title">
+                                        <%- project.actionTitle %>
+                                    </div>
+                                    <div class="action-desc-left">
+                                        <%- project.shortDescription %>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img alt="Flutur Chrome Extension" src="<%- project.primaryMissionPhoto %>" class="img-responsive" /></div>
+                            </div>
+                        </div>
+
+                        <div style="position: absolute;bottom:0; padding:30px">
+                            <div class="bold-heading fleft">
+                                <a target="_top" class="hover-gray black" href="/blog">
+                                Blogs</a>
+                            </div>
+
+
+                            <div class="bold-heading fleft">
+                                <a target="_top" class="hover-gray black" href="/">
+                                Home</a>
+                            </div>
+                            <div class="bold-heading fleft">
+                                <a target="_top" class="hover-gray black" href="/aboutus">
+                                About Flutur</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="widgets show-widgets">
+                <div id="middle">
+                    <div class="hey-sexy" class="transition">
+                        <strong></strong>Hey,</strong>
+                        <%- user.first_name %>
+                    </div>
+                    <br>
+                </div>
+
+                <div id="middle-below">
+                    <div class="search search-cont middle-below-search">
+                        <!-- <span class="search-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
+                        </span> -->
+                        <input id="autocomplete" title="Search for something" placeholder="&#xf002;  Search">
+                    </div>
+                </div>
+
+                <div id="centerDiv" class="middle-below-app">
+                    <div class="app-bar">
+                        <!-- <span class="app-bar-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
+                        </span> -->
+                        <ul class="centerUL" style="line-height:10px">
+                            <li>
+                                <a target="_top" href="http://www.facebook.com">
+                                    <div class="font-xs link white oval-container">
+                                        <img alt="Flutur Facebook" class="oval-container-image" src="/image/facebook-icon.png" />
+                                        <br> <br><i>Facebook</i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.youtube.com">
+                                    <img alt="Flutur Youtube" class="oval-container-image" src="/image/youtube-icon.png" /><br><br><i>Youtube</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.drive.google.com">
+                                    <img alt="Flutur Google Drive" class="oval-container-image" src="/image/drive-icon.png" />
+                                    <br> <br><i>Drive</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://docs.google.com/spreadsheets/u/0/">
+                                    <img alt="Flutur Google sheets" class="oval-container-image" src="/image/sheets-icon.png" /><br> <br><i>Sheets</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_top" class="font-xs link white oval-container" href="http://www.gmail.com">
+                                    <img alt="Flutur Gmail" class="oval-container-image" src="/image/gmail-icon.png" /><br> <br><i>Gmail</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ad-footer-left">
+                <div id="user-profile-container" class="small-shadow">
+                    <div style="width: 100%; float:left; padding-left:10px; padding-top:5px">
+                        <div class="display-number-title">Flutur's Donations</div>
+                        <div class="display-number" style="margin-top:2px">
+                            <%- stats.donations %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;width: 100%;height: 90px;position: absolute;bottom: 0;">
+                <div class="ad-footer-center">
+                    <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top: 30px;font-family: Quicksand;">
+                    </div>
+                </div>
+            </div>
+
+
+            <% if (user.state === 'v1_donate_pending') { %>
+
+                <div class="ad-footer-right">
+                    <span class="donate-info">
+                        <div class="hover-right bold mb-1 uc">Donate now!</div>
+                        <div class="hover-right">TODO fix this some long thing here check</div>
+                    </span>
+                    <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                        <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
+                    </div>
+
+                    <div class="page-text quicksand white center-element" style="font-weight:100;top:-10%; right:30%; position: absolute;font-size:12px;">
+                        You've made
+                    </div>
+
+                    <div class="page-text quicksand white center-element" style="top:10%;right:30%; position: absolute;font-size:12px;">
+                        <span style="font-size:16px; font-weight:700"> <%- project.unitsCreated %></span>
+                        <span style="font-size:16px; font-weight:100 "><%- project.unitrep %>! </span></div>
+                    <div>
+                        <div>
+                            <div class="quicksand white pink-box" id="donate-now">DONATE HEARTS</div>
+                        </div>
+                    </div>
+
+                    <% } else if (user.state === 'v1_cause_selection_pending') { %>
+                        <div class="ad-footer-right">
+                            <span class="donate-info">
+                                <div class="hover-right bold mb-1 uc">Choose your next cause</div>
+                                <div class="hover-right">TODO fix this some long thing here check</div>
+                        </span>
+
+                            <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                                <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
+                            </div>
+
+                            <div class="page-text quicksand white center-element" style="font-weight:100;top:-5%; right:30%; position: absolute;font-size:12px;">
+                                You donated
+                            </div>
+
+                            <div class="page-text quicksand white center-element" style="top:15%;right:30%; position: absolute;font-size:12px;">
+                                <span style="font-size:16px; font-weight:700"> <%- project.unitsCreated %></span>
+                                <span style="font-size:16px; font-weight:100 "><%- project.unitrep %>! </span></div>
+                            <div>
+                                <div class="quicksand white pink-box pink-box-lower" id="choose-now">NEW MISSION
+                                </div>
+                            </div>
+                        </div>
+
+                        <% } else {%>
+
+                            <div class="ad-footer-right">
+                                <span class="donate-info">
+                                    <div class="hover-right bold mb-1 uc"><%- project.donateFTUE.title %></div>
+                                    <div class="hover-right"><%- project.donateFTUE.info %></div>
+                        
+                            </span>
+                                <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                                    <img alt="Flutur Cause" class="small-env-icon" src="<%- project.secondaryMissionPhoto %>" />
+
+                                </div>
+
+                                <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
+                                    <div id="myPercent"></div>
+                                </div>
+
+                                <div class="progressbar">
+                                    <div id="myProgress">
+                                        <div id="myBar"></div>
+                                    </div>
+                                </div>
+                                <div class="page-text quicksand white center-element" style="margin-top:50px;right:30%; position: absolute;font-size:14px;">
+                                    <%- stats.shortRemaining %> left!
+                                </div>
+                            </div>
+
+                            <% } %>
+                </div>
+        </div>
+        </div>
+
+    </header>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<!-- <script src="js/clock.js"></script> -->
+<script src="js/searchbar.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("body").fadeIn(500);
+        if (document.getElementById("myPercent") != null) {
+            document.getElementById("myPercent").innerText = <%= user.progress %> + "%";
+
+        }
+        if (document.getElementById("myBar") != null && document.getElementById("myBar").style != null) {
+            document.getElementById("myBar").style.width = <%= user.progress %> + "%";
+        }
+
+        if (document.getElementById("donate-now") != null && document.getElementById("donate-now").style != null) {
+            document.getElementById('donate-now').onclick = function() {
+                $.get('/donate/donate-project', {}, function(data) {
+                    $(".dark-gradient-donate").show();
+                });
+            };
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    var adblock = true;
+</script>
+
+<script type="text/javascript" src="js/adframe.js"></script>
+
+<script type="text/javascript">
+    if (adblock == true) {
+        $(".ad-block-bar").show();
+    } else {
+        $(".ad-block-bar").hide();
+    }
+
+    $(document).ready(function() {
+        window.theme = "<%- user.color_theme %>";
+        setupThemeUI();
+        setupWidgets();
+        setupPopups();
+    });
+
+    function setupPopups() {
+        if ("<% showMissionSelectedPopup %>") {
+            alert("mission");
+        }
+    }
+
+    function showSnackbar() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function() {
+            x.className = x.className.replace("show", "");
+        }, 1000);
+    }
+
+    $("#tell-friends").click(function() {
+        $(".copy-link-box").css("display", "block");
+    });
+
+    $(".dark-gradient-donate").click(function() {
+        reload();
+    });
+    $("#cross-icon").click(function() {
+        reload();
+    });
+
+    function reload() {
+        window.location.reload(true);
+    }
+
+    $("#choose-now").click(function() {
+        window.location.href = '/new-tab/choose-project';
+    });
+
+    $("#choose-mission").click(function(e) {
+        window.location.href = '/new-tab/choose-project';
+        e.stopPropagation();
+    });
+
+    $("#grad-input").click(function() {
+        window.theme = "gradient";
+        setTheme();
+    });
+    $("#white-input").click(function() {
+        window.theme = "white";
+        setTheme();
+    });
+    $("#unsplash-input").click(function() {
+        window.theme = "unsplash";
+        setTheme();
+    });
+
+
+    function setupWidgets() {
+        if ("<%- user.ui_settings.app_bar %>" == "true") {
+            $(".middle-below-app").css('visibility', 'visible');
+        } else {
+            $(".middle-below-app").css('visibility', 'hidden');
+        }
+
+        if ("<%- user.ui_settings.search_visible %>" == "true") {
+            $("#middle-below").css('visibility', 'visible');
+        } else {
+            $("#middle-below").css('visibility', 'hidden');
+        }
+    }
+
+
+    function setupThemeUI() {
+        switch (window.theme) {
+            case "white":
+                $("#myBar").css("background-color", "#00F79F");
+                $("#background-image-white").hide();
+                $("#background-image-overlay").hide();
+                $("#background-image").show();
+                $("#background-image").css("background", "white");
+                $(".hey-sexy").css("color", "#5e5e5e");
+                $("#hamburger-icon").attr("src", "/image/right_nav_black.png");
+                $("#logo-icon").attr("src", "/image/flutur_logo_black.png");
+                $("#app-icon").attr("src", "/image/all_apps_purple.png");
+                $("#theme-icon").attr("src", "/image/theme_change_black.png");
+                document.getElementById("autocomplete").classList.add("formWhite");
+                $("#autocomplete").css("border", "1px solid rgba(152,152,152,0.66)");
+                $("#autocomplete").css("background-color", "rgba(255,255,255,0.55)");
+                $("#autocomplete").css("color", "#5e5e5e");
+                $("#autocomplete").css("border-radius", "5px");
+                $("#logo-icon").attr("src", "/image/flutur_logo_black.png");
+                $(".display-number-title").css("color", "black");
+                $(".page-text").css("color", "black");
+                $(".display-number").css("color", "black");
+                $("#myProgress").css("background-color", "rgba(1, 1, 1, 0.13)");
+                $("#grad-input").removeClass('borderClass');
+                $("#white-input").addClass('borderClass');
+                $("#unsplash-input").removeClass('borderClass');
+                $(".font-xs").removeClass("white");
+                $(".font-xs").addClass("black");
+                break;
+
+            case "unsplash":
+            default:
+                $(".hey-sexy").css("color", "white");
+                $("#background-image-white").show();
+                $(".page-text").css("color", "white");
+                setTimeout(function() {
+                    $("#background-image-overlay").fadeIn(3000);
+                }, 100);
+                $("#background-image").show();
+                $("#background-image").css("background", "");
+                $("#background-image").css("background-image", "url('<%- dailyImage %>')");
+                $("#hamburger-icon").attr("src", "/image/right_nav_white.png");
+                $("#app-icon").attr("src", "/image/all_apps.png");
+                $("#theme-icon").attr("src", "/image/theme_change.png");
+                $("#logo-icon").attr("src", "/image/flutur_logo_white.png");
+                $("#autocomplete").css("background-color", "rgba(0, 0, 0, 0.55)");
+                $("#autocomplete").css("color", "white");
+                $("#autocomplete").css("border", "0px solid rgba(152,152,152,0.66)");
+                $("#myProgress").css("background-color", "rgba(255,255,255, 0.17)");
+                $("#myBar").css("background-color", "#38FFFC");
+                document.getElementById("autocomplete").classList.remove("formWhite");
+                $(".display-number-title").css("color", "white");
+                $(".display-number").css("color", "white");
+                $("#grad-input").removeClass('borderClass');
+                $("#white-input").removeClass('borderClass');
+                $("#unsplash-input").addClass('borderClass');
+                $(".font-xs").removeClass("black");
+                $(".font-xs").addClass("white");
+                break;
+
+            case "gradient":
+                $(".hey-sexy").css("color", "white");
+                $("#background-image-white").hide();
+                $("#myBar").css("background-color", "#38FFFC");
+                $(".page-text").css("color", "white");
+                $("#background-image-overlay").hide();
+                $("#background-image").hide();
+                $("#hamburger-icon").attr("src", "/image/right_nav_white.png");
+                $("#app-icon").attr("src", "/image/all_apps.png");
+                $("#theme-icon").attr("src", "/image/theme_change.png");
+                $("#logo-icon").attr("src", "/image/flutur_logo_white.png");
+                $("#myProgress").css("background-color", "rgba(1, 1, 1, 0.13)");
+                $("#autocomplete").css("border", "0px solid rgba(152,152,152,0.6)");
+                $("#autocomplete").css("color", "white");
+                $("#autocomplete").css("background-color", "rgba(0, 0, 0, 0.07)");
+                document.getElementById("autocomplete").classList.remove("formWhite");
+                $(".display-number-title").css("color", "white");
+                $(".display-number").css("color", "white");
+                $("#grad-input").addClass('borderClass');
+                $("#white-input").removeClass('borderClass');
+                $("#unsplash-input").removeClass('borderClass');
+                $(".font-xs").removeClass("black");
+                $(".font-xs").addClass("white");
+                break;
+        }
+    }
+
+    function copyToClipboard(text) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(text).select();
+        document.execCommand("copy");
+        $temp.remove();
+        $(".copy-link-box").css("display", "none");
+        showSnackbar();
+    }
+
+    function hideSearch() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/mask-search",
+            error: function(result) {}
+        });
+    }
+
+    function hideAppBar() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/mask-apps",
+            error: function(result) {}
+        });
+    }
+
+    function showSearch() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/unmask-search",
+            error: function(result) {}
+        });
+    }
+
+    function showAppBar() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/unmask-apps",
+            error: function(result) {}
+        });
+    }
+
+    function toggleTheme() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/theme-toggle?currentTheme=" + window.theme,
+            success: function(result) {
+                window.theme = result;
+                window.location.reload(true);
+            },
+            error: function(result) {}
+        });
+    }
+
+    function setTheme() {
+        $.ajax({
+            type: "GET",
+            url: "/new-tab/theme-change?selectedTheme=" + window.theme,
+            success: function(result) {
+                window.location.reload(true);
+            },
+            error: function(result) {
+
+            }
+        });
+    }
+
+    function openAppsDrawer() {
+        $("#apps-container-overlay").toggle();
+    }
+
+    function dismissApps() {
+        $("#apps-container-overlay").hide();
+        $("#drawer-container-overlay").hide();
+    }
+
+    function dismissDrawer() {
+        $("#drawer-container-overlay").hide();
+    }
+
+    function openRightNav() {
+        $("#drawer-container-overlay").toggle();
+    }
+
+    function showBigDonateBox() {
+        $(".ad-footer-right-big-button-box").show();
+        $(".ad-footer-right-button-box").hide();
+    }
+
+    function hideBigDonateBox() {
+        $(".ad-footer-right-big-button-box").hide();
+        $(".ad-footer-right-button-box").show();
+    }
+
+    function showBigMissionBox() {
+        $(".ad-footer-right-big-mission-box").show();
+        $(".ad-footer-right-mission-box").hide();
+    }
+
+    function hideBigMissionBox() {
+        $(".ad-footer-right-big-mission-box").hide();
+        $(".ad-footer-right-mission-box").show();
+    }
+
+    $(".copy-link-box").click(function() {
+        copyToClipboard("www.flutur.org");
+    });
+
+    $(document).click(function(event) {
+        if (!$(event.target).hasClass('copy-link-box') && !$(event.target).hasClass('tell-friends')) {
+            $(".copy-link-box").css("display", "none");
+        }
+    });
+
+    $(".right-drawer").click(function(e) {
+        e.stopPropagation();
+    })
+
+    $(".search-cross").click(function(e) {
+        $("#middle-below").css('position', 'absolute');
+        $("#middle-below").css('left', '100%');
+        $("#middle-below").css('width', '0px');
+        $("#middle-below").css('height', '0px');
+        $("#middle-below").css('top', '-10%');
+        $("#middle-below").css('opacity', '0.0');
+        hideSearch();
+        setTimeout(function() {
+            $("#hamburger-icon").addClass("pulse");
+            setTimeout(function() {
+                $("#hamburger-icon").removeClass("pulse")
+            }, 100);
+        }, 400);
+
+    });
+
+    $(".app-bar-cross").click(function(e) {
+        $(".middle-below-app").css('position', 'absolute');
+        $(".middle-below-app").css('left', '100%');
+        $(".middle-below-app").css('width', '0px');
+        $(".middle-below-app").css('height', '0px');
+        $(".middle-below-app").css('top', '-10%');
+        $(".middle-below-app").css('opacity', '0.0');
+        hideAppBar();
+        setTimeout(function() {
+            $("#hamburger-icon").addClass("pulse");
+            setTimeout(function() {
+                $("#hamburger-icon").removeClass("pulse")
+            }, 100);
+        }, 400);
+
+    });
+</script>
+
+</html>
