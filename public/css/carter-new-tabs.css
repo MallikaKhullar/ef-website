@@ -15,6 +15,15 @@
     font-size: 18px;
 }
 
+.right-footer {
+    color: #5E5E5E;
+    font-family: Poppins;
+    font-size: 10px;
+    line-height: 16px;
+    margin-top: 25px;
+    margin-right: 15px;
+}
+
 #myProgress {
     display: inline-block;
     vertical-align: middle;
@@ -945,6 +954,10 @@ label.input-toggle>input {
     margin-top: 25px;
     margin-right: 15px;
     color: black;
+}
+
+.ml-4 {
+    margin-left: 4rem;
 }
 
 #myProgress {

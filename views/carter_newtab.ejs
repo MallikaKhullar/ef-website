@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/css/new-tab.css">
     <link rel="stylesheet" href="/css-min/jquery-ui.css">
 
-    <link rel="stylesheet" href="/css/new-tabs.css">
+    <link rel="stylesheet" href="/css/carter-new-tabs.css">
 
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -55,11 +55,11 @@
         <div id="background-image" class="background" style="background: url('<%- dailyImage %>');"></div>
         <div id="background-image-overlay" class="background background-gradient-layer"></div>
 
-        <div class="ad-block-bar no-disp">
+        <!-- <div class="ad-block-bar no-disp">
             <div style="background-color: #FFFFFF; padding:15px 0;width:75%;position: relative; float:left">
                 <img src="/image/heart.png" style="height:10px" /> Only advertisements are used to raise funds for the cause! Please turn off your ad blocker!</div>
             <div style="float:left; padding:15px 0;position: relative;background-color:pink;width:25%">switch off ></div>
-        </div>
+        </div>-->
 
         <div class="dark-gradient-donate no-disp">
             <% if (user.state === 'v1_donate_pending') { %>
@@ -241,7 +241,7 @@
 
                     <br><br><br>
 
-                    <div style="background:#f9f9f9;margin-left:-20px; margin-right:-20px; height: 50%;padding:30px">
+                    <div style="background:#f9f9f9;margin-left:-20px; margin-right:-20px; height: 53%;padding:30px">
                         <div>
                             <div class="row">
                                 <div class="col-sm-6">
@@ -257,21 +257,23 @@
                             </div>
                         </div>
 
-                        <div style="position: absolute;bottom:0; padding:30px">
-                            <div class="bold-heading fleft">
-                                <a target="_top" class="hover-gray black" href="/blog">
-                                Blogs</a>
-                            </div>
+                        <div style="position: absolute;bottom:0; padding:15px">
+                            <a target="_top" class="hover-gray fleft" href="/blog">
+                                <div class="right-footer">
+                                    Blogs
+                                </div>
+                            </a>
+                            <a target="_top" class="hover-gray fleft ml-4" href="/">
+                                <div class="right-footer">
+                                    Home
+                                </div>
+                            </a>
+                            <a target="_top" class="hover-gray fleft ml-4" href="/aboutus">
+                                <div class="right-footer">
+                                    About
+                                </div>
+                            </a>
 
-
-                            <div class="bold-heading fleft">
-                                <a target="_top" class="hover-gray black" href="/">
-                                Home</a>
-                            </div>
-                            <div class="bold-heading fleft">
-                                <a target="_top" class="hover-gray black" href="/aboutus">
-                                About Flutur</a>
-                            </div>
                         </div>
                     </div>
                 </div>
