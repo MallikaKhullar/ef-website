@@ -432,7 +432,7 @@ var Constants = {
         dailyImage: 'http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515774704/unsplash/paul-gilmore-260937_vgncso.jpg'
     },
     login: {
-        stats: { donations: 'Rs. 11,086', followers: 4 },
+        stats: { donations: 'Rs. 11,065', followers: 3 },
         projects: [{
                 projectId: 'project-helpdesk',
                 projectTitle: 'Helpdesks',
