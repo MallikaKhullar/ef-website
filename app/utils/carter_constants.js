@@ -529,6 +529,97 @@ var Constants = {
             },
             unitString: '12 projects'
         }
+    },
+    newtab: {
+        stats: {
+            donations: 'Rs. 11,065',
+            remainingTime: '13 days ',
+            shortRemaining: '13d'
+        },
+        user: {
+            progress: 8.8,
+
+            picture: 'https://lh4.googleusercontent.com/-4LgLFjwVpeQ/AAAAAAAAAAI/AAAAAAAAA3k/ktebr6TpI3I/photo.jpg?sz=50',
+            color_theme: 'unsplash',
+            user_id: 'user1519531262490',
+            state: 'v1_week_ongoing',
+            web_version: '0.0.1',
+            timestamp: 1519531262490,
+            email: 'mallikapriyak@gmail.com',
+            name: 'Mallika',
+            google_token: 'ya29.GlttBVynX-VlqrB0DmPTJIcOsTtxdq57kgcICH96mimqOtaaQKS6lCVSXpvft-3k3coDBf8XJe9-BYcr7w41UiYttUEEiVPfVqsfNH4ENYgfCm5_-ic69yK2ndmI',
+            google_id: '112430514351332325676',
+            __v: 22,
+            modified_timestamp: 1524140643215,
+            total_tabs: 527,
+            project: {
+                project_id: 'project-tbs',
+                target_end_time: 1525350135390,
+                target_start_time: 1524140535390,
+                tabs: 22
+            },
+            all_project_donations: ['donation1523754083153',
+                'donation1523754148729',
+                'donation1523754215067',
+                'donation1523754880198',
+                'donation1523756102114',
+                'donation1523756601578',
+                'donation1523756905857',
+                'donation1523771342376',
+                'donation1523771877720',
+                'donation1523874424927',
+                'donation1523879594957',
+                'donation1523879930026',
+                'donation1523888648586',
+                'donation1523893285404',
+                'donation1523893739273',
+                'donation1523894514349',
+                'donation1523959667011',
+                'donation1523959693432'
+            ],
+            hearts: {
+                total_hearts: 639,
+                current_cause_id: 'xyz',
+                target_end_time: 1523750688818,
+                target_start_time: 1523750688818,
+                current_week_hearts: 36,
+                donations_till_date: []
+            },
+            last_project: { tabs: '5', project_id: 'project-hhk' },
+            previous_donation: { previous_cause_id: 'xyz', previous_week_hearts: '6' },
+            ui_settings: { app_bar: true, search_visible: true }
+        },
+        project: {
+            projectId: 'project-tbs',
+            projectTitle: 'Tarun Bharat Sangh',
+            isFeatured: true,
+            primaryMissionPhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1523771594/TBH_2_emxbyv.png',
+            secondaryMissionPhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1523957647/aaaq_yww14i.png',
+            showcasePhoto: 'https://assets.awwwards.com/awards/media/cache/thumb_834_598/external/2017/06/5953d73168ad9.jpg',
+            ngoId: 'tbs',
+            featureActionTitle: 'Help Rajasthan With Water',
+            actionTitle: 'Help<br>Rajasthan<br>With Water',
+            homeDescription: 'Waterman is dfsdff fdsfd fsfslhlks an NGO whose primary mission is to create awareness against begging, molding childbeggars towards by providing them with education, assisting healthy and disabled beggars with employment opportunities and welfare schemes and so on.<br><br>During some such drives in slums and villages, Ruhpreet a volunteer at HHK noticed that many women still use cloth or other such means during menstruation which are potentially harmful.',
+            shortDescription: 'Har Hath Kalam (HHK) is an NGO whose primary mission is to create awareness against begging, molding child beggars towards by providing them with education, assisting healthy and disabled beggars with employment opportunities and welfare schemes and so on.<br><br>During some such drives in slums and villages, Ruhpreet a volunteer at HHK noticed that many women still use cloth or other such meansduring menstruation which are potentially harmful....',
+            unitIcon: 'https://assets.awwwards.com/awards/media/cache/thumb_834_598/external/2017/06/5953d73168ad9.jpg',
+            currentUnits: 12,
+            donateThanks: 'Thanks for helping TBS make water!',
+            conversionFormula: '/100',
+            currentUnitMeasure: 'project',
+            donateFTUE: {
+                title: 'Donate water by tabbing',
+                info: 'somestuff about donation'
+            },
+            weeklyTargetTabs: 250,
+            ngo: {
+                ngoName: 'TBS',
+                ngoUrl: 'http://www.aarambh.org/',
+                ngoPhotoUrl: 'http://www.aarambh.org/images/logo.jpg'
+            }
+        },
+        previousProjet: {},
+        dailyImage: 'http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515774645/unsplash/unsplash3.jpg',
+        showMissionSelectedPopup: false
     }
 };
 module.exports = Constants;

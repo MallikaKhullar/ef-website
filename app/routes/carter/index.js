@@ -29,6 +29,9 @@ router.get('/login', function(req, res) {
 router.get('/home', function(req, res) {
     res.render("carter_home.ejs", constants.homepage);
 });
+router.get('/newtab', function(req, res) {
+    res.render("carter_newtab.ejs", constants.newtab);
+});
 router.get('/project', function(req, res) {
     res.render("carter_project.ejs", constants.project);
 
