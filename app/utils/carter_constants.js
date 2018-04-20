@@ -932,6 +932,102 @@ var Constants = {
         previousProjet: {},
         dailyImage: 'http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515774645/unsplash/unsplash3.jpg',
         showMissionSelectedPopup: false
+    },
+    newtabdonate: {
+        stats: {
+            donations: 'Rs. 11,066',
+            remainingTime: '1 hour ',
+            shortRemaining: '1s'
+        },
+        user: {
+            progress: 2,
+
+            picture: 'https://lh4.googleusercontent.com/-4LgLFjwVpeQ/AAAAAAAAAAI/AAAAAAAAA3k/ktebr6TpI3I/photo.jpg?sz=50',
+            color_theme: 'unsplash',
+            user_id: 'user1519531262490',
+            state: 'v1_donate_pending',
+            web_version: '0.0.1',
+            timestamp: 1519531262490,
+            email: 'mallikapriyak@gmail.com',
+            name: 'Mallika',
+            google_token: 'ya29.GlttBVynX-VlqrB0DmPTJIcOsTtxdq57kgcICH96mimqOtaaQKS6lCVSXpvft-3k3coDBf8XJe9-BYcr7w41UiYttUEEiVPfVqsfNH4ENYgfCm5_-ic69yK2ndmI',
+            google_id: '112430514351332325676',
+            __v: 24,
+            modified_timestamp: 1524260224443,
+            total_tabs: 575,
+            project: {
+                project_id: 'project-hhk',
+                target_end_time: 1524247693313,
+                target_start_time: 1524247693313,
+                tabs: 5
+            },
+            all_project_donations: ['donation1523754083153',
+                'donation1523754148729',
+                'donation1523754215067',
+                'donation1523754880198',
+                'donation1523756102114',
+                'donation1523756601578',
+                'donation1523756905857',
+                'donation1523771342376',
+                'donation1523771877720',
+                'donation1523874424927',
+                'donation1523879594957',
+                'donation1523879930026',
+                'donation1523888648586',
+                'donation1523893285404',
+                'donation1523893739273',
+                'donation1523894514349',
+                'donation1523959667011',
+                'donation1523959693432',
+                'donation1524208258652',
+                'donation1524253070921'
+            ],
+            hearts: {
+                total_hearts: 639,
+                current_cause_id: 'xyz',
+                target_end_time: 1523750688818,
+                target_start_time: 1523750688818,
+                current_week_hearts: 36,
+                donations_till_date: []
+            },
+            last_project: { tabs: '8', project_id: 'project-hhk' },
+            previous_donation: { previous_cause_id: 'xyz', previous_week_hearts: '6' },
+            ui_settings: { app_bar: true, search_visible: true }
+        },
+        project: {
+            projectId: 'project-hhk',
+            projectTitle: 'HHK',
+            isFeatured: true,
+            primaryMissionPhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524031014/UI%20images/HHK_Big_1_2x.png',
+            secondaryMissionPhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524031014/UI%20images/HHK_Small_1_2x.png',
+            showcasePhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524031014/UI%20images/HHK_Small_1_2x.png',
+            ngoId: 'hhk',
+            featureActionTitle: 'Create Eco-friend Sanitary-pads',
+            actionTitle: 'Create<br>Eco-friendly<br>Sanitary-pads',
+            cardStyle: 'background: linear-gradient(254.64deg, #FFEEF7 0%, #FFCAE5 100%); color:black',
+            homeDescription: 'Har Hath Kalam (HHK) is an NGO whose primary mission is to create awareness against begging, molding child beggars towards by providing them with education, assisting healthy and disabled beggars with employment opportunities and welfare schemes and so on.<br><br>During some such drives in slums and villages, Ruhpreet a volunteer at HHK noticed that many women still use cloth or other such means during menstruation which are potentially harmful.',
+            shortDescription: 'Har Hath Kalam (HHK) is an NGO whose primary mission is to create awareness against begging, molding child beggars towards by providing them with education, assisting healthy and disabled beggars with employment opportunities and welfare schemes and so on.<br><br>During some such drives in slums and villages, Ruhpreet a volunteer at HHK noticed that many women still use cloth or other such meansduring menstruation which are potentially harmful. . . .',
+            unitIcon: 'https://assets.awwwards.com/awards/media/cache/thumb_834_598/external/2017/06/5953d73168ad9.jpg',
+            currentUnits: 51,
+            donateThanks: 'Thanks for helping women women reach out to 1434 villagers',
+            conversionFormula: '/0.7',
+            currentUnitMeasure: 'napkin',
+            ngo: {
+                ngoName: 'HHK',
+                ngoUrl: 'http://www.aarambh.org/',
+                ngoPhotoUrl: 'http://www.aarambh.org/images/logo.jpg'
+            },
+            donateFTUE: {
+                title: 'Donate napkins by tabbing',
+                info: 'somestuff about donation'
+            },
+            weeklyTargetTabs: 250,
+            unitsCreated: '8.1',
+            unitrep: 'napkins'
+        },
+        previousProjet: {},
+        dailyImage: 'http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515771774/mtn1.jpg',
+        showMissionSelectedPopup: false
     }
 };
 module.exports = Constants;
