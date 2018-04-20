@@ -14,6 +14,7 @@ var projectSchema = mongoose.Schema({
     currentUnits: Number,
     donateThanks: String,
     currentUnitMeasure: String,
+    cardStyle: String,
     primaryMissionPhoto: String,
     conversionFormula: String,
     weeklyTargetTabs: Number,
