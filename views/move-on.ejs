@@ -118,7 +118,7 @@
             Our New Missions
         </div>
         <div>
-            <div class="featured large-dialog-overlay mb-5">
+            <div class="featured large-dialog-overlay mb-5" style="<%-featuredProject.cardStyle%>">
                 <div class="row">
                     <div class="col-sm-3">
                         <img alt="Flutur Chrome Extension" src="<%- featuredProject.primaryMissionPhoto %>" class="img-responsive" /></div>
@@ -152,9 +152,9 @@
 
             <div class="poppins ta-c white mb-5">
                 <% for(var i=0; i<projects.length; i++) { %>
-                    <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>">
+                    <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>" style="<%-projects[i].cardStyle%>">
                         <div class="mission-img-container">
-                            <img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[0].secondaryMissionPhoto %>" />
+                            <img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[i].secondaryMissionPhoto %>" />
                         </div>
                         <div class="action-title bold uc">
                             <div class="open-new-tabs-to uc">Open new tabs to</div>
