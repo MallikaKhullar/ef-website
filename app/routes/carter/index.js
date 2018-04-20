@@ -17,9 +17,17 @@ const prettyMs = require('pretty-ms');
 
 
 //v1 route
-router.get('/choose', function(req, res) {
-    res.render("carter_choose.ejs", constants.choose);
-
+router.get('/chooselol', function(req, res) {
+    res.render("carter_choose.ejs", constants.chooselol);
+});
+router.get('/choosehhk', function(req, res) {
+    res.render("carter_choose.ejs", constants.choosehhk);
+});
+router.get('/chooseaar', function(req, res) {
+    res.render("carter_choose.ejs", constants.chooseaar);
+});
+router.get('/choosetbs', function(req, res) {
+    res.render("carter_choose.ejs", constants.choosetbs);
 });
 
 router.get('/login', function(req, res) {
