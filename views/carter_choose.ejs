@@ -31,37 +31,52 @@
 </head>
 
 <body>
-    <div style="width: 100%;background-color: #000000cc;">
-        <img src='<%- dailyImage %>' id="bg" alt="" />
-        <img id="bg" />
+    <div id="bgoverlay">
+        <img src='<%- dailyImage %>' id="bg" />
 
         <div class="choose-title mb-3 pt-5">Choose your mission!</div>
 
-        <a href='/new-tab/project-selected?cause_id=<%-featuredProject.projectId%>'>
-            <div class="featured large-dialog-overlay mb-5">
+        <div class="large-dialog-overlay mb-5" style="<%- featuredProject.cardStyle %>">
+            <a href='/new-tab/project-selected?cause_id=<%-featuredProject.projectId%>' style="color:inherit">
                 <div class="row">
-                    <div class="col-sm-3 pt-80">
+                    <div class="col-sm-3 pt-40">
                         <img alt="Flutur Chrome Extension" src="<%- featuredProject.primaryMissionPhoto %>" class="img-responsive" /></div>
-                    <div class="col-sm-5 tab-project-details-container">
+                    <div class="col-sm-5 pt-40">
                         <div class="open-new-tabs-to" style="line-height:1.5; margin-top:30px; letter-spacing: 0.5px;text-align:left;padding-right:50px;">Open new tabs to</div>
-                        <div class="big-action-title">
+                        <div class="big-action-title uc">
                             <%- featuredProject.featureActionTitle %>
                         </div>
 
                         <div class="featured-green">
-                            <div class="poppins-thin xs-text">Featured Mission</div>
-                            <div class="poppins-thin xs-text">April - May 2018</div>
+                            <div style="position: relative;float:left; width:20%">
+                                <img src="/image/black_star.png" style="height:25px; margin-left:5px;margin-top:7px" />
+                            </div>
+                            <div style="position: relative;float:left; width:80%">
+                                <div class="poppins-thick xs-text uc">Featured Mission</div>
+                                <div class="poppins-small">March - April 2018</div>
+                            </div>
                         </div>
+
+                        <div class="ta-l mt-2">
+                            <img src="https://www.icon2s.com/wp-content/uploads/2014/04/black-white-android-clock.png" style="height:17px;width:17x; margin-right:5px;">
+                            <%- featuredProject.unitString %>
+                        </div>
+
                     </div>
-                    <div class="col-sm-4 featured-hover pt-80">
+                    <div class="col-sm-4 pt-40">
+                        <div class="units-big">
+                            <img src="<%- featuredProject.unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
+                            <%- featuredProject.unitString %>
+                        </div>
                         <div class="action-desc-left primary-text">
                             <%- featuredProject.homeDescription %>
                         </div>
                         <div class="choose-mission-featured bold uc choose-box" style="line-height:1.5; letter-spacing: 0.5px;">Choose mission </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
+
+        </div>
 
         <div class="or-select-from-these">. . .<br>Or select from these awesome missions!
         </div>
@@ -73,17 +88,21 @@
         </div>
 
 
-        <div id="mission" class="mw-80 mb-5 mt-5">
+        <div id="mission" class="mw-80 mb-7 mt-5">
             <% for(var i=0; i<projects.length; i++) { %>
-
-                <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>">
-                    <div class="adjust">
-                        <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[i].secondaryMissionPhoto %>" /></div>
-                        <div class="action-title">
-                            <div class="action-title-inner">
-                                <%- projects[i].actionTitle %>
-                            </div>
+                <div class="mission-li secondary-mission" id="<%-projects[i].projectId%>" style="<%-projects[i].cardStyle%>">
+                    <div class="whole-box" id="whole-<%-projects[i].projectId%>">
+                        <div class="mission-img-container"><img alt="Flutur Environment Saving" class="mission-img" src="<%- projects[i].secondaryMissionPhoto %>" />
                         </div>
+
+                        <div class="open-new-tabs-to-thin">Open new tabs to</div>
+
+                        <div class="action-title">
+                            <%- projects[i].actionTitle %>
+                        </div>
+
+                        <div class="thin">for some shit</div>
+
                         <div class="mb-3 action-desc">
                             <%- projects[i].shortDescription %>
                         </div>
@@ -93,10 +112,10 @@
                             <%- projects[i].unitString %>
                         </div>
                         <div class="choose-box-secondary-rect" id="choose-<%-projects[i].projectId%>" style="display:none">
-                            CHOOSE MISSION
+                            Choose this mission
                         </div>
                         <div class="choose-box-secondary" id="hide-<%-projects[i].projectId%>">
-                            CHOOSE MISSION
+                            Choose this mission
                         </div>
                     </div>
                 </div>
@@ -116,11 +135,12 @@
     });
 
     $(document).ready(function() {
-        $(".featured").mouseenter(function() {
-            $(".featured-hover").css("background", "black");
-        });
-        $(".featured").mouseleave(function() {
-            $(".featured-hover").css("background", "none");
+
+        var color = $('.big-action-title').css("color");
+        $(".choose-box").css({
+            "border-color": color,
+            "border-width": "1px",
+            "border-style": "solid"
         });
 
         $(".mission-li").mouseenter(function() {
@@ -139,6 +159,10 @@
         $(".choose-box-secondary-rect").click(function() {
             var id = $(this).attr('id');
             window.location.href = '/new-tab/project-selected?cause_id=' + id.replace("choose-", "");
+        });
+        $(".whole-box").click(function() {
+            var id = $(this).attr('id');
+            window.location.href = '/new-tab/project-selected?cause_id=' + id.replace("whole-", "");
         });
 
         $("#click").click(function(e) {
