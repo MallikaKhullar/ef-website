@@ -40,6 +40,9 @@ router.get('/home', function(req, res) {
 router.get('/newtab', function(req, res) {
     res.render("carter_newtab.ejs", constants.newtab);
 });
+router.get('/newtabdonate', function(req, res) {
+    res.render("carter_newtabdonate.ejs", constants.newtabdonate);
+});
 router.get('/project', function(req, res) {
     res.render("carter_project.ejs", constants.project);
 
