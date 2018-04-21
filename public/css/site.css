@@ -246,15 +246,6 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-
-/*     
-.select-styled:active:after,
-.select-styled.active:after {
-    top: 9px;
-    border-color: transparent transparent #fff transparent;
-}
- */
-
 .select-options {
     display: none;
     position: absolute;
@@ -1433,13 +1424,6 @@ body,
 .highzindex {
     z-index: 25;
 }
-
-
-/* #all-content-container { */
-
-
-/* display: hidden;
-    } */
 
 .dialog-overlay {
     position: absolute;

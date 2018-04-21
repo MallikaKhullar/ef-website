@@ -13,6 +13,7 @@ var projectSchema = mongoose.Schema({
     unitIcon: String,
     currentUnits: Number,
     donateThanks: String,
+    fullFeaturePhoto: String,
     currentUnitMeasure: String,
     cardStyle: String,
     primaryMissionPhoto: String,
