@@ -57,13 +57,13 @@
         <img src=" <%-featuredProject.fullFeaturePhoto%>" style="width:100vw;">
     </div>
 
-    <section id="mission-prim" class="black mission-box-container bg-lightgrey">
+    <section id="mission-prim" class=" mission-box-container" style="<%- featuredProject.cardStyle %>">
         <div class="row tab-project-container hover-slight">
             <div class="col-sm-3 ">
-                <img alt="Flutur Chrome Extension" src="<%-featuredProject.showcasePhoto%>" class="img-responsive" style="margin-top:-40px" /></div>
+                <img alt="Flutur Chrome Extension" src="<%-featuredProject.showcasePhoto%>" class="img-responsive" style="height:350px;margin-top:-50px" /></div>
             <div class="col-sm-5 tab-project-details-container">
-                <div class="uc font-200" style="margin-top:30px; ">Open new tabs to</div>
-                <div class="font-700 uc" style="margin:20px 0; font-size: 44px; line-height:40px;">
+                <div class="uc font-200" style="margin-top:40px; ">Open new tabs to</div>
+                <div class="font-700 uc" style="margin:30px 0; font-size: 50px; line-height:52px;">
                     <%- featuredProject.featureActionTitle %>
 
                 </div>
@@ -72,25 +72,25 @@
                 <div class="featured-white" style="margin-right:200px">
                     <div class="row">
                         <div class="col-sm-2">
-                            <img src="/image/black_star.png" style="height:25px; margin-left:5px;margin-top:7px" />
+                            <img src="/image/black_star.png" style="height:20px; margin-left:4px;margin-top:-5px;" />
                         </div>
                         <div class="col-sm-10">
                             <div class="poppins-thick xs-text uc">Featured Mission</div>
-                            <div class="poppins-small">March - April 2018</div>
+                            <!-- <div class="poppins-small">March - April 2018</div> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 tab-project-details-container">
-                <div class="font-200" style="padding-right:50px;">
+            <div class="col-sm-4 tab-project-details-container" style="padding-left:30px;">
+                <div class="font-200" style="margin-top:40px;padding-right:50px;">
                     <%- featuredProject.homeDescription %>
                 </div>
-                <div id="feature-read-more" class="c-p font-500 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                <div id="feature-read-more" class="c-p font-700 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
             </div>
         </div>
     </section>
 
-    <section id="secondary-missions" class="other-missions-box-container bg-white">
+    <section id="secondary-missions" class="other-missions-box-container bg-lightgrey">
         <div class="we-also-support mb-3">WE ALSO SUPPORT - </div>
 
         <div class="row">
@@ -98,19 +98,21 @@
                 <a href='projects/<%- projects[i].projectId %>'>
                     <div class="col-sm-4 small-proj">
                         <img src="<%- projects[i].showcasePhoto%>" class="mb-2" style="height:150px; width:150px" />
-                        <div class="thick-text black font-small uc" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
+                        <div class="thick-text black font-small uc" style="line-height:1.2; letter-spacing: 0.5px;padding-right:50px;padding-bottom:10px;font-size:25px">
                             <%- projects[i].projectTitle%>
                         </div>
-                        <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
+                        <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;">
                             <%- projects[i].homeDescription%>
                         </div>
+                        <div id="feature-read-more" class="black c-p font-700 uc" style="font-size:12px; margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+
                     </div>
                 </a>
                 <% } %>
         </div>
     </section>
 
-    <section id="desktop-about" class="about-container bg-lightgrey">
+    <section id="desktop-about" class="about-container bg-white">
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-5 flutur-effect-container">

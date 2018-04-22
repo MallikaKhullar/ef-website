@@ -20,9 +20,23 @@
             font-family: 'Poppins', 'Helvetica', 'Arial', 'sans-serif';
         }
         
+        .btn:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .red-btn:hover {
+            background-color: #df5f58;
+        }
+        
+        .blue-btn:hover {
+            background-color: #5c6ddF;
+        }
+        
         #left-side {
             width: 60vw;
             height: auto;
+            padding-left: 50px;
             background-repeat: repeat-y;
             overflow: hidden;
             position: absolute;
@@ -35,8 +49,7 @@
             position: fixed;
             right: 0;
             height: 100vh;
-            padding-bottom: 30px;
-            padding: 0px 40px 50px 40px;
+            padding: 0px 90px 50px 40px;
             overflow: auto;
         }
         
@@ -44,6 +57,7 @@
             font-family: Poppins;
             font-size: 39px;
             font-weight: 600;
+            color: black;
             line-height: 50px;
         }
         
@@ -77,10 +91,10 @@
         body,
         .all-content-container {
             height: 100%;
-            color: #3F3F3F;
+            color: #454545;
             background-size: 800% 800%;
             animation: AnimationName 18s ease infinite;
-            font-weight: 100;
+            font-weight: 200;
         }
         
         .featured-green {
@@ -152,14 +166,14 @@
         
         .other-mission-desc {
             font-family: Poppins;
-            font-size: 12px;
-            line-height: 18px;
-            font-weight: 100;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 500;
         }
         
         .other-mission-title {
             font-family: Poppins;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: bold;
             line-height: 34px;
         }
@@ -192,4 +206,10 @@
         
         .btn-xl {
             padding: 20px 45px;
+        }
+        
+        .choose-title {
+            font-size: 41px;
+            line-height: 44px;
+            padding-right: 100px;
         }
