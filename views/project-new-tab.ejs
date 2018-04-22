@@ -113,381 +113,374 @@
                 <% } %>
         </div>
 
-
-        <div class="dark-gradient-auto no-disp">
-            <div class="small-dialog-overlay">
-                <div class="row">
-                    <div class="col-sm-5"></div>
-                    <div class="col-sm-7" style="margin-top:-35px; padding-right:30px; text-align: right">
-                        <img src="/image/cross_white.png" class="cross-icon" id="cross-icon" onclick="dismissDrawer()">
-                    </div>
-                </div>
-
-
-
-                <div class="row">
-                    <div class="col-sm-5">
-                        <div class="ta-c">
-                            <img alt="Flutur Environment Saving" style="width:90%; height:90%;" src="<%- project.showcasePhoto %>" /></a>
+        <% if (showMissionSelectedPopup === true) { %>
+            <div class="dark-gradient-autoAssign">
+                <div class="small-dialog-overlay" style="height:50%">
+                    <div class="row">
+                        <div class="col-sm-5"></div>
+                        <div class="col-sm-7" style="margin-top:-35px; padding-right:30px; text-align: right">
+                            <img src="/image/cross_white.png" class="cross-icon" id="cross-icon" onclick="startMission()">
                         </div>
+                    </div>
 
-                        <div>
-                            <img alt="Flutur NGO" style="float:left;position:relative;margin-top:5px; height:22%; width:22%; margin-left:50px" src="http://www.aarambh.org/images/logo.jpg">
-                            <div class="thin-text white" style="float:left;margin-top: 8%; font-size:12px">
-                                <div>Benefiting NGOs</div>
-                                <div>
-                                    <%- project.ngo.ngoName %>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="ta-c">
+                                <img alt="Flutur Environment Saving" style="width:70%; height:auto;" src=" <%- project.showcasePhoto %>" /></a>
+                                <div class="action-units white uc" style="margin-top:15px;">
+                                    <!-- <%- project.projectTotal %> helpdesks made so far -->
+                                    32 helpdesks
+                                </div>
+                                <div class="thin-poppins uc white">
+                                    created so far
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6" style="text-align:left">
-                        <div class="congrats-title mint uc" style="margin-top:15px;">
-                            <%- project.unitsCreated %>
-                                <span class="white"><%- project.unitrep %></span>
-                        </div>
-                        <div class="donation-details white uc" style="letter-spacing: 2px">
-                            donated successfully
-                        </div>
-                        <div class="donated-successfully white">
-                            <%- project.donateThanks %>
-                        </div>
-                        <div class="donated-successfully font-700 white">
-                            Read more
-                        </div>
-                    </div>
-                </div>
 
-                <div class="white pink-box-big font-700" id="choose-mission">
-                    CHOOSE NEXT MISSION
+                        <div class="col-sm-6" style="text-align:left">
+                            <div class="thin-poppins white">
+                                We've chosen a mission for you!
+                            </div>
+                            <div class="congrats-title white uc" style="line-height: 37px; margin-top:15px;">
+                                <%- project.projectTitle %>
+                            </div>
+
+                            <div class="thin-poppins white">
+                                Open new tabs to generate funds for making School helpdesks!
+                            </div>
+                        </div>
+
+                        <div class="quicksand white grey-box-big" onclick="startMission()">
+                            CONTINUE
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <% } %>
+
+                <div class="page-container">
+                    <nav class="navbar navbar-default" style="padding-top:10px;">
+                        <div class="container-fluid" style="width:97%">
+                            <div class="navbar-header">
+                                <a target="_top" class="navbar-brand" href="http://www.flutur.org">
+                                    <img alt="Flutur Chrome Extension New Tab" id="logo-icon" src="/image/flutur_logo_white.png" />
+                                </a>
+                            </div>
+
+                            <ul class="nav navbar-nav navbar-right" style="margin-top:5px">
+                                <li>
+                                    <img alt="Theme icon" id="theme-icon" onclick='toggleTheme()' style="height: 16px; width: 16px;" class="quicklink-img-small" src="/image/theme_change.png" />
+                                </li>
+                                <li>
+                                    <img alt="Apps icon" id="app-icon" onclick='openAppsDrawer()' class="quicklink-img-small" src="/image/all_apps.png" />
+                                </li>
+                                <li>
+                                    <img alt="Hamburger icon" id="hamburger-icon" style="margin-right:15px;width: 20px;" onclick='openRightNav()' class="quicklink-img-small" src="/image/drive-icon.png" />
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
 
 
-        <div class="page-container">
-            <nav class="navbar navbar-default" style="padding-top:10px;">
-                <div class="container-fluid" style="width:97%">
-                    <div class="navbar-header">
-                        <a target="_top" class="navbar-brand" href="http://www.flutur.org">
-                            <img alt="Flutur Chrome Extension New Tab" id="logo-icon" src="/image/flutur_logo_white.png" />
-                        </a>
-                    </div>
+                    <div id="apps-container-overlay" class="transparent-container" onclick="dismissApps()" style="display:none">
+                        <div class="apps-container">
+                            <ul class="centerUL">
+                                <li>
+                                    <a target="_top" href="http://www.gmail.com">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-gmail.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_top" href="http://www.drive.google.com">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-drive.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_top" href="http://calendar.google.com/calendar/r">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-calendar.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_top" href="http://www.google.com/contacts/?hl=en">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-contacts.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_top" href="http://hangouts.google.com/">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-hangouts.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_top" href="http://www.youtube.com">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-youtube.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_top" href="https://plus.google.com/discover">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-plus.png" />
+                                    </a>
+                                </li>
+                            </ul>
 
-                    <ul class="nav navbar-nav navbar-right" style="margin-top:5px">
-                        <li>
-                            <img alt="Theme icon" id="theme-icon" onclick='toggleTheme()' style="height: 16px; width: 16px;" class="quicklink-img-small" src="/image/theme_change.png" />
-                        </li>
-                        <li>
-                            <img alt="Apps icon" id="app-icon" onclick='openAppsDrawer()' class="quicklink-img-small" src="/image/all_apps.png" />
-                        </li>
-                        <li>
-                            <img alt="Hamburger icon" id="hamburger-icon" style="margin-right:15px;width: 20px;" onclick='openRightNav()' class="quicklink-img-small" src="/image/drive-icon.png" />
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                            <br><br>
 
-
-            <div id="apps-container-overlay" class="transparent-container" onclick="dismissApps()" style="display:none">
-                <div class="apps-container">
-                    <ul class="centerUL">
-                        <li>
-                            <a target="_top" href="http://www.gmail.com">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-gmail.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="http://www.drive.google.com">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-drive.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="http://calendar.google.com/calendar/r">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-calendar.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="http://www.google.com/contacts/?hl=en">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-contacts.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="http://hangouts.google.com/">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-hangouts.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="http://www.youtube.com">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-youtube.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="https://plus.google.com/discover">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-plus.png" />
-                            </a>
-                        </li>
-                    </ul>
-
-                    <br><br>
-
-                    <ul class="centerUL" style=" width: 267px;
+                            <ul class="centerUL" style=" width: 267px;
                     margin-left: 0px;
                     margin-right: 0px;">
-                        <li>
-                            <a target="_top" href="http://www.google.com/sheets/about/">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-sheets.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="http://www.docs.google.com">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-docs.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_top" href="http://docs.google.com/presentation/u/0/">
-                                <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-slides.png" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                                <li>
+                                    <a target="_top" href="http://www.google.com/sheets/about/">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-sheets.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_top" href="http://www.docs.google.com">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-docs.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_top" href="http://docs.google.com/presentation/u/0/">
+                                        <img alt="Flutur Facebook" class="quicklink-img-med" src="/image/google-slides.png" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div id="drawer-container-overlay" class="semi-dark-container" onclick="dismissApps()" style="display:none">
-                <div class="right-drawer">
+                    <div id="drawer-container-overlay" class="semi-dark-container" onclick="dismissApps()" style="display:none">
+                        <div class="right-drawer">
 
-                    <img src="/image/cross_right_bar.png" class="cross-icon" onclick="dismissDrawer()" />
+                            <img src="/image/cross_right_bar.png" class="cross-icon" onclick="dismissDrawer()" />
 
-                    <div class="profile-card">
-                        <img class="profile-img" src="<%- user.picture %>" />
-                        <h2 class="profile-name">
-                            <%- user.name %>
-                        </h2>
-                        <!-- <p style="line-height: 19px">
+                            <div class="profile-card">
+                                <img class="profile-img" src="<%- user.picture %>" />
+                                <h2 class="profile-name">
+                                    <%- user.name %>
+                                </h2>
+                                <!-- <p style="line-height: 19px">
                             <%- user.hearts.total_hearts_text %> collected</p> -->
-                    </div>
-
-                    <div class="theme-small-text mb-1">
-                        <div class="theme-layout"><img src="/image/painting _icon.png" style="height:12px; width:12px; margin-right:5px;">THEMES</div>
-                        <br>
-
-                        <div style="padding:0px; margin:0 10px; float:left">
-                            <div class="ta-c">
-                                <img id="white-input" src="/image/circ_white.png" class="theme-display-icon" />
-                                <div> WHITE</div>
                             </div>
-                        </div>
-                        <div style="padding:0px; margin:0 50px; float:left; text-align:center">
-                            <div class="ta-c">
-                                <img id="grad-input" src="/image/circ_grad.png" class="theme-display-icon" />
-                                <div>ALIVE</div>
-                            </div>
-                        </div>
-                        <div style="padding:0px; margin:0 10px; float:left; text-align:center">
-                            <div class="ta-c">
-                                <img id="unsplash-input" src="/image/circ_unsplash.png" class="theme-display-icon" />
-                                <div>PHOTOS</div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <br><br><br>
+                            <div class="theme-small-text mb-1">
+                                <div class="theme-layout"><img src="/image/painting _icon.png" style="height:12px; width:12px; margin-right:5px;">THEMES</div>
+                                <br>
 
-                    <div style="background:#f9f9f9;margin-left:-20px; margin-right:-20px; height: 53%;padding:40px 0px 30px 30px">
-                        <div>
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <div class="right-nav-title">
-                                        <%- project.actionTitle %>
+                                <div style="padding:0px; margin:0 10px; float:left">
+                                    <div class="ta-c">
+                                        <img id="white-input" src="/image/circ_white.png" class="theme-display-icon" />
+                                        <div> WHITE</div>
                                     </div>
-                                    <div class="action-desc-left">
-                                        <%- project.shortDescription %>
-                                    </div>
-                                    <div id="read-more" class="c-p font-700 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
-                                        Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
                                 </div>
-                                <div class="col-sm-7">
-                                    <img alt="Flutur Chrome Extension" src="<%- project.primaryMissionPhoto %>" class="img-responsive" style="transform: scaleX(-1);" /></div>
+                                <div style="padding:0px; margin:0 50px; float:left; text-align:center">
+                                    <div class="ta-c">
+                                        <img id="grad-input" src="/image/circ_grad.png" class="theme-display-icon" />
+                                        <div>ALIVE</div>
+                                    </div>
+                                </div>
+                                <div style="padding:0px; margin:0 10px; float:left; text-align:center">
+                                    <div class="ta-c">
+                                        <img id="unsplash-input" src="/image/circ_unsplash.png" class="theme-display-icon" />
+                                        <div>PHOTOS</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br><br><br>
+
+                            <div style="background:#f9f9f9;margin-left:-20px; margin-right:-20px; height: 53%;padding:40px 0px 30px 30px">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <div class="right-nav-title">
+                                                <%- project.actionTitle %>
+                                            </div>
+                                            <div class="action-desc-left">
+                                                <%- project.shortDescription %>
+                                            </div>
+                                            <div id="read-more" class="c-p font-700 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
+                                                Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <img alt="Flutur Chrome Extension" src="<%- project.primaryMissionPhoto %>" class="img-responsive" style="transform: scaleX(-1);" /></div>
+                                    </div>
+                                </div>
+
+                                <div style="position: absolute;bottom:0; padding:15px">
+                                    <a target="_top" class="hover-gray fleft" href="/blog">
+                                        <div class="right-footer">
+                                            Blogs
+                                        </div>
+                                    </a>
+                                    <a target="_top" class="hover-gray fleft ml-4" href="/">
+                                        <div class="right-footer">
+                                            Home
+                                        </div>
+                                    </a>
+                                    <a target="_top" class="hover-gray fleft ml-4" href="/aboutus">
+                                        <div class="right-footer">
+                                            About
+                                        </div>
+                                    </a>
+
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div style="position: absolute;bottom:0; padding:15px">
-                            <a target="_top" class="hover-gray fleft" href="/blog">
-                                <div class="right-footer">
-                                    Blogs
-                                </div>
-                            </a>
-                            <a target="_top" class="hover-gray fleft ml-4" href="/">
-                                <div class="right-footer">
-                                    Home
-                                </div>
-                            </a>
-                            <a target="_top" class="hover-gray fleft ml-4" href="/aboutus">
-                                <div class="right-footer">
-                                    About
-                                </div>
-                            </a>
 
+                    <div class="widgets show-widgets">
+                        <div id="middle">
+                            <div class="hey-sexy" class="transition">
+                                <strong></strong>Hey,</strong>
+                                <%- user.first_name %>
+                            </div>
+                            <br>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-
-            <div class="widgets show-widgets">
-                <div id="middle">
-                    <div class="hey-sexy" class="transition">
-                        <strong></strong>Hey,</strong>
-                        <%- user.first_name %>
-                    </div>
-                    <br>
-                </div>
-
-                <div id="middle-below">
-                    <div class="search search-cont middle-below-search">
-                        <!-- <span class="search-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
+                        <div id="middle-below">
+                            <div class="search search-cont middle-below-search">
+                                <!-- <span class="search-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
                         </span> -->
-                        <input id="autocomplete" title="Search for something" placeholder="&#xf002;  Search">
-                    </div>
-                </div>
+                                <input id="autocomplete" title="Search for something" placeholder="&#xf002;  Search">
+                            </div>
+                        </div>
 
-                <div id="centerDiv" class="middle-below-app">
-                    <div class="app-bar">
-                        <!-- <span class="app-bar-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
+                        <div id="centerDiv" class="middle-below-app">
+                            <div class="app-bar">
+                                <!-- <span class="app-bar-cross cross"><i class="fa fa-times" aria-hidden="true"></i>
                         </span> -->
-                        <ul class="centerUL" style="line-height:10px">
-                            <li>
-                                <a target="_top" href="http://www.facebook.com">
-                                    <div class="font-xs link white oval-container">
-                                        <img alt="Flutur Facebook" class="oval-container-image" src="/image/facebook-icon.png" />
-                                        <br> <br><i>Facebook</i>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_top" class="font-xs link white oval-container" href="http://www.youtube.com">
-                                    <img alt="Flutur Youtube" class="oval-container-image" src="/image/youtube-icon.png" /><br><br><i>Youtube</i>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_top" class="font-xs link white oval-container" href="http://www.drive.google.com">
-                                    <img alt="Flutur Google Drive" class="oval-container-image" src="/image/drive-icon.png" />
-                                    <br> <br><i>Drive</i>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_top" class="font-xs link white oval-container" href="http://docs.google.com/spreadsheets/u/0/">
-                                    <img alt="Flutur Google sheets" class="oval-container-image" src="/image/sheets-icon.png" /><br> <br><i>Sheets</i>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_top" class="font-xs link white oval-container" href="http://www.gmail.com">
-                                    <img alt="Flutur Gmail" class="oval-container-image" src="/image/gmail-icon.png" /><br> <br><i>Gmail</i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ad-footer-left">
-                <div id="user-profile-container" class="small-shadow">
-                    <div style="width: 100%; float:left; padding-left:10px; padding-top:5px">
-                        <div class="display-number-title">Flutur's Donations</div>
-                        <div class="display-number" style="margin-top:2px">
-                            <%- stats.donations %>
+                                <ul class="centerUL" style="line-height:10px">
+                                    <li>
+                                        <a target="_top" href="http://www.facebook.com">
+                                            <div class="font-xs link white oval-container">
+                                                <img alt="Flutur Facebook" class="oval-container-image" src="/image/facebook-icon.png" />
+                                                <br> <br><i>Facebook</i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_top" class="font-xs link white oval-container" href="http://www.youtube.com">
+                                            <img alt="Flutur Youtube" class="oval-container-image" src="/image/youtube-icon.png" /><br><br><i>Youtube</i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_top" class="font-xs link white oval-container" href="http://www.drive.google.com">
+                                            <img alt="Flutur Google Drive" class="oval-container-image" src="/image/drive-icon.png" />
+                                            <br> <br><i>Drive</i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_top" class="font-xs link white oval-container" href="http://docs.google.com/spreadsheets/u/0/">
+                                            <img alt="Flutur Google sheets" class="oval-container-image" src="/image/sheets-icon.png" /><br> <br><i>Sheets</i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_top" class="font-xs link white oval-container" href="http://www.gmail.com">
+                                            <img alt="Flutur Gmail" class="oval-container-image" src="/image/gmail-icon.png" /><br> <br><i>Gmail</i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div style="text-align:center;width: 100%;height: 90px;position: absolute;bottom: 0;">
-                <div class="ad-footer-center">
-                    <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top: 30px;font-family: Quicksand;">
+                    <div class="ad-footer-left">
+                        <div id="user-profile-container" class="small-shadow">
+                            <div style="width: 100%; float:left; padding-left:10px; padding-top:5px">
+                                <div class="display-number-title">Flutur's Donations</div>
+                                <div class="display-number" style="margin-top:2px">
+                                    <%- stats.donations %>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+
+                    <div style="text-align:center;width: 100%;height: 90px;position: absolute;bottom: 0;">
+                        <div class="ad-footer-center">
+                            <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top: 30px;font-family: Quicksand;">
+                            </div>
+                        </div>
+                    </div>
 
 
-            <% if (user.state === 'v1_donate_pending') { %>
+                    <% if (user.state === 'v1_donate_pending') { %>
 
-                <div class="ad-footer-right">
-                    <span class="donate-info">
+                        <div class="ad-footer-right">
+                            <span class="donate-info">
                         <div class="hover-right bold mb-1 uc">Donate now!</div>
                         <div class="hover-right">TODO fix this some long thing here check</div>
                     </span>
-                    <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
-                        <img alt="Flutur Cause" class="small-env-icon" src="<%- project.playPhoto %>" />
-                    </div>
-
-                    <div class="page-text quicksand white center-element" style="font-weight:100;top:-10%; right:40%; position: absolute;font-size:12px;">
-                        You've made
-                    </div>
-
-                    <div class="page-text quicksand white center-element" style="top:10%;right:40%; position: absolute;font-size:12px;">
-                        <span style="font-size:16px; font-weight:700"> <%- project.unitsCreated %></span>
-                        <span style="font-size:16px; font-weight:100 "><%- project.unitrep %>! </span></div>
-                    <div>
-                        <div>
-                            <div class="quicksand white pink-box" style="margin-right:22px" id="donate-now">DONATE HEARTS</div>
-                        </div>
-                    </div>
-
-                    <% } else if (user.state === 'v1_cause_selection_pending') { %>
-                        <div class="ad-footer-right">
-                            <span class="donate-info">
-                                <div class="hover-right bold mb-1 uc">Choose your next cause</div>
-                                <div class="hover-right">TODO fix this some long thing here check</div>
-                        </span>
-
                             <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
                                 <img alt="Flutur Cause" class="small-env-icon" src="<%- project.playPhoto %>" />
                             </div>
 
-                            <div class="page-text quicksand white center-element" style="font-weight:100;top:-5%; right:40%; position: absolute;font-size:12px;">
-                                You donated
+                            <div class="page-text quicksand white center-element" style="font-weight:100;top:-10%; right:40%; position: absolute;font-size:12px;">
+                                You've made
                             </div>
 
-                            <div class="page-text quicksand white center-element" style="top:15%;right:40%; position: absolute;font-size:12px;">
+                            <div class="page-text quicksand white center-element" style="top:10%;right:40%; position: absolute;font-size:12px;">
                                 <span style="font-size:16px; font-weight:700"> <%- project.unitsCreated %></span>
                                 <span style="font-size:16px; font-weight:100 "><%- project.unitrep %>! </span></div>
                             <div>
-                                <div class="quicksand white pink-box pink-box-lower" style="margin-right:22px" id="choose-now">NEW MISSION
+                                <div>
+                                    <div class="quicksand white pink-box" style="margin-right:22px" id="donate-now">DONATE HEARTS</div>
                                 </div>
                             </div>
-                        </div>
 
-                        <% } else {%>
+                            <% } else if (user.state === 'v1_cause_selection_pending') { %>
+                                <div class="ad-footer-right">
+                                    <span class="donate-info">
+                                <div class="hover-right bold mb-1 uc">Choose your next cause</div>
+                                <div class="hover-right">TODO fix this some long thing here check</div>
+                        </span>
 
-                            <div class="ad-footer-right">
-                                <span class="donate-info">
+                                    <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                                        <img alt="Flutur Cause" class="small-env-icon" src="<%- project.playPhoto %>" />
+                                    </div>
+
+                                    <div class="page-text quicksand white center-element" style="font-weight:100;top:-5%; right:40%; position: absolute;font-size:12px;">
+                                        You donated
+                                    </div>
+
+                                    <div class="page-text quicksand white center-element" style="top:15%;right:40%; position: absolute;font-size:12px;">
+                                        <span style="font-size:16px; font-weight:700"> <%- project.unitsCreated %></span>
+                                        <span style="font-size:16px; font-weight:100 "><%- project.unitrep %>! </span></div>
+                                    <div>
+                                        <div class="quicksand white pink-box pink-box-lower" style="margin-right:22px" id="choose-now">NEW MISSION
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <% } else {%>
+
+                                    <div class="ad-footer-right">
+                                        <span class="donate-info">
                                     <div class="hover-right bold mb-1 uc"><%- project.donateFTUE.title %></div>
                                     <div class="hover-right"><%- project.donateFTUE.info %></div>
                         
                             </span>
-                                <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
-                                    <img alt="Flutur Cause" class="small-env-icon" src="<%- project.playPhoto %>" />
+                                        <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
+                                            <img alt="Flutur Cause" class="small-env-icon" src="<%- project.playPhoto %>" />
 
-                                </div>
+                                        </div>
 
-                                <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
-                                    <div id="myPercent" style="margin-right:30px"></div>
-                                </div>
+                                        <div class="page-text quicksand white center-element" style="right:30%; position: absolute;font-size:25px;">
+                                            <div id="myPercent" style="margin-right:30px"></div>
+                                        </div>
 
-                                <div class="progressbar" style="margin-right:30px">
-                                    <div id="myProgress">
-                                        <div id="myBar"></div>
+                                        <div class="progressbar" style="margin-right:30px">
+                                            <div id="myProgress">
+                                                <div id="myBar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="page-text quicksand white center-element" style="margin-right:30px;margin-top:50px;right:30%; position: absolute;font-size:14px;">
+                                            <%- stats.shortRemaining %> left!
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="page-text quicksand white center-element" style="margin-right:30px;margin-top:50px;right:30%; position: absolute;font-size:14px;">
-                                    <%- stats.shortRemaining %> left!
-                                </div>
-                            </div>
 
-                            <% } %>
+                                    <% } %>
+                        </div>
                 </div>
-        </div>
-        </div>
+                </div>
 
     </header>
 </body>
@@ -534,14 +527,8 @@
         window.theme = "<%- user.color_theme %>";
         setupThemeUI();
         setupWidgets();
-        setupPopups();
     });
 
-    function setupPopups() {
-        if ("<%- showMissionSelectedPopup %>") {
-            alert("mission");
-        }
-    }
 
     function showSnackbar() {
         var x = document.getElementById("snackbar");
@@ -587,6 +574,10 @@
         window.theme = "unsplash";
         setTheme();
     });
+
+    function startMission() {
+        window.location.href = "/new-tab";
+    }
 
 
     function setupWidgets() {
