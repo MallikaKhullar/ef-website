@@ -39,10 +39,10 @@
     .mission-img {
         width: 9vw;
         height: 11vw;
-        margin: 20px 0 0 20px;
+        border-radius: 8px;
     }
     .big-action-title {
-        font-size: 2.7em;
+        font-size: 43px;
         padding: 0;
         margin: 10px 0px;
         text-align: left;
@@ -52,30 +52,29 @@
     }
     .action-title {
         font-family: Poppins;
-        font-size: 24px;
+        font-size: 33px;
         font-weight: bold;
         padding: 5px 20px 5px 0;
         text-transform: uppercase;
-        line-height: 26px;
+        line-height: 33px;
         text-align: right;
         text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
     }
     .large-dialog-overlay {
-        width: 70vw;
-        height: 63vh;
+        width: 73vw;
+        transition: .2s;
         margin: 0 auto;
+        height: 454px;
         z-index: 3;
+        padding: 20px 0px 0px 0px;
         border-radius: 10px;
         box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38);
     }
     .large-dialog-overlay:hover {
-        -webkit-animation: pulses 0.2s linear;
-        -moz-animation: pulses 0.2s linear;
-        -o-animation: pulses 0.2s linear;
-        animation: pulses 0.2s linear;
+        transform: scale(1.01);
     }
     .choose-mission-featured {
-        color: green;
+        color: #00cdc0;
         font-family: Poppins;
         font-size: 18px;
         border-radius: 5px;
@@ -84,7 +83,7 @@
     }
     .action-desc-left {
         font-family: Poppins;
-        font-size: 12px;
+        font-size: 13px;
         line-height: 16px;
         padding: 15px;
         margin: 30px 0;
@@ -136,15 +135,11 @@
         text-align: right;
         text-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
     }
-    /* .mission-li:hover .action-title {
-        font-size: 18.6px;
-    }
-    */
     .large-dialog-overlay {
         width: 70vw;
-        height: 63vh;
         padding-left: 20px;
         margin: 0 auto;
+        height: 422px;
         z-index: 3;
         border-radius: 10px;
         background: radial-gradient(circle, #4D291B 0%, #3F1B0D 100%);
@@ -266,6 +261,7 @@
     font-size: 14px;
     text-decoration: none!;
     cursor: pointer;
+    margin-top: 20px;
     border-radius: 0 0 10px 10px;
     background-color: #11C0D9;
     font-weight: 700;
@@ -290,7 +286,7 @@
 .units-big {
     font-family: Poppins;
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
     margin-left: 15px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -331,62 +327,19 @@ body {
     margin-left: 2.5%;
     margin-right: 2.5%;
     margin-bottom: 5rem;
-    width: 21%;
+    width: 22%;
     /* height: 60vh; */
     /* background: linear-gradient(140deg, #3A5E69 0%, #1B3042 100%); */
     display: inline-block;
 }
 
-@-webkit-keyframes pulses {
-    0% {
-        -webkit-transform: scale(1);
-    }
-    100% {
-        -webkit-transform: scale(1.01);
-    }
-}
-
-@-moz-keyframes pulses {
-    0% {
-        -webkit-transform: scale(1);
-    }
-    100% {
-        -webkit-transform: scale(1.01);
-    }
-}
-
-@-o-keyframes pulses {
-    0% {
-        -webkit-transform: scale(1);
-    }
-    100% {
-        -webkit-transform: scale(1.01);
-    }
-}
-
-@keyframes pulses {
-    0% {
-        -webkit-transform: scale(1);
-    }
-    100% {
-        -webkit-transform: scale(1.01);
-    }
+.mission-li {
+    transition: .2s;
 }
 
 .mission-li:hover {
     margin-bottom: 5rem;
-    -webkit-animation: pulses 0.2s linear;
-    -moz-animation: pulses 0.2s linear;
-    -o-animation: pulses 0.2s linear;
-    animation: pulses 0.2s linear;
-    /* IE 10+, Fx 29+ */
-    /* margin-left: 1%;
-    margin-right: 1%;
-    width: 27%;
-    height: 70vh;
-    margin-top: -20px;
-    background: linear-gradient(140deg, #3A5E69 0%, #1B3042 100%);
-    display: inline-block; */
+    transform: scale(1.01);
 }
 
 body,
@@ -454,13 +407,14 @@ a:hover {
 }
 
 .featured-green {
-    background-color: #3EFFDE;
     color: black;
     text-align: left;
     width: 60%;
     padding-top: 10px;
+    font-weight: 700;
+    border: 2px solid #3F3F3F;
     padding-left: 10px;
-    height: 60px;
+    height: 45px;
 }
 
 .open-new-tabs-to {
@@ -473,7 +427,7 @@ a:hover {
 .open-new-tabs-to-thin {
     text-transform: uppercase;
     font-family: Poppins;
-    font-size: 11.2px;
+    font-size: 10.2px;
     font-weight: 100;
     padding-right: 20px;
     margin-top: -110px;

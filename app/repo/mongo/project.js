@@ -7,6 +7,7 @@ var projectSchema = mongoose.Schema({
     isFeatured: { type: Boolean, default: false },
     showcasePhoto: String,
     secondaryMissionPhoto: String,
+    playPhoto: String,
     actionTitle: String,
     shortDescription: String,
     homeDescription: String,
