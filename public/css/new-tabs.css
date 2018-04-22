@@ -560,6 +560,53 @@ input.formWhite:-ms-input-placeholder {
     position: absolute;
 }
 
+.featured-green {
+    text-align: left;
+    padding-top: 10px;
+    font-weight: 700;
+    padding-left: 10px;
+    width: 60%;
+    font-size: 12px;
+    color: black;
+    height: 38px;
+    background-color: #FFFFFF;
+}
+
+.created-so-far {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 12px;
+    letter-spacing: 3.43px;
+    line-height: 18px;
+}
+
+.weve-chosen {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+}
+
+.turn-off-ad-blocker {
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.17px;
+    line-height: 16px;
+}
+
+.assign-dialog-overlay {
+    background-color: #000;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
+    left: 25%;
+    top: 13%;
+    padding: 20px 0 0 50px;
+    z-index: 3;
+    position: absolute;
+}
+
  ::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
@@ -614,7 +661,7 @@ ul.centerUL {
 
 .background-gradient-layer {
     display: none;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4), #00000080, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.4), rgba(59, 13, 13, 0.4), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.15), rgba(58, 2, 2, 0.15), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.7));
 }
 
 .ad-footer-center {
@@ -623,7 +670,6 @@ ul.centerUL {
     left: 50%;
     right: 0;
     z-index: 10;
-    background: pink;
     height: 90px;
     width: 728px;
     transform: translate(-50%, 0%);

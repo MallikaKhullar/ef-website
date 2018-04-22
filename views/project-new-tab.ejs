@@ -115,11 +115,26 @@
 
         <% if (showMissionSelectedPopup === true) { %>
             <div class="dark-gradient-autoAssign">
-                <div class="small-dialog-overlay" style="height:50%">
-                    <div class="row">
-                        <div class="col-sm-5"></div>
-                        <div class="col-sm-7" style="margin-top:-35px; padding-right:30px; text-align: right">
-                            <img src="/image/cross_white.png" class="cross-icon" id="cross-icon" onclick="startMission()">
+                <div class="assign-dialog-overlay" style="height:60%">
+                    <div class=" row" style="margin-bottom:30px">
+                        <div class="col-sm-6">
+                            <div class="featured-green">
+                                <div style="position: relative;float:left;">
+                                    <img src="/image/black_star.png" style="height:17px; margin-left:2px;margin-top:-2px" />
+                                </div>
+                                <div style="position: relative;float:left; width:80%">
+                                    <div class="uc" style="margin-left:5px">Featured Mission</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 white">
+                            <div style="position: relative;float:right; padding-right:40px">
+                                <div class="uc turn-off-ad-blocker" style="margin-left:5px;margin-top:4px">Whitelist us on <br>your adblocker</div>
+                            </div>
+                            <div style="position: relative;float:right;">
+                                <img src="/image/adblk.png" style="height:45px; margin-left:2px;margin-top:-2px" />
+                            </div>
+
                         </div>
                     </div>
 
@@ -131,22 +146,22 @@
                                     <!-- <%- project.projectTotal %> helpdesks made so far -->
                                     32 helpdesks
                                 </div>
-                                <div class="thin-poppins uc white">
+                                <div class="created-so-far uc">
                                     created so far
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6" style="text-align:left">
-                            <div class="thin-poppins white">
+                            <div class="weve-chosen white">
                                 We've chosen a mission for you!
                             </div>
-                            <div class="congrats-title white uc" style="line-height: 37px; margin-top:15px;">
+                            <div class="congrats-title white uc" style="line-height: 37px; margin-top:5px;">
                                 <%- project.projectTitle %>
                             </div>
 
-                            <div class="thin-poppins white">
-                                Open new tabs to generate funds for making School helpdesks!
+                            <div class="weve-chosen white">
+                                <%- project.autoActionMessage %>
                             </div>
                         </div>
 

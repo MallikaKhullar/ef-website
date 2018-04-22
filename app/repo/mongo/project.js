@@ -12,6 +12,7 @@ var projectSchema = mongoose.Schema({
     shortDescription: String,
     homeDescription: String,
     unitIcon: String,
+    autoActionMessage: String,
     currentUnits: Number,
     donateThanks: String,
     fullFeaturePhoto: String,
