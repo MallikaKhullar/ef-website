@@ -12,9 +12,7 @@
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,200,300,500,700" rel="stylesheet" />
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -105,15 +103,6 @@
                 line-height: 18px;
                 margin: 10px 0px;
                 height: 36px;
-            }
-            .black-quicksand-title,
-            .para-text,
-            body {
-                font-family: Poppins;
-            }
-            .para-text {
-                font-weight: 200;
-                font-size: 15px;
             }
             .recent-title {
                 margin: 80px 0px 10px 0px;
@@ -364,6 +353,16 @@
             margin-top: 10px;
         }
         
+        .quick-weight-bold-small,
+        .display-number-title,
+        .display-number,
+        .btn-med,
+        .quicksand,
+        footer ul li a,
+        .quick-weight-bold {
+            font-family: Poppins;
+        }
+        
         .big-margin-top {
             margin-top: 60px;
         }
@@ -382,6 +381,17 @@
         .footer-desc {
             display: none
         }
+        
+        .black-quicksand-title,
+        .para-text,
+        body {
+            font-family: Poppins;
+        }
+        
+        .para-text {
+            font-weight: 200;
+            font-size: 15px;
+        }
     </style>
 </head>
 
@@ -389,23 +399,24 @@
 
     <%- include standard-header.ejs %>
 
-        <div class="blog-detail-container">
-
-            <div class="center-cropped" style="background-image: url('/image/white_facebook_icon.png');">
-                <div class="black-share" style="position: absolute;right: 10%;margin-top: 420px; margin-right: 20px;">
-                    <div class="btn-outline btn-med" style="background-color: rgba(0, 0, 0, 0.6);text-align:center;width:150px;cursor:pointer;">
-                        <a class="facebook-share" target="_blank" style="color: #0CFFFC;text-decoration:none!important;">
-                            <img alt="Flutur Facebook" style="display:inline-block; height:14px; margin-bottom:1px" class="quicklink-img" src="/image/white_facebook_icon.png" />
-                            <div style="display:inline-block" class="white quicksand">Share Article</div>
-                        </a>
-                    </div>
+        <div class="end-to-end" onclick="installChromeApp()">
+            <div style="width:300px; margin:0 auto">
+                <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1523957194/aarambh_3x_nmwmwl.png" style="float:left;width:25px;height:25px;margin:3px 10px 0px 0px">
+                <div class="congrats-title mint uc">
+                    32
+                    <span class="white">desks funded!</span>
+                </div>
+                <div class="days-left">
+                    14 days left!
                 </div>
             </div>
+        </div>
 
-            <div class="image-caption">
-                Hello caption
+
+        <div class="blog-detail-container">
+
+            <div class="center-cropped" style="background-image: url('http://res.cloudinary.com/epicfoundation/image/upload/v1523968501/Screen_Shot_2018-04-17_at_6.04.03_pm_hcdfrs.png');">
             </div>
-
 
             <div class="squish">
                 <h1 class="black-quicksand-title">
