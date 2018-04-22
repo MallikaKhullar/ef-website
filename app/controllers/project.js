@@ -13,6 +13,13 @@ exports.getProjectDetails = function(data) {
         return deferred.success(res);
     });
 }
+exports.getShortProjectDetails = function(data) {
+    if (data == null || data.projectId == null) return deferred.success({});
+    return fn.defer(fn.bind(Project, 'getProjectDetails'))({ projectId: data.projectId }).pipe(function(res) {
+        res.shortDescription = Utils.trunc(res.shortDescription, 200);
+        return deferred.success(res);
+    });
+}
 exports.getFeaturedProject = function() {
     return fn.defer(fn.bind(Project, 'getFeaturedProject'))().pipe(function(res) {
         res.shortDescription = Utils.trunc(res.shortDescription);

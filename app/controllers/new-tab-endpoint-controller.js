@@ -43,7 +43,7 @@ exports.render_weekOngoing_v1 = function(req, res, setAsDonatePending) {
     var def = {
         userCount: userController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
-        currentProject: projectController.getProjectDetails({ projectId: req.user.project.project_id })
+        currentProject: projectController.getShortProjectDetails({ projectId: req.user.project.project_id })
     };
 
     deferred.combine(def).pipe(function(data) {
@@ -62,7 +62,6 @@ exports.render_weekOngoing_v1 = function(req, res, setAsDonatePending) {
 }
 
 exports.render_autoAssignNewProject = function(req, res, showMissionSelectedPopup) {
-    console.log("auoassign");
     userController.incrementTabsById(req.user.id);
 
     var def = {
@@ -72,22 +71,28 @@ exports.render_autoAssignNewProject = function(req, res, showMissionSelectedPopu
     };
 
     deferred.combine(def).pipe(function(data) {
-
         var start = moment().format('x');
         var end = Utils.getTwoWeekTime(start);
+
         userController.setProject(req.user.user_id, data.currentProject.projectId, start, end).pipe(function(proj) {
 
             // req.user.state = "v1_week_ongoing";
 
+            var user = JSON.parse(JSON.stringify(req.user));
+            user.project = data.currentProject;
+            user.project.project_id = data.currentProject.projectId;
+            user.project.target_end_time = end;
+            user.project.target_start_time = start;
+            user.project.tabs = 0;
+
             v1_constructPayload({
-                user: req.user,
+                user: user,
                 numDonations: data.donationCount,
                 numUsers: data.userCount,
                 project: data.currentProject,
                 req: req,
             }).pipe(function(result) {
-                result.showMissionSelectedPopup = showMissionSelectedPopup;
-                console.log("austosdsds");
+                result.showMissionSelectedPopup = true;
                 res.render("project-new-tab.ejs", result);
             });
         });
@@ -119,6 +124,8 @@ function constructQuery(query) {
 }
 
 function appendProjectDeadlines(data) {
+    console.log("\nREACHED HERE\n", data.user);
+    console.log("\nREACHED HERE ALSO\n", data.user.project);
 
     var hoursToGo = Utils.timePeriodInHours(data.user.project.target_end_time, moment().format('x'));
     var remainingTime = hoursToGo >= 24 ? (hoursToGo / 24 > 1 ? Math.floor(hoursToGo / 24) + " days " : Math.floor(hoursToGo / 24) + " day ") :
@@ -157,23 +164,27 @@ function findUserProgress(causes, id) {
 }
 
 function v1_constructPayload(data) {
+    console.log("*1");
     data = appendProjectProgress(data);
 
+    console.log("*2");
     var newdata = appendProjectDeadlines(data);
 
-
+    console.log("*3");
     newdata.user = data.user;
     newdata.project = data.project;
     newdata.previousProjet = data.previousProject || {};
     newdata = appendBackgroundImage(newdata);
 
 
+    console.log("*4");
     newdata.user.first_name = Utils.firstName(newdata.user.name);
     newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
     if (Utils.hasTimeElapsedSince(data.user.project.target_end_time) && newdata.user.state.includes("week")) {
         userController.setDonatePending(data.user.user_id);
     }
 
+    console.log("*5");
     newdata.project = data.project;
 
     if (newdata.user.state == "v1_cause_selection_pending") {
@@ -206,5 +217,6 @@ function v1_constructPayload(data) {
         }
     }
 
+    console.log("*6");
     return deferred.success(newdata);
 }
