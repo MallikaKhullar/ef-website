@@ -55,7 +55,6 @@ exports.render_weekOngoing_v1 = function(req, res, setAsDonatePending) {
             req: req,
         }).pipe(function(result) {
             result.showMissionSelectedPopup = false;
-            console.log("NEW TAB DATA", result);
             res.render("project-new-tab.ejs", result);
         });
     });
@@ -90,9 +89,7 @@ exports.render_autoAssignNewProject = function(req, res, showMissionSelectedPopu
                 req: req,
             }).pipe(function(result) {
                 result.showMissionSelectedPopup = showMissionSelectedPopup;
-                result.mallika = "rahul";
-                console.log(result.showMissionSelectedPopup);
-                console.log(result.dailyImage);
+
                 res.render("project-new-tab.ejs", result);
             });
         });
@@ -124,8 +121,6 @@ function constructQuery(query) {
 }
 
 function appendProjectDeadlines(data) {
-    console.log("\nREACHED HERE\n", data.user);
-    console.log("\nREACHED HERE ALSO\n", data.user.project);
 
     var hoursToGo = Utils.timePeriodInHours(data.user.project.target_end_time, moment().format('x'));
     var remainingTime = hoursToGo >= 24 ? (hoursToGo / 24 > 1 ? Math.floor(hoursToGo / 24) + " days " : Math.floor(hoursToGo / 24) + " day ") :
@@ -164,27 +159,21 @@ function findUserProgress(causes, id) {
 }
 
 function v1_constructPayload(data) {
-    console.log("*1");
     data = appendProjectProgress(data);
 
-    console.log("*2");
     var newdata = appendProjectDeadlines(data);
 
-    console.log("*3");
     newdata.user = data.user;
     newdata.project = data.project;
     newdata.previousProjet = data.previousProject || {};
     newdata = appendBackgroundImage(newdata);
 
-
-    console.log("*4");
     newdata.user.first_name = Utils.firstName(newdata.user.name);
     newdata.user.picture = (newdata.user.picture == null || newdata.user.picture == undefined) ? "/image/user.png" : newdata.user.picture;
     if (Utils.hasTimeElapsedSince(data.user.project.target_end_time) && newdata.user.state.includes("week")) {
         userController.setDonatePending(data.user.user_id);
     }
 
-    console.log("*5");
     newdata.project = data.project;
 
     if (newdata.user.state == "v1_cause_selection_pending") {
@@ -217,6 +206,5 @@ function v1_constructPayload(data) {
         }
     }
 
-    console.log("*6");
     return deferred.success(newdata);
 }
