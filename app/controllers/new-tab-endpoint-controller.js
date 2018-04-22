@@ -75,9 +75,6 @@ exports.render_autoAssignNewProject = function(req, res, showMissionSelectedPopu
         var end = Utils.getTwoWeekTime(start);
 
         userController.setProject(req.user.user_id, data.currentProject.projectId, start, end).pipe(function(proj) {
-
-            // req.user.state = "v1_week_ongoing";
-
             var user = JSON.parse(JSON.stringify(req.user));
             user.project = data.currentProject;
             user.project.project_id = data.currentProject.projectId;
@@ -92,7 +89,10 @@ exports.render_autoAssignNewProject = function(req, res, showMissionSelectedPopu
                 project: data.currentProject,
                 req: req,
             }).pipe(function(result) {
-                result.showMissionSelectedPopup = true;
+                result.showMissionSelectedPopup = showMissionSelectedPopup;
+                result.mallika = "rahul";
+                console.log(result.showMissionSelectedPopup);
+                console.log(result.dailyImage);
                 res.render("project-new-tab.ejs", result);
             });
         });
