@@ -1028,6 +1028,43 @@ var Constants = {
         previousProjet: {},
         dailyImage: 'http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515771774/mtn1.jpg',
         showMissionSelectedPopup: false
+    },
+    projectlol: {
+        details: {
+            projectId: 'project-lol',
+            isFeatured: false,
+            primaryMissionPhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524031026/UI%20images/LOL_Big_1_2x.png',
+            secondaryMissionPhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524031025/UI%20images/LOL_Small_1_Copy_2_2x.png',
+            showcasePhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524391821/UI%20images/LOL_squaere_3x.png',
+            ngoId: 'lol',
+            fullFeaturePhoto: 'https://res.cloudinary.com/epicfoundation/image/upload/v1523669576/dfd_gzbont.jpg',
+            cardStyle: 'background:black;color:white',
+            unitIcon: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524391724/UI%20images/LOL_tiny.png',
+            conversionFormula: '/50',
+            tabsForSingleUnit: 200,
+            forByLine: 'For 2100 Families',
+            projectTitle: 'Light Rural Homes',
+            featureActionTitle: 'Light Rural Homes',
+            actionTitle: 'Light<br>Rural<br>Homes',
+            homeDescription: 'Even today, over 240 million Indians do not have access to electricity. Several Government programs tried to address the issue, but a large number vulnerable, poor citizens of the country still have received little to no relief to their woes. Liter of Light Bangalore chapter is providing such households access to low cost, solar eco-friendly bottle bulbs. These solar powered bulbs provide illumination even during the night. Till date, it has illuminated over 2000 homes across India. Flutur has partnered with Liter of Light Bangalore chapter to illuminate one home at a time.',
+            shortDescription: 'Over 240 million Indias do not have access to electricity. Liter of Light Bangalore chapter is providing such households access to low cost, solar eco-friendly bottle bulbs. These solar powered bulbs provide illumination even during the night. . . .',
+            playPhoto: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524031695/UI%20images/LOL_play_1_2x.png',
+            donateThanks: 'Thanks for helping LOL reach out to 1434 villagers',
+            currentUnitMeasure: 'lamp',
+            autoActionMessage: 'sdasd sdsad sd asd sd adadad dsad d',
+            donateFTUE: {
+                title: 'Donate light by tabbing',
+                info: 'somestuff about donation long long dsfsfs dfsdlfjdf sdfk jd sdfdslkj dsf lkfjsdfkj'
+            },
+            weeklyTargetTabs: 250,
+            ngo: {
+                ngoName: 'Liter of Light',
+                ngoUrl: 'http://www.literoflightusa.org/home/',
+                ngoPhotoUrl: 'http://res.cloudinary.com/epicfoundation/image/upload/v1524396352/UI%20images/LOL_logo_2x.png'
+            }
+        },
+        currUnits: '121',
+        stats: { donations: 'Rs. 11,134', followers: 6 }
     }
 };
 module.exports = Constants;
