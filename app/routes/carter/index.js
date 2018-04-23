@@ -52,8 +52,7 @@ router.get('/moveon', function(req, res) {
 
 });
 router.get('/projlol', function(req, res) {
-    res.render("carter_proj_lol.ejs", constants.moveon);
-
+    res.render("carter_proj_lol.ejs", constants.projectlol);
 });
 
 
