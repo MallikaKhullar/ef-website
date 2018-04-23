@@ -64,7 +64,7 @@ function constructPayload(project, filters) {
     if (filters.truncShortDesc) project.shortDescription = Utils.trunc(project.shortDescription, filters.truncShort);
     if (filters.truncHomeDesc) project.homeDescription = Utils.trunc(project.homeDescription, filters.truncHome);
 
-    project.unitString = project.currentUnits + " " + (project.currentUnits == 1 ? project.currentUnitMeasure : project.currentUnitMeasure + "s");
+    // project.unitString = project.currentUnits + " " + (project.currentUnits == 1 ? project.currentUnitMeasure : project.currentUnitMeasure + "s");
     return project;
 }
 

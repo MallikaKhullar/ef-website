@@ -46,6 +46,20 @@ donationDumpSchema.statics = {
             }
         ], cb);
     },
+    getDonationsByProjectId: function(id, cb) {
+        this.aggregate([
+            { $match: { project_id: id } },
+            {
+                $group: { _id: "", sum: { $sum: "$num_tabs" } }
+            },
+            {
+                $project: {
+                    _id: 0,
+                    sum: '$sum'
+                }
+            }
+        ], cb);
+    },
 
 };
 

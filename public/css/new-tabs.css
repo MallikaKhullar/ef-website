@@ -582,7 +582,7 @@ input.formWhite:-ms-input-placeholder {
 
 .weve-chosen {
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 100;
     line-height: 21px;
 }
 
@@ -602,7 +602,7 @@ input.formWhite:-ms-input-placeholder {
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.68);
     left: 25%;
     top: 13%;
-    padding: 20px 0 0 50px;
+    padding: 50px 0 0 50px;
     z-index: 3;
     position: absolute;
 }
@@ -1203,13 +1203,14 @@ label.input-toggle>input {
 
 .grey-box-big {
     font-weight: 700;
-    /* width: 50%; */
+    width: 30%;
     /* text-align: center; */
     cursor: pointer;
+    text-align: center;
     padding: 25px;
     position: absolute;
-    font-size: 12px;
-    background-color: grey;
+    font-size: 14px;
+    background-color: #FF197F;
     bottom: 0px;
     right: 0;
     float: right;

@@ -31,18 +31,22 @@ router.get('/:projectId', function(req, res) {
     var def1 = {
         details: projectController.getProjectDetails({ projectId }),
         userCount: userController.getAllUserCount(),
-        donationCount: donationController.getAllDonationCount()
+        donationCount: donationController.getAllDonationCount(),
+        tabsDonated: donationController.getCurrentProgress(projectId)
     };
 
     deferred.combine(def1).pipe(function(data) {
+        var units = data.tabsDonated / data.details.tabsForSingleUnit;
         var newdata = {
             details: data.details,
+            currUnits: units.toFixed(0),
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
                 followers: Utils.getCommaSeparatedNumber(data.userCount)
             }
         };
 
+        console.log("SENDING", newdata);
         res.render(projectId + ".ejs", newdata);
     });
 });

@@ -13,7 +13,7 @@
 
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200, 300,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500,700" rel="stylesheet">
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
 
     <link href="/css/login.css" rel="stylesheet">
@@ -48,18 +48,20 @@
                 <div class="featured-white" style="margin-right:200px">
                     <div class="row">
                         <div class="col-sm-2">
-                            <img src="/image/black_star.png" style="height:25px; margin-left:5px;margin-top:7px" />
+                            <img src="/image/black_star.png" style="height:20px; margin-left:8px;margin-top:-4px" />
                         </div>
                         <div class="col-sm-10">
                             <div class="poppins-thick xs-text uc">Featured Mission</div>
-                            <div class="poppins-small">March - April 2018</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="poppins-thin smaller-text uc" style="margin-top:20px;padding-right:50px;">Open new tabs to</div>
-                <div class="poppins-thick uc" style="margin-top:15px;font-size: 53px; line-height:54px;">Build Rainwater Harvesting Structures</div>
-                <div class="poppins-thin smaller-text" style="margin-top:20px;padding-right:50px;">Join Tarun Bharat Sangh's quest to restore the ecology of Karauli in Rajasthan, by building rainwater harvesting structures.
+                <div class="poppins-thick uc" style="margin-top:15px;font-size: 53px; line-height:54px;">
+                    <%- featuredProject.projectTitle%>
+                </div>
+                <div class="poppins-thin smaller-text" style="margin-top:20px;padding-right:50px;">
+                    <%- featuredProject.shortDescription %>
                 </div>
             </div>
 

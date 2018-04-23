@@ -54,3 +54,19 @@ exports.getAllStats = function(userId) {
         return deferred.success(data);
     });
 };
+
+
+function getAllDonationsForProject(id) {
+    console.log("*2", id);
+    return fn.defer(fn.bind(Donation, 'getDonationsByProjectId'))(id).pipe(function(data) {
+        console.log("*4", data);
+        return deferred.success(data);
+    });
+};
+
+
+exports.getCurrentProgress = function(id) {
+    return getAllDonationsForProject(id).pipe(function(data) {
+        return deferred.success(data && data.length > 0 && data[0].sum ? data[0].sum : 0);
+    });
+};

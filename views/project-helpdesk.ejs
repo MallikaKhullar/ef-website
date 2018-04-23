@@ -141,8 +141,14 @@
             width: 100%;
             cursor: pointer;
             background: black;
+            z-index: 999;
             padding: 30px 0;
             color: white;
+            transition: .2s;
+        }
+        
+        .end-to-end:hover {
+            transform: scale(1.05)
         }
         
         .congrats-title {
@@ -461,26 +467,26 @@
     <%- include standard-header.ejs %>
 
 
+
         <div class="end-to-end" onclick="installChromeApp()">
-            <div style="width:300px; margin:0 auto">
-                <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1523957194/aarambh_3x_nmwmwl.png" style="float:left;width:25px;height:25px;margin:3px 10px 0px 0px">
-                <div class="congrats-title mint uc">
-                    32
-                    <span class="white">desks funded!</span>
+            <div style="width:600px; margin:0 auto; text-align:center">
+                <div style="display:inline-block">
+                    <img alt="flutur" src="<%- details.unitIcon%>" style="float:left;width:25px;height:25px;margin:3px 10px 0px 0px">
+                    <div class="congrats-title mint uc" style="float:left">
+                        <%- currUnits %>
+                            <span class="white">helpdesks funded!</span>
+                    </div>
                 </div>
                 <div class="days-left">
-                    14 days left!
+                    Install Flutur New Tab to raise funds for school children in rural India!
                 </div>
             </div>
-
-
         </div>
-
 
         <div class="blog-detail-container">
 
-            <div class="center-cropped" style="background-image: url('http://res.cloudinary.com/epicfoundation/image/upload/v1523968501/Screen_Shot_2018-04-17_at_6.04.03_pm_hcdfrs.png');">
-            </div>
+            <img src='http://res.cloudinary.com/epicfoundation/image/upload/v1524495123/projects/Asset_6_3x_1x.png' style="margin:0 auto;display:block;height:450px;width:60%">
+
 
             <div class="squish">
                 <h1 class="black-quicksand-title">
@@ -609,16 +615,18 @@
         <div class="blue-27">
             <div>
                 <span class="support-this-cause">Support this cause!</span>
-                <div class="row" style="width:60%; margin:15px auto;box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.5);">
-                    <div class="col-sm-8" style="padding:0">
-                        <div class="cover-image" style="height:60vh;"></div>
+                <div class="row" style="width:57%; margin:15px auto;box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.5);">
+                    <div class="col-sm-7" style="padding:0">
+                        <img src="http://res.cloudinary.com/epicfoundation/image/upload/v1524503467/projects/aar1.jpg" style="height: 100%;width: 100%;">
                     </div>
-                    <div class="col-sm-4" style="padding:60px 30px 20px 30px;background:#3C3C3C;height:60vh">
-                        <div class="open-new-tabs-to font-100" style="line-height:1.5; letter-spacing: 0.5px;text-align:left;">Open new tabs to</div>
+                    <div class="col-sm-5" style="padding:90px 30px 20px 30px;background:#3C3C3C;height:70vh">
+                        <div class="open-new-tabs-to" style="line-height:1.5; letter-spacing: 0.5px;text-align:left;">Open new tabs to</div>
                         <div class="big-action-title">
-                            Build <br>Light<br>Bulbs
+                            <%- details.actionTitle%>
                         </div>
-                        <div class="open-new-tabs-to font-100" style="line-height:1.5; margin-top:10px; letter-spacing: 0.5px;text-align:left;">For villages</div>
+                        <div class="open-new-tabs-to" style="line-height:1.5; margin-top:10px; letter-spacing: 0.5px;text-align:left;">
+                            <%- details.forByLine%>
+                        </div>
 
                         <div class="start-button" onclick="installChromeApp()" style="margin-top:4em">Install Flutur New Tab
                         </div>
@@ -626,7 +634,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="resp-footer">
             <%- include footer_partial.ejs %>
