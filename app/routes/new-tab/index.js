@@ -45,10 +45,25 @@ router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
 //v1 route
 router.get('/choose-project', continueIfLoggedIn, function(req, res) {
     projectController.getProjectOverviews({ truncShortDesc: true, truncShort: 200 }).pipe(function(projects) {
-        var data = {};
-        data = Utils.appendProjects(data, projects);
-        data.dailyImage = constants.images[Math.round(0) % constants.images.length];
-        res.render("select-cause.ejs", data);
+        var featuredProj;
+        for (i in projects) {
+            if (projects[i].isFeatured == true) {
+                featuredProj = projects[i];
+                break;
+            }
+        }
+
+        console.log("*1", featuredProj.projectId);
+
+        donationController.getCurrentProgress(featuredProj.projectId).pipe(function(tabsDonated) {
+            console.log("*2");
+            var data = {};
+            var units = tabsDonated / featuredProj.tabsForSingleUnit;
+            data.unitString = units.toFixed(0) + " " + (units.toFixed(0) == 1 ? featuredProj.currentUnitMeasure : featuredProj.currentUnitMeasure + "s");
+            data = Utils.appendProjects(data, projects);
+            data.dailyImage = constants.images[Math.round(0) % constants.images.length];
+            res.render("select-cause.ejs", data);
+        });
     });
 });
 

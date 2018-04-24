@@ -53,7 +53,7 @@
 
     <style>
         .support-this-cause {
-            color: #FFFFFF;
+            color: #3C3C3C;
             font-family: Poppins;
             font-size: 30px;
             font-weight: 300;
@@ -73,7 +73,13 @@
             cursor: pointer;
             font-weight: 700;
             font-family: Poppins;
+            transition: .2s;
             padding: 15px 10px;
+        }
+        
+        .start-button:hover {
+            background: rgba(255, 255, 255, .05);
+            transform: scale(1.02);
         }
         
         .big-action-title {
@@ -103,16 +109,12 @@
             color: #23D2AF;
         }
         
-        .start-button:hover {
-            background: rgba(255, 255, 255, .05);
-        }
-        
         .blue-27 {
             padding: 100px 0px;
             width: 100vw;
             color: white;
             text-align: center;
-            background-color: #2CA6B2;
+            background-color: #f9f9f9;
         }
         
         .para-text {
@@ -628,7 +630,7 @@
                         <div class="big-action-title">
                             <%- details.actionTitle%>
                         </div>
-                        <div class="open-new-tabs-to" style="line-height:1.5; margin-top:10px; letter-spacing: 0.5px;text-align:left;">
+                        <div class="open-new-tabs-to" style="line-height:1.5; margin-top:13px; letter-spacing: 0.5px;text-align:left;">
                             <%- details.forByLine%>
                         </div>
 

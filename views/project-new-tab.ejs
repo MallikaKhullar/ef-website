@@ -80,7 +80,7 @@
                             </div>
 
                             <div>
-                                <img alt="Flutur NGO" style="float:left;position:relative;margin-top:5px; height:22%; width:22%; margin-left:50px" src="http://www.aarambh.org/images/logo.jpg">
+                                <img alt="Flutur NGO" style="float:left;position:relative;margin-top:5px; height:22%; width:22%; margin-left:50px; margin-right:10px;" src=" <%- project.ngo.ngoPhotoUrl %>">
                                 <div class="thin-text white" style="float:left;margin-top: 8%; font-size:12px">
                                     <div>Benefiting NGOs</div>
                                     <div>
@@ -101,7 +101,7 @@
                                 <%- project.donateThanks %>
                             </div>
                             <div class="donated-successfully font-700 white">
-                                Read more
+                                <a style="color:inherit;text-decoration: none!" href='projects/<%- project.projectId %>'>Read more</a>
                             </div>
                         </div>
                     </div>
@@ -312,10 +312,11 @@
                                                 <%- project.shortDescription %>
                                             </div>
                                             <div id="read-more" class="c-p font-700 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
-                                                Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                                                <a style="color:inherit;text-decoration: none!" href='projects/<%- project.projectId %>'>Read more</a>
+                                                <i class="fa fa-angle-right" aria-hidden="true"></i></div>
                                         </div>
-                                        <div class="col-sm-7">
-                                            <img alt="Flutur Chrome Extension" src="<%- project.primaryMissionPhoto %>" class="img-responsive" style="transform: scaleX(-1);" /></div>
+                                        <div class="col-sm-6">
+                                            <img alt="Flutur Chrome Extension" src="<%- project.showcasePhoto %>" class="img-responsive" style="transform: scaleX(-1);" /></div>
                                     </div>
                                 </div>
 

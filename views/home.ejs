@@ -243,17 +243,18 @@
     });
 
     $(document).ready(function() {
-        $('#welcomepopup').show();
-
-        // var isshow = localStorage.getItem('isshow');
-        // if (isshow == null) {
-        //     localStorage.setItem('isshow', 1);
-        //     $('#welcomepopup').show();
-        // }
+        var isshow = localStorage.getItem('isshow');
+        if (isshow == null) {
+            localStorage.setItem('isshow', 1);
+            $('#welcomepopup').show();
+        }
     });
 
     $("#popupX").click(function() {
         $('#welcomepopup').hide();
+    });
+    $("#mission-prim").click(function() {
+        window.location.href = 'projects/<%- featuredProject.projectId %>';
     });
 
     $("#desktop-footer-motivation").find("a").click(function(e) {

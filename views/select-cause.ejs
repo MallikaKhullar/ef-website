@@ -39,12 +39,16 @@
             <a href='/new-tab/project-selected?cause_id=<%-featuredProject.projectId%>' style="color:inherit">
                 <div class="row">
                     <div class="col-sm-3" style="padding:0px">
-                        <img alt="Flutur Chrome Extension" style="padding-top:0px" src="<%- featuredProject.primaryMissionPhoto %>" class="img-responsive" /></div>
+                        <img alt="Flutur Chrome Extension" style="padding-top:0px; margin-top:-30px" src="<%- featuredProject.primaryMissionPhoto %>" class="img-responsive" /></div>
                     <div class="col-sm-5 pt-40">
                         <div class="open-new-tabs-to" style="line-height:1.5; margin-top:80px; letter-spacing: 0.5px;text-align:left;padding-right:50px;">Open new tabs to</div>
                         <div class="big-action-title uc">
                             <%- featuredProject.featureActionTitle %>
                         </div>
+                        <div class="open-new-tabs-to" style="line-height:1.5; margin:10px 0px; letter-spacing: 0.5px;text-align:left;padding-right:50px;">
+                            <%- featuredProject.forByLine %>
+                        </div>
+
 
                         <div class="featured-green">
                             <div style="position: relative;float:left; width:20%">
@@ -59,8 +63,8 @@
                     </div>
                     <div class="col-sm-4 pt-40">
                         <div class="units-big">
-                            <img src="<%- featuredProject.unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
-                            <%- featuredProject.unitString %>
+                            <img src="<%- featuredProject.unitIcon %>" style="height:17px;width:17x; margin-right:5px;margin-top:-4px">
+                            <%- unitString %> funded!
                         </div>
                         <div class="action-desc-left primary-text" style="margin-top:43px">
                             <%- featuredProject.shortDescription %>
@@ -96,15 +100,18 @@
                             <%- projects[i].actionTitle %>
                         </div>
 
-                        <div class="thin">for some shit</div>
+                        <div class="thin">
+                            <%- projects[i].forByLine %>
+                        </div>
 
                         <div class="mb-3 action-desc">
                             <%- projects[i].shortDescription %>
                         </div>
 
-                        <div class="units">
-                            <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;">
-                            <%- projects[i].unitString %>
+                        <div class="small-units">
+                            <!-- <img src="<%- projects[i].unitIcon %>" style="height:17px;width:17x; margin-right:5px;"> By -->
+                            <span style="font-weight:500">With </span>
+                            <%- projects[i].ngo.ngoName %>
                         </div>
                         <div class="choose-box-secondary-rect" id="choose-<%-projects[i].projectId%>">
                             Choose this mission
