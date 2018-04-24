@@ -37,84 +37,83 @@
 </header>
 
 <div class="small-content-box">
-
-    <section id="mission" class="mission-box-container bg-lightgrey">
+    <section id="mission-small" class="bg-lightgrey">
         <img src=" <%-featuredProject.fullFeaturePhoto%>" style="width:100vw;">
-        <div class="row tab-project-container">
-            <div class="col-sm-3 ">
-                <img alt="Flutur Chrome Extension" src="<%-featuredProject.showcasePhoto%>" class="img-responsive" /></div>
-            <div class="col-sm-5 tab-project-details-container">
-                <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Open new tabs to</div>
-                <div class="poppins-thick" style="margin-top:20px;font-size: 44px; line-height:40px;">BUILD SCHOOL HELPDESKS</div>
-                <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
-                    Just one more step and you're ready to start raising funds. Happy tabbing!</div>
-                <div class="featured-green">
-                    <div class="poppins-thin xs-text" style="padding-right:50px;">Featured Mission</div>
-                    <div class="poppins-thin xs-text" style="padding-right:50px;">March - April 2018</div>
+        <div class="tab-project-container-small">
+            <img alt="Flutur Chrome Extension" src="<%-featuredProject.showcasePhoto%>" class="mission-photo-small" style="margin:0 auto" />
+            <div class=" tab-project-details-container">
+                <div class="thin-text black font-xsmall uc" style="line-height:1.5; letter-spacing: 0.5px;">Open new tabs to</div>
+                <div class="poppins-thick uc" id="featured-title-small" style="margin-top:20px;font-size: 34px; line-height:30px;">
+                    <%- featuredProject.featureActionTitle %>
+                </div>
+
+                <div id="featured-rect-small" class="featured-white-small" style="margin: 20px auto;width:70%;height:40px">
+                    <img id="featured-star-small" style="float:left;height:20px; margin-left:10px;margin-top:7px;" />
+                    <div class="poppins-thick xs-text uc" style="float:left;height:20px; margin-left:10px;margin-top:8px;">Featured Mission</div>
                 </div>
             </div>
-            <div class="col-sm-4 tab-project-details-container">
-                <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Barbecue party tips can help a host put together an extraordinary event for family and friends. Eating outdoors is a favorite pastime enjoyed by everyone and planning the event can help make it more memorable and stress-free for the host.
-                    Big or small, a barbecue party requires an adequate amount of planning and preparation to ensure that everything is laid out properly.
+        </div>
+        <div class="tab-project-details-container">
+            <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;">
+                <%- featuredProject.homeDescription %>
+            </div>
+            <div class="thick-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px; margin-top:10px">Read more</div>
+        </div>
+</div>
+</section>
+
+<section id="secondary-missions-small" class=" bg-white">
+    <div class="thick-text black uc" style="font-size:20px;">OTHER MISSIONS WE SUPPORT </div>
+    <% for(var i=0; i<projects.length; i++) { %>
+        <a href='projects/<%- projects[i].projectId %>' style="color:inherit;text-decoration: none!">
+            <div class="small-proj">
+                <div class="small-text poppins-thick" style="margin-top:25px;line-height:1.2; letter-spacing: 0.5px;font-size:15px">
+                    <%- projects[i].projectTitle%>
                 </div>
-                <div class="thick-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Read more</div>
+                <img src="<%- projects[i].showcasePhoto%>" class="mb-2" style="margin-top:5px;height:100px; width:100px; " />
+                <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;">
+                    <%- projects[i].shortDescription%>
+                </div>
+                <div id="feature-read-more" class="black c-p font-700 uc" style="font-size:12px; margin: 10px 0px;line-height:1.5; letter-spacing: 0.5px;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+
             </div>
+        </a>
+        <% } %>
+</section>
+
+<section id="small-about" class="about-container bg-lightgrey">
+    <div class="flutur-effect-container">
+        <h1 class="pink-quicksand-title">The flutur effect</h1>
+        <h1 class="black-page-title" style="margin:15px 0px;">Tiny acts can have large effects</h1>
+        <h3 class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px">At Flutur, we are building products which convert your otherwise wasted hours into real donations. As a result, you can change the world right from your workplace!
+        </h3>
+    </div>
+    <div class="amita-img-container">
+        <img alt="Flutur Child" src="/image/flutur_pratiksha.png" style="width:60%;filter: alpha(opacity=90);" />
+    </div>
+</section>
+
+
+<section id="small-chrome-extension" class=" bg-white">
+    <div class="small-gradient-box-container">
+        <div class="gradient-box">
+            <div class="white font-smaller" style="float:left;width:25%;padding-left:5px; ">PROJECT ONE</div>
+            <div class="white" style="float:left;width:5%;">|</div>
+            <div class="white font-smaller" style="float:left;width:70%;">FLUTUR NEW TAB</div>
+            <div class="clearfix"></div>
         </div>
-    </section>
+    </div>
 
-    <section id="secondary-missions" class="other-missions-box-container bg-white">
-        <div class="small-text poppins-thick mb-3">OTHER MISSIONS - </div>
+    <div class="small-laptop-container">
+        <img src="/image/flutur_laptop.png" class="img-responsive" alt="Flutur Chrome Extension New Tab" /></div>
 
-        <div class="row">
-            <div class="col-sm-6">
-                <img src="/image/facebook-icon.png" class="mb-2" />
-                <div class="thick-text black font-small" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">AFFORDABLE SANITARY NAPKINS</div>
-                <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">The role of a good cook ware in the preparation of a sumptuous meal cannot be overemphasized. When one consider purchasing a good cookware the first point that comes to the mind is the budget. Buying a standard cookware within one’s budget
-                    and at the same time obtaining all the pieces and features one has in mind is no simple task. </div>
-            </div>
-            <div class="col-sm-6">
-                <img src="/image/facebook-icon.png" class="mb-2" />
-
-                <div class="thick-text black font-small" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">AFFORDABLE SANITARY NAPKINS</div>
-                <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">The role of a good cook ware in the preparation of a sumptuous meal cannot be overemphasized. When one consider purchasing a good cookware the first point that comes to the mind is the budget. Buying a standard cookware within one’s budget
-                    and at the same time obtaining all the pieces and features one has in mind is no simple task. </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="small-about" class="about-container bg-lightgrey">
-        <div class="flutur-effect-container">
-            <h1 class="pink-quicksand-title">The flutur effect</h1>
-            <h1 class="black-quicksand-title" style="margin:15px 0px;">Tiny acts can have large effects</h1>
-            <h3 class="thin-text black font-smaller">At Flutur, we are building products which convert your otherwise wasted hours into real donations. As a result, you can change the world right from your workplace!
-            </h3>
-        </div>
-        <div class="amita-img-container">
-            <img alt="Flutur Child" src="/image/flutur_pratiksha.png" style="width:60%;filter: alpha(opacity=90);" />
-        </div>
-    </section>
-
-
-    <section id="chrome-extension" class="chrome-extension bg-white">
-        <div class="small-gradient-box-container">
-            <div class="gradient-box">
-                <div class="white font-smaller" style="float:left;width:25%;padding-left:5px; ">PROJECT ONE</div>
-                <div class="white" style="float:left;width:5%;">|</div>
-                <div class="white font-smaller" style="float:left;width:70%;">FLUTUR NEW TAB</div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-
-        <div class="small-laptop-container">
-            <img src="/image/flutur_laptop.png" class="img-responsive" alt="Flutur Chrome Extension New Tab" /></div>
-
-        <div class="small-project-details-container">
-            <div class="black-quicksand-title">Flutur New Tab</div>
-            <div class="thin-text black font-smaller" style="margin:20px 0 20px 0;">The <b>Flutur New Tab</b> Chrome extension replaces your new tab page with a beautiful one designed by us. Every new tab you open while surfing the web raises funds for the cause of your choice.</div>
-            <div onclick="installChromeApp()" style="cursor:pointer; margin-top:10px; padding:25px 30px 40px 30px" class="white-button">
-                <img alt="Flutur Chrome Extension New Tab" src="/image/get_started_text.png" style="float:left;height:15px" />
-                <img alt="Flutur Chrome Extension New Tab" src="/image/gradient_arrow.png" style="float:right;height:15px" />
-            </div>
-        </div>
-    </section>
+    <div class="small-project-details-container">
+        <div class="black-page-title">Flutur New Tab</div>
+        <h3 class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px">The <b>Flutur New Tab</b> Chrome extension replaces your new tab page with a beautiful one designed by us. Every new tab you open while surfing the web raises funds for the cause of your choice.</div>
+    <div onclick="installChromeApp()" style="cursor:pointer; margin:5px 15px 0px 15px; padding:25px 30px 40px 30px" class="white-button">
+        <img alt="Flutur Chrome Extension New Tab" src="/image/get_started_text.png" style="float:left;height:15px" />
+        <img alt="Flutur Chrome Extension New Tab" src="/image/gradient_arrow.png" style="float:right;height:15px" />
+    </div>
+    </div>
+</section>
 </div>

@@ -240,6 +240,7 @@
         }
 
         changeImpactGrid();
+        pullThemeFromDb();
     });
 
     $(document).ready(function() {
@@ -253,6 +254,31 @@
     $("#popupX").click(function() {
         $('#welcomepopup').hide();
     });
+
+
+
+
+    function pullThemeFromDb() {
+        var color = $("#featured-title").css("color");
+        $("#mission-txt").css("display", "block");
+        if (color.includes("255")) {
+            $("#featured-rect").css("border", "2px solid white");
+            $("#featured-star").attr("src", "/image/white_star.png");
+        } else {
+            $("#featured-rect").css("border", "2px solid #3f3f3f");
+            $("#featured-star").attr("src", "/image/black_star.png");
+        }
+
+        color = $("#featured-title-small").css("color");
+        if (color.includes("255")) {
+            $("#featured-rect-small").css("border", "2px solid white");
+            $("#featured-star-small").attr("src", "/image/white_star.png");
+        } else {
+            $("#featured-rect-small").css("border", "2px solid #3f3f3f");
+            $("#featured-star-small").attr("src", "/image/black_star.png");
+        }
+    }
+    $("featured-title")
     $("#mission-prim").click(function() {
         window.location.href = 'projects/<%- featuredProject.projectId %>';
     });

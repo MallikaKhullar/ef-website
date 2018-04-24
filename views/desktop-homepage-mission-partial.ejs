@@ -60,21 +60,21 @@
     <section id="mission-prim" class=" mission-box-container" style="<%- featuredProject.cardStyle %>">
         <div class="row tab-project-container hover-slight">
             <div class="col-sm-3 ">
-                <img alt="Flutur Chrome Extension" src="<%-featuredProject.showcasePhoto%>" class="img-responsive" style="height:350px;margin-top:-50px" /></div>
+                <img alt="Flutur Chrome Extension" src="<%-featuredProject.primaryMissionPhoto%>" class="img-responsive" style="height:350px;margin-top:-50px" /></div>
             <div class="col-sm-5 tab-project-details-container">
                 <div class="uc font-200" style="margin-top:40px; ">Open new tabs to</div>
-                <div class="font-700 uc" style="margin:30px 0; font-size: 50px; line-height:52px;">
+                <div id="featured-title" class="font-700 uc" style="margin:30px 0; font-size: 50px; line-height:52px;">
                     <%- featuredProject.featureActionTitle %>
 
                 </div>
                 <!-- <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px; margin: 10px 0">
                     Just one more step and you're ready to start raising funds. Happy tabbing!</div> -->
-                <div class="featured-white" style="margin-right:200px">
+                <div id="featured-rect" class="featured-white" style="margin-right:200px">
                     <div class="row">
                         <div class="col-sm-2">
-                            <img src="/image/black_star.png" style="height:20px; margin-left:4px;margin-top:-5px;" />
+                            <img id="featured-star" style="height:20px; margin-left:4px;margin-top:-5px;" />
                         </div>
-                        <div class="col-sm-10">
+                        <div id='mission-txt' class="col-sm-10">
                             <div class="poppins-thick xs-text uc">Featured Mission</div>
                             <!-- <div class="poppins-small">March - April 2018</div> -->
                         </div>

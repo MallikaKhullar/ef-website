@@ -147,6 +147,16 @@
     .grid-container {
         padding: 10px 20px;
     }
+    #mission-small {
+        padding: 0px;
+    }
+    .tab-project-container-small {
+        text-align: center;
+    }
+    .mission-photo-small {
+        width: 40vw;
+        height: auto;
+    }
 }
 
 .quick-weight-bold-small {
@@ -253,6 +263,9 @@ header {
     .small-laptop-container,
     .small-content-box,
     .small-pledge-section,
+    #small-about,
+    #secondary-missions-small,
+    #small-chrome-extension,
     .small-mobile-header {
         display: none;
     }
@@ -425,7 +438,10 @@ header .header-content {
     .small-header-content-inner,
     .tab-laptop-container,
     .small-content-box,
+    #secondary-missions-small,
+    #small-about,
     .small-mobile-header,
+    #small-chrome-extension,
     .small-pledge-section {
         display: block;
     }
@@ -451,8 +467,8 @@ header .header-content {
         padding: 50px 15px 50px 15px;
         text-align: center;
     }
-    .chrome-extension {
-        padding: 50px 0 0 0;
+    #small-chrome-extension {
+        padding: 50px 0 50px 0;
     }
     .pink-quicksand-title {
         font-size: 26px;
@@ -466,6 +482,7 @@ header .header-content {
     }
     .tab-project-details-container {
         padding: 0px 50px 20px 50px;
+        text-align: center;
     }
     .know-how-container {
         margin-left: 50px;
@@ -1848,7 +1865,28 @@ h3 {
     color: black;
 }
 
+.small-proj {
+    padding-left: 50px;
+    transition: .2s;
+}
+
+.small-proj:hover {
+    transform: scale(1.01);
+}
+
 @media all and (max-width: 699px) {
+    .black-page-title {
+        font-size: 40px;
+        line-height: 45px;
+        font-weight: 700;
+    }
+    .small-proj {
+        padding: 0px;
+    }
+    #secondary-missions-small {
+        text-align: center;
+        padding: 50px;
+    }
     .category-container {
         display: none;
     }
@@ -1878,9 +1916,12 @@ h3 {
 }
 
 .featured-white {
-    border: 2px solid #3F3F3F;
     padding: 10px 10px 10px 10px;
     width: 40%;
+}
+
+#mission-txt {
+    display: none;
 }
 
 .img-rt {
@@ -1962,13 +2003,4 @@ header {
 
 .font-xsmall {
     font-size: 12px;
-}
-
-.small-proj {
-    padding-left: 50px;
-    transition: .2s;
-}
-
-.small-proj:hover {
-    transform: scale(1.01);
 }

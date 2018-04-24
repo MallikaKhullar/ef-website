@@ -50,9 +50,9 @@
                         </div>
 
 
-                        <div class="featured-green">
+                        <div id="feature-box" class="featured-green">
                             <div style="position: relative;float:left; width:20%">
-                                <img src="/image/black_star.png" style="height:25px; margin-left:8px;margin-top:-2px" />
+                                <img id="star-icon" src="/image/black_star.png" style="height:23px; margin-left:8px;margin-top:-2px" />
                             </div>
                             <div style="position: relative;float:left; width:80%">
                                 <div class="poppins-thick xs-text uc">Featured Mission</div>
@@ -142,19 +142,16 @@
             "border-width": "1px",
             "border-style": "solid"
         });
+        $("#feature-box").css({
+            "border": "1px solid " + color
+        });
+        $("#feature-box").css({
+            "color": color
+        });
+        if (color.includes(255)) color = "white";
+        else color = "black";
+        $("#star-icon").attr("src", "/image/" + color + "_star.png");
 
-        // $(".mission-li").mouseenter(function() {
-        //     var id = $(this).attr('id');
-        //     $("#choose-" + id).show();
-        //     $("#hide-" + id).hide();
-        //     // $(".hidethis").hide();
-        // });
-        // $(".mission-li").mouseleave(function() {
-        //     var id = $(this).attr('id');
-        //     $("#choose-" + id).hide();
-        //     $("#hide-" + id).show();
-        //     // $(".hidethis").show();
-        // });
 
         $(".choose-box-secondary-rect").click(function() {
             var id = $(this).attr('id');
