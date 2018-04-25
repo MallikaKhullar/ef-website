@@ -61,6 +61,12 @@
             background-color: #f9f9f9;
         }
         
+        @media all and (max-width: 699px) {
+            .blue-27 {
+                display: none;
+            }
+        }
+        
         .support-this-cause {
             color: #3C3C3C;
             font-family: Poppins;
@@ -105,6 +111,9 @@
         }
         
         @media all and (max-width: 699px) {
+            .end-to-end {
+                display: none;
+            }
             .footer-icons {
                 font-size: 20px;
             }
@@ -240,6 +249,18 @@
         }
         
         @media screen and (min-width: 700px) {
+            .end-to-end {
+                width: 100%;
+                cursor: pointer;
+                background: black;
+                z-index: 999;
+                padding: 30px 0;
+                color: white;
+                transition: .2s;
+            }
+            .end-to-end:hover {
+                transform: scale(1.05)
+            }
             .recent-title {
                 margin: 110px 0px 10px 0px;
             }
@@ -362,20 +383,6 @@
             color: #23D2AF;
         }
         
-        .end-to-end {
-            width: 100%;
-            cursor: pointer;
-            background: black;
-            z-index: 999;
-            padding: 30px 0;
-            color: white;
-            transition: .2s;
-        }
-        
-        .end-to-end:hover {
-            transform: scale(1.05)
-        }
-        
         .congrats-title {
             font-family: Poppins;
             font-size: 25px;
@@ -469,6 +476,25 @@
             line-height: 60px;
             padding: 0 15px;
         }
+        
+        @media all and (max-width: 699px) {
+            .black-quicksand-title {
+                line-height: 30px;
+                font-size: 28px;
+                padding: 0 15px;
+            }
+            .title-img {
+                transform: scale(1.3);
+            }
+            .para-text {
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 22px;
+            }
+            .end-to-end {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -496,7 +522,7 @@
 
         <div class="blog-detail-container">
 
-            <img src='http://res.cloudinary.com/epicfoundation/image/upload/v1524582832/UI%20images/Asset_8_3x.png' style="margin:0 auto;display:block;width:60%">
+            <img class="title-img" src='http://res.cloudinary.com/epicfoundation/image/upload/v1524583501/UI%20images/PROJECT_-_IMAGES-01.png' style="margin:0 auto;display:block;width:90%">
 
 
             <div class="squish">
@@ -508,10 +534,8 @@
                     <div class="para">
 
                         <div style="text-align:center;">
-                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1523373674/Lol2_ufuczb.jpg" class="para-image">
-                            <div class="image-caption">
-                                some caption
-                            </div>
+                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1524587354/Lol2_ufuczb_ectx1i.jpg" style="width:90%">
+
                         </div>
 
                         <div class="para-text">
@@ -530,7 +554,7 @@
                         </div>
 
                         <div style="text-align:center;">
-                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1524495152/projects/Group_5_2x.png" style="width:80%">
+                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1524495152/projects/Group_5_2x.png" style="width:90%">
                         </div>
 
                         <div class="para-text">
@@ -548,10 +572,9 @@
                         </div>
 
                         <div style="text-align:center;">
-                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1523373675/Lol1_xduog5.jpg" class="para-image">
-                            <div class="image-caption">
-                                some caption
-                            </div>
+                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1524587385/Lol1_xduog5_zw8qkq.jpg" style="width:90%">
+
+
                         </div>
 
                         <div class="para-text">
@@ -561,12 +584,6 @@
                 </div>
                 <div style="margin:20px 0px;">
                     <div class="para">
-                        <div style="text-align:center;">
-                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1524495154/projects/Group_14_2x.png" style="width:80%">
-                            <div class="image-caption">
-                                some caption
-                            </div>
-                        </div>
 
                         <div class="para-text">
                             With numerous successful implementations, the Liter of Light Bangalore has run nearly self-sustaining & independent projects in Madhya Pradesh, Tamil Nadu, Odisha etc., The passionate and inspiring aura surrounding Pankaj Dixit and team has even galvanized
@@ -578,32 +595,36 @@
                     <div class="para">
 
                         <div style="text-align:center;">
-                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1523373678/Lol5_twu2wa.jpg" class="para-image">
-                            <div class="image-caption">
-                                some caption
-                            </div>
-                        </div>
+                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1524495154/projects/Group_14_2x.png" style="width:90%">
 
+                        </div>
                         <div class="para-text">
                             The importance of even the most basic access to light to nurture success,dreams and also empower people can quickly be undermined. The success of Liter of Light, Bangalore shows the difference that even the slightest ray of light in the darkest of places
                             could make in the lives of another.
                         </div>
+
+                        <div style="text-align:center;">
+                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1523373678/Lol5_twu2wa.jpg" style="width:90%">
+
+                        </div>
+
                     </div>
                 </div>
                 <div style="margin:20px 0px;">
                     <div class="para">
 
 
-                        <div style="text-align:center;">
-                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1524495154/projects/Group_19_2x.png" style="width:80%">
-
-                        </div>
-
                         <div class="para-text">
                             Neeraj, 11 years old, dreams to be a footballer one day. He was excited to know that the field was getting a night light and his play time did not have to end along with the sunset
                             <br><br> Bhairavi, 9 years old from Sirumalai ,TN and a jewelry enthusiast. Bhairavi, along with her sister likes to collect stones and make bracelets and necklaces for her family and friends. But she hardly gets an hour after
                             school to pursue her hobby as it gets dark. Bhairavi is happy to know that now she will be able to make many more jewelry pieces with the new night light in her house.
                         </div>
+
+
+                        <div style="text-align:center;">
+                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1524495154/projects/Group_19_2x.png" style="width:90%">
+                        </div>
+
                     </div>
                 </div>
                 <div style="margin:20px 0px;">
@@ -641,10 +662,8 @@
 
 
                         <div style="text-align:center;">
-                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1523373677/Lol8_mijxyn.jpg" class="para-image">
-                            <div class="image-caption">
-                                some caption
-                            </div>
+                            <img alt="flutur" src="http://res.cloudinary.com/epicfoundation/image/upload/v1523373677/Lol8_mijxyn.jpg" style="width:90%">
+
                         </div>
 
 

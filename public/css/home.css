@@ -152,6 +152,7 @@
     }
     .tab-project-container-small {
         text-align: center;
+        padding-top: 20px;
     }
     .mission-photo-small {
         width: 40vw;
@@ -240,7 +241,70 @@ header {
     padding: 80px 50px 0px 50px;
 }
 
+header .header-content .header-content-inner {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+header .header-content .header-content-inner .list-badges {
+    margin-bottom: 25px;
+}
+
+header .header-content .header-content-inner .list-badges img {
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+header .header-content .header-content-inner-box {
+    max-width: none;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header .header-content {
+    text-align: center;
+    padding: 150px 0 0px 0px;
+    position: relative;
+}
+
 @media screen and (min-width: 700px) {
+    .main-home-title {
+        visibility: hidden;
+        letter-spacing: -1px;
+        font-size: 45px;
+        line-height: 50px;
+    }
+    .basic-slide {
+        width: 355px;
+        padding: 15px 25px;
+        box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
+        font-weight: 400;
+        background: #fff;
+        border: 0.5px solid #efefef;
+        border-radius: 5px 0 0px 5px;
+        color: #000;
+        font-size: 20px;
+    }
+    label {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: -5px;
+        border-radius: 0px 5px 5px 0px;
+        padding: 16.5px 25px;
+        background: #FF0F96;
+        box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
+    }
     .blogs-link {
         padding: 50px 50px 70px 50px;
     }
@@ -278,42 +342,6 @@ header {
     .about-container {
         padding: 170px 0;
     }
-}
-
-header .header-content .header-content-inner {
-    position: relative;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-header .header-content .header-content-inner h1 {
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 30px;
-}
-
-header .header-content .header-content-inner .list-badges {
-    margin-bottom: 25px;
-}
-
-header .header-content .header-content-inner .list-badges img {
-    height: 50px;
-    margin-bottom: 25px;
-}
-
-header .header-content .header-content-inner-box {
-    max-width: none;
-    margin: 0;
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-header .header-content {
-    text-align: center;
-    padding: 150px 0 0px 0px;
-    position: relative;
 }
 
 @media (max-width: 1100px) {
@@ -458,14 +486,16 @@ header .header-content {
     }
     header .header-content {
         text-align: center;
-        padding: 100px 0 0px 0px;
+        padding: 180px 0 0px 0px;
         position: relative;
     }
     .about-container,
-    .small-project-details-container,
     .benefitting-ngos {
         padding: 50px 15px 50px 15px;
         text-align: center;
+    }
+    .small-project-details-container {
+        padding: 50px;
     }
     #small-chrome-extension {
         padding: 50px 0 50px 0;
@@ -481,15 +511,15 @@ header .header-content {
         line-height: 35px;
     }
     .tab-project-details-container {
-        padding: 0px 50px 20px 50px;
+        padding: 0px 50px 40px 50px;
         text-align: center;
     }
     .know-how-container {
         margin-left: 50px;
     }
     .impact-img {
-        width: 26px;
-        height: 26px;
+        width: 22px;
+        height: 22px;
         margin-bottom: 5px;
     }
     .font-smaller {
@@ -520,12 +550,18 @@ header .header-content {
         width: 175px;
         padding: 10px 10px;
         font-weight: 400;
+        box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
+        background: #fff;
+        border: 0.5px solid #efefef;
+        color: #000;
         border-radius: 5px 0 0px 5px;
     }
     label {
         margin-left: -5px;
         border-radius: 0px 5px 5px 0px;
         padding: 10.5px 5px;
+        background: #FF0F96;
+        color: white;
         box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
     }
     .email-submit {
@@ -1205,18 +1241,6 @@ footer ul li a.active {
     transform: rotate(315deg) translate(12em) rotate(-315deg);
 }
 
-.basic-slide {
-    width: 355px;
-    padding: 15px 25px;
-    box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
-    font-weight: 400;
-    background: #fff;
-    border: 0.5px solid #efefef;
-    border-radius: 5px 0 0px 5px;
-    color: #000;
-    font-size: 20px;
-}
-
  ::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
     color: #b8b8b8;
@@ -1247,17 +1271,6 @@ footer ul li a.active {
  ::placeholder {
     /* Most modern browsers support this now. */
     color: #b8b8b8;
-}
-
-label {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: -5px;
-    border-radius: 0px 5px 5px 0px;
-    padding: 16.5px 25px;
-    background: #FF0F96;
-    box-shadow: 2px 9px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .trans-box {
@@ -1473,13 +1486,6 @@ button:focus {
 
 #footer-motivation {
     margin-top: -50px;
-}
-
-.main-home-title {
-    visibility: hidden;
-    letter-spacing: -1px;
-    font-size: 45px;
-    line-height: 50px;
 }
 
 .benefitting-ngos {
@@ -1876,8 +1882,8 @@ h3 {
 
 @media all and (max-width: 699px) {
     .black-page-title {
-        font-size: 40px;
-        line-height: 45px;
+        font-size: 37px;
+        line-height: 40px;
         font-weight: 700;
     }
     .small-proj {

@@ -650,9 +650,13 @@
                 $("#background-image-white").show();
                 $(".page-text").css("color", "white");
                 setTimeout(function() {
-                    $("#background-image-overlay").fadeIn(100);
+                    $("#background-image-overlay").fadeIn(800);
                 }, 600);
                 $("#background-image").show();
+                $("#background-image").bind("load", function() {
+                    $(this).fadeIn();
+                });
+
                 $("#background-image").css("background", "");
                 $("#background-image").css("background-image", "url('<%- dailyImage %>')");
                 $("#hamburger-icon").attr("src", "/image/right_nav_white.png");
