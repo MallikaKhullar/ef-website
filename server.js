@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = 8080,
+    port = 8081,
     database = require('./config/database'), // load the database config    
     mongoose = require('mongoose'), // mongoose for mongodb
     passport = require('passport'),
@@ -9,12 +9,10 @@ var express = require('express'),
     router = require('./app/routes/index'),
     session = require('express-session'),
     helmet = require('helmet');
-
-// var session = require('express-session');
-// var redisStore = require('connect-redis')(session);
-// var redis = require("redis");
-// var client = redis.createClient();
-
+var session = require('express-session');
+var redisStore = require('connect-redis')(session);
+var redis = require("redis");
+var client = redis.createClient();
 
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
@@ -25,17 +23,16 @@ require('./app/repo/passport')(passport);
 app.use(helmet());
 
 // required for passport
+app.use(session({
+    secret: 'deveshIsSexy',
+    // create new redis store.
+    store: new redisStore({ host: 'localhost', port: 6379, client: client, ttl: 60000 * 24 * 30 * 2000 }),
+    cookie: { maxAge: (60000 * 24 * 30 * 2000) },
+    saveUninitialized: false,
+    resave: false
+}));
 
-// app.use(session({
-//     secret: 'deveshIsSexy',
-//     // create new redis store.
-//     store: new redisStore({ host: 'localhost', port: 6379, client: client, ttl: 60000 * 24 * 30 * 100 }),
-//     cookie: { maxAge: (60000 * 24 * 30 * 100) },
-//     saveUninitialized: false,
-//     resave: false
-// }));
-
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret TODO: where to get this from?
+//app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret TODO: where to get this from?
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
