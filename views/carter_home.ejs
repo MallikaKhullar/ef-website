@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="google-site-verification" content="bIgzhiYzJX-z_6EqT39MpkW7wN8J7zbpD_8puZbvKeM" />
+    <link rel="icon" href="image/header_logo.png" />
+
+    <link rel="alternate" href="http://www.flutur.org" hreflang="en-in" />
+    <link rel="alternate" href="http://www.flutur.org" hreflang="en" />
+
+    <title>Flutur New Tab Chrome Extension</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/onebagjpomhjadhoiianmnelkbcnllnf">
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="/css/site.css"> -->
+    <link rel="stylesheet" href="/css/carter-home.css">
+
+    <meta name="keywords" content="flutur, flutur effect, flutur bengaluru, flutur india, flutur foundation, flutur chrome tab, tabs for a change, Flutur New Tab, chrome new tab, flutur tabs for a change, flutur ngos donation, flutur donatewithoutdonating"
+    />
+
+    <meta property="og:title" content="Flutur - Change the world sitting at your laptop!" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.flutur.org/" />
+    <meta property="og:image" content="http://res.cloudinary.com/epicfoundation/image/upload/v1514018637/EPIC_characters_-16_1_bokly4.png" />
+    <meta property="og:description" content="Help India's NGOs get funds with Flutur's Chrome extension - Flutur New Tab" />
+    <meta property="fb:app_id" content="197971190828325" />
+    <meta name="twitter:title" content="Flutur - Change the world sitting at your laptop!" />
+    <meta name="twitter:description" content="Help India's NGOs get funds with Flutur's Chrome extension - Flutur New Tab" />
+    <meta name="twitter:url" content="http://www.flutur.org" />
+    <meta name="twitter:image" content="http://res.cloudinary.com/epicfoundation/image/upload/v1514018637/EPIC_characters_-16_1_bokly4.png" />
+    <meta name="description" content="At Flutur, we convert your otherwise wasted hours into real donations through the Flutur effect. Try out the Flutur New Tab Chrome Extention">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111348597-1');
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-1409230231892834",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar" style="z-index:10; margin-top:10px;margin-bottom:-100px;">
+        <div class="container" style="width:95%">
+            <div class="navbar-header">
+
+                <a class="navbar-brand page-scroll" href="/">
+                    <img alt="Flutur Logo, Flutur effect" src="/image/flutur_logo_white.png" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top: 15px;padding-right: 15px;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="li-no-padding" style="margin-right:40px">
+                        <a class="white hover-light" target="_top" href="/blog">
+                            <b class="quick-weight-bold"> BLOG</b>
+                        </a>
+                    </li>
+                    <li class="li-no-padding" style="margin-right:40px">
+                        <a class="white hover-light" target="_top" href="https://goo.gl/forms/pc8kMcdEJQyIPCfJ3">
+                            <b class="quick-weight-bold"> VOLUNTEER</b>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="btn-outline btn-med" style="font-size:12px; cursor:pointer">
+                            <!-- <i class="fa fa-venus-mars" aria-hidden="true"></i> -->
+                            <div onclick="installChromeApp()" style="padding-left: 20px; padding-right: 20px; text-decoration:none!important; height:100%; width:100%">
+                                <b> CHROME PLUGIN</b>
+                                <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <%- include carter_mobile.ejs %>
+    </div>
+    <div>
+        <%- include carter_desktop_partial.ejs %>
+    </div>
+
+
+    <section class="bg-lightgrey blogs-link">
+        <div class="category-container">
+            <div class="title-container" style="width:50%; float:left">
+                <h1 class="black-page-title">
+                    <% if (typeof category != 'undefined') { %>
+                        <%- category.category_name %>
+                            <% } else {%>
+                                Flutur Blogs &amp; Stories
+                                <% } %>
+            </div>
+
+
+
+        </div>
+        </div>
+
+        <div class="category-container-small">
+            <h1 class="black-page-title" style="text-align: center">
+                <% if (typeof category != 'undefined') { %>
+                    <%- category.category_name %>
+                        <% } else {%>
+                            Flutur Blogs &amp; Stories
+                            <% } %>
+            </h1>
+        </div>
+
+        <div class="grid-row" style="margin-bottom:20px;">
+            <% for(var i=0; i<blogs.length; i++) { %>
+                <div class="grid-column">
+                    <a href="/blog/<%-blogs[i].blog_id%>">
+                            <div class="blog-img" style="background-image:url('<%-blogs[i].title_photo_url%>');">
+                            </div>
+                            <div style="height:95px">
+                            <h2 class="blog-outside-title black">
+                                <%- blogs[i].blog_title%>
+                            </h2>
+                            <h3 class="blog-short-desc">
+                                <%- blogs[i].blog_short_desc%>
+                            </h3>
+                        </div>
+                        </a>
+                </div>
+                <% } %>
+        </div>
+        <a href="/blog" class="more-pink-title" style="float:right;">
+                View All <i class="fa fa-angle-right" style="font-size:15px; margin-left:5px" aria-hidden="true"></i>
+            </a>
+    </section>
+
+    <section id="pledge" class="small-pledge-section bg-white">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6 pledge-container">
+            <h1 class="black-page-title">We’re starting a revolution at Flutur &amp; we need your support!</h1>
+            <h2 class="thin-text black font-smaller" style="margin:20px 0 20px 0;">Share your email to know more about what we're building</h2>
+
+            <div style="margin-top:20px;" id="email-input" class="email-input">
+                <span>
+                        <input class="basic-slide font-smaller small-name" id="name" type="email" placeholder="Eg. i.love.flutur@gmail.com" />
+                        <label for="name" class="small-email-label font-smaller"  style="cursor:pointer"> Tell Me More
+                            <i class="fa fa-angle-right" aria-hidden="true" style="margin: 0 10px"></i>
+                        </label>
+                    </span>
+            </div>
+
+            <div style="margin-top:20px;display:none" class="email-submit" id="email-submit">
+                Awesome! We will write to you shortly :)
+            </div>
+
+            <div class="gif-container">
+                <img alt="Flutur Effect Lorenz Attractor" src="/image/flutur_logo.gif" style="height:auto; width:70%" />
+            </div>
+        </div>
+    </section>
+
+    <section id="pledge" class="pledge-section bg-white">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 pledge-container">
+                <h1 class="black-page-title" style="font-size:50px; line-height:50px">We’re starting a revolution at Flutur &amp; we need your support!</h1>
+                <div class="thin-text black font-small" style="margin:20px 0 20px 0;">Share your email to know more about what we're building</div>
+
+                <div style="margin-top:30px;" id="email-input" class="email-input">
+                    <span>
+                          <input class="basic-slide desktop-name" id="name" type="email" placeholder="Eg. i.love.flutur@gmail.com" />
+                               <label for="name" class="email-label" style="cursor:pointer"> Tell Me More
+                                    <i class="fa fa-angle-right" aria-hidden="true" style="margin: 0 10px"></i>
+                               </label>
+                    </span>
+                </div>
+
+                <div style="margin-top:30px;display:none" class="email-submit" id="email-submit">
+                    Awesome! We will write to you shortly :)
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <img alt="Flutur Effect Lorenz Attractor" src="/image/flutur_logo.gif" style="height:auto; width:70%" />
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </section>
+
+
+
+    <div class="resp-footer">
+        <%- include footer_partial.ejs %>
+    </div>
+    <div class="small-resp-footer">
+        <%- include footer_small_partial.ejs %>
+    </div>
+
+</body>
+<script src="https://rawgit.com/andreruffert/rangeslider.js/develop/dist/rangeslider.min.js"></script>
+<script src="js/impact_grid.min.js"></script>
+<script src="js/drop.min.js"></script>
+<script src="js/slider.min.js"></script>
+<script src="js/chromeExtension.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".footer-desc").show();
+        $(".main-home-title").css("visibility", "visible").hide().fadeIn(50);
+        $(".rangeslider-wrap").css("visibility", "visible").hide().fadeIn(50);
+
+        if (window.matchMedia('(min-width: 700px)').matches) {
+            $(".trans-box").fadeIn(50);
+        } else {
+            $(".small-trans-box").fadeIn(50);
+        }
+
+        changeImpactGrid();
+        pullThemeFromDb();
+    });
+
+    $(document).ready(function() {
+        var isshow = localStorage.getItem('isshow');
+        if (isshow == null) {
+            localStorage.setItem('isshow', 1);
+            $('#welcomepopup').show();
+        }
+    });
+
+    $("#popupX").click(function() {
+        $('#welcomepopup').hide();
+    });
+
+
+
+
+    function pullThemeFromDb() {
+        var color = $("#featured-title").css("color");
+        $("#mission-txt").css("display", "block");
+        if (color.includes("255")) {
+            $("#featured-rect").css("border", "2px solid white");
+            $("#featured-star").attr("src", "/image/white_star.png");
+        } else {
+            $("#featured-rect").css("border", "2px solid #3f3f3f");
+            $("#featured-star").attr("src", "/image/black_star.png");
+        }
+
+        color = $("#featured-title-small").css("color");
+        if (color.includes("255")) {
+            $("#featured-rect-small").css("border", "2px solid white");
+            $("#featured-star-small").attr("src", "/image/white_star.png");
+        } else {
+            $("#featured-rect-small").css("border", "2px solid #3f3f3f");
+            $("#featured-star-small").attr("src", "/image/black_star.png");
+        }
+    }
+    $("featured-title")
+    $("#mission-prim").click(function() {
+        window.location.href = 'projects/<%- featuredProject.projectId %>';
+    });
+
+    $("#desktop-footer-motivation").find("a").click(function(e) {
+        e.preventDefault();
+        var section = $(this).attr("href");
+        $("html, body").animate({
+            scrollTop: $(section).offset().top
+        });
+    });
+    $("#small-footer-motivation").find("a").click(function(e) {
+        e.preventDefault();
+        var section = $(this).attr("href");
+        $("html, body").animate({
+            scrollTop: $(section).offset().top
+        });
+    });
+
+
+    function submitEmail($val) {
+        if ($val.val() == null || $val.val() == undefined || $val.val() == "")
+            return;
+
+        $.ajax({
+            type: "GET",
+            url: "/home/submit-email?email_id=" + $val.val(),
+            success: function(result) {
+                $(".email-input").css("display", "none");
+                $(".email-submit").css("display", "block");
+            },
+            error: function(result) {}
+        });
+    }
+
+    $('.email-label').click(function() {
+        submitEmail($(".desktop-name"));
+    });
+    $('.small-email-label').click(function() {
+        submitEmail($(".small-name"));
+    });
+    $('#feature-read-more').click(function() {
+        window.location.href = "projects/" + "<%- featuredProject.projectId %>";
+    });
+</script>
+
+<script type="text/javascript">
+    var infolinks_pid = 3083843;
+    var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+
+
+</html>

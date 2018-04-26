@@ -1,0 +1,171 @@
+<header class="main-header">
+    <div class='welcome' id='welcomepopup'>
+        <div>
+            <img id="popupX" alt="Flutur Chrome Extension" src="/image/cross_right_bar.png" class="img-rt" />
+            <h3 class="dialog-small-txt">Raise funds by just browsing the internet!</h3>
+            <div class="start-now" onclick="installChromeApp()">Start now</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 primary-section-container">
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <div class="main-home-title thick-text">How long are you active online everyday?</div>
+                    <div class="rangeslider-wrap" style="visibility:hidden">
+                        <input type="range" min="0" max="16" step="0.5" labels="0, 16" value="1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="header-content" style="padding: 0 50px;width:100%">
+                <div class="header-content-inner" style="width:100%">
+
+                    <div class="trans-box">
+                        <div style="display:table">
+                            <div id="impact-val" class="thick-text" style="padding-right:5px; font-size:40px; vertical-align:middle; width:100px;text-align:left;display:table-cell">3.12</div>
+                            <select id="year" style="display:table-cell;padding:15px">
+                                            <option value="tree">TREES</option>
+                                            <option value="food">CHILDREN FED</option>
+                                            <option value="book">DAYS OF SCHOOL</option>
+                                        </select>
+                        </div>
+
+                        <div id="impact-stmt" class="font-100" style="font-size:1.1vw;width:420px; height:50px; margin:10px 0 0 5px;"></div>
+                        <div style="margin: 10px 0px 50px 0">
+                            <%- include grid.ejs %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="desktop-footer-motivation" style="padding: 30px 0px 50px 0px;">
+        <a href="#mission-prim" style="text-decoration:none">
+            <div style="text-align:center" class="hover-light white font-100">The world needs more superheroes!
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+        </a>
+    </div>
+</header>
+
+
+<div class="desktop-content">
+    <div style="text-align: center">
+        <img src=" <%-featuredProject.fullFeaturePhoto%>" style="width:100vw;">
+    </div>
+
+    <section id="mission-prim" class=" mission-box-container" style="<%- featuredProject.cardStyle %>">
+        <div class="row tab-project-container hover-slight">
+            <div class="col-sm-3 ">
+                <img alt="Flutur Chrome Extension" src="<%-featuredProject.primaryMissionPhoto%>" class="img-responsive" style="height:350px;margin-top:-50px" /></div>
+            <div class="col-sm-5 tab-project-details-container">
+                <div class="uc font-200" style="margin-top:40px; ">Open new tabs to</div>
+                <div id="featured-title" class="font-700 uc" style="margin:30px 0; font-size: 50px; line-height:52px;">
+                    <%- featuredProject.featureActionTitle %>
+
+                </div>
+                <!-- <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px; margin: 10px 0">
+                        Just one more step and you're ready to start raising funds. Happy tabbing!</div> -->
+                <div id="featured-rect" class="featured-white" style="margin-right:200px">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img id="featured-star" style="height:20px; margin-left:4px;margin-top:-5px;" />
+                        </div>
+                        <div id='mission-txt' class="col-sm-10">
+                            <div class="poppins-thick xs-text uc">Featured Mission</div>
+                            <!-- <div class="poppins-small">March - April 2018</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 tab-project-details-container" style="padding-left:30px;">
+                <div class="font-200" style="margin-top:40px;padding-right:50px;">
+                    <%- featuredProject.homeDescription %>
+                </div>
+                <div id="read-more" class="font-700 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="secondary-missions" class="other-missions-box-container bg-lightgrey">
+        <div class="we-also-support mb-3">WE ALSO SUPPORT - </div>
+
+        <div class="row">
+            <% for(var i=0; i<projects.length; i++) { %>
+                <a href='projects/<%- projects[i].projectId %>'>
+                    <div class="col-sm-4 small-proj">
+                        <img src="<%- projects[i].showcasePhoto%>" class="mb-2" style="height:150px; width:150px" />
+                        <div class="thick-text black font-small uc" style="line-height:1.2; letter-spacing: 0.5px;padding-right:50px;padding-bottom:10px;font-size:25px">
+                            <%- projects[i].projectTitle%>
+                        </div>
+                        <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;">
+                            <%- projects[i].homeDescription%>
+                        </div>
+                        <div id="feature-read-more" class="black c-p font-700 uc" style="font-size:12px; margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+
+                    </div>
+                </a>
+                <% } %>
+        </div>
+    </section>
+
+    <section id="desktop-about" class="about-container bg-white">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5 flutur-effect-container">
+                <h1 class="pink-quicksand-title" style="margin-top:40px;">The flutur effect</h1>
+                <h1 class="black-quicksand-title" style="margin:15px 0px;">Tiny acts can have large effects</h1>
+                <h3 style="line-height:1.5; letter-spacing: 1px;" class="thin-text black font-small">At Flutur, we are building products which convert your otherwise wasted hours into real donations. As a result, you can change the world right from your workplace!
+                </h3>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5 amita-img-container">
+                <img alt="Flutur Child" src="/image/flutur_pratiksha.png" style="width:60%;filter: alpha(opacity=90);" />
+            </div>
+        </div>
+    </section>
+
+    <section id="proj" class="gradient-box-container bg-white" style="padding: 100px 0;">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="gradient-box">
+                    <div class="white" style="float:left;width:25%;padding-left:15px;">PROJECT ONE</div>
+                    <div class="white" style="float:left;width:5%;">|</div>
+                    <div class="white" style="float:left;width:70%;">FLUTUR NEW TAB</div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="col-sm-6"></div>
+            <div class="col-sm-1"></div>
+        </div>
+
+        <div class="row tab-project-container">
+            <div class="col-sm-5 big-laptop-container">
+                <img alt="Flutur Chrome Extension" src="/image/flutur_laptop.png" class="img-responsive" /></div>
+            <div class="col-sm-5 tab-project-details-container">
+                <div class="black-quicksand-title" style="margin:100px 0 20px 0; font-size:50px; line-height:50px">Flutur New Tab</div>
+                <div class="thin-text black font-small" style="letter-spacing: 1px; margin:20px 0 20px 0;">The <b>Flutur New Tab</b> Chrome extension replaces your new tab page with a beautiful one designed by us. Every new tab you open while surfing the web raises funds for the cause of your choice.</div>
+                <div onclick="installChromeApp()" class="hover-light white-button">
+                    <img alt="Flutur Chrome Extension Get Started" src="/image/get_started_text.png" style="float:left;height:15px" />
+                    <img alt="Flutur Chrome Extension New Tab Get Started" src="/image/gradient_arrow.png" style="float:right;height:15px" />
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-5"></div>
+            <div class="col-sm-2 know-how-container">
+                <a href="/faqs" style="text-decoration:none; margin-top:300px">
+                    <div class="know-how">Know how?</div>
+                    <div style="box-sizing: border-box; width: 87px; border: 1px solid #000000;"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
