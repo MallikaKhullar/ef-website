@@ -43,18 +43,18 @@
             </div>
         </nav>
 
-        <div style="padding: 50px 100px">
+        <div style="padding: 50px 70px">
             <div class="row">
-                <div class="col-sm-12 poppins heading bold mt-2">
+                <div class="col-sm-12 poppins heading bold" style="margin-top:50px">
                     Flutur has just improved!
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-12 poppins para mt-2">
-                    Joel! Since flutur began its journey almost 6 months ago, we’ve been rying to figure out ways to improve the transparency of our entire operation. Because of this we have tiesd up with 4 Indian NGOs that will be implrementing All your hearts will now
-                    be converted to.<br> <br>Joel! Since flutur began its journey almost 6 months ago, we’ve been rying to figure out ways to improve the transparency of our entire operation. Because of this we have tiesd up with 4
-                    Indian NGOs that will be implrementing All your hearts will now be converted to.<br>
+                <div class="col-sm-12 poppins para mt-1">
+                    Previously you could select a different cause every week and all the money you raised was directly donated to the NGOs under the cause, who could then use your funds as per their needs.
+                    <br><br> We wanted to give you more control over where your funds go. So from today - instead of choosing a general cause, you'll get to choose from specific projects that you want your raised funds to go to.
+                    <br><br> We are happy to announce that Flutur has partnered with NGOs that uplift the society through frugal innovations which effectively tackle the causes you're passionate about in a more direct and hands down way.
                 </div>
             </div>
             <div class="row">
@@ -133,7 +133,7 @@
                                 <div class="col-sm-1">
                                     <img src="/image/black_star.png" style="height:10px;margin-top:-5px; margin-left:3px" />
                                 </div>
-                                <div class="col-sm-7" style="padding-left:0; margin-top:5px;margin-left:3px">
+                                <div class="col-sm-8" style="padding-left:0; margin-top:5px;margin-left:3px">
                                     <div class="featured-mission bold uc">Featured Mission</div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                     </div>
                     <div class="col-sm-4 featured-hover">
                         <div class="action-desc-left">
-                            <%- featuredProject.homeDescription %>
+                            <%- featuredProject.shortDescription %>
                         </div>
                     </div>
                 </div>
@@ -160,10 +160,12 @@
                             <div class="action-title-inner">
                                 <%- projects[i].actionTitle %>
                             </div>
-                            <div class="open-new-tabs-to uc">For Karauli</div>
+                            <div class="open-new-tabs-to uc">
+                                <%- projects[i].forByLine %>
+                            </div>
                         </div>
 
-                        <div class="mb-4 mt-1 units">
+                        <div class="mb-3 mt-1 units">
                             <%- projects[i].ngo.ngoName %>
                         </div>
                     </div>

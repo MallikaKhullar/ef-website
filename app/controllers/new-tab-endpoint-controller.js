@@ -15,7 +15,7 @@ const prettyMs = require('pretty-ms');
 
 exports.render_shiftUsersToV1 = function(user, res) {
     var def = {
-        projects: projectController.getProjectOverviews({ truncShortDesc: true, truncShort: 70, truncHomeDesc: true, truncHome: 200 }),
+        projects: projectController.getProjectOverviews({}),
         donations: donationController.getAllStats(user.user_id)
     };
 
@@ -24,7 +24,6 @@ exports.render_shiftUsersToV1 = function(user, res) {
 
         var newdata = {};
         newdata = Utils.appendProjects(newdata, data.projects);
-
         var causesIds = data.donations.map(a => a._id);
         causeController.getAllCausesByIds(causesIds).pipe(function(allCauses) {
             for (i in allCauses) {
@@ -60,6 +59,8 @@ exports.render_weekOngoing_v1 = function(req, res, setAsDonatePending) {
     });
 }
 
+
+
 exports.render_autoAssignNewProject = function(req, res, showMissionSelectedPopup) {
     userController.incrementTabsById(req.user.id);
 
@@ -91,6 +92,50 @@ exports.render_autoAssignNewProject = function(req, res, showMissionSelectedPopu
                 result.showMissionSelectedPopup = showMissionSelectedPopup;
 
                 res.render("project-new-tab.ejs", result);
+            });
+        });
+    });
+}
+
+
+exports.donate_render_autoAssignNewProject = function(req, res, showMissionSelectedPopup) {
+    var user = JSON.parse(JSON.stringify(req.user));
+    var donation_id = "donation" + moment().format('x');
+    donationController.createDumpv1(user.project.tabs, donation_id, user.user_id, user.project.project_id).pipe(function(dump) {
+        userController.donate(donation_id, user.user_id);
+        user.last_project = {};
+        user.last_project.tabs = user.project.tabs - 1;
+        user.last_project.project_id = user.project.project_id;
+        user.project.tabs = 0;
+        var def = {
+            userCount: userController.getAllUserCount(),
+            donationCount: donationController.getAllDonationCount(),
+            currentProject: projectController.getFeaturedProject() //for new users, assign them featured project
+        };
+
+        deferred.combine(def).pipe(function(data) {
+            var start = moment().format('x');
+            var end = Utils.getTwoWeekTime(start);
+
+            userController.setProject(user.user_id, data.currentProject.projectId, start, end).pipe(function(newUser) {
+
+                var user1 = JSON.parse(JSON.stringify(newUser));
+                user1.project = data.currentProject;
+                user1.project.project_id = data.currentProject.projectId;
+                user1.project.target_end_time = end;
+                user1.project.target_start_time = start;
+                user1.project.tabs = 0;
+
+                v1_constructPayload({
+                    user: user1,
+                    numDonations: data.donationCount,
+                    numUsers: data.userCount,
+                    project: data.currentProject,
+                    req: req,
+                }).pipe(function(result) {
+                    result.showMissionSelectedPopup = showMissionSelectedPopup;
+                    res.render("project-new-tab.ejs", result);
+                });
             });
         });
     });
@@ -183,7 +228,7 @@ function v1_constructPayload(data) {
         //so i'll need to pull the last project
         return projectController.getProjectDetails({ projectId: newdata.user.project.project_id }).pipe(function(last_proj) {
             try {
-                newdata.project.unitsCreated = (newdata.user.last_project.tabs / last_proj.weeklyTargetTabs) + 1;
+                newdata.project.unitsCreated = (newdata.user.last_project.tabs / last_proj.tabsForSingleUnit) + 1;
                 newdata.project.unitsCreated = newdata.project.unitsCreated.toFixed(1);
                 newdata.project.unitrep = (newdata.project.unitsCreated == 1.00 ? last_proj.currentUnitMeasure : last_proj.currentUnitMeasure + "s")
             } catch (err) {
@@ -197,7 +242,7 @@ function v1_constructPayload(data) {
 
     if (newdata.user.state == "v1_donate_pending") {
         try {
-            newdata.project.unitsCreated = (newdata.user.project.tabs / data.project.weeklyTargetTabs) + 1;
+            newdata.project.unitsCreated = (newdata.user.project.tabs / data.project.tabsForSingleUnit) + 1;
             newdata.project.unitsCreated = newdata.project.unitsCreated.toFixed(1);
             newdata.project.unitrep = (newdata.project.unitsCreated == 1.00 ? data.project.currentUnitMeasure : data.project.currentUnitMeasure + "s")
         } catch (err) {

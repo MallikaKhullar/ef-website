@@ -38,7 +38,7 @@
 
 <div class="small-content-box">
     <section id="mission-small" class="bg-lightgrey">
-        <img src=" <%-featuredProject.fullFeaturePhoto%>" style="width:100vw;">
+        <img src="<%- featuredProject.fullFeaturePhoto %>" style="width:100vw;">
         <div class="tab-project-container-small">
             <img alt="Flutur Chrome Extension" src="<%-featuredProject.showcasePhoto%>" class="mission-photo-small" style="margin:0 auto" />
             <div class=" tab-project-details-container">
@@ -67,7 +67,7 @@
     <% for(var i=0; i<projects.length; i++) { %>
         <a href='projects/<%- projects[i].projectId %>' style="color:inherit;text-decoration: none!">
             <div class="small-proj">
-                <div class="small-text uc poppins-thick" style="margin-top:40px;line-height:1.2; letter-spacing: 0.5px;font-size:23px">
+                <div class="small-text uc poppins-thick" style="margin-top:40px;line-height:1.1; letter-spacing: 0.5px;font-size:23px">
                     <%- projects[i].projectTitle%>
                 </div>
                 <img src="<%- projects[i].showcasePhoto%>" class="mb-2" style="margin-top:5px;height:125px; width:125px; " />

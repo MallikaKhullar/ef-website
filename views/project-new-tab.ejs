@@ -101,7 +101,7 @@
                                 <%- project.donateThanks %>
                             </div>
                             <div class="donated-successfully font-700 white">
-                                <a style="color:inherit;text-decoration: none!" href='projects/<%- project.projectId %>'>Read more</a>
+                                <a style="color:inherit;text-decoration: none!" target="_top" href='projects/<%- project.projectId %>'>Read more</a>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
 
         <% if (showMissionSelectedPopup === true) { %>
             <div class="dark-gradient-autoAssign">
-                <div class="assign-dialog-overlay" style="height:60%">
+                <div class="assign-dialog-overlay" style="height:67%">
                     <div class=" row" style="margin-bottom:30px">
                         <div class="col-sm-6">
                             <div class="featured-green">
@@ -143,11 +143,10 @@
                             <div>
                                 <img alt="Flutur Environment Saving" style="width:70%; height:auto;" src=" <%- project.showcasePhoto %>" /></a>
                                 <div class="action-units white uc" style="margin-top:15px;">
-                                    <!-- <%- project.projectTotal %> helpdesks made so far -->
-                                    32 helpdesks
+                                    6000 villagers
                                 </div>
                                 <div class="created-so-far uc">
-                                    created so far
+                                    to be given water
                                 </div>
                             </div>
                         </div>
@@ -301,17 +300,36 @@
 
                             <br><br><br>
 
-                            <div class="right-nav-boxxy" style="<%- project.cardStyle %>">
+
+
+                            <div style="padding-top: 10px; margin-left:-20px; margin-right:-20px; height: 50%; text-align:right; margin-top:70px; background:#f9f9f9; ">
+                                <div class="bold-heading">
+                                    <a target="_top" class="hover-gray black" href="/blog">
+                                    Blogs</a>
+                                </div>
+                                <div class="bold-heading">
+                                    <a target="_top" class="hover-gray black" href="/privacy">
+                                    Privacy</a>
+                                </div>
+                                <div class="bold-heading">
+                                    <a target="_top" class="hover-gray black" href="/faqs">
+                                    FAQs</a>
+                                </div>
+
+                                <div class="bold-heading">
+                                    <a target="_top" class="hover-gray black" href="/">
+                                    Home</a>
+                                </div>
+                            </div>
+                            <!-- <div class="right-nav-boxxy" style="<%- project.cardStyle %>">
                                 <div>
                                     <div class="row">
                                         <div class="col-sm-5">
                                             <div class="right-nav-title">
                                                 <%- project.actionTitle %>
                                             </div>
-                                            <div class="action-desc-left">
-                                                <%- project.shortDescription %>
-                                            </div>
-                                            <div id="read-more" class="c-p font-700 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
+
+                                          <div id="read-more" class="c-p font-700 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">
                                                 <a style="color:inherit;text-decoration: none!" href='projects/<%- project.projectId %>'>Read more</a>
                                                 <i class="fa fa-angle-right" aria-hidden="true"></i></div>
                                         </div>
@@ -338,7 +356,7 @@
                                     </a>
 
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -422,15 +440,15 @@
 
                         <div class="ad-footer-right">
                             <span class="donate-info">
-                        <div class="hover-right bold mb-1 uc">Donate now!</div>
-                        <div class="hover-right">TODO fix this some long thing here check</div>
+                                    <div class="hover-right bold uc"><%- project.donateFTUE.title %></div>
+                                    <div class="hover-right"><%- project.donateFTUE.info %></div>
                     </span>
                             <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">
                                 <img alt="Flutur Cause" class="small-env-icon" src="<%- project.playPhoto %>" />
                             </div>
 
                             <div class="page-text quicksand white center-element" style="font-weight:100;top:-10%; right:40%; position: absolute;font-size:12px;">
-                                You've made
+                                You've raised funds for
                             </div>
 
                             <div class="page-text quicksand white center-element" style="top:10%;right:40%; position: absolute;font-size:12px;">
@@ -438,15 +456,15 @@
                                 <span style="font-size:16px; font-weight:100 "><%- project.unitrep %>! </span></div>
                             <div>
                                 <div>
-                                    <div class="quicksand white pink-box" style="margin-right:22px" id="donate-now">DONATE HEARTS</div>
+                                    <div class="quicksand white pink-box" style="margin-right:22px" id="donate-now">DONATE NOW</div>
                                 </div>
                             </div>
 
                             <% } else if (user.state === 'v1_cause_selection_pending') { %>
                                 <div class="ad-footer-right">
                                     <span class="donate-info">
-                                <div class="hover-right bold mb-1 uc">Choose your next cause</div>
-                                <div class="hover-right">TODO fix this some long thing here check</div>
+                                            <div class="hover-right bold uc"><%- project.donateFTUE.title %></div>
+                                            <div class="hover-right"><%- project.donateFTUE.info %></div>
                         </span>
 
                                     <div style="position: absolute;width: 100%; float:right; padding-left:10px; padding-top:5px; text-align:right">

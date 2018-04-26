@@ -57,9 +57,7 @@ exports.getAllStats = function(userId) {
 
 
 function getAllDonationsForProject(id) {
-    console.log("*2", id);
     return fn.defer(fn.bind(Donation, 'getDonationsByProjectId'))(id).pipe(function(data) {
-        console.log("*4", data);
         return deferred.success(data);
     });
 };

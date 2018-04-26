@@ -142,7 +142,7 @@ userSchema.statics = {
                 "project.target_end_time": data.end,
                 "project.project_id": data.cause_id,
             }
-        }, {}, cb);
+        }, { new: true }, cb);
     },
 
     //v1 route

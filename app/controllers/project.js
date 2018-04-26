@@ -61,6 +61,8 @@ exports.getProjectFeaturedDetail = function(projectId) {
 };
 
 function constructPayload(project, filters) {
+    if (filters == undefined || filters == null) return project;
+
     if (filters.truncShortDesc) project.shortDescription = Utils.trunc(project.shortDescription, filters.truncShort);
     if (filters.truncHomeDesc) project.homeDescription = Utils.trunc(project.homeDescription, filters.truncHome);
 

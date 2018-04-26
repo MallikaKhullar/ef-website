@@ -44,7 +44,7 @@ router.get('/choose-mission', continueIfLoggedIn, function(req, res) {
 
 //v1 route
 router.get('/choose-project', continueIfLoggedIn, function(req, res) {
-    projectController.getProjectOverviews({ truncShortDesc: true, truncShort: 200 }).pipe(function(projects) {
+    projectController.getProjectOverviews().pipe(function(projects) {
         var featuredProj;
         for (i in projects) {
             if (projects[i].isFeatured == true) {
@@ -54,6 +54,7 @@ router.get('/choose-project', continueIfLoggedIn, function(req, res) {
         }
 
         console.log("*1", featuredProj.projectId);
+        console.log("*1 TRUNCTE", featuredProj.shortDescription);
 
         donationController.getCurrentProgress(featuredProj.projectId).pipe(function(tabsDonated) {
             console.log("*2");
@@ -111,7 +112,7 @@ router.get('/', continueIfLoggedIn, function(req, res) {
         case 'v1_donate_pending':
             if (donatePendingForMoreThanDay(req.user)) {
                 console.log("*4");
-                newTabController_v1.render_autoAssignNewProject(req, res, false);
+                newTabController_v1.donate_render_autoAssignNewProject(req, res, false);
                 return;
             } else {
                 console.log("*5");
