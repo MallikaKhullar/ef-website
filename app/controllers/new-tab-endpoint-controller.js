@@ -228,7 +228,7 @@ function v1_constructPayload(data) {
         //so i'll need to pull the last project
         return projectController.getProjectDetails({ projectId: newdata.user.project.project_id }).pipe(function(last_proj) {
             try {
-                newdata.project.unitsCreated = (newdata.user.last_project.tabs / last_proj.tabsForSingleUnit) + 1;
+                newdata.project.unitsCreated = (newdata.user.last_project.tabs / last_proj.tabsForSingleUnit);
                 newdata.project.unitsCreated = newdata.project.unitsCreated.toFixed(1);
                 newdata.project.unitrep = (newdata.project.unitsCreated == 1.00 ? last_proj.currentUnitMeasure : last_proj.currentUnitMeasure + "s")
             } catch (err) {
@@ -242,7 +242,7 @@ function v1_constructPayload(data) {
 
     if (newdata.user.state == "v1_donate_pending") {
         try {
-            newdata.project.unitsCreated = (newdata.user.project.tabs / data.project.tabsForSingleUnit) + 1;
+            newdata.project.unitsCreated = (newdata.user.project.tabs / data.project.tabsForSingleUnit);
             newdata.project.unitsCreated = newdata.project.unitsCreated.toFixed(1);
             newdata.project.unitrep = (newdata.project.unitsCreated == 1.00 ? data.project.currentUnitMeasure : data.project.currentUnitMeasure + "s")
         } catch (err) {
