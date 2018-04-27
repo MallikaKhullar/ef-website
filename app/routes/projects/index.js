@@ -46,7 +46,6 @@ router.get('/:projectId', function(req, res) {
             }
         };
 
-        console.log("SENDING", newdata);
         res.render(projectId + ".ejs", newdata);
     });
 });

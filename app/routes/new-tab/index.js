@@ -53,11 +53,7 @@ router.get('/choose-project', continueIfLoggedIn, function(req, res) {
             }
         }
 
-        console.log("*1", featuredProj.projectId);
-        console.log("*1 TRUNCTE", featuredProj.shortDescription);
-
         donationController.getCurrentProgress(featuredProj.projectId).pipe(function(tabsDonated) {
-            console.log("*2");
             var data = {};
             var units = tabsDonated / featuredProj.tabsForSingleUnit;
             data.unitString = units.toFixed(0) + " " + (units.toFixed(0) == 1 ? featuredProj.currentUnitMeasure : featuredProj.currentUnitMeasure + "s");
