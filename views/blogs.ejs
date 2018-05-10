@@ -196,13 +196,17 @@
         }
     </style>
 
-    <% if (typeof category != 'undefined') { %>
-        <meta name="keywords" content="flutur, flutur effect, flutur bengaluru, flutur india, flutur foundation, flutur chrome tab, tabs for a change, chrome new tab, flutur tabs for a change, flutur new tab, flutur ngos donation, flutur donatewithoutdonating, flutur <%- category.category_name%>"
-        />
-        <% } else {%>
-            <meta name="keywords" content=" flutur new tab, flutur, flutur effect, flutur bengaluru, flutur india, flutur foundation, flutur chrome tab, tabs for a change, chrome new tab, flutur tabs for a change, flutur ngos donation, flutur donatewithoutdonating"
+    <%- include partial-head.ejs %>
+
+
+        <% if (typeof category != 'undefined') { %>
+            <meta name="keywords" content="flutur, flutur effect, flutur bengaluru, flutur india, flutur foundation, flutur chrome tab, tabs for a change, chrome new tab, flutur tabs for a change, flutur new tab, flutur ngos donation, flutur donatewithoutdonating, flutur <%- category.category_name%>"
             />
-            <% } %>
+            <% } else {%>
+                <meta name="keywords" content=" flutur new tab, flutur, flutur effect, flutur bengaluru, flutur india, flutur foundation, flutur chrome tab, tabs for a change, chrome new tab, flutur tabs for a change, flutur ngos donation, flutur donatewithoutdonating"
+                />
+                <% } %>
+
 </head>
 
 <body style="display:none">
