@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Flutur | Login | DonateWithoutDonating</title>
+    <link rel="icon" href="image/header_logo.png" />
+
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+
+    <link href="/css/login.css" rel="stylesheet">
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111348597-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111348597-1');
+    </script>
+    <%- include partial-head.ejs %>
+
+</head>
+
+<body>
+
+    <div id='left-side'>
+        <nav id="mainNav">
+            <div class="navbar-header" style="padding: 10px;">
+                <a target="_top" class="navbar-brand" href="http://www.flutur.org">
+                    <img src="/image/flutur_logo_black.png" />
+                </a>
+            </div>
+        </nav>
+
+        <div class="row" style="margin-top:145px;">
+            <div class="col-sm-8" style="padding: 10px 0px 10px 50px;">
+                <div class="featured-white" style="margin-right:200px">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/image/black_star.png" style="height:20px; margin-left:8px;margin-top:-4px" />
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="poppins-thick xs-text uc">Featured Mission</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poppins-thin smaller-text uc" style="margin-top:20px;padding-right:50px;">Open new tabs to</div>
+                <div class="poppins-thick uc" style="margin-top:15px;font-size: 53px; line-height:54px;">
+                    <%- featuredProject.projectTitle%>
+                </div>
+                <div class="poppins-thin smaller-text" style="margin-top:20px;padding-right:50px;">
+                    <%- featuredProject.shortDescription %>
+                </div>
+            </div>
+
+            <div class="col-sm-4" style="padding:0">
+                <img src='<%- featuredProject.primaryMissionPhoto%>' style="width:100%;margin-top:-10px">
+            </div>
+        </div>
+
+
+
+        <div style="margin-top:250px; padding-left:30px;">
+            <div style="padding:20px">
+                <div class="other-mission-title choose-title" style="margin-top:10px">Choose from our other missions after 2 weeks!</div>
+
+                <% for(var i=0; i<projects.length; i++) { %>
+                    <div class="row" style="margin:50px 0px">
+                        <div class="col-sm-3" style="padding:0px">
+                            <img src="<%- projects[i].showcasePhoto%>" style="margin-top:10px; height:150px; width:150px" />
+                        </div>
+                        <div class="col-sm-9" style="margin-left:-15px">
+                            <div style="margin:25px 0;">
+                                <div class="other-mission-title uc" style="padding-right:50px;">
+                                    <%- projects[i].projectTitle%>
+                                </div>
+                                <div class="other-mission-desc mt-1" style="padding-right:80px;">
+                                    <%- projects[i].shortDescription%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% } %>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id='right-side'>
+        <div style="margin-top:200px">
+            <div class="sign-in-to-begin">Sign in to begin</div>
+            <!-- <div class="sign-in-stats">32 helpdesks so far!</div> -->
+            <div>
+                <a href="/auth/google" target="_top" class="full-width btn btn-xl red-btn login-btn white" style="margin-top: 10px">
+                    <!-- <img src="/image/google_white.png" style="height:25px; margin-right:10px; margin-bottom:2px" /> -->
+                    Google Plus</a>
+            </div>
+            <div>
+                <a href="/auth/facebook" target="_top" class="full-width btn btn-xl blue-btn login-btn white" style="margin-top: 10px">
+                    <!-- <img src="/image/facebook_white.png" style="height:20px; margin-right:10px; margin-bottom:2px" /> -->
+                    Facebook</a>
+            </div>
+        </div>
+        <!-- <div style="margin-top:30px; text-align:center" class="poppins-thin smaller-text"><i class="fa fa-power-off" aria-hidden="true"></i> Please turn your Ad blocker off for this site!</div> -->
+
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="/vendor/jquery/jquery.min.js "></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js "></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js "></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js "></script>
+
+</body>
+
+</html>
