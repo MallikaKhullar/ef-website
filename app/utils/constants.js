@@ -8,7 +8,6 @@ var Constants = {
         "http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515857169/unsplash/daniel-wallace-191458.jpg",
         "http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515857182/unsplash/andy-kerr-153378.jpg",
         "http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515857117/unsplash/alberto-restifo-95349.jpg",
-        "http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515774731/unsplash/sebastien-gabriel-127043_pljnfl.jpg",
         "http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515774726/unsplash/willian-west-276239_tyk2tk.jpg",
         "http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515774707/unsplash/eberhard-grossgasteiger-338314_cpznja.jpg",
         "http://res.cloudinary.com/epicfoundation/image/upload/c_scale,h_1100/v1515857062/unsplash/john-silliman-115522.jpg",
