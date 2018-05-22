@@ -15,7 +15,6 @@
     <title>Flutur New Tab Chrome Extension</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/onebagjpomhjadhoiianmnelkbcnllnf">
     <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -312,7 +311,7 @@
 
         $.ajax({
             type: "GET",
-            url: "/home/submit-email?email_id=" + $val.val(),
+            url: "/submit-email?email_id=" + $val.val(),
             success: function(result) {
                 $(".email-input").css("display", "none");
                 $(".email-submit").css("display", "block");
