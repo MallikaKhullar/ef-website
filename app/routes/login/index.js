@@ -29,7 +29,7 @@ router.get('/', function(req, res) {
         };
 
         newdata = Utils.appendProjects(newdata, data.projects);
-        res.render("login-hhk.ejs", newdata);
+        res.render("login_lol.ejs", newdata);
     });
 });
 
