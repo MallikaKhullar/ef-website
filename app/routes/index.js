@@ -16,7 +16,7 @@ var projects = require('./projects');
 var contactPage = require('./contact');
 var aboutPage = require('./about-us');
 var carter = require('./carter');
-// var newTabTest = require('./new-tab-test');
+var doomo = require('./doomo');
 
 var allRoutes = function(app, passport) {
 
@@ -59,6 +59,7 @@ var allRoutes = function(app, passport) {
     app.use('/new-tab', newTab);
     app.use('/faqs', faqs);
     app.use('/carter', carter);
+    app.use('/doomo', doomo);
 
     app.all("/blog/didn't-teach-me-in-school-maharashtra-farmers", function(req, res, next) {
         res.redirect(301, "http://www.flutur.org/blog/didnt-teach-me-in-school-maharashtra-farmers");
