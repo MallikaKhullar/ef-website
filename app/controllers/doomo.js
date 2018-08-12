@@ -13,7 +13,6 @@ exports.getAllLevels = function() {
 }
 
 exports.preRegisterUser = function(userId) {
-    console.log("1");
     return fn.defer(fn.bind(DoomoUser, 'createUser'))(userId).pipe(function(res) {
         console.log("Control" + res);
         return deferred.success(res);

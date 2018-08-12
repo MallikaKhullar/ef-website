@@ -6,21 +6,46 @@ var fn = require('./../../utils/functions');
 var doomoController = require('../../controllers/doomo');
 var userController = require('../../controllers/user');
 var moment = require('moment');
+var config = require('config');
 
-router.get('/levels', function(req, res) {
+router.post('/levels', function(req, res) {
     console.log("levels");
+
+    var passKey = req.body.key;
+
+    if (!passKey || passKey != config.doomokey) {
+        res.status(401).send("Not authorized");
+        return;
+    }
+
     doomoController.getAllLevels().pipe(function(data) {
         res.status(200).send({ "levels": data });
     });
 });
-router.get('/codes', function(req, res) {
+router.post('/codes', function(req, res) {
     console.log("codes");
+
+    var passKey = req.body.key;
+
+    if (!passKey || passKey != config.doomokey) {
+        res.status(401).send("Not authorized");
+        return;
+    }
+
     doomoController.getAllCodes().pipe(function(data) {
         res.status(200).send({ "codes": data });
     });
 });
-router.get('/randomcode', function(req, res) {
+router.post('/randomcode', function(req, res) {
     console.log("randomcode");
+
+    var passKey = req.body.key;
+
+    if (!passKey || passKey != config.doomokey) {
+        res.status(401).send("Not authorized");
+        return;
+    }
+
     doomoController.getRandomCode().pipe(function(data) {
         res.status(200).send(data);
     });
@@ -32,7 +57,7 @@ router.post('/preregister', function(req, res) {
     var passKey = req.body.key;
     var userId = req.body.userId;
 
-    if (!passKey || passKey != "n30ch3rry5008th") {
+    if (!passKey || passKey != config.doomokey) {
         res.status(401).send("Not authorized");
         return;
     }
@@ -42,9 +67,15 @@ router.post('/preregister', function(req, res) {
     });
 });
 
-router.get('/totalUsers', function(req, res) {
+router.post('/total-users', function(req, res) {
     console.log("totalusers");
 
+    var passKey = req.body.key;
+
+    if (!passKey || passKey != config.doomokey) {
+        res.status(401).send("Not authorized");
+        return;
+    }
     userController.getAllUserCount().pipe(function(data) {
         res.status(200).send({ "1": data });
     });
