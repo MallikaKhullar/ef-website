@@ -1199,6 +1199,12 @@ footer ul li a.active {
     background: linear-gradient(90deg, #C768FF 0%, #FF1F7B 100%);
 }
 
+.blackbord-box {
+    padding: 15px;
+    opacity: 0.94;
+    background: linear-gradient(90deg, #ffffff 0%, #FF1F7B 100%);
+}
+
 .rounded-gradient-box {
     opacity: 0.94;
     border-radius: 19.71px;
