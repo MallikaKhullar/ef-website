@@ -543,9 +543,6 @@ header .header-content {
     .img-responsive {
         max-width: 90%;
     }
-    .img-responsive-smaller {
-        max-width: 60%;
-    }
     .small-project-details-container {
         text-align: center;
     }
@@ -2028,4 +2025,8 @@ header {
 
 .font-xsmall {
     font-size: 12px;
+}
+
+.img-responsive-smaller {
+    max-width: 60%;
 }

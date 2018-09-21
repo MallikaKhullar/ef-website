@@ -1,0 +1,60 @@
+<div class="desktop-content">
+    <div style="text-align: center">
+        <img src="http://res.cloudinary.com/epicfoundation/image/upload/v1528738737/dldkjfdlkj_apsq1h.jpg" style="width:100vw;background: linear-gradient(to right, #f6cfe8, #f6d3ea, #f8dff0, #fae7f4, #fbeef7)">
+    </div>
+
+    <section id="mission-prim" class=" mission-box-container" style="<%- featuredProject.cardStyle %>">
+        <div class="row tab-project-container hover-slight">
+            <div class="col-sm-3 ">
+                <img alt="Flutur Chrome Extension" src="<%-featuredProject.primaryMissionPhoto%>" class="img-responsive" style="height:350px;margin-top:-50px" /></div>
+            <div class="col-sm-5 tab-project-details-container">
+                <div class="uc font-200" style="margin-top:40px; ">Open new tabs to</div>
+                <div id="featured-title" class="font-700 uc" style="margin:30px 0; font-size: 50px; line-height:52px;">
+                    <%- featuredProject.featureActionTitle %>
+
+                </div>
+                <!-- <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;padding-right:50px; margin: 10px 0">
+                        Just one more step and you're ready to start raising funds. Happy tabbing!</div> -->
+                <div id="featured-rect" class="featured-white" style="margin-right:200px">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img id="featured-star" style="height:20px; margin-left:4px;margin-top:-5px;" />
+                        </div>
+                        <div id='mission-txt' class="col-sm-10">
+                            <div class="poppins-thick xs-text uc">Featured Mission</div>
+                            <!-- <div class="poppins-small">March - April 2018</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 tab-project-details-container" style="padding-left:30px;">
+                <div class="font-200" style="margin-top:40px;padding-right:50px;">
+                    <%- featuredProject.homeDescription %>
+                </div>
+                <div id="read-more" class="font-700 uc" style="margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="secondary-missions" class="other-missions-box-container bg-lightgrey">
+        <div class="we-also-support mb-3">WE ALSO SUPPORT - </div>
+
+        <div class="row">
+            <% for(var i=0; i<projects.length; i++) { %>
+                <a href='projects/<%- projects[i].projectId %>'>
+                    <div class="col-sm-4 small-proj">
+                        <img src="<%- projects[i].showcasePhoto%>" class="mb-2" style="height:150px; width:150px" />
+                        <div class="thick-text black font-small uc" style="line-height:1.1; letter-spacing: 0.5px;padding-right:50px;padding-bottom:10px;font-size:25px">
+                            <%- projects[i].projectTitle%>
+                        </div>
+                        <div class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px;">
+                            <%- projects[i].homeDescription%>
+                        </div>
+                        <div id="feature-read-more" class="black c-p font-700 uc" style="font-size:12px; margin-top: 5px;line-height:1.5; letter-spacing: 0.5px;padding-right:50px;">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+
+                    </div>
+                </a>
+                <% } %>
+        </div>
+    </section>
+</div>

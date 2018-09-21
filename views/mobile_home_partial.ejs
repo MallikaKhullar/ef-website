@@ -1,43 +1,5 @@
-<header class="small-mobile-header">
-    <div class="col-sm-6 primary-section-container">
-        <div class="header-content">
-            <div class="header-content-inner">
-                <div class="main-home-title thick-text white">How long are you active online everyday?</div>
-                <div class="rangeslider-wrap" style="visibility:hidden">
-                    <input type="range" min="0" max="16" step="0.5" labels="0, 16" value="1">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="small-header-content white">
-        <div class="small-header-content-inner" style="width:100%">
-            <div class="small-trans-box">
-                <div style="display:table">
-                    <div id="small-impact-val" class="thick-text" style="padding-right:5px; font-size:40px; vertical-align:middle; width:100px;text-align:left;display:table-cell">3.12</div>
-                    <select id="small-year" style="display:table-cell;padding:15px">
-                                    <option value="tree">TREES</option>
-                                    <option value="food">CHILDREN FED</option>
-                                    <option value="book">DAYS OF SCHOOL</option>
-                                </select>
-                </div>
-
-                <div id="small-impact-stmt" class="thin-text font-smaller" style="font-size:12px;margin:10px 0 0 5px;">Planted &amp; watered by you in 1 year by doing almost nothing!</div>
-                <div style="margin: 10px 0px 50px 0">
-                    <%- include small_grid.ejs %>
-                </div>
-            </div>
-            <div id="small-footer-motivation" style="padding: 40px 0px;">
-                <a href="#small-about" style="text-decoration:none">
-                    <div style="text-align:center" class="thin-text white">The world needs more superheroes! <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
-
 <div class="small-content-box">
-    <section id="mission-small" class="bg-lightgrey">
+    <section id="mission-small" class="bg-white">
         <img src="<%- featuredProject.fullFeaturePhoto %>" style="width:100vw;">
         <div class="tab-project-container-small">
             <img alt="Flutur Chrome Extension" src="<%-featuredProject.showcasePhoto%>" class="mission-photo-small" style="margin:0 auto" />
@@ -62,7 +24,7 @@
 </div>
 </section>
 
-<section id="secondary-missions-small" class=" bg-white">
+<section id="secondary-missions-small" class=" bg-lightgrey">
     <div class="thick-text black uc" style="font-size:11px;letter-spacing: 3.5px">We also support - </div>
     <% for(var i=0; i<projects.length; i++) { %>
         <a href='projects/<%- projects[i].projectId %>' style="color:inherit;text-decoration: none!">
@@ -81,7 +43,7 @@
         <% } %>
 </section>
 
-<section id="small-about" class="about-container bg-lightgrey" style="padding:30px 50px;">
+<section id="small-about" class="about-container bg-white" style="padding:30px 50px;">
     <div class="flutur-effect-container">
         <h1 class="pink-quicksand-title">The flutur effect</h1>
         <h1 class="black-page-title" style="margin:15px 0px;">Tiny acts can have large effects</h1>
@@ -90,30 +52,6 @@
     </div>
     <div class="amita-img-container">
         <img alt="Flutur Child" src="/image/flutur_pratiksha.png" style="width:60%;filter: alpha(opacity=90);" />
-    </div>
-</section>
-
-
-<section id="small-chrome-extension" class=" bg-white">
-    <div class="small-gradient-box-container">
-        <div class="gradient-box" style="font-weight:500;font-size:12px">
-            <div class="white " style=" float:left;width:25%;padding-left:5px; ">PROJECT ONE</div>
-            <div class="white" style="float:left;width:5%;padding-left:5px">|</div>
-            <div class="white" style="float:left;width:70%;">FLUTUR NEW TAB</div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="small-laptop-container">
-        <img src="/image/flutur_laptop.png" class="img-responsive" alt="Flutur Chrome Extension New Tab" /></div>
-
-    <div class="small-project-details-container">
-        <div class="black-page-title" style="font-size:37px;line-height:40px;">Flutur New Tab</div>
-        <h3 class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px">The <b>Flutur New Tab</b> Chrome extension replaces your new tab page with a beautiful one designed by us. Every new tab you open while surfing the web raises funds for the cause of your choice.</div>
-    <div onclick="installChromeApp()" style="cursor:pointer; margin:5px 15px 0px 15px; padding:25px 40px 40px 40px" class="white-button">
-        <img alt="Flutur Chrome Extension New Tab" src="/image/get_started_text.png" style="float:left;height:15px" />
-        <img alt="Flutur Chrome Extension New Tab" src="/image/gradient_arrow.png" style="float:right;height:15px" />
-    </div>
     </div>
 </section>
 </div>
