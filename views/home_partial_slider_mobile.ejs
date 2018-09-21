@@ -1,0 +1,50 @@
+<header class="small-mobile-header">
+    <div class="col-sm-6 primary-section-container">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <div class="main-home-title thick-text white">How long are you active online everyday?</div>
+                <div class="rangeslider-wrap" style="visibility:hidden">
+                    <input type="range" min="0" max="16" step="0.5" labels="0, 16" value="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="small-header-content white">
+        <div class="small-header-content-inner" style="width:100%">
+            <div class="small-trans-box">
+                <div style="display:table">
+                    <div id="small-impact-val" class="thick-text" style="padding-right:5px; font-size:40px; vertical-align:middle; width:100px;text-align:left;display:table-cell">3.12</div>
+                    <select id="small-year" style="display:table-cell;padding:15px">
+                                        <option value="tree">TREES</option>
+                                        <option value="food">CHILDREN FED</option>
+                                        <option value="book">DAYS OF SCHOOL</option>
+                                    </select>
+                </div>
+
+                <div id="small-impact-stmt" class="thin-text font-smaller" style="font-size:12px;margin:10px 0 0 5px;">Planted &amp; watered by you in 1 year by doing almost nothing!</div>
+                <div style="margin: 10px 0px 50px 0">
+                    <%- include small_grid.ejs %>
+                </div>
+            </div>
+            <div id="small-footer-motivation" style="padding: 40px 0px;">
+                <a href="#small-about" style="text-decoration:none">
+                    <div style="text-align:center" class="thin-text white">The world needs more superheroes! <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section id="small-about" class="about-container bg-lightgrey" style="padding:30px 50px;">
+    <div class="flutur-effect-container">
+        <h1 class="pink-quicksand-title">The flutur effect</h1>
+        <h1 class="black-page-title" style="margin:15px 0px;">Tiny acts can have large effects</h1>
+        <h3 class="thin-text black font-xsmall" style="line-height:1.5; letter-spacing: 0.5px">At Flutur, we are building products which convert your otherwise wasted hours into real donations. As a result, you can change the world right from your workplace!
+        </h3>
+    </div>
+    <div class="amita-img-container">
+        <img alt="Flutur Child" src="/image/flutur_pratiksha.png" style="width:60%;filter: alpha(opacity=90);" />
+    </div>
+</section>
