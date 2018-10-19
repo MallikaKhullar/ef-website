@@ -1757,9 +1757,9 @@ button {
 
 .popup-small-title {
     color: #000;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 600;
-    line-height: 13px;
+    line-height: 10px;
 }
 
 .blog-img {
@@ -2045,6 +2045,25 @@ header {
 }
 
 .team .t-img {
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    /* transition: all 2s ease-out; */
+    /* width: 200%; */
+    /* max-width: none; */
+}
+
+.kindo-app:hover {
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
+    transform-origin: bottom;
+}
+
+.kindo-app {
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
