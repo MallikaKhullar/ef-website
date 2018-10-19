@@ -17,6 +17,7 @@ router.get('/', function(req, res) {
 
     var def1 = {
         userCount: userController.getAllUserCount(),
+        doomoUsers: doomoController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount()
     };
 
@@ -38,7 +39,7 @@ router.get('/', function(req, res) {
             blogs: data.all,
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(data.userCount)
+                followers: Utils.getCommaSeparatedNumber(data.userCount + data.doomoUsers)
             },
             currentPage: page,
             currentCategoryId: type,

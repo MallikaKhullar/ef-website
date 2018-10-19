@@ -12,7 +12,6 @@ doomoUserSchema.statics = {
         this.find({}).lean().exec(cb);
     },
     getUserCount: function(cb) {
-        console.log("AT DB");
         this.count({}).lean().exec(cb);
     },
     createUser: function(userId, cb) {
