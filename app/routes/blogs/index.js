@@ -4,6 +4,7 @@ var Utils = require('../../utils');
 var blogController = require('../../controllers/blog');
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
+var doomoController = require('../../controllers/doomo');
 var userController = require('../../controllers/user');
 var donationController = require('../../controllers/donations');
 var moment = require('moment');
@@ -58,6 +59,7 @@ router.get('/:blogId', function(req, res) {
         details: blogController.getBlogDetails({ blog_id }),
         recent: blogController.getBlogOverviews({ filter: { blog_id: { $nin: [blog_id] } }, count: 3 }),
         userCount: userController.getAllUserCount(),
+        doomoUsers: doomoController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount()
     };
 
@@ -78,7 +80,7 @@ router.get('/:blogId', function(req, res) {
             recent: data.recent,
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(data.userCount)
+                followers: Utils.getCommaSeparatedNumber(data.userCount + data.doomoUsers)
             }
         };
 

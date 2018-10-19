@@ -4,6 +4,7 @@ var RouteHandler = require('../../handlers/route_handler');
 var userController = require('../../controllers/user');
 var donationController = require('../../controllers/donations');
 var projectController = require('../../controllers/project');
+var doomoController = require('../../controllers/doomo');
 
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
@@ -15,6 +16,7 @@ router.get('/', function(req, res) {
     else console.log("Login page hit");
     var def = {
         userCount: userController.getAllUserCount(),
+        doomoUsers: doomoController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
         projects: projectController.getProjectOverviews({ truncHomeDesc: true, truncHome: 250 })
     };
@@ -24,7 +26,7 @@ router.get('/', function(req, res) {
         var newdata = {
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(data.userCount)
+                followers: Utils.getCommaSeparatedNumber(data.userCount + data.doomoUsers)
             }
         };
 

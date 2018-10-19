@@ -3,6 +3,7 @@ var router = express.Router();
 var Utils = require('../../utils');
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
+var doomoController = require('../../controllers/doomo');
 var userController = require('../../controllers/user');
 var donationController = require('../../controllers/donations');
 var moment = require('moment');
@@ -10,6 +11,7 @@ var moment = require('moment');
 router.get('/', function(req, res) {
     var def1 = {
         userCount: userController.getAllUserCount(),
+        doomoUsers: doomoController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount()
     };
 
@@ -17,7 +19,7 @@ router.get('/', function(req, res) {
         var newdata = {
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(data.userCount)
+                followers: Utils.getCommaSeparatedNumber(data.userCount + data.doomoUsers)
             }
         };
 

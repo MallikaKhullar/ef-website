@@ -19,6 +19,12 @@ exports.preRegisterUser = function(userId) {
     });
 }
 
+exports.getAllUserCount = function() {
+    return fn.defer(fn.bind(DoomoUser, 'getUserCount'))().pipe(function(res) {
+        return deferred.success(res);
+    });
+};
+
 exports.getRandomCode = function(userId) {
     return fn.defer(fn.bind(DoomoCode, 'getAllCodes'))().pipe(function(res) {
         return deferred.success(res[Math.floor(Math.random() * res.length)]);

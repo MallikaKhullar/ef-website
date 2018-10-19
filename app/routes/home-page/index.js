@@ -5,6 +5,7 @@ var ngoController = require('../../controllers/ngo');
 var userController = require('../../controllers/user');
 var donationController = require('../../controllers/donations');
 var blogController = require('../../controllers/blog');
+var doomoController = require('../../controllers/doomo');
 var deferred = require('./../../utils/deferred');
 var fn = require('./../../utils/functions');
 var Utils = require('../../utils');
@@ -25,6 +26,7 @@ router.get('/', function(req, res) {
     var def = {
         ngos: ngoController.getAllNgos(),
         userCount: userController.getAllUserCount(),
+        doomoUsers: doomoController.getAllUserCount(),
         donationCount: donationController.getAllDonationCount(),
         allBlogs: blogController.getBlogOverviews({ count: 9, filter: { starred: true } }),
         projects: projectController.getProjectOverviews({})
@@ -36,7 +38,7 @@ router.get('/', function(req, res) {
             ngos: data.ngos,
             stats: {
                 donations: "Rs. " + Utils.getCommaSeparatedMoney(data.donationCount),
-                followers: Utils.getCommaSeparatedNumber(data.userCount)
+                followers: Utils.getCommaSeparatedNumber((data.userCount + data.doomoUsers))
             },
             blogs: data.allBlogs
         };
