@@ -22,6 +22,23 @@ router.post('/levels', function(req, res) {
         res.status(200).send({ "levels": data });
     });
 });
+
+
+router.post('/levels_v2', function(req, res) {
+    console.log("levels_v2");
+
+    var passKey = req.body.key;
+
+    if (!passKey || passKey != config.doomokey) {
+        res.status(401).send("Not authorized");
+        return;
+    }
+
+    doomoController.getAllLevels().pipe(function(data) {
+        res.status(200).send({ "levels": data });
+    });
+});
+
 router.post('/codes', function(req, res) {
     console.log("codes");
 

@@ -1,6 +1,7 @@
 const DoomoUser = require('../repo/mongo/doomo_user');
 const DoomoCode = require('../repo/mongo/doomo_code');
 const Puzzle = require('../repo/mongo/doomo_levels');
+const Puzzle2 = require('../repo/mongo/doomo_levels_v2');
 const { wrap: async } = require('co');
 var fn = require('./../utils/functions');
 var deferred = require('./../utils/deferred.js');
@@ -8,6 +9,12 @@ var moment = require('moment');
 
 exports.getAllLevels = function() {
     return fn.defer(fn.bind(Puzzle, 'getAllPuzzles'))().pipe(function(res) {
+        return deferred.success(res);
+    });
+}
+
+exports.getAllLevels_v2 = function() {
+    return fn.defer(fn.bind(Puzzle2, 'getAllPuzzles_v2'))().pipe(function(res) {
         return deferred.success(res);
     });
 }
