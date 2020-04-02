@@ -34,7 +34,7 @@ router.post('/levels_v2', function(req, res) {
         return;
     }
 
-    doomoController.getAllLevels().pipe(function(data) {
+    doomoController.getAllLevels_v2().pipe(function(data) {
         res.status(200).send({ "levels": data });
     });
 });
